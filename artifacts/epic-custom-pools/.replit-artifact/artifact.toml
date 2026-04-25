@@ -1,0 +1,32 @@
+kind = "web"
+  previewPath = "/"
+  title = "Epic Custom Pools"
+  version = "1.0.0"
+  id = "artifacts/epic-custom-pools"
+  router = "path"
+
+  [[integratedSkills]]
+  name = "react-vite"
+  version = "1.0.0"
+
+  [[services]]
+  name = "web"
+  paths = [ "/" ]
+  localPort = 19724
+
+  [services.development]
+  run = "pnpm --filter @workspace/epic-custom-pools run dev"
+
+  [services.production]
+  build = [ "pnpm", "--filter", "@workspace/epic-custom-pools", "run", "build" ]
+
+  [services.production.run]
+  args = [ "pnpm", "--filter", "@workspace/epic-custom-pools", "run", "start" ]
+
+  [services.production.run.env]
+  PORT = "19724"
+  NODE_ENV = "production"
+
+  [services.env]
+  PORT = "19724"
+  
