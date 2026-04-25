@@ -1,0 +1,66 @@
+Using the existing Next.js app with the Epic Custom Pools design system, build the complete homepage at route / and the lead capture backend.
+
+HOMEPAGE SECTIONS (in order, top to bottom):
+
+1. HERO SECTION
+   - Full-width, tall hero with a dark overlay on a high-quality pool background image (use a beautiful Unsplash pool photo via next/image)
+   - Headline (Playfair Display, large): "Where DFW Families Build Their Best Memories"
+   - Subheadline: "Owner-operated by a DFW pool industry veteran — now serving Fort Worth, Weatherford, Aledo, Granbury & surrounding areas directly under his own name"
+   - Two CTA buttons: Primary gold button "Get Your Free Design Consultation" → /consultation, Secondary outline button "Our Story" → /about
+   - The hero must look stunning on both mobile and desktop
+
+2. TRUST BAR
+   - Row of 4 values (not statistics — this is a new business): "Owner-Operated", "You Deal Direct With the Builder", "Transparent Pricing", "Free Design Consultation"
+   - White background, navy text, gold accents, subtle border
+   - No fake project counts or review stars
+
+3. SERVICES OVERVIEW
+   - Section title: "What We Build"
+   - 3 cards: Gunite/Concrete Pools, Fiberglass Pools, Swim Spas & Hot Tubs
+   - Each card: icon, title, 2-sentence description, "Learn More" link to respective service page
+   - Elegant card design with hover effect
+
+4. INLINE LEAD FORM
+   - Section with navy background
+   - Headline: "Ready to Get Started? Let's Design Your Dream Pool."
+   - Form fields: Full Name (required), Phone Number (required, type=tel), City/Zip (required), Pool Type Interest (dropdown: Gunite, Fiberglass, Swim Spa, Not Sure), Message (textarea, optional)
+   - Submit button: "Get My Free Consultation →" in gold
+   - On submit: POST to /api/contact, show success message, fire GA4 event
+
+5. WHY EPIC CUSTOM POOLS
+   - 4 differentiators with icons based on the founder story and mission:
+     "You Talk Directly To The Builder" — no project managers or salespeople in the middle
+     "Transparent Pricing, Always" — honest ranges published openly, no call-for-quote runaround
+     "Built For Families, By Someone Who Cares" — the mission behind starting this business
+     "DFW's Local Expert" — years of hands-on experience across Fort Worth and surrounding communities
+   - Light gray background section
+
+6. CTA BANNER
+   - Navy background with gold text
+   - "Every great backyard starts with a conversation."
+   - Large gold button: "Schedule Your Free Consultation"
+
+LEAD FORM API ROUTE at /api/contact:
+- Receives form data via POST request
+- Validates required fields (name, phone, city)
+- Sends an email to a contractor email address (use CONTRACTOR_EMAIL from environment variable) using the Resend API (RESEND_API_KEY from env)
+- Email subject: "New Lead — Epic Custom Pools — [Name]"
+- Email body: all form fields, submission timestamp, page URL
+- Returns success or error JSON response
+- Install the resend npm package
+
+THANK YOU PAGE at /thank-you:
+- Shown after successful form submission (redirect after POST)
+- Friendly confirmation message, expected callback time, contractor phone number as tap-to-call
+- Links back to /gallery and /pricing
+- Fire GA4 event: trackEvent('form_submit', {page: 'home'})
+
+SEO META TAGS for homepage:
+- Title: "Epic Custom Pools | Fort Worth Custom Pool Builder"
+- Description: "Fort Worth's premier custom pool builder. Gunite, fiberglass, and swim spas. Serving Weatherford, Aledo, Granbury & DFW. Get your free design consultation today."
+- Open Graph image, title, and description
+
+GA4 EVENTS to fire:
+- cta_click when any CTA button is clicked
+- phone_click when phone number tap-to-call is clicked
+- form_submit on successful lead form submission
