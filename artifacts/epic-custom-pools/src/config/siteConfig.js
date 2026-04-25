@@ -1,3 +1,5 @@
+const DEFAULT_CITIES = 'Fort Worth,Weatherford,Aledo,Granbury,Mineral Wells,Benbrook,Hudson Oaks,Burleson';
+
 const siteConfig = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://epiccustompools.com',
   siteName: process.env.NEXT_PUBLIC_SITE_NAME || 'Epic Custom Pools',
@@ -6,16 +8,10 @@ const siteConfig = {
   email: process.env.NEXT_PUBLIC_EMAIL || 'info@epiccustompools.com',
   address: process.env.NEXT_PUBLIC_ADDRESS || 'Fort Worth, TX',
   ga4Id: process.env.NEXT_PUBLIC_GA4_ID || '',
-  serviceCities: [
-    'Fort Worth',
-    'Weatherford',
-    'Aledo',
-    'Granbury',
-    'Mineral Wells',
-    'Benbrook',
-    'Hudson Oaks',
-    'Burleson',
-  ],
+  serviceCities: (process.env.NEXT_PUBLIC_SERVICE_CITIES || DEFAULT_CITIES)
+    .split(',')
+    .map((c) => c.trim())
+    .filter(Boolean),
   navLinks: [
     { label: 'Home', href: '/' },
     { label: 'Gunite Pools', href: '/gunite-pools' },
