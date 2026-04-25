@@ -1,0 +1,100 @@
+import { NextRequest, NextResponse } from 'next/server';
+import { Resend } from 'resend';
+
+export async function POST(req: NextRequest) {
+  let body: Record<string, string>;
+
+  try {
+    body = await req.json();
+  } catch {
+    return NextResponse.json({ error: 'Invalid request body.' }, { status: 400 });
+  }
+
+  const { name, phone, city, poolType, message } = body;
+
+  if (!name?.trim() || !phone?.trim() || !city?.trim()) {
+    return NextResponse.json(
+      { error: 'Name, phone number, and city are required.' },
+      { status: 400 }
+    );
+  }
+
+  const apiKey = process.env.RESEND_API_KEY;
+  const contractorEmail = process.env.CONTRACTOR_EMAIL;
+
+  if (!apiKey) {
+    console.error('[contact] RESEND_API_KEY is not set');
+    return NextResponse.json(
+      { error: 'Server configuration error — please contact us directly.' },
+      { status: 500 }
+    );
+  }
+
+  if (!contractorEmail) {
+    console.error('[contact] CONTRACTOR_EMAIL is not set');
+    return NextResponse.json(
+      { error: 'Server configuration error — please contact us directly.' },
+      { status: 500 }
+    );
+  }
+
+  const resend = new Resend(apiKey);
+  const submittedAt = new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' });
+  const pageUrl = req.headers.get('referer') || 'https://epiccustompools.com';
+
+  const html = `
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" /></head>
+<body style="font-family:sans-serif;color:#1a1a1a;max-width:600px;margin:auto;padding:24px;">
+  <div style="background:#0a1628;padding:20px 24px;border-radius:8px 8px 0 0;">
+    <h1 style="color:#c9a84c;font-size:20px;margin:0;">New Lead — Epic Custom Pools</h1>
+  </div>
+  <div style="border:1px solid #e0e0e0;border-top:none;border-radius:0 0 8px 8px;padding:24px;">
+    <table style="width:100%;border-collapse:collapse;">
+      <tr><td style="padding:8px 0;color:#666;width:140px;vertical-align:top;font-size:14px;">Name</td><td style="padding:8px 0;font-weight:600;">${escapeHtml(name)}</td></tr>
+      <tr><td style="padding:8px 0;color:#666;font-size:14px;">Phone</td><td style="padding:8px 0;"><a href="tel:${escapeHtml(phone.replace(/\D/g, ''))}" style="color:#1a6b7a;">${escapeHtml(phone)}</a></td></tr>
+      <tr><td style="padding:8px 0;color:#666;font-size:14px;">City / Zip</td><td style="padding:8px 0;">${escapeHtml(city)}</td></tr>
+      <tr><td style="padding:8px 0;color:#666;font-size:14px;">Pool Interest</td><td style="padding:8px 0;">${escapeHtml(poolType || 'Not specified')}</td></tr>
+      ${
+        message?.trim()
+          ? `<tr><td style="padding:8px 0;color:#666;font-size:14px;vertical-align:top;">Message</td><td style="padding:8px 0;white-space:pre-wrap;">${escapeHtml(message)}</td></tr>`
+          : ''
+      }
+    </table>
+    <hr style="border:none;border-top:1px solid #e0e0e0;margin:20px 0;" />
+    <p style="font-size:12px;color:#999;margin:0;">
+      Submitted: ${submittedAt} (Central)<br />
+      Source: ${escapeHtml(pageUrl)}
+    </p>
+  </div>
+</body>
+</html>
+`;
+
+  try {
+    await resend.emails.send({
+      from: 'Epic Custom Pools <onboarding@resend.dev>',
+      to: [contractorEmail],
+      replyTo: undefined,
+      subject: `New Lead — Epic Custom Pools — ${name}`,
+      html,
+    });
+
+    return NextResponse.json({ success: true });
+  } catch (err) {
+    console.error('[contact] Resend error:', err);
+    return NextResponse.json(
+      { error: 'Failed to send. Please call us directly or try again.' },
+      { status: 500 }
+    );
+  }
+}
+
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}

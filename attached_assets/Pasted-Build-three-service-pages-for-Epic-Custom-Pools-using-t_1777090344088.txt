@@ -1,0 +1,49 @@
+Build three service pages for Epic Custom Pools using the existing design system and layout. Each page should be fully written with real SEO-optimized content — not placeholder text.
+
+CREATE THESE THREE PAGES:
+
+1. /gunite-pools — Gunite/Concrete Pools
+   SEO Title: "Gunite Pool Builder Fort Worth TX | Epic Custom Pools"
+   SEO Description: "Custom gunite and concrete pools in Fort Worth, Weatherford & DFW. Fully custom shapes, finishes, and features. Get your free design consultation with Epic Custom Pools."
+   Primary keyword: "gunite pool builder Fort Worth"
+   Content to include:
+   - Hero with pool background image and headline "Fully Custom Gunite Pools — Built to Last a Lifetime"
+   - What is a gunite pool? (educational paragraph)
+   - Benefits of gunite: fully custom shape, durability, design flexibility, long lifespan
+   - Our gunite process: Design → Engineering → Excavation → Shell → Finish → Fill
+   - Popular features: infinity edges, sun shelves, grottos, beach entries, waterfalls
+   - Inline lead form (reuse the contact form component, pass page source as hidden field)
+   - FAQ section: 4 common gunite pool questions with answers
+
+2. /fiberglass-pools — Fiberglass Pools
+   SEO Title: "Fiberglass Pool Installation Fort Worth TX | Epic Custom Pools"
+   SEO Description: "Fiberglass pool installation in Fort Worth and DFW. Faster install, low maintenance, algae-resistant surface. Free design consultation with Epic Custom Pools."
+   Primary keyword: "fiberglass pool installation Fort Worth"
+   Content to include:
+   - Hero with headline "Fiberglass Pools — Faster Install, Lower Maintenance"
+   - What is a fiberglass pool? (educational paragraph)
+   - Benefits: faster installation (weeks not months), algae-resistant surface, low maintenance costs, smooth finish
+   - Gunite vs Fiberglass comparison table (be honest about tradeoffs)
+   - Our fiberglass models and shapes overview
+   - Inline lead form
+   - FAQ: 4 common fiberglass questions
+
+3. /swim-spas — Swim Spas & Hot Tubs
+   SEO Title: "Swim Spa & Hot Tub Installation DFW | Epic Custom Pools"
+   SEO Description: "Swim spa and hot tub installation in Fort Worth and DFW. Year-round use, smaller footprint, health benefits. Free consultation with Epic Custom Pools."
+   Primary keyword: "swim spa installation DFW"
+   Content to include:
+   - Hero with headline "Swim Spas & Hot Tubs — Year-Round Enjoyment in Any Backyard"
+   - What is a swim spa? + health and fitness benefits
+   - Swim Spa vs Pool comparison (for smaller yards)
+   - Hot tub options and features
+   - Installation process overview
+   - Inline lead form
+   - FAQ: 4 common questions
+
+FOR ALL THREE PAGES:
+- Use the same reusable lead form component from Sprint 2, passing a source hidden field ("gunite-page", "fiberglass-page", "swim-spa-page") so the contractor knows which page generated the lead
+- Add LocalBusiness + Service JSON-LD schema markup to each page
+- Every image must have descriptive alt text: "[pool type] pool builder Fort Worth TX"
+- Internal links: each page links to /pricing and /consultation
+- Create a reusable ServicePageTemplate component so all three pages share the same structure with different content props

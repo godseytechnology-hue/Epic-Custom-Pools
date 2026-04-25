@@ -73,9 +73,24 @@ Key env vars:
 - `tailwind.config.js` — brand color tokens, font family variables
 - `next-sitemap.config.js` — sitemap generation (runs post-build)
 
+### New Sprint 2 Files
+- `src/app/page.tsx` — full homepage (6 sections: Hero, Trust Bar, Services, Lead Form, Why section, CTA)
+- `src/app/api/contact/route.ts` — lead form POST handler (Resend email, validates name/phone/city)
+- `src/app/thank-you/page.tsx` — post-submission confirmation page
+- `src/components/LeadForm.tsx` — client component, POSTs to /api/contact, redirects on success
+- `src/components/TrackingLink.tsx` — client wrapper for GA4 cta_click events on server components
+- `src/components/FormSubmitTracker.tsx` — fires form_submit GA4 event on /thank-you mount
+
+### Env vars needed for lead form
+Add these to `.env.local` to activate email delivery:
+```
+RESEND_API_KEY=re_...       # from resend.com
+CONTRACTOR_EMAIL=you@...    # where leads are delivered
+```
+
 ### Sprint Status
 - **Sprint 1** (DONE): Global layout shell — Navbar, Footer, MobileBottomBar, siteConfig, GA4, SEO foundations
-- **Sprint 2** (pending): Full home page (hero, services section, CTA, social proof)
+- **Sprint 2** (DONE): Full homepage + lead form API (Resend) + /thank-you page
 - **Sprint 3** (pending): Service pages (Gunite, Fiberglass, Swim Spas, Home Builders)
 - **Sprint 4** (pending): Local SEO city pages (Fort Worth, Weatherford, Aledo, etc.)
 - **Sprint 5** (pending): Gallery, About, Pricing pages
