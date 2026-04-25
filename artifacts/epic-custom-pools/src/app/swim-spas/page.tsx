@@ -2,11 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import ServiceJsonLd from '@/components/ServiceJsonLd';
+import siteConfig from '@/config/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Swim Spas & Hot Tubs Fort Worth TX | Year-Round Aquatic Wellness',
   description:
-    'Swim spas and hot tubs installed in Fort Worth, Aledo, Weatherford, Mineral Wells, and surrounding areas. Swim, exercise, and relax year-round in any backyard. Free consultation from Epic Custom Pools.',
+    `Swim spas and hot tubs installed in ${siteConfig.serviceAreaPhrase}. Swim, exercise, and relax year-round in any backyard. Free consultation from Epic Custom Pools.`,
   openGraph: {
     title: 'Swim Spas & Hot Tubs — Year-Round Enjoyment in Any Backyard | Epic Custom Pools',
     description:
@@ -126,7 +127,7 @@ export default function SwimSpasPage() {
     <>
       <ServiceJsonLd
         serviceName="Swim Spa & Hot Tub Installation"
-        serviceDescription="Swim spa and hot tub installation and setup serving Fort Worth, Aledo, Weatherford, Mineral Wells, and surrounding areas."
+        serviceDescription={`Swim spa and hot tub installation and setup serving ${siteConfig.serviceAreaPhrase}`}
         serviceUrl="/swim-spas"
       />
       <ServicePageTemplate

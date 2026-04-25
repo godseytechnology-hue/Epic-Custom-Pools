@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import ServiceJsonLd from '@/components/ServiceJsonLd';
+import siteConfig from '@/config/siteConfig';
 
 const FIBERGLASS_MODELS = [
   {
@@ -62,7 +63,7 @@ const fiberglassExtraContent = (
 export const metadata: Metadata = {
   title: 'Fiberglass Pools Fort Worth TX | Fast Install, Low Maintenance',
   description:
-    'Fiberglass pool installation in Fort Worth, Aledo, Weatherford, Mineral Wells, and surrounding areas. Faster install, lower maintenance, smooth finish. Get your free quote from Epic Custom Pools.',
+    `Fiberglass pool installation in ${siteConfig.serviceAreaPhrase}. Faster install, lower maintenance, smooth finish. Get your free quote from Epic Custom Pools.`,
   openGraph: {
     title: 'Fiberglass Pools — Faster Install, Lower Maintenance | Epic Custom Pools',
     description:
@@ -78,7 +79,7 @@ export default function FiberglassPoolsPage() {
     <>
       <ServiceJsonLd
         serviceName="Fiberglass Pool Installation"
-        serviceDescription="Fiberglass swimming pool installation serving Fort Worth, Aledo, Weatherford, Mineral Wells, and surrounding areas."
+        serviceDescription={`Fiberglass swimming pool installation serving ${siteConfig.serviceAreaPhrase}`}
         serviceUrl="/fiberglass-pools"
       />
       <ServicePageTemplate

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import ServiceJsonLd from '@/components/ServiceJsonLd';
+import siteConfig from '@/config/siteConfig';
 
 const POPULAR_FEATURES = [
   { icon: '🌊', name: 'Vanishing / Infinity Edge', desc: 'Water appears to merge with the horizon — a stunning visual effect for elevated or hillside lots.' },
@@ -38,7 +39,7 @@ const guniteExtraContent = (
 export const metadata: Metadata = {
   title: 'Gunite Pools Fort Worth TX | Custom Concrete Pool Builder',
   description:
-    'Fully custom gunite pools designed and built in Fort Worth, Aledo, Weatherford, Mineral Wells, and surrounding areas. Any shape, any size — built to last a lifetime. Get a free consultation.',
+    `Fully custom gunite pools designed and built in ${siteConfig.serviceAreaPhrase}. Any shape, any size — built to last a lifetime. Get a free consultation.`,
   openGraph: {
     title: 'Fully Custom Gunite Pools — Built to Last a Lifetime | Epic Custom Pools',
     description:
@@ -54,7 +55,7 @@ export default function GunitePoolsPage() {
     <>
       <ServiceJsonLd
         serviceName="Gunite Pool Installation"
-        serviceDescription="Custom gunite (concrete) swimming pool design and construction serving Fort Worth, Aledo, Weatherford, Mineral Wells, and surrounding areas."
+        serviceDescription={`Custom gunite (concrete) swimming pool design and construction serving ${siteConfig.serviceAreaPhrase}`}
         serviceUrl="/gunite-pools"
       />
       <ServicePageTemplate

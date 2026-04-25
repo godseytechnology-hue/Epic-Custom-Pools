@@ -1,5 +1,10 @@
 const DEFAULT_CITIES = 'Fort Worth,Aledo,Weatherford,Mineral Wells';
 
+const serviceCities = (process.env.NEXT_PUBLIC_SERVICE_CITIES || DEFAULT_CITIES)
+  .split(',')
+  .map((c) => c.trim())
+  .filter(Boolean);
+
 const siteConfig = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://epiccustompools.com',
   siteName: process.env.NEXT_PUBLIC_SITE_NAME || 'Epic Custom Pools',
@@ -8,10 +13,8 @@ const siteConfig = {
   email: process.env.NEXT_PUBLIC_EMAIL || 'info@epiccustompools.com',
   address: process.env.NEXT_PUBLIC_ADDRESS || 'Fort Worth, TX',
   ga4Id: process.env.NEXT_PUBLIC_GA4_ID || '',
-  serviceCities: (process.env.NEXT_PUBLIC_SERVICE_CITIES || DEFAULT_CITIES)
-    .split(',')
-    .map((c) => c.trim())
-    .filter(Boolean),
+  serviceCities,
+  serviceAreaPhrase: serviceCities.join(', ') + ', and surrounding areas',
   navLinks: [
     { label: 'Home', href: '/' },
     { label: 'Pricing', href: '/pricing' },

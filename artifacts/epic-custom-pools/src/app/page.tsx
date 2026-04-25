@@ -14,7 +14,7 @@ const OG_IMAGE =
 export const metadata: Metadata = {
   title: 'Epic Custom Pools | Fort Worth Custom Pool Builder',
   description:
-    "Fort Worth's premier custom pool builder. Gunite, fiberglass, and swim spas. Serving Fort Worth, Aledo, Weatherford, Mineral Wells, and surrounding areas. Get your free design consultation today.",
+    `Fort Worth's premier custom pool builder. Gunite, fiberglass, and swim spas. Serving ${siteConfig.serviceAreaPhrase}. Get your free design consultation today.`,
   openGraph: {
     title: 'Epic Custom Pools | Fort Worth Custom Pool Builder',
     description:
@@ -120,7 +120,7 @@ export default function HomePage() {
               Where DFW Families Build Epic Memories
             </h1>
             <p className="font-inter text-white/80 text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
-              Owner-operated by a DFW pool industry expert — now serving Fort Worth, Aledo, Weatherford, Mineral Wells, and surrounding areas.
+              Owner-operated by a DFW pool industry expert — now serving {siteConfig.serviceAreaPhrase}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <TrackingLink
@@ -245,7 +245,7 @@ export default function HomePage() {
             Schedule Your Free Consultation
           </TrackingLink>
           <p className="font-inter text-white/40 text-sm mt-6">
-            Serving Fort Worth, Aledo, Weatherford, Mineral Wells &amp; surrounding areas.
+            Serving {siteConfig.serviceAreaPhrase}
           </p>
         </div>
       </section>
