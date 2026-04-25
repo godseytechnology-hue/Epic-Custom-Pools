@@ -16,7 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/weatherford-pool-builder', priority: 0.85 },
     { url: '/about', priority: 0.7 },
     { url: '/home-builders', priority: 0.75 },
-    { url: '/gallery', priority: 0.7 },
   ];
 
   return pages.map(({ url, priority }) => ({

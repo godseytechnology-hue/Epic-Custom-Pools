@@ -46,16 +46,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {CITY_LINKS.map((city) => (
                 <li key={city.label}>
-                  {city.href === '#' ? (
-                    <span className="font-inter text-white/50 text-sm">{city.label}, TX</span>
-                  ) : (
-                    <Link
-                      href={city.href}
-                      className="font-inter text-white/70 text-sm hover:text-white transition-colors duration-150"
-                    >
-                      {city.label}, TX
-                    </Link>
-                  )}
+                  <Link
+                    href={city.href}
+                    className="font-inter text-white/70 text-sm hover:text-white transition-colors duration-150"
+                  >
+                    {city.label}, TX
+                  </Link>
                 </li>
               ))}
             </ul>
