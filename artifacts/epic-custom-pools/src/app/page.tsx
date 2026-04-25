@@ -5,11 +5,10 @@ import siteConfig from '@/config/siteConfig';
 import LeadForm from '@/components/LeadForm';
 import TrackingLink from '@/components/TrackingLink';
 
-const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1920&q=80';
+const HERO_IMAGE = '/hero-pool.jpg';
 
 const OG_IMAGE =
-  'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1200&q=80';
+  'https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1200&q=80';
 
 export const metadata: Metadata = {
   title: 'Epic Custom Pools | Fort Worth Custom Pool Builder',
