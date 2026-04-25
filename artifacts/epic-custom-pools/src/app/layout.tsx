@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.siteName,
     title: `${siteConfig.siteName} | ${siteConfig.tagline}`,
     description:
-      'Premium custom pool design and installation in Fort Worth, Weatherford, Aledo, Granbury, and surrounding DFW communities.',
+      'Premium custom pool design and installation in Fort Worth, Aledo, Weatherford, Mineral Wells, and surrounding areas.',
     url: siteConfig.siteUrl,
   },
   twitter: {

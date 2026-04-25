@@ -14,7 +14,7 @@ const OG_IMAGE =
 export const metadata: Metadata = {
   title: 'Epic Custom Pools | Fort Worth Custom Pool Builder',
   description:
-    "Fort Worth's premier custom pool builder. Gunite, fiberglass, and swim spas. Serving Weatherford, Aledo, Granbury & DFW. Get your free design consultation today.",
+    "Fort Worth's premier custom pool builder. Gunite, fiberglass, and swim spas. Serving Fort Worth, Aledo, Weatherford, Mineral Wells, and surrounding areas. Get your free design consultation today.",
   openGraph: {
     title: 'Epic Custom Pools | Fort Worth Custom Pool Builder',
     description:
@@ -245,7 +245,7 @@ export default function HomePage() {
             Schedule Your Free Consultation
           </TrackingLink>
           <p className="font-inter text-white/40 text-sm mt-6">
-            Serving Fort Worth, Weatherford, Aledo, Granbury &amp; surrounding DFW communities.
+            Serving Fort Worth, Aledo, Weatherford, Mineral Wells &amp; surrounding areas.
           </p>
         </div>
       </section>

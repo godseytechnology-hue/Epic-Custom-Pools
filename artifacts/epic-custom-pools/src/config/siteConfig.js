@@ -1,4 +1,4 @@
-const DEFAULT_CITIES = 'Fort Worth,Weatherford,Aledo,Granbury,Mineral Wells,Benbrook,Hudson Oaks,Burleson';
+const DEFAULT_CITIES = 'Fort Worth,Aledo,Weatherford,Mineral Wells';
 
 const siteConfig = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://epiccustompools.com',

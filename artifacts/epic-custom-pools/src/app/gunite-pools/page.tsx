@@ -38,7 +38,7 @@ const guniteExtraContent = (
 export const metadata: Metadata = {
   title: 'Gunite Pools Fort Worth TX | Custom Concrete Pool Builder',
   description:
-    'Fully custom gunite pools designed and built in Fort Worth, Weatherford, Aledo, and the DFW area. Any shape, any size — built to last a lifetime. Get a free consultation.',
+    'Fully custom gunite pools designed and built in Fort Worth, Aledo, Weatherford, Mineral Wells, and surrounding areas. Any shape, any size — built to last a lifetime. Get a free consultation.',
   openGraph: {
     title: 'Fully Custom Gunite Pools — Built to Last a Lifetime | Epic Custom Pools',
     description:
@@ -54,7 +54,7 @@ export default function GunitePoolsPage() {
     <>
       <ServiceJsonLd
         serviceName="Gunite Pool Installation"
-        serviceDescription="Custom gunite (concrete) swimming pool design and construction serving Fort Worth, Weatherford, Aledo, Granbury, and surrounding DFW communities."
+        serviceDescription="Custom gunite (concrete) swimming pool design and construction serving Fort Worth, Aledo, Weatherford, Mineral Wells, and surrounding areas."
         serviceUrl="/gunite-pools"
       />
       <ServicePageTemplate
