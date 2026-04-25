@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import siteConfig from '@/config/siteConfig';
 import FormSubmitTracker from '@/components/FormSubmitTracker';
+import PhoneLink from '@/components/PhoneLink';
 
 export const metadata: Metadata = {
   title: 'Thank You — We\'ll Be in Touch Soon',
@@ -31,13 +32,14 @@ export default function ThankYouPage() {
             <p className="font-inter text-white/70 text-sm mb-3">
               In the meantime, feel free to reach us directly:
             </p>
-            <a
-              href={`tel:${siteConfig.phone.replace(/\D/g, '')}`}
+            <PhoneLink
+              phone={siteConfig.phone}
+              source="thank_you"
               className="inline-flex items-center gap-2 font-inter font-semibold text-gold text-xl hover:text-gold-light transition-colors"
             >
               <span aria-hidden="true">📞</span>
               {siteConfig.phone}
-            </a>
+            </PhoneLink>
             <p className="font-inter text-white/40 text-xs mt-2">Mon–Sat, 7am–7pm Central</p>
           </div>
 
