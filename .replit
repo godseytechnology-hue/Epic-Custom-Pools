@@ -34,4 +34,3 @@ externalPort = 3000
 [userenv]
 
 [userenv.shared]
-CONTRACTOR_EMAIL = "godsey.technology@gmail.com"
