@@ -1,0 +1,46 @@
+// SPRINT 5 — CITY LANDING PAGES + LOCAL SEO SCHEMA
+
+Build two city-specific landing pages for Epic Custom Pools and a reusable city page template for adding more cities later.
+
+CITY PAGE TEMPLATE COMPONENT:
+Create a reusable CityPageTemplate component that accepts props: cityName, county, description, neighborhoods, localFacts, poolTypes, heroImage. This will be used for all 8 city pages.
+
+PAGE 1: /fort-worth-pool-builder
+SEO Title: "Pool Builder Fort Worth TX | Epic Custom Pools"
+SEO Description: "Fort Worth's trusted custom pool builder. Gunite, fiberglass, and swim spas. Serving all Fort Worth neighborhoods and Tarrant County. Free design consultation."
+Primary keyword: "pool builder Fort Worth TX"
+
+Unique content for Fort Worth:
+- Headline: "Fort Worth's Trusted Custom Pool Builder"
+- Opening paragraph mentioning: Fort Worth's hot Texas summers, the growing west-side neighborhoods (Aledo, Walsh Ranch, Ventana, Riverton), demand for outdoor living spaces, Epic Custom Pools' local knowledge of Tarrant County permitting
+- Neighborhoods we serve: Westover Hills, Aledo, Benbrook, Ridglea, TCU area, Walsh Ranch, Hulen area
+- Local consideration: Tarrant County HOA and permit notes (general info)
+- Pool type recommendations for Fort Worth lot types (typical suburban lots, larger acreage)
+- A "Why Owner-Operated Matters" paragraph: the owner's personal familiarity with Fort Worth and Tarrant County — not a franchise, not a chain, a local expert who has worked in these neighborhoods
+- LocalBusiness JSON-LD schema with Fort Worth address references and service area
+- Lead form with city pre-filled as "Fort Worth"
+- Do NOT include testimonial placeholders — the founder story and transparent pricing are the trust mechanism on day 1
+
+PAGE 2: /weatherford-pool-builder
+SEO Title: "Pool Builder Weatherford TX | Epic Custom Pools"
+SEO Description: "Custom pool builder in Weatherford, TX. Parker County's choice for gunite, fiberglass & swim spas. Acreage properties welcome. Free design consultation."
+Primary keyword: "pool builder Weatherford TX"
+
+Unique content for Weatherford:
+- Headline: "Weatherford's Premier Custom Pool Builder"
+- Opening paragraph mentioning: Parker County growth, acreage and ranch properties unique to the Weatherford area, larger lot sizes allowing for more ambitious pool designs, Epic Custom Pools' experience with sloped terrain and larger properties
+- Areas we serve from Weatherford: Willow Park, Hudson Oaks, Brock, Millsap, Aledo
+- Local consideration: Parker County permitting, well-water properties, larger acreage designs
+- Pool types especially popular in Weatherford (larger custom gunite, resort-style)
+- A "Why Owner-Operated Matters" paragraph specific to Weatherford: the personal familiarity with Parker County, acreage builds, and the kind of relationship a smaller community expects from a local contractor
+- LocalBusiness JSON-LD schema with Weatherford/Parker County references
+- Lead form with city pre-filled as "Weatherford"
+- Do NOT include testimonial placeholders — authenticity over fabricated social proof
+
+FOOTER ENHANCEMENT:
+Add a "Cities We Serve" section to the footer that lists all 8 cities as internal links — even the ones without pages yet. Link to the existing pages and use # for future pages.
+
+SITEMAP UPDATE:
+Ensure next-sitemap config picks up all new pages and regenerates sitemap.xml automatically on build.
+
+// Output: 2 unique city pages with local content + reusable template for fast expansion to remaining 6 cities
