@@ -46,23 +46,22 @@ const VALUES = [
   },
 ];
 
-const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1920&q=80';
+const HERO_IMAGE = '/about-pool-v3.jpg';
 
 export default function AboutPage() {
   return (
     <>
       {/* ─── HERO ──────────────────────────────────────────────── */}
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-navy">
         <Image
           src={HERO_IMAGE}
-          alt="Epic Custom Pools team and completed pool project"
+          alt="Children enjoying a custom backyard pool built by Epic Custom Pools"
           fill
           className="object-cover object-center"
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-navy/72" />
+        <div className="absolute inset-0 bg-navy/80" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-12 w-full py-20">
           <div className="max-w-2xl">
             <p className="font-inter text-gold text-sm font-semibold tracking-widest uppercase mb-4">
