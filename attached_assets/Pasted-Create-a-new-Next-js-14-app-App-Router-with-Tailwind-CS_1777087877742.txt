@@ -1,0 +1,43 @@
+Create a new Next.js 14 app (App Router) with Tailwind CSS for a premium swimming pool company called "Epic Custom Pools" based in Fort Worth, TX.
+
+BRAND DESIGN SYSTEM:
+- Primary colors: Navy #0a1628, Gold #c9a84c, Teal #1a6b7a, White
+- Heading font: Playfair Display (import from Google Fonts)
+- Body font: Inter (import from Google Fonts)
+- The overall feel should be luxury, trustworthy, and high-end — think premium home design brand, not typical pool contractor
+
+CREATE A GLOBAL LAYOUT with:
+1. A sticky top navigation bar with:
+   - Logo: "⬡ Epic Custom Pools" in Playfair Display, gold color
+   - Nav links: Home, Gunite Pools, Fiberglass, Swim Spas, Pricing, Gallery, About, Contact
+   - A gold CTA button: "Free Consultation" that links to /consultation
+   - Hamburger menu on mobile (fully functional)
+   - Navy background, white text
+
+2. A footer with:
+   - Company name and tagline: "Fort Worth's Premier Custom Pool Builder"
+   - Three columns: Services (Gunite Pools, Fiberglass Pools, Swim Spas, Home Builders), Cities Served (Fort Worth, Weatherford, Aledo, Granbury, Mineral Wells), Contact (phone as tap-to-call link, email, hours)
+   - Copyright line
+   - Navy background, white and gold text
+
+3. A mobile sticky bottom bar (fixed, always visible on mobile only):
+   - Left button: "📞 Call Now" — links to tel: placeholder
+   - Right button: "Get Free Quote" — links to /consultation
+   - Gold and navy styling, full width, z-index above content
+
+GOOGLE ANALYTICS 4:
+- Install the GA4 tracking snippet in the root layout
+- Use measurement ID: G-XXXXXXXXXX (placeholder — I will replace with real ID)
+- Add a reusable helper function trackEvent(eventName, params) that wraps window.gtag for custom event tracking throughout the app
+
+TECHNICAL REQUIREMENTS:
+- Install and configure next-seo package for SEO meta tags
+- Install and configure next-sitemap for sitemap generation
+- Create a siteConfig.js file that reads ALL site-wide values from environment variables:
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL (starts as Replit dev URL — swapped to live domain at Sprint 7 launch with zero code changes)
+  phone: process.env.NEXT_PUBLIC_PHONE
+  ga4Id: process.env.NEXT_PUBLIC_GA4_ID
+  Plus: siteName, tagline, email, address, list of service cities
+  This single pattern means every canonical URL, sitemap entry, and OG tag updates automatically when the domain is swapped
+- Set page size to US standards, mobile-first responsive design
+- Create a /public/robots.txt that allows all crawlers and references the sitemap via siteConfig.siteUrl

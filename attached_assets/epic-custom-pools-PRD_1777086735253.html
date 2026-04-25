@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Epic Custom Pools — Product Requirements Document</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --navy: #0a1628;
+    --gold: #c9a84c;
+    --gold-light: #e8d5a3;
+    --teal: #1a6b7a;
+    --teal-light: #e8f4f6;
+    --slate: #4a5568;
+    --light: #f8f9fa;
+    --white: #ffffff;
+    --border: #e2e8f0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #2d3748;
+    background: var(--white);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .cover {
+    background: linear-gradient(145deg, var(--navy) 0%, #1a3050 60%, var(--teal) 100%);
+    color: white;
+    padding: 80px 60px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(201,168,76,0.12);
+  }
+
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 40%;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: rgba(26,107,122,0.2);
+  }
+
+  .brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--gold);
+    margin-bottom: 8px;
+    position: relative; z-index: 1;
+  }
+
+  .doc-title {
+    font-size: 22px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 24px;
+    position: relative; z-index: 1;
+  }
+
+  .cover-meta {
+    display: flex;
+    gap: 32px;
+    position: relative; z-index: 1;
+  }
+
+  .meta-item { font-size: 12px; color: rgba(255,255,255,0.6); }
+  .meta-item strong { display: block; color: var(--gold-light); font-size: 13px; margin-bottom: 2px; }
+
+  .gold-bar { height: 4px; background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold)); }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 40px; }
+
+  .toc {
+    background: var(--light);
+    border-left: 4px solid var(--gold);
+    padding: 32px 40px;
+    margin: 40px 0;
+  }
+
+  .toc h2 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--navy); margin-bottom: 16px; }
+
+  .toc ol { padding-left: 20px; }
+  .toc li { margin-bottom: 6px; color: var(--teal); font-weight: 500; font-size: 13px; }
+  .toc li a { color: var(--teal); text-decoration: none; }
+  .toc li a:hover { color: var(--gold); }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--navy);
+    margin: 48px 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  h2 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--teal);
+    margin: 32px 0 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 24px 0 8px;
+  }
+
+  p { margin-bottom: 12px; color: var(--slate); }
+
+  .section { margin-bottom: 48px; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 13px;
+  }
+
+  th {
+    background: var(--navy);
+    color: white;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  tr:nth-child(even) td { background: var(--light); }
+  tr:hover td { background: var(--teal-light); }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .badge-mvp { background: #dcfce7; color: #166534; }
+  .badge-post { background: #fef9c3; color: #854d0e; }
+  .badge-saas { background: #ede9fe; color: #5b21b6; }
+  .badge-high { background: #fee2e2; color: #991b1b; }
+  .badge-med { background: #fef3c7; color: #92400e; }
+  .badge-low { background: #d1fae5; color: #065f46; }
+
+  .callout {
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 16px 0;
+    border-left: 4px solid;
+  }
+
+  .callout-gold { background: #fffbeb; border-color: var(--gold); }
+  .callout-teal { background: var(--teal-light); border-color: var(--teal); }
+  .callout-navy { background: #eef2ff; border-color: var(--navy); }
+
+  .callout strong { display: block; margin-bottom: 4px; font-size: 13px; }
+
+  ul { padding-left: 20px; margin-bottom: 12px; }
+  ul li { margin-bottom: 5px; color: var(--slate); }
+
+  .sprint-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+
+  .sprint-header {
+    background: var(--navy);
+    color: white;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .sprint-num {
+    background: var(--gold);
+    color: var(--navy);
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  .sprint-body { padding: 16px 20px; }
+
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 16px 0;
+  }
+
+  .kpi-card {
+    background: var(--navy);
+    color: white;
+    border-radius: 8px;
+    padding: 18px;
+    text-align: center;
+  }
+
+  .kpi-number { font-size: 28px; font-weight: 700; color: var(--gold); }
+  .kpi-label { font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  .page-break { page-break-before: always; }
+
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    margin-top: 60px;
+  }
+
+  footer span { color: var(--gold); }
+
+  @media print {
+    .cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .kpi-card { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="brand">Epic Custom Pools</div>
+  <div class="doc-title">Product Requirements Document — Website & Digital Strategy</div>
+  <div class="cover-meta">
+    <div class="meta-item"><strong>Version</strong>1.0 — Initial Release</div>
+    <div class="meta-item"><strong>Market</strong>Fort Worth / DFW, TX</div>
+    <div class="meta-item"><strong>Status</strong>Pre-Development</div>
+    <div class="meta-item"><strong>Prepared</strong>2025</div>
+  </div>
+</div>
+<div class="gold-bar"></div>
+
+<div class="container">
+
+  <!-- TOC -->
+  <div class="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+      <li><a href="#overview">Executive Overview & Brand Strategy</a></li>
+      <li><a href="#differentiation">Differentiation & Strategic Advantages</a></li>
+      <li><a href="#architecture">Site Architecture & Page Strategy</a></li>
+      <li><a href="#seo">SEO Strategy — Local & Technical</a></li>
+      <li><a href="#design">Design Principles & Mobile Responsiveness</a></li>
+      <li><a href="#lead">Lead Capture System</a></li>
+      <li><a href="#chat">Live Chat & SMS Integration</a></li>
+      <li><a href="#analytics">Analytics & Behavioral Tracking</a></li>
+      <li><a href="#digital">Digital Marketing Campaign Strategy</a></li>
+      <li><a href="#mvp">MVP Feature Set</a></li>
+      <li><a href="#postmvp">Post-MVP Features & Roadmap</a></li>
+      <li><a href="#saas">SaaS Pivot Strategy — AI Pool Designer</a></li>
+      <li><a href="#gbp">Google Business Profile Optimization</a></li>
+      <li><a href="#domain">Domain Strategy & Launch Wiring</a></li>
+      <li><a href="#stack">Technical Stack & Build Plan</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. OVERVIEW -->
+  <div class="section" id="overview">
+    <h1>1. Executive Overview & Brand Strategy</h1>
+    <p>Epic Custom Pools is a full-service pool design and installation company serving the Fort Worth metropolitan area and surrounding communities including Weatherford, Aledo, Granbury, Mineral Wells, Benbrook, and Hudson Oaks. The company specializes in gunite/concrete pools, fiberglass pools, and swim spas/hot tubs, serving both residential homeowners and home builders or developers.</p>
+
+    <p>This document defines the complete digital strategy for establishing Epic Custom Pools as the dominant online presence in its service region — from initial MVP website launch through a long-term SaaS product evolution. The primary objective is immediate lead generation while building lasting brand authority that justifies premium pricing and attracts high-intent buyers.</p>
+
+    <div class="callout callout-gold">
+      <strong>🎯 Core Brand Promise</strong>
+      Epic Custom Pools is positioned as a trusted luxury partner — not a commodity contractor. Every element of the website, from copy to photography to UX, should reinforce the message: <em>we elevate homes and lifestyles through expert craftsmanship and personalized design.</em>
+    </div>
+
+    <h2>Target Segments</h2>
+    <table>
+      <tr><th>Segment</th><th>Profile</th><th>Key Message</th><th>Avg. Contract Value</th></tr>
+      <tr><td><strong>Luxury Homeowners</strong></td><td>$500K+ home, design-conscious, value quality over price</td><td>"Your vision, masterfully executed"</td><td>$80K–$150K+</td></tr>
+      <tr><td><strong>Mid-Market Families</strong></td><td>Growing family, value safety, fun, and ROI on home</td><td>"Built for life. Built to last."</td><td>$35K–$70K</td></tr>
+      <tr><td><strong>Home Builders / Developers</strong></td><td>Volume buyers, need reliability and scheduling</td><td>"Your trusted pool partner at scale"</td><td>$40K–$90K × volume</td></tr>
+    </table>
+  </div>
+
+  <!-- 2. DIFFERENTIATION -->
+  <div class="section" id="differentiation">
+    <h1>2. Differentiation & Strategic Advantages</h1>
+    <p>The following opportunities represent areas where Epic Custom Pools can create a decisive competitive advantage online. Most competitors in the DFW market fail on all of these fronts simultaneously.</p>
+
+    <h2>Highest-Impact Differentiators</h2>
+
+    <h3>🏆 Pricing Transparency</h3>
+    <p>The pool industry is notorious for opaque pricing. A dedicated <code>/pricing</code> page with honest ranges, cost-affecting factors, and a visual cost configurator will capture buyers who are frustrated by competitors forcing them to "call for a quote." This page is projected to be among the highest-converting pages on the site and will rank for high-intent keywords like <em>"how much does a pool cost in Texas."</em></p>
+
+    <h3>🏆 B2B Builder/Developer Track</h3>
+    <p>No local pool contractor has a dedicated landing page or conversion funnel for home builders. A <code>/home-builders</code> page targeting "pool contractor for home builders Fort Worth" is a zero-competition keyword opportunity with extremely high contract value. One builder relationship can yield 10–30 pools per year.</p>
+
+    <h3>🏆 Hyper-Local City Pages</h3>
+    <p>A hub-and-spoke local SEO architecture with individual city landing pages (Fort Worth, Weatherford, Aledo, Granbury, Mineral Wells, Benbrook, Hudson Oaks, Burleson) targets geographic searches that competitors ignore. Each page contains unique, locally-relevant content — not duplicated filler.</p>
+
+    <h3>🏆 Free Design Consultation CTA</h3>
+    <p>Offering a free design consultation as the primary CTA lowers the barrier to engagement dramatically. Buyers in a $50K+ purchase decision need a low-risk first step. This positions Epic Custom Pools as confident and service-oriented rather than transactional.</p>
+
+    <h3>🏆 Trust Signal Architecture</h3>
+    <p>Years in business, project count, certifications (APSP, BBB), and client testimonials should be surfaced on every page — not buried on an About page. Trust signals adjacent to conversion forms measurably increase form completion rates.</p>
+
+    <h3>🏆 Mobile-First Experience</h3>
+    <p>Over 70% of local service searches happen on mobile. A click-to-call button, sticky CTA bar, and fast-loading mobile layout will capture competitors' leads who have poor mobile experiences.</p>
+  </div>
+
+  <!-- 3. ARCHITECTURE -->
+  <div class="section" id="architecture">
+    <h1>3. Site Architecture & Page Strategy</h1>
+
+    <table>
+      <tr><th>Page</th><th>URL</th><th>Primary Keyword</th><th>Phase</th><th>Priority</th></tr>
+      <tr><td>Home</td><td>/</td><td>Pool builder Fort Worth TX</td><td><span class="badge badge-mvp">MVP</span></td><td><span class="badge badge-high">Critical</span></td></tr>
+      <tr><td>Gunite/Concrete Pools</td><td>/gunite-pools</td><td>Gunite pool builder Fort Worth</td><td><span class="badge badge-mvp">MVP</span></td><td><span class="badge badge-high">Critical</span></td></tr>
+      <tr><td>Fiberglass Pools</td><td>/fiberglass-pools</td><td>Fiberglass pool installation Fort Worth</td><td><span class="badge badge-mvp">MVP</span></td><td><span class="badge badge-high">Critical</span></td></tr>
+      <tr><td>Swim Spas & Hot Tubs</td><td>/swim-spas</td><td>Swim spa installation DFW</td><td><span class="badge badge-mvp">MVP</span></td><td><span class="badge badge-high">Critical</span></td></tr>
+      <tr><td>Pricing & Process</td><td>/pricing</td><td>How much does a pool cost Texas</td><td><span class="badge badge-mvp">MVP</span></td><td><span class="badge badge-high">Critical</span></td></tr>
+      <tr><td>Free Consultation</td><td>/consultation</td><td>Free pool design consultation Weatherford</td><td><span class="badge badge-mvp">MVP</span></td><td><span class="badge badge-high">Critical</span></td></tr>
+      <tr><td>About</td><td>/about</td><td>Trusted pool builder Parker County TX</td><td><span class="badge badge-mvp">MVP</span></td><td><span class="badge badge-med">High</span></td></tr>
+      <tr><td>Gallery</td><td>/gallery</td><td>Custom pool designs Fort Worth</td><td><span class="badge badge-mvp">MVP</span></td><td><span class="badge badge-med">High</span></td></tr>
+      <tr><td>For Home Builders</td><td>/home-builders</td><td>Pool contractor home builders Fort Worth</td><td><span class="badge badge-mvp">MVP</span></td><td><span class="badge badge-med">High</span></td></tr>
+      <tr><td>Fort Worth</td><td>/fort-worth-pool-builder</td><td>Pool builder Fort Worth TX</td><td><span class="badge badge-mvp">MVP</span></td><td><span class="badge badge-med">High</span></td></tr>
+      <tr><td>Weatherford</td><td>/weatherford-pool-builder</td><td>Pool builder Weatherford TX</td><td><span class="badge badge-mvp">MVP</span></td><td><span class="badge badge-med">High</span></td></tr>
+      <tr><td>Aledo</td><td>/aledo-pool-builder</td><td>Pool builder Aledo TX</td><td><span class="badge badge-post">Post-MVP</span></td><td><span class="badge badge-low">Medium</span></td></tr>
+      <tr><td>Granbury</td><td>/granbury-pool-builder</td><td>Pool builder Granbury TX</td><td><span class="badge badge-post">Post-MVP</span></td><td><span class="badge badge-low">Medium</span></td></tr>
+      <tr><td>Mineral Wells</td><td>/mineral-wells-pool-builder</td><td>Pool builder Mineral Wells TX</td><td><span class="badge badge-post">Post-MVP</span></td><td><span class="badge badge-low">Medium</span></td></tr>
+      <tr><td>Benbrook / Hudson Oaks</td><td>/benbrook-pool-builder</td><td>Pool builder Benbrook TX</td><td><span class="badge badge-post">Post-MVP</span></td><td><span class="badge badge-low">Medium</span></td></tr>
+      <tr><td>Blog</td><td>/blog</td><td>Long-tail keyword engine</td><td><span class="badge badge-post">Post-MVP</span></td><td><span class="badge badge-low">Medium</span></td></tr>
+    </table>
+
+    <div class="callout callout-teal">
+      <strong>📍 City Page Strategy</strong>
+      Each city page must contain unique content: local geography references, local permit/HOA considerations, neighborhood callouts, and a locally-relevant CTA. Pages with duplicate content provide no SEO value and may be penalized.
+    </div>
+  </div>
+
+  <!-- 4. SEO -->
+  <div class="section" id="seo">
+    <h1>4. SEO Strategy — Local & Technical</h1>
+
+    <h2>Technical SEO Checklist (Built Into MVP)</h2>
+    <table>
+      <tr><th>Requirement</th><th>Implementation</th><th>Priority</th></tr>
+      <tr><td>Auto-generated sitemap.xml</td><td>Next.js next-sitemap package</td><td><span class="badge badge-high">Day 1</span></td></tr>
+      <tr><td>robots.txt</td><td>Static file in /public</td><td><span class="badge badge-high">Day 1</span></td></tr>
+      <tr><td>Open Graph meta tags</td><td>Per-page via Next.js Head component</td><td><span class="badge badge-high">Day 1</span></td></tr>
+      <tr><td>LocalBusiness schema markup</td><td>JSON-LD on homepage and city pages</td><td><span class="badge badge-high">Day 1</span></td></tr>
+      <tr><td>Image alt text</td><td>[City] + [pool type] formula on every image</td><td><span class="badge badge-high">Day 1</span></td></tr>
+      <tr><td>Core Web Vitals (90+ score)</td><td>Next.js image optimization + lazy loading</td><td><span class="badge badge-med">Week 1</span></td></tr>
+      <tr><td>Mobile-first responsive design</td><td>Tailwind CSS breakpoints</td><td><span class="badge badge-high">Day 1</span></td></tr>
+      <tr><td>Canonical URLs</td><td>Prevent duplicate content on city pages</td><td><span class="badge badge-med">Week 1</span></td></tr>
+      <tr><td>Google Search Console</td><td>Submit sitemap, monitor indexing</td><td><span class="badge badge-high">Launch day</span></td></tr>
+    </table>
+
+    <h2>Blog Content Calendar (First 90 Days)</h2>
+    <table>
+      <tr><th>Article</th><th>Target Keyword</th><th>Intent</th></tr>
+      <tr><td>How Much Does a Pool Cost in Texas in 2025?</td><td>pool cost Texas 2025</td><td>Buyer research</td></tr>
+      <tr><td>Gunite vs Fiberglass: Which is Right for Fort Worth?</td><td>gunite vs fiberglass pool Fort Worth</td><td>Comparison</td></tr>
+      <tr><td>5 Things to Know Before Building a Pool in Parker County</td><td>pool permit Parker County TX</td><td>Local authority</td></tr>
+      <tr><td>Best Pool Builders in Weatherford TX — What to Look For</td><td>pool builder Weatherford TX reviews</td><td>Trust building</td></tr>
+      <tr><td>Swim Spa vs Pool: What's Better for a Small Backyard?</td><td>swim spa vs pool small backyard</td><td>Alternative buyer</td></tr>
+      <tr><td>Pool ROI: Does a Pool Add Value to Your Home in Texas?</td><td>does a pool add home value Texas</td><td>Justification buyer</td></tr>
+    </table>
+  </div>
+
+  <!-- 5. DESIGN -->
+  <div class="section" id="design">
+    <h1>5. Design Principles & Mobile Responsiveness</h1>
+
+    <h2>Visual Identity</h2>
+    <p>The Epic Custom Pools brand should evoke luxury, trust, and craftsmanship — not the generic blue-and-white palette of most pool websites. The visual system should feel more aligned with high-end home design and architecture brands.</p>
+
+    <table>
+      <tr><th>Element</th><th>Specification</th><th>Rationale</th></tr>
+      <tr><td>Primary Palette</td><td>Deep navy (#0a1628), gold (#c9a84c), white</td><td>Luxury positioning, premium feel</td></tr>
+      <tr><td>Accent</td><td>Deep teal (#1a6b7a)</td><td>Water association without cliché</td></tr>
+      <tr><td>Heading Font</td><td>Playfair Display (serif)</td><td>Elegance, high-end editorial feel</td></tr>
+      <tr><td>Body Font</td><td>Inter (sans-serif)</td><td>Clarity, readability, modern</td></tr>
+      <tr><td>Photography Style</td><td>Golden hour, twilight pool shots, lifestyle imagery</td><td>Aspirational emotional response</td></tr>
+      <tr><td>Imagery Tone</td><td>Families enjoying pools, not just empty pools</td><td>Drives emotional connection</td></tr>
+      <tr><td>White Space</td><td>Generous — never cluttered</td><td>Signals premium, gives content room</td></tr>
+    </table>
+
+    <h2>Mobile Responsiveness Requirements</h2>
+    <div class="callout callout-navy">
+      <strong>📱 Mobile-First is Non-Negotiable</strong>
+      Over 70% of local service searches happen on mobile devices. The site must be designed mobile-first, then scaled up — not the reverse.
+    </div>
+
+    <table>
+      <tr><th>Component</th><th>Mobile Behavior</th></tr>
+      <tr><td>Navigation</td><td>Hamburger menu, tap-friendly links (44px min height)</td></tr>
+      <tr><td>Hero CTA Button</td><td>Full-width, high-contrast, above the fold</td></tr>
+      <tr><td>Sticky CTA Bar</td><td>Fixed bottom bar: "Call Now" + "Get Free Quote" buttons</td></tr>
+      <tr><td>Phone Number</td><td>tap-to-call href="tel:" link everywhere it appears</td></tr>
+      <tr><td>Forms</td><td>Large input fields, no more than 4 fields, auto-focus</td></tr>
+      <tr><td>Gallery</td><td>Swipeable carousel on mobile, grid on desktop</td></tr>
+      <tr><td>Tables/Pricing</td><td>Horizontally scrollable or stacked card layout</td></tr>
+      <tr><td>Load Time</td><td>Target under 2.5s on mobile (LCP metric)</td></tr>
+      <tr><td>Font Sizes</td><td>Minimum 16px body text to prevent zoom on iOS</td></tr>
+    </table>
+
+    <h2>Page-Level UX: 3-CTA Rule</h2>
+    <p>Every page must contain three conversion touchpoints to maximize lead capture without being aggressive:</p>
+    <ul>
+      <li><strong>Hero CTA</strong> — "Get Your Free Design Consultation" — above the fold, high contrast button</li>
+      <li><strong>Mid-page embedded form</strong> — 3-field inline form (Name, Phone, City/Zip) within the content flow</li>
+      <li><strong>Sticky mobile CTA bar</strong> — fixed to bottom of screen on mobile with call and quote options</li>
+    </ul>
+  </div>
+
+  <!-- 6. LEAD CAPTURE -->
+  <div class="section" id="lead">
+    <h1>6. Lead Capture System</h1>
+
+    <h2>MVP Lead Form Configuration</h2>
+    <p>The primary lead form should be intentionally minimal — the goal is to reduce friction and get the contact, not to pre-qualify extensively at the form stage.</p>
+
+    <table>
+      <tr><th>Field</th><th>Type</th><th>Required</th><th>Rationale</th></tr>
+      <tr><td>Full Name</td><td>Text</td><td>Yes</td><td>Personalization in follow-up</td></tr>
+      <tr><td>Phone Number</td><td>Tel</td><td>Yes</td><td>Primary contact method for contractors</td></tr>
+      <tr><td>City / Zip Code</td><td>Text</td><td>Yes</td><td>Service area qualification</td></tr>
+      <tr><td>Pool Type Interest</td><td>Dropdown</td><td>No</td><td>Lead routing, optional to keep friction low</td></tr>
+      <tr><td>Message</td><td>Textarea</td><td>No</td><td>Optional context, don't require</td></tr>
+    </table>
+
+    <h2>Email Notification Flow</h2>
+    <p>On form submission, the system sends an immediate email notification to the contractor containing all submitted fields, the page the lead originated from, the timestamp, and the referring URL. This is implemented via a Next.js API route connected to Resend or SendGrid (both offer free tiers sufficient for MVP lead volumes).</p>
+
+    <div class="callout callout-gold">
+      <strong>⚡ Lead Response Time Matters Enormously</strong>
+      Studies show that responding to a web lead within 5 minutes increases conversion by over 400% vs. responding after 30 minutes. The contractor should be coached to treat email notifications as urgent and respond same-day at minimum.
+    </div>
+
+    <h2>Post-Submission Experience</h2>
+    <ul>
+      <li>Redirect to a dedicated /thank-you page (enables GA4 conversion tracking)</li>
+      <li>Thank-you page includes: confirmation message, expected response time, contractor phone number, and links to gallery and pricing pages to keep engagement warm</li>
+      <li>Optional: auto-reply email to the prospect confirming receipt</li>
+    </ul>
+  </div>
+
+  <!-- 7. CHAT -->
+  <div class="section" id="chat">
+    <h1>7. Live Chat & SMS Integration</h1>
+
+    <h2>Recommended Stack: Tawk.to + Zapier + Twilio</h2>
+    <p>This combination delivers real SMS alerts to the contractor's phone the moment a website visitor initiates a chat — with zero monthly cost at MVP scale.</p>
+
+    <table>
+      <tr><th>Component</th><th>Tool</th><th>Cost</th><th>Role</th></tr>
+      <tr><td>Chat Widget</td><td>Tawk.to</td><td>Free forever</td><td>Embeds on site, captures visitor messages</td></tr>
+      <tr><td>Automation Bridge</td><td>Zapier Free Tier</td><td>Free (100 tasks/mo)</td><td>Triggers on new Tawk.to chat event</td></tr>
+      <tr><td>SMS Delivery</td><td>Twilio</td><td>~$0.008/SMS</td><td>Delivers chat notification to contractor phone</td></tr>
+    </table>
+
+    <h2>Integration Setup Steps</h2>
+    <ul>
+      <li><strong>Step 1:</strong> Create Tawk.to account → copy embed script → add to Next.js _app.js or layout component</li>
+      <li><strong>Step 2:</strong> In Zapier, create a Zap: Trigger = "New Chat Started" in Tawk.to</li>
+      <li><strong>Step 3:</strong> Action = Twilio "Send SMS" with visitor name, message, and page URL</li>
+      <li><strong>Step 4:</strong> Contractor receives: "New Epic Pools chat from [Name] on /gunite-pools: [message]"</li>
+      <li><strong>Step 5:</strong> Contractor can respond via Tawk.to mobile app in real time</li>
+    </ul>
+
+    <h2>Post-MVP Chat Upgrade Path</h2>
+    <p>As lead volume grows, the chat system can evolve to include AI-powered auto-responses for after-hours inquiries, CRM integration for automatic lead logging, and chat-to-consultation booking flows — all covered in the Post-MVP section.</p>
+  </div>
+
+  <!-- 8. ANALYTICS -->
+  <div class="section" id="analytics">
+    <h1>8. Analytics & Behavioral Tracking</h1>
+
+    <h2>GA4 Event Tracking Plan</h2>
+    <table>
+      <tr><th>Event Name</th><th>Trigger</th><th>Business Purpose</th></tr>
+      <tr><td>form_submit</td><td>Any lead form submission</td><td>Primary conversion — count leads</td></tr>
+      <tr><td>cta_click</td><td>"Get Free Consultation" button clicks</td><td>Measure intent before form</td></tr>
+      <tr><td>phone_click</td><td>Tap-to-call link clicks</td><td>Track mobile call intent</td></tr>
+      <tr><td>chat_started</td><td>Tawk.to chat widget opened</td><td>Measure chat engagement</td></tr>
+      <tr><td>scroll_depth</td><td>25%, 50%, 75%, 100% page scroll</td><td>Content engagement quality</td></tr>
+      <tr><td>city_page_view</td><td>Any /[city]-pool-builder page</td><td>Geographic demand insight</td></tr>
+      <tr><td>gallery_view</td><td>Gallery page or image expanded</td><td>Visual content engagement</td></tr>
+      <tr><td>pricing_page_view</td><td>/pricing page loaded</td><td>High-intent buyer signal</td></tr>
+      <tr><td>blog_read</td><td>75% scroll on blog article</td><td>Content marketing effectiveness</td></tr>
+    </table>
+
+    <h2>Key Metrics Dashboard (Monthly Review)</h2>
+    <table>
+      <tr><th>Metric</th><th>What It Tells You</th><th>Target (Month 3)</th></tr>
+      <tr><td>Organic sessions</td><td>SEO momentum</td><td>500+ / month</td></tr>
+      <tr><td>Lead form submissions</td><td>Direct pipeline value</td><td>15–30 / month</td></tr>
+      <tr><td>Top city pages by session</td><td>Where demand is strongest</td><td>Fort Worth, Weatherford leading</td></tr>
+      <tr><td>Top landing pages</td><td>Which content attracts visitors</td><td>/pricing in top 3</td></tr>
+      <tr><td>Mobile vs desktop split</td><td>UX investment priority</td><td>Monitor — expect 65%+ mobile</td></tr>
+      <tr><td>Avg. session duration</td><td>Content quality signal</td><td>90+ seconds</td></tr>
+      <tr><td>Bounce rate by page</td><td>Page relevance / UX issues</td><td>Below 60%</td></tr>
+      <tr><td>Source/medium of leads</td><td>Which channels produce leads</td><td>Organic Search dominant</td></tr>
+      <tr><td>Chat engagement rate</td><td>Chat widget effectiveness</td><td>Track baseline</td></tr>
+    </table>
+
+    <div class="callout callout-teal">
+      <strong>📊 Connect GA4 to Google Search Console on Day 1</strong>
+      This combination shows exactly which search queries bring visitors and which pages they land on — the single most valuable data feed for ongoing SEO decisions.
+    </div>
+  </div>
+
+  <!-- 9. DIGITAL MARKETING -->
+  <div class="section" id="digital">
+    <h1>9. Digital Marketing Campaign Strategy</h1>
+
+    <h2>Tier 1 — Organic Only ($0 Ad Spend)</h2>
+    <p>Recommended for the first 60–90 days while the site builds domain authority. Focus entirely on SEO, Google Business Profile, and directory listings.</p>
+    <ul>
+      <li>Launch Google Business Profile immediately (takes time to gain authority)</li>
+      <li>Submit to Houzz, Angi, HomeAdvisor, BBB, Yelp, Nextdoor</li>
+      <li>Publish 2 blog articles per month targeting high-intent keywords</li>
+      <li>Solicit reviews from past clients — target 10+ Google reviews in first 90 days</li>
+      <li>Post before/after project photos to Google Business Profile weekly</li>
+    </ul>
+
+    <h2>Tier 2 — Local Launch ($300–$800/month)</h2>
+    <p>Once the site is live and indexed, introduce paid channels with tight geographic and intent targeting.</p>
+    <table>
+      <tr><th>Channel</th><th>Budget Allocation</th><th>Expected CPL</th><th>Notes</th></tr>
+      <tr><td>Google Local Services Ads (LSA)</td><td>$200–$400/mo</td><td>$40–$90/lead</td><td>Pay per verified lead, highest intent</td></tr>
+      <tr><td>Google Search Ads</td><td>$100–$400/mo</td><td>$60–$120/lead</td><td>Target "pool builder [city]" keywords</td></tr>
+      <tr><td>Facebook/Instagram Retargeting</td><td>$0–$100/mo</td><td>Brand reinforcement</td><td>Retarget site visitors with gallery ads</td></tr>
+    </table>
+
+    <h2>Tier 3 — Growth Mode ($1,000–$3,000/month)</h2>
+    <p>For aggressive market capture once lead-to-close rate is understood and profitable.</p>
+    <table>
+      <tr><th>Channel</th><th>Budget Allocation</th><th>Strategy</th></tr>
+      <tr><td>Google LSA</td><td>$600–$1,200/mo</td><td>Expand to all service cities</td></tr>
+      <tr><td>Google Search</td><td>$400–$800/mo</td><td>Broader keyword set + competitor terms</td></tr>
+      <tr><td>Meta Ads</td><td>$200–$600/mo</td><td>Lookalike audiences, gallery video ads</td></tr>
+      <tr><td>YouTube Pre-roll</td><td>$100–$400/mo</td><td>Pool tour videos, brand awareness</td></tr>
+    </table>
+
+    <div class="callout callout-gold">
+      <strong>💰 Critical Context: Pool Contractor Economics</strong>
+      A single closed pool deal at $60,000 with a 30% margin yields $18,000 gross profit. A $500/month ad spend that generates even one additional closed deal per month produces a 36× return. The ROI math is extremely favorable — the barrier is tracking which leads close.
+    </div>
+  </div>
+
+  <!-- 10. MVP -->
+  <div class="section" id="mvp">
+    <h1>10. MVP Feature Set</h1>
+    <p>The MVP is optimized for speed-to-launch and immediate lead generation. Every feature below must be complete before launch.</p>
+
+    <table>
+      <tr><th>#</th><th>Feature</th><th>Description</th><th>Priority</th></tr>
+      <tr><td>1</td><td>Responsive Homepage</td><td>Hero, trust signals, services overview, consultation CTA, mobile sticky bar</td><td><span class="badge badge-high">P0</span></td></tr>
+      <tr><td>2</td><td>Lead Capture Form</td><td>5-field form on homepage and consultation page, email notification via API route</td><td><span class="badge badge-high">P0</span></td></tr>
+      <tr><td>3</td><td>GA4 Integration</td><td>Tracking snippet + form_submit, cta_click, phone_click events</td><td><span class="badge badge-high">P0</span></td></tr>
+      <tr><td>4</td><td>Service Pages (3)</td><td>Gunite, Fiberglass, Swim Spas — each with unique content and embedded form</td><td><span class="badge badge-high">P0</span></td></tr>
+      <tr><td>5</td><td>Pricing & Process Page</td><td>Transparent price ranges, cost factors, process timeline, strong CTA</td><td><span class="badge badge-high">P0</span></td></tr>
+      <tr><td>6</td><td>City Pages (2)</td><td>Fort Worth + Weatherford with unique local content and LocalBusiness schema</td><td><span class="badge badge-high">P0</span></td></tr>
+      <tr><td>7</td><td>Gallery Page</td><td>Grid/carousel layout, stock imagery placeholder, alt-text optimized</td><td><span class="badge badge-med">P1</span></td></tr>
+      <tr><td>8</td><td>About Page</td><td>Years in business, team, mission, trust signals</td><td><span class="badge badge-med">P1</span></td></tr>
+      <tr><td>9</td><td>Home Builders Page</td><td>B2B-focused landing page, separate contact form, volume messaging</td><td><span class="badge badge-med">P1</span></td></tr>
+      <tr><td>10</td><td>Live Chat Widget</td><td>Tawk.to embed + Zapier + Twilio SMS notification to contractor</td><td><span class="badge badge-med">P1</span></td></tr>
+      <tr><td>11</td><td>Thank You Page</td><td>Post-submission confirmation, enables GA4 goal tracking</td><td><span class="badge badge-high">P0</span></td></tr>
+      <tr><td>12</td><td>SEO Foundations</td><td>sitemap.xml, robots.txt, Open Graph tags, LocalBusiness schema, canonical URLs</td><td><span class="badge badge-high">P0</span></td></tr>
+      <tr><td>13</td><td>Mobile Optimization</td><td>Responsive layout, sticky CTA bar, tap-to-call, fast LCP</td><td><span class="badge badge-high">P0</span></td></tr>
+    </table>
+  </div>
+
+  <!-- 11. POST-MVP -->
+  <div class="section page-break" id="postmvp">
+    <h1>11. Post-MVP Features & Roadmap</h1>
+    <p>Post-MVP features are sequenced from lowest to highest implementation effort. Each is designed to compound the value of the MVP foundation.</p>
+
+    <h3>Phase 2A — Quick Wins (1–4 weeks each)</h3>
+
+    <table>
+      <tr><th>Feature</th><th>Description</th><th>Effort</th><th>Revenue Impact</th></tr>
+      <tr><td>Remaining City Pages (6)</td><td>Aledo, Granbury, Mineral Wells, Benbrook, Hudson Oaks, Burleson — each with unique content</td><td><span class="badge badge-low">Low</span></td><td>Expands organic search footprint; each page can generate 2–5 leads/month</td></tr>
+      <tr><td>Blog Engine</td><td>Next.js MDX blog with category filtering, SEO meta, social sharing</td><td><span class="badge badge-low">Low</span></td><td>Compounds organic traffic monthly; "pool cost Texas" alone drives thousands of searches/month</td></tr>
+      <tr><td>Review Widget</td><td>Embed Google Reviews dynamically on homepage and city pages</td><td><span class="badge badge-low">Low</span></td><td>Social proof adjacent to CTA increases form completion rate by est. 15–25%</td></tr>
+      <tr><td>Photo Gallery Upgrade</td><td>Replace stock images with real project photos, organized by pool type and city</td><td><span class="badge badge-low">Low</span></td><td>Gallery is second-most-visited page type; real photos increase trust and time-on-site</td></tr>
+    </table>
+
+    <h3>Phase 2B — Conversion Enhancers (4–8 weeks each)</h3>
+
+    <table>
+      <tr><th>Feature</th><th>Description</th><th>Effort</th><th>Revenue Impact</th></tr>
+      <tr><td>AI Chat Auto-Responder</td><td>After-hours AI bot answers common questions (pricing, timeline, service area) and captures leads when contractor is offline</td><td><span class="badge badge-med">Medium</span></td><td>Captures leads 24/7; pools are often browsed evenings/weekends when contractor isn't available</td></tr>
+      <tr><td>Interactive Cost Estimator</td><td>Web-based slider tool: select pool type, size, features → get ballpark estimate range + CTA to consult</td><td><span class="badge badge-med">Medium</span></td><td>Highest-converting lead magnet in the pool industry; buyers who use cost tools convert at 2–3× rate</td></tr>
+      <tr><td>Online Consultation Scheduler</td><td>Calendly or custom booking integration so prospects can self-schedule a design call without phone tag</td><td><span class="badge badge-med">Medium</span></td><td>Eliminates phone tag friction; reduces lead-to-meeting time from days to minutes</td></tr>
+      <tr><td>CRM Integration</td><td>Connect lead forms and chat to HubSpot or GoHighLevel for pipeline tracking, automated follow-up sequences, and deal stage management</td><td><span class="badge badge-med">Medium</span></td><td>Contractors who follow up with 3+ touchpoints close at 60% higher rate; CRM enables this at scale</td></tr>
+    </table>
+
+    <h3>Phase 2C — Strategic Investments (2–4 months each)</h3>
+
+    <table>
+      <tr><th>Feature</th><th>Description</th><th>Effort</th><th>Revenue Impact</th></tr>
+      <tr><td>3D Pool Visualizer</td><td>Allow prospects to upload a backyard photo and preview pool designs overlaid on their actual yard</td><td><span class="badge badge-high">High</span></td><td>Dramatically increases emotional buy-in; reduces time-to-decision; strong differentiation from all local competitors</td></tr>
+      <tr><td>Project Portal</td><td>Client login area to track their pool project status, view design documents, approve changes, and communicate with the team</td><td><span class="badge badge-high">High</span></td><td>Increases referral rate (happy, informed clients refer); reduces contractor support burden; premium brand signal</td></tr>
+      <tr><td>AI Design & Estimator Tool (SaaS MVP)</td><td>See Section 12 — AI-powered pool design and cost estimation tool; initially used internally by Epic Custom Pools then licensed to other contractors nationally</td><td><span class="badge badge-high">Very High</span></td><td>See SaaS section — TAM in the tens of millions annually</td></tr>
+    </table>
+  </div>
+
+  <!-- 12. SAAS -->
+  <div class="section" id="saas">
+    <h1>12. SaaS Pivot Strategy — AI Pool Designer & Estimator</h1>
+
+    <div class="callout callout-gold">
+      <strong>🚀 The Big Opportunity</strong>
+      The same AI tool built to help Epic Custom Pools convert leads faster can be productized and licensed to pool contractors across the United States. There are approximately 25,000–30,000 pool installation contractors in the US. Even penetrating 1% of that market at $200/month represents $600,000 in annual recurring revenue.
+    </div>
+
+    <h2>Product Vision</h2>
+    <p>An AI-powered web application that allows a pool contractor (or their client) to:</p>
+    <ul>
+      <li>Upload or describe a backyard (dimensions, slope, obstacles)</li>
+      <li>Select design preferences (pool type, shape, features, finish)</li>
+      <li>Receive an AI-generated pool design concept with visual rendering</li>
+      <li>Get an itemized cost estimate including materials, labor, and equipment</li>
+      <li>Export a branded PDF proposal the contractor can present to the homeowner</li>
+    </ul>
+
+    <h2>Market Sizing</h2>
+    <table>
+      <tr><th>Segment</th><th>Addressable Units</th><th>Price Point</th><th>TAM</th></tr>
+      <tr><td>US Pool Contractors (SaaS)</td><td>~27,000</td><td>$150–$300/mo</td><td>$48M–$97M ARR</td></tr>
+      <tr><td>Pool Dealers / Showrooms</td><td>~8,000</td><td>$200–$400/mo</td><td>$19M–$38M ARR</td></tr>
+      <tr><td>Home Builder Partnerships</td><td>~5,000</td><td>$300–$600/mo</td><td>$18M–$36M ARR</td></tr>
+      <tr><td><strong>Total Addressable Market</strong></td><td></td><td></td><td><strong>$85M–$171M ARR</strong></td></tr>
+    </table>
+
+    <h2>Build Sequence (Epic Custom Pools as Pilot)</h2>
+    <ul>
+      <li><strong>Phase 1:</strong> Build the cost estimator as a lead capture widget on the Epic Custom Pools website (this is a post-MVP feature that directly generates leads)</li>
+      <li><strong>Phase 2:</strong> Add AI design suggestions powered by Claude or GPT-4 Vision — prospect describes backyard, gets 3 design concepts</li>
+      <li><strong>Phase 3:</strong> Build branded PDF export — Epic Custom Pools logo, itemized estimate, design concept, CTA to schedule consultation</li>
+      <li><strong>Phase 4:</strong> Package as white-label SaaS product — other contractors pay monthly fee to use the same tool under their own brand</li>
+      <li><strong>Phase 5:</strong> Add contractor marketplace — homeowners use the tool to get matched with vetted contractors nationally</li>
+    </ul>
+
+    <h2>Competitive Moat</h2>
+    <p>The key insight is that Epic Custom Pools becomes the <strong>reference customer and product development partner</strong> for the SaaS tool. Real usage data from actual pool sales informs the AI model's accuracy on materials and pricing — something a software-only startup couldn't replicate without industry partnerships. This creates a durable data advantage.</p>
+  </div>
+
+  <!-- 13. GBP -->
+  <div class="section" id="gbp">
+    <h1>13. Google Business Profile Optimization (Post-MVP)</h1>
+
+    <h2>Setup Checklist</h2>
+    <table>
+      <tr><th>Step</th><th>Action</th><th>Priority</th></tr>
+      <tr><td>1</td><td>Create profile at business.google.com — use exact legal business name</td><td><span class="badge badge-high">Immediate</span></td></tr>
+      <tr><td>2</td><td>Set primary category: "Swimming Pool Contractor" — add secondary: "Swimming Pool Repair Service"</td><td><span class="badge badge-high">Immediate</span></td></tr>
+      <tr><td>3</td><td>Verify via postcard (allow 5–14 days) — start this process before site launches</td><td><span class="badge badge-high">Immediate</span></td></tr>
+      <tr><td>4</td><td>Add complete NAP: Name, Address, Phone — must match site exactly</td><td><span class="badge badge-high">Week 1</span></td></tr>
+      <tr><td>5</td><td>Write a keyword-rich business description (750 chars) mentioning pool types and cities served</td><td><span class="badge badge-med">Week 1</span></td></tr>
+      <tr><td>6</td><td>Add service area: list every city/zip code served</td><td><span class="badge badge-med">Week 1</span></td></tr>
+      <tr><td>7</td><td>Upload 10+ high-quality photos: exterior pools, team, logo, completed projects</td><td><span class="badge badge-med">Week 2</span></td></tr>
+      <tr><td>8</td><td>Enable messaging — allows customers to text directly from GBP</td><td><span class="badge badge-med">Week 2</span></td></tr>
+      <tr><td>9</td><td>Set up Q&A section — pre-populate 5–10 common questions with keyword-rich answers</td><td><span class="badge badge-low">Month 1</span></td></tr>
+      <tr><td>10</td><td>Post weekly updates — project photos, seasonal offers, blog snippets</td><td><span class="badge badge-low">Ongoing</span></td></tr>
+      <tr><td>11</td><td>Actively solicit reviews — email past clients with direct review link after each project</td><td><span class="badge badge-high">Ongoing</span></td></tr>
+      <tr><td>12</td><td>Respond to every review (positive and negative) within 24 hours</td><td><span class="badge badge-high">Ongoing</span></td></tr>
+    </table>
+
+    <div class="callout callout-teal">
+      <strong>⭐ Review Strategy</strong>
+      Google's local pack ranking algorithm heavily weights review count and recency. A goal of 20 reviews in the first 6 months is achievable if the contractor asks every satisfied client. A direct review link (shortened) should be on every invoice, follow-up email, and thank-you card.
+    </div>
+  </div>
+
+  <!-- 14. DOMAIN STRATEGY -->
+  <div class="section" id="domain">
+    <h1>14. Domain Strategy & Launch Wiring</h1>
+
+    <p>The client already has a domain. The recommended approach is to build and test the entire site on Replit's default preview URL, then wire the existing domain at launch. This separates the build phase cleanly from the go-live moment and eliminates any risk of disrupting an existing web presence during development.</p>
+
+    <h2>Pre-MVP: Confirm Domain Access</h2>
+    <p>Before Sprint 0 begins, confirm the following with the client — domain wiring at the end will stall if any of these are missing:</p>
+
+    <table>
+      <tr><th>Item</th><th>Action Required</th><th>Who</th></tr>
+      <tr><td>Domain registrar</td><td>Identify where the domain is registered (GoDaddy, Namecheap, Cloudflare, Google Domains, etc.)</td><td>Client</td></tr>
+      <tr><td>Registrar login</td><td>Confirm client has active login credentials and DNS access</td><td>Client</td></tr>
+      <tr><td>Current DNS records</td><td>Check if domain currently points anywhere (existing site, parked, etc.) — avoid disruption</td><td>Developer</td></tr>
+      <tr><td>Email on domain</td><td>If client uses @theirdomain.com email, confirm MX records will not be overwritten at launch</td><td>Developer</td></tr>
+    </table>
+
+    <div class="callout callout-gold">
+      <strong>⚠️ Critical: Get Registrar Access Before You Start Building</strong>
+      The most common launch-day blocker is a client who can't find their registrar login. Collect this information in Sprint 0, not Sprint 7.
+    </div>
+
+    <h2>During the Build: Replit Dev URL</h2>
+    <p>Replit automatically generates a live preview URL for every project in the format <code>https://[project-name].[username].repl.co</code>. Use this URL for all development, testing, and client review sessions across Sprints 1–6. No domain access is required during this phase.</p>
+
+    <div class="callout callout-teal">
+      <strong>📌 siteConfig.js — Set Up for Easy Domain Swap</strong>
+      On day one of Sprint 1, configure the site URL as an environment variable so all sitemap URLs, canonical tags, and Open Graph meta tags update automatically when the domain is swapped at launch — no manual find-and-replace needed.
+      <br><br>
+      <code>siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://[project].repl.co'</code>
+      <br><br>
+      At launch, simply update <code>NEXT_PUBLIC_SITE_URL</code> in the environment and rebuild.
+    </div>
+
+    <h2>At Launch: Two Deployment Options</h2>
+
+    <h3>Option A — Replit Custom Domain (Simplest)</h3>
+    <p>Replit supports custom domain attachment directly in project settings. Add the client's domain, then update two DNS records at the registrar. Propagation typically completes within 1 hour. SSL is handled automatically. This is the fastest path if staying entirely within Replit.</p>
+
+    <table>
+      <tr><th>Step</th><th>Action</th><th>Where</th></tr>
+      <tr><td>1</td><td>In Replit project settings → Custom Domain → enter client domain</td><td>Replit dashboard</td></tr>
+      <tr><td>2</td><td>Replit provides a CNAME target — copy it</td><td>Replit dashboard</td></tr>
+      <tr><td>3</td><td>Add CNAME record pointing domain to Replit's target</td><td>Client's DNS registrar</td></tr>
+      <tr><td>4</td><td>Wait for DNS propagation (15 min – 2 hrs)</td><td>—</td></tr>
+      <tr><td>5</td><td>Verify SSL certificate issued automatically</td><td>Browser</td></tr>
+      <tr><td>6</td><td>Update <code>NEXT_PUBLIC_SITE_URL</code> env variable to live domain and rebuild</td><td>Replit Secrets panel</td></tr>
+    </table>
+
+    <h3>Option B — Deploy to Vercel (Recommended for Performance)</h3>
+    <p>For better Core Web Vitals scores, higher uptime, and edge-network delivery, deploy the final build to Vercel. This is the professional production choice and remains free for this project's scale. The workflow is: Replit → push to GitHub → Vercel imports from GitHub → point client domain to Vercel.</p>
+
+    <table>
+      <tr><th>Step</th><th>Action</th><th>Where</th></tr>
+      <tr><td>1</td><td>Connect Replit project to a GitHub repository (Replit has built-in Git support)</td><td>Replit Git panel</td></tr>
+      <tr><td>2</td><td>Create a free Vercel account and import the GitHub repository</td><td>vercel.com</td></tr>
+      <tr><td>3</td><td>Add all environment variables (RESEND_API_KEY, CONTRACTOR_EMAIL, NEXT_PUBLIC_SITE_URL, GA4 ID) in Vercel project settings</td><td>Vercel dashboard</td></tr>
+      <tr><td>4</td><td>In Vercel → Domains → add the client's domain</td><td>Vercel dashboard</td></tr>
+      <tr><td>5</td><td>Vercel provides DNS records — add them at client's registrar (A record + CNAME)</td><td>Client's DNS registrar</td></tr>
+      <tr><td>6</td><td>Verify SSL auto-provisioned and site resolves on live domain</td><td>Browser</td></tr>
+      <tr><td>7</td><td>Update <code>NEXT_PUBLIC_SITE_URL</code> in Vercel env to live domain → trigger redeploy</td><td>Vercel dashboard</td></tr>
+    </table>
+
+    <div class="callout callout-navy">
+      <strong>🏎️ Why Vercel Wins for SEO</strong>
+      Vercel serves assets from a global edge network, which means faster load times from anywhere in DFW. Google's Core Web Vitals — a ranking factor — are directly impacted by server response time. Vercel consistently outperforms Replit's hosted deployment on LCP (Largest Contentful Paint), which matters for the competitive pool contractor search results.
+    </div>
+
+    <h2>MX Record Protection (If Client Has Email on Domain)</h2>
+    <p>If the client receives email at their domain (e.g. info@theirdomain.com), their DNS currently has MX records pointing to their email provider (Google Workspace, Microsoft 365, etc.). When adding a CNAME or A record for the website, <strong>do not touch the MX records</strong>. Adding the website DNS records alongside existing MX records is standard — they do not conflict. Confirm this before making any DNS changes.</p>
+  </div>
+
+  <!-- 15. STACK -->
+  <div class="section" id="stack">
+    <h1>15. Technical Stack & Build Plan</h1>
+
+    <h2>Recommended Stack</h2>
+    <table>
+      <tr><th>Layer</th><th>Technology</th><th>Rationale</th></tr>
+      <tr><td>Framework</td><td>Next.js 14 (App Router)</td><td>SSR for SEO, API routes for forms, React ecosystem</td></tr>
+      <tr><td>Styling</td><td>Tailwind CSS</td><td>Rapid responsive development, mobile-first utility classes</td></tr>
+      <tr><td>Hosting</td><td>Replit + Vercel (for production)</td><td>Build on Replit, deploy to Vercel for performance and uptime SLA</td></tr>
+      <tr><td>Email (Lead Notify)</td><td>Resend or SendGrid</td><td>Both have free tiers; Resend has simpler Next.js integration</td></tr>
+      <tr><td>Chat</td><td>Tawk.to</td><td>Free forever, mobile app for contractor, easy embed</td></tr>
+      <tr><td>SMS Alerts</td><td>Twilio via Zapier</td><td>Real SMS to contractor's phone, ~$0.008/message</td></tr>
+      <tr><td>Analytics</td><td>Google Analytics 4</td><td>Free, industry standard, integrates with Search Console</td></tr>
+      <tr><td>SEO</td><td>next-seo + next-sitemap</td><td>Handles meta tags, OG tags, and sitemap generation</td></tr>
+      <tr><td>Images</td><td>Next.js Image component + Unsplash</td><td>Auto-optimization, lazy loading, stock photos for MVP</td></tr>
+      <tr><td>Domain</td><td>Namecheap or Google Domains</td><td>Register domain containing "pool" and ideally "fort worth" or "Texas"</td></tr>
+    </table>
+
+    <h2>Sprint Build Order</h2>
+    <table>
+      <tr><th>Sprint</th><th>Deliverable</th><th>Goal</th></tr>
+      <tr><td><strong>Sprint 0</strong></td><td>Domain audit — confirm registrar, login, DNS access, MX record check, siteConfig.js env variable strategy</td><td>No launch-day blockers</td></tr>
+      <tr><td>Sprint 1</td><td>Next.js setup, design system, GA4 install, nav/footer, siteConfig with NEXT_PUBLIC_SITE_URL</td><td>Foundation with tracking live on Replit URL</td></tr>
+      <tr><td>Sprint 2</td><td>Homepage with hero, trust signals, lead form, email API</td><td>First lead can be captured</td></tr>
+      <tr><td>Sprint 3</td><td>3 service pages (Gunite, Fiberglass, Swim Spas)</td><td>Core service SEO indexed</td></tr>
+      <tr><td>Sprint 4</td><td>Pricing page + Consultation page + Thank You page</td><td>Highest-converting pages live</td></tr>
+      <tr><td>Sprint 5</td><td>City pages (Fort Worth + Weatherford) + schema markup</td><td>Local SEO foundation set</td></tr>
+      <tr><td>Sprint 6</td><td>Gallery, About, Home Builders pages + Tawk.to chat</td><td>Full MVP complete on Replit dev URL</td></tr>
+      <tr><td>Sprint 7</td><td>Domain wiring (Replit or Vercel), env var update, sitemap submit, Search Console, GBP creation</td><td>Site live on client domain, indexed by Google</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<footer>
+  <strong><span>Epic Custom Pools</span></strong> — Product Requirements Document &nbsp;|&nbsp; Confidential &nbsp;|&nbsp; 2025
+</footer>
+
+</body>
+</html>
