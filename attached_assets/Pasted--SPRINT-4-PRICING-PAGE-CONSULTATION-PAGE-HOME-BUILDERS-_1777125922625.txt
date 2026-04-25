@@ -1,0 +1,71 @@
+// SPRINT 4 — PRICING PAGE, CONSULTATION PAGE, HOME BUILDERS PAGE
+
+Build three high-converting pages for Epic Custom Pools.
+
+PAGE 1: /pricing — Pricing & Our Process
+SEO Title: "Pool Cost Fort Worth TX | Pricing & Process | Epic Custom Pools"
+SEO Description: "Honest pool pricing for Fort Worth and DFW. See typical costs for gunite, fiberglass, and swim spas. No surprises. Free design consultation included."
+
+// IMPORTANT DESIGN PRINCIPLE: Pricing is ALWAYS shown openly.
+// Never gate pricing behind a form — that destroys the trust and SEO value of this page.
+// Instead, use two contextual inline forms placed at natural moments of buyer intent.
+
+Sections to build IN THIS ORDER:
+1. Hero: "Honest Pricing. No Surprises." with subheadline: "We publish our pricing because we're confident in our value — and because you deserve to know what you're getting into before you ever pick up the phone."
+
+2. Pricing ranges table (fully visible, no form required):
+   * Entry Level Gunite: $55,000–$80,000
+   * Mid-Range Gunite: $80,000–$130,000
+   * Luxury Gunite: $130,000–$250,000+
+   * Fiberglass: $45,000–$85,000
+   * Swim Spa: $20,000–$50,000
+   Include note: "Final pricing depends on size, features, and site conditions"
+
+3. FIRST INLINE FORM — placed immediately after the pricing table, before cost factors:
+   - Headline: "Want a More Accurate Estimate for Your Yard?"
+   - Subtext: "Tell us a little about your project and we'll give you a realistic range — no obligation, no sales call."
+   - Fields: Name (required), Phone (required), City (required), Pool Type dropdown (optional)
+   - Button: "Get My Personalized Estimate →"
+   - Submit fires GA4 event: trackEvent('form_submit', {page: 'pricing', position: 'mid-page'})
+   - Navy background, gold button — visually distinct from surrounding content
+
+4. What affects your price: list of 6–8 factors (size, depth, features, finishes, equipment, site access, decking, landscaping)
+
+5. Our process timeline: visual step-by-step: Free Consultation → Design → Permitting → Construction → Final Walkthrough (show estimated weeks for each step)
+
+6. Why we show pricing: short honest paragraph — something like: "Most contractors make you call before they'll mention a number. We think that's backwards. You're about to make one of the biggest investments in your home. You should be able to do your research without feeling pressured."
+
+7. SECOND INLINE FORM — placed at the very bottom after the process section:
+   - Headline: "Ready to Talk Through the Numbers?"
+   - Subtext: "Schedule a free design consultation — we'll walk through your yard, your vision, and give you a real estimate with no surprises."
+   - Same fields as mid-page form
+   - Button: "Get My Free Consultation →"
+   - Submit fires GA4 event: trackEvent('form_submit', {page: 'pricing', position: 'bottom'})
+   - Both forms POST to /api/contact with source="pricing-page" and position as an additional field
+
+// The result: browsers get the full information they came for.
+// Buyers ready to act have two frictionless on-ramps — one mid-research, one post-research.
+// No buyer is blocked. No trust is lost. Two lead capture moments instead of one.
+
+PAGE 2: /consultation — Free Design Consultation
+SEO Title: "Free Pool Design Consultation Fort Worth | Epic Custom Pools"
+Sections:
+- Hero: "Let's Design Your Dream Pool — At No Cost to You"
+- What happens in a consultation: 4-step explanation (We listen, We design, We estimate, We plan)
+- Large, prominent lead form (this is the primary conversion page)
+- FAQ: "How long does it take?", "Is there any obligation?", "What should I prepare?", "Do you serve my area?"
+- Map or text list of all service cities
+
+PAGE 3: /home-builders — For Home Builders & Developers
+SEO Title: "Pool Contractor for Home Builders Fort Worth TX | Epic Custom Pools"
+SEO Description: "Reliable pool installation partner for home builders and developers in Fort Worth and DFW. Volume pricing, on-time delivery, warranty. Contact Epic Custom Pools."
+This page should have a completely different tone — professional B2B, not consumer emotional. Speak to their concerns: reliability, schedule, warranty, volume pricing, communication.
+Sections:
+- Hero: "A Pool Partner Your Buyers Will Love — And Your Schedule Won't Fear"
+- Why builders choose us: 5 points (on-time, volume pricing, one point of contact, warranty, we handle permits)
+- How it works for builders: streamlined 4-step process
+- Types of communities/projects we support
+- Separate B2B contact form (fields: Company Name, Contact Name, Phone, Email, Typical Project Count/Year, City)
+- B2B form sends to same /api/contact endpoint with source="home-builders-page"
+
+// Output: 3 high-converting pages — your pricing page alone will outrank competitors for "pool cost Fort Worth"
