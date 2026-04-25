@@ -63,7 +63,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const ga4Id = siteConfig.ga4Id;
+  const isReplit = !!process.env.REPL_ID;
+  const ga4Id = isReplit ? '' : siteConfig.ga4Id;
 
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
