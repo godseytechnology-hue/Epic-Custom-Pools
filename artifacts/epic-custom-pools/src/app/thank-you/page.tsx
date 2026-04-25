@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import Link from 'next/link';
 import siteConfig from '@/config/siteConfig';
 import FormSubmitTracker from '@/components/FormSubmitTracker';
@@ -13,7 +14,9 @@ export const metadata: Metadata = {
 export default function ThankYouPage() {
   return (
     <>
-      <FormSubmitTracker />
+      <Suspense fallback={null}>
+        <FormSubmitTracker />
+      </Suspense>
       <main className="min-h-screen bg-navy flex flex-col items-center justify-center px-4 text-center py-24">
         <div className="max-w-xl mx-auto">
           <div className="mb-8">

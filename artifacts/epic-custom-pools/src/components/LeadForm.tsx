@@ -44,7 +44,7 @@ export default function LeadForm() {
       });
 
       if (res.ok) {
-        router.push('/thank-you');
+        router.push('/thank-you?submitted=1');
       } else {
         const data = await res.json().catch(() => ({}));
         setError(data.error || 'Something went wrong. Please try again.');

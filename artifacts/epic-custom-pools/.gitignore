@@ -1,0 +1,17 @@
+# Next.js build output
+.next/
+out/
+
+# Environment secrets
+.env.local
+.env.*.local
+
+# pnpm
+node_modules/
+
+# Generated sitemap (build artifact)
+public/sitemap.xml
+public/sitemap-*.xml
+
+# OS
+.DS_Store
