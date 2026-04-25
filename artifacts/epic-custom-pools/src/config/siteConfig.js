@@ -14,9 +14,6 @@ const siteConfig = {
     .filter(Boolean),
   navLinks: [
     { label: 'Home', href: '/' },
-    { label: 'Gunite Pools', href: '/gunite-pools' },
-    { label: 'Fiberglass', href: '/fiberglass-pools' },
-    { label: 'Swim Spas', href: '/swim-spas' },
     { label: 'Pricing', href: '/pricing' },
     { label: 'Gallery', href: '/gallery' },
     { label: 'About', href: '/about' },

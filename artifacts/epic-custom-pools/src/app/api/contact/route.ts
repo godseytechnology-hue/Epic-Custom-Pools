@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Invalid request body.' }, { status: 400 });
   }
 
-  const { name, email, phone, city, poolType, message } = body;
+  const { name, email, phone, city, poolType, message, source } = body;
 
   if (!name?.trim() || !phone?.trim() || !city?.trim()) {
     return NextResponse.json(
@@ -57,6 +57,7 @@ export async function POST(req: NextRequest) {
       <tr><td style="padding:8px 0;color:#666;font-size:14px;">Phone</td><td style="padding:8px 0;"><a href="tel:${escapeHtml(phone.replace(/\D/g, ''))}" style="color:#1a6b7a;">${escapeHtml(phone)}</a></td></tr>
       <tr><td style="padding:8px 0;color:#666;font-size:14px;">City / Zip</td><td style="padding:8px 0;">${escapeHtml(city)}</td></tr>
       <tr><td style="padding:8px 0;color:#666;font-size:14px;">Pool Interest</td><td style="padding:8px 0;">${escapeHtml(poolType || 'Not specified')}</td></tr>
+      ${source?.trim() ? `<tr><td style="padding:8px 0;color:#666;font-size:14px;">Lead Source</td><td style="padding:8px 0;">${escapeHtml(source)}</td></tr>` : ''}
       ${
         message?.trim()
           ? `<tr><td style="padding:8px 0;color:#666;font-size:14px;vertical-align:top;">Message</td><td style="padding:8px 0;white-space:pre-wrap;">${escapeHtml(message)}</td></tr>`

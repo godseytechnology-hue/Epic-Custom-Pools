@@ -14,7 +14,11 @@ type FormState = {
   message: string;
 };
 
-export default function LeadForm() {
+type LeadFormProps = {
+  source?: string;
+};
+
+export default function LeadForm({ source }: LeadFormProps) {
   const router = useRouter();
   const [form, setForm] = useState<FormState>({
     name: '',
@@ -39,10 +43,11 @@ export default function LeadForm() {
     setError('');
 
     try {
+      const payload = source ? { ...form, source } : form;
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify(payload),
       });
 
       if (res.ok) {

@@ -75,11 +75,18 @@ Key env vars:
 
 ### New Sprint 2 Files
 - `src/app/page.tsx` — full homepage (6 sections: Hero, Trust Bar, Services, Lead Form, Why section, CTA)
-- `src/app/api/contact/route.ts` — lead form POST handler (Resend email, validates name/phone/city)
+- `src/app/api/contact/route.ts` — lead form POST handler (Resend email, validates name/phone/city, passes source field)
 - `src/app/thank-you/page.tsx` — post-submission confirmation page
-- `src/components/LeadForm.tsx` — client component, POSTs to /api/contact, redirects on success
+- `src/components/LeadForm.tsx` — client component, POSTs to /api/contact, accepts optional `source` prop, redirects on success
 - `src/components/TrackingLink.tsx` — client wrapper for GA4 cta_click events on server components
 - `src/components/FormSubmitTracker.tsx` — fires form_submit GA4 event on /thank-you mount
+
+### New Sprint 3 Files
+- `src/app/gunite-pools/page.tsx` — Gunite Pools service page with hero, educational content, 6 benefits, 6-step process, FAQ
+- `src/app/fiberglass-pools/page.tsx` — Fiberglass Pools service page with hero, content, benefits, gunite-vs-fiberglass comparison table, FAQ
+- `src/app/swim-spas/page.tsx` — Swim Spas & Hot Tubs service page with hero, content, benefits, swim spa vs pool comparison table, hot tub options, FAQ
+- `src/components/ServicePageTemplate.tsx` — reusable template driving all three service page layouts (hero, sections, benefits, process steps, comparison table, lead form, FAQ, internal links)
+- `src/components/ServiceJsonLd.tsx` — JSON-LD schema helper rendering LocalBusiness + Service structured data for each service page
 
 ### Env vars needed for lead form
 Add these to `.env.local` to activate email delivery:
@@ -91,7 +98,7 @@ CONTRACTOR_EMAIL=you@...    # where leads are delivered
 ### Sprint Status
 - **Sprint 1** (DONE): Global layout shell — Navbar, Footer, MobileBottomBar, siteConfig, GA4, SEO foundations
 - **Sprint 2** (DONE): Full homepage + lead form API (Resend) + /thank-you page
-- **Sprint 3** (pending): Service pages (Gunite, Fiberglass, Swim Spas, Home Builders)
+- **Sprint 3** (DONE): Service pages — /gunite-pools, /fiberglass-pools, /swim-spas with full content, lead forms (sourced), JSON-LD schema, SEO metadata
 - **Sprint 4** (pending): Local SEO city pages (Fort Worth, Weatherford, Aledo, etc.)
 - **Sprint 5** (pending): Gallery, About, Pricing pages
 - **Sprint 6** (pending): Consultation/lead form + Resend email integration
