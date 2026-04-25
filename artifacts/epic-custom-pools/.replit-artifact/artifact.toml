@@ -15,7 +15,7 @@ kind = "web"
   localPort = 19724
 
   [services.development]
-  run = "pnpm --filter @workspace/epic-custom-pools run dev"
+  run = "pnpm --filter @workspace/epic-custom-pools run build && pnpm --filter @workspace/epic-custom-pools run start"
 
   [services.production]
   build = [ "pnpm", "--filter", "@workspace/epic-custom-pools", "run", "build" ]
@@ -29,4 +29,3 @@ kind = "web"
 
   [services.env]
   PORT = "19724"
-  
