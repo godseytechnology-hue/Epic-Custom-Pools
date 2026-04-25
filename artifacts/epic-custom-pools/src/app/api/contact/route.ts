@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Invalid request body.' }, { status: 400 });
   }
 
-  const { name, phone, city, poolType, message } = body;
+  const { name, email, phone, city, poolType, message } = body;
 
   if (!name?.trim() || !phone?.trim() || !city?.trim()) {
     return NextResponse.json(
@@ -53,6 +53,7 @@ export async function POST(req: NextRequest) {
   <div style="border:1px solid #e0e0e0;border-top:none;border-radius:0 0 8px 8px;padding:24px;">
     <table style="width:100%;border-collapse:collapse;">
       <tr><td style="padding:8px 0;color:#666;width:140px;vertical-align:top;font-size:14px;">Name</td><td style="padding:8px 0;font-weight:600;">${escapeHtml(name)}</td></tr>
+      ${email?.trim() ? `<tr><td style="padding:8px 0;color:#666;font-size:14px;">Email</td><td style="padding:8px 0;"><a href="mailto:${escapeHtml(email)}" style="color:#1a6b7a;">${escapeHtml(email)}</a></td></tr>` : ''}
       <tr><td style="padding:8px 0;color:#666;font-size:14px;">Phone</td><td style="padding:8px 0;"><a href="tel:${escapeHtml(phone.replace(/\D/g, ''))}" style="color:#1a6b7a;">${escapeHtml(phone)}</a></td></tr>
       <tr><td style="padding:8px 0;color:#666;font-size:14px;">City / Zip</td><td style="padding:8px 0;">${escapeHtml(city)}</td></tr>
       <tr><td style="padding:8px 0;color:#666;font-size:14px;">Pool Interest</td><td style="padding:8px 0;">${escapeHtml(poolType || 'Not specified')}</td></tr>
@@ -76,7 +77,7 @@ export async function POST(req: NextRequest) {
     await resend.emails.send({
       from: 'Epic Custom Pools <onboarding@resend.dev>',
       to: [contractorEmail],
-      replyTo: undefined,
+      ...(email?.trim() ? { replyTo: email.trim() } : {}),
       subject: `New Lead — Epic Custom Pools — ${name}`,
       html,
     });

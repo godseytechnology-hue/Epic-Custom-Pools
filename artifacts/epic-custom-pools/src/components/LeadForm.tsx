@@ -7,6 +7,7 @@ const POOL_TYPES = ['Gunite / Concrete', 'Fiberglass', 'Swim Spa / Hot Tub', 'No
 
 type FormState = {
   name: string;
+  email: string;
   phone: string;
   city: string;
   poolType: string;
@@ -17,6 +18,7 @@ export default function LeadForm() {
   const router = useRouter();
   const [form, setForm] = useState<FormState>({
     name: '',
+    email: '',
     phone: '',
     city: '',
     poolType: '',
@@ -89,6 +91,23 @@ export default function LeadForm() {
               />
             </div>
             <div>
+              <label htmlFor="email" className="block font-inter text-white/70 text-xs mb-1.5 ml-1">
+                Email Address
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                value={form.email}
+                onChange={handleChange}
+                placeholder="jane@example.com"
+                className={inputClass}
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
               <label htmlFor="phone" className="block font-inter text-white/70 text-xs mb-1.5 ml-1">
                 Phone Number <span className="text-gold">*</span>
               </label>
@@ -103,9 +122,6 @@ export default function LeadForm() {
                 className={inputClass}
               />
             </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label htmlFor="city" className="block font-inter text-white/70 text-xs mb-1.5 ml-1">
                 City / Zip Code <span className="text-gold">*</span>
@@ -121,25 +137,26 @@ export default function LeadForm() {
                 className={inputClass}
               />
             </div>
-            <div>
-              <label htmlFor="poolType" className="block font-inter text-white/70 text-xs mb-1.5 ml-1">
-                Pool Type Interest
-              </label>
-              <select
-                id="poolType"
-                name="poolType"
-                value={form.poolType}
-                onChange={handleChange}
-                className={`${inputClass} cursor-pointer`}
-              >
-                <option value="" className="bg-navy">Select a pool type...</option>
-                {POOL_TYPES.map((t) => (
-                  <option key={t} value={t} className="bg-navy">
-                    {t}
-                  </option>
-                ))}
-              </select>
-            </div>
+          </div>
+
+          <div>
+            <label htmlFor="poolType" className="block font-inter text-white/70 text-xs mb-1.5 ml-1">
+              Pool Type Interest
+            </label>
+            <select
+              id="poolType"
+              name="poolType"
+              value={form.poolType}
+              onChange={handleChange}
+              className={`${inputClass} cursor-pointer`}
+            >
+              <option value="" className="bg-navy">Select a pool type...</option>
+              {POOL_TYPES.map((t) => (
+                <option key={t} value={t} className="bg-navy">
+                  {t}
+                </option>
+              ))}
+            </select>
           </div>
 
           <div>
