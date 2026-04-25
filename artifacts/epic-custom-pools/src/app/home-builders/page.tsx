@@ -1,134 +1,171 @@
 import type { Metadata } from 'next';
-import ServicePageTemplate from '@/components/ServicePageTemplate';
-import ServiceJsonLd from '@/components/ServiceJsonLd';
+import BuilderLeadForm from '@/components/BuilderLeadForm';
 import siteConfig from '@/config/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Pool Installation for Home Builders | Epic Custom Pools',
-  description: `Reliable trade partner for residential home builders in ${siteConfig.serviceAreaPhrase}. We handle pool design, permitting, and installation so you can focus on your build.`,
+  title: 'Pool Contractor for Home Builders Fort Worth TX | Epic Custom Pools',
+  description:
+    'Reliable pool installation partner for home builders and developers in Fort Worth and DFW. Volume pricing, on-time delivery, warranty. Contact Epic Custom Pools.',
   openGraph: {
-    title: 'Pool Installation for Home Builders | Epic Custom Pools',
-    description: `Partner with Epic Custom Pools for new construction pool installations across ${siteConfig.serviceAreaPhrase}. Consistent quality, on-schedule delivery.`,
+    title: 'Pool Contractor for Home Builders Fort Worth TX | Epic Custom Pools',
+    description:
+      'Epic Custom Pools is the pool trade partner Fort Worth builders trust — on-time delivery, volume pricing, full permit handling, and a warranty your buyers will love.',
   },
 };
 
-const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1920&q=80';
+const BUILDER_BENEFITS = [
+  {
+    icon: '📅',
+    title: 'On-Time Delivery',
+    desc: 'We build backward from your closing date and commit to a construction schedule in writing. Your buyers move in on time.',
+  },
+  {
+    icon: '💰',
+    title: 'Volume Pricing',
+    desc: 'Builders who work with us on multiple communities receive preferred scheduling and competitive volume pricing. We want to grow with you.',
+  },
+  {
+    icon: '📞',
+    title: 'One Point of Contact',
+    desc: 'From permit submission to buyer handover, you deal with one person — not a different sub at every phase. No finger-pointing.',
+  },
+  {
+    icon: '🛡️',
+    title: 'Full Warranty',
+    desc: 'Every pool carries a structural warranty and equipment warranty. Warranty documentation is delivered to the homeowner at handover.',
+  },
+  {
+    icon: '📋',
+    title: 'We Handle All Permits',
+    desc: 'Our team submits, tracks, and closes pool permits with every relevant city and county across DFW. No burden on your office.',
+  },
+];
+
+const BUILDER_PROCESS = [
+  {
+    step: 1,
+    title: 'Intro Call',
+    desc: 'We discuss your communities, typical lot types, and volume. You get a clear picture of our pricing structure and lead times before committing to anything.',
+  },
+  {
+    step: 2,
+    title: 'Scope & Price',
+    desc: 'We review your site plans, finalize pool specs and options for each community, and deliver itemized pricing in writing.',
+  },
+  {
+    step: 3,
+    title: 'Permitting',
+    desc: 'We file all permit applications, track approvals, and keep your project manager informed at every step. Average permit timelines vary by jurisdiction — we know them all.',
+  },
+  {
+    step: 4,
+    title: 'Build & Handover',
+    desc: 'Our crew handles excavation through final finish. We complete a punch list, pass all inspections, and hand the homeowner a working pool with full documentation.',
+  },
+];
+
+const PROJECT_TYPES = [
+  { label: 'Custom Homes', desc: 'Single-lot custom builds where the pool is part of the original design package.' },
+  { label: 'Production Communities', desc: 'Volume pool installation across planned communities with standardized or option-based designs.' },
+  { label: 'Spec Homes', desc: 'Pre-built and staged pools for homes hitting the market — designed to photograph well and sell fast.' },
+  { label: 'Mixed-Use Residential', desc: 'Townhome communities, HOA amenity pools, and multi-family developments.' },
+];
 
 export default function HomeBuildersPage() {
   return (
     <>
-      <ServiceJsonLd
-        serviceName="Pool Installation for Home Builders"
-        serviceDescription={`New construction pool installation for residential home builders across ${siteConfig.serviceAreaPhrase}`}
-        serviceUrl="/home-builders"
-      />
-      <ServicePageTemplate
-        heroImage={HERO_IMAGE}
-        heroImageAlt="new construction pool installation for home builders"
-        heroHeadline="Pool Installation for Home Builders"
-        heroSubheadline={`A dependable trade partner for residential developers and general contractors across ${siteConfig.serviceAreaPhrase}. We deliver pools on schedule and on spec — every time.`}
-        source="home-builders-page"
-        sections={[
-          {
-            heading: 'Why Home Builders Choose Epic Custom Pools',
-            body: [
-              'When you are building a new home, every trade partner affects your timeline and your reputation. Pool installation is no exception. A missed deadline or a sloppy finish hurts the sale and reflects on you — regardless of who is at fault.',
-              `Epic Custom Pools works exclusively with reputable home builders and developers across ${siteConfig.serviceAreaPhrase}. We understand construction schedules, coordinate directly with your site super, and deliver finished pools that are ready for buyer walkthroughs.`,
-              'From the design consultation through final inspection, we function as an extension of your build team — not a vendor you have to manage.',
-            ],
-          },
-          {
-            heading: 'What the Partnership Looks Like',
-            body: [
-              'We integrate into your build process at whatever stage makes sense — pre-slab, during framing, or after landscaping. Our team reviews your site plan, identifies the optimal placement for the pool and equipment pad, and coordinates with your excavation contractor if needed.',
-              'We handle all permitting in the relevant jurisdiction, manage our own crew through every phase of the build, and complete a thorough punch list before final handover. You get a single point of contact from start to finish.',
-            ],
-          },
-        ]}
-        benefits={[
-          {
-            icon: '📋',
-            title: 'We Handle All Permitting',
-            desc: 'Our team submits, tracks, and closes all pool permits with the relevant city or county — no burden on your office.',
-          },
-          {
-            icon: '📅',
-            title: 'Schedule-Driven',
-            desc: 'We work backward from your closing date and build a pool installation schedule that keeps your project on track.',
-          },
-          {
-            icon: '🔧',
-            title: 'Single Trade Responsibility',
-            desc: 'Excavation, plumbing, electrical, decking, and finish work are all managed under one contract. No finger-pointing between subs.',
-          },
-          {
-            icon: '📐',
-            title: 'Design Coordination',
-            desc: 'We review your architectural plans and coordinate pool placement, equipment runs, and electrical with your MEP trades early — before it costs money to change.',
-          },
-          {
-            icon: '🏡',
-            title: 'Buyer-Ready Finish',
-            desc: 'Every pool is completed to a presentation standard your buyers expect — clean lines, spotless tile, and full operational testing.',
-          },
-          {
-            icon: '🤝',
-            title: 'Repeat-Friendly Pricing',
-            desc: 'Builders who work with us on multiple projects receive preferred scheduling and volume pricing. We grow with you.',
-          },
-        ]}
-        processSteps={[
-          {
-            step: 1,
-            title: 'Project Review',
-            desc: 'Share your site plan and timeline. We review pool placement, equipment pad location, and permit jurisdiction, then provide a detailed scope and price.',
-          },
-          {
-            step: 2,
-            title: 'Design Sign-Off',
-            desc: 'We finalize the pool design with your team — shape, finish, water features, and any builder-specified options — and prepare permit documents.',
-          },
-          {
-            step: 3,
-            title: 'Permitting',
-            desc: 'We submit all permit applications and track approvals with the city or county on your behalf.',
-          },
-          {
-            step: 4,
-            title: 'Installation',
-            desc: 'Our crew handles excavation, steel, plumbing, electrical, concrete or shell placement, tile, coping, and decking per the approved plan.',
-          },
-          {
-            step: 5,
-            title: 'Inspections & Punch List',
-            desc: 'We schedule and pass all required inspections, complete a detailed punch list, and bring the pool to final operational status before your walkthrough.',
-          },
-          {
-            step: 6,
-            title: 'Buyer Handover',
-            desc: 'We provide the homeowner with an equipment orientation, operating manual, and warranty documentation — so your buyer is confident from day one.',
-          },
-        ]}
-        faq={[
-          {
-            question: 'What size developments do you work with?',
-            answer: `We partner with builders on everything from single custom homes to communities with dozens of lots across ${siteConfig.serviceAreaPhrase}. Contact us to discuss volume scheduling and preferred builder arrangements.`,
-          },
-          {
-            question: 'Can you work from our architectural plans?',
-            answer: 'Yes. We routinely work from architectural site plans and coordinate with your structural and MEP engineers to ensure the pool scope integrates cleanly with the home design.',
-          },
-          {
-            question: 'Do you offer a warranty on new construction pools?',
-            answer: 'Yes. All pools we install for new construction carry a structural warranty and equipment warranty. Warranty documentation is provided at buyer handover.',
-          },
-          {
-            question: 'What geographic areas do you serve for home builder projects?',
-            answer: `We serve home builders across ${siteConfig.serviceAreaPhrase}. Reach out to discuss any project outside our standard footprint.`,
-          },
-        ]}
-      />
+      {/* ─── HERO ─────────────────────────────────────────── */}
+      <section className="bg-navy py-28 px-4 md:px-12">
+        <div className="max-w-4xl mx-auto">
+          <p className="font-inter text-gold text-sm font-semibold tracking-widest uppercase mb-4">
+            For Home Builders &amp; Developers
+          </p>
+          <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6 max-w-3xl">
+            A Pool Partner Your Buyers Will Love — And Your Schedule Won&apos;t Fear
+          </h1>
+          <p className="font-inter text-white/75 text-lg md:text-xl leading-relaxed max-w-2xl mb-10">
+            Epic Custom Pools works with home builders and developers across {siteConfig.serviceAreaPhrase}. We deliver finished pools on schedule, handle every permit, and give your buyers something to brag about.
+          </p>
+          <a
+            href="#builder-form"
+            className="inline-flex items-center justify-center bg-gold text-navy font-inter font-bold text-base px-8 py-4 rounded hover:bg-gold-light transition-colors duration-200"
+          >
+            Start the Conversation →
+          </a>
+        </div>
+      </section>
+
+      {/* ─── WHY BUILDERS CHOOSE US ───────────────────────── */}
+      <section className="bg-white py-20 px-4 md:px-8">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
+            Why Builders Choose Epic Custom Pools
+          </h2>
+          <p className="font-inter text-gray-500 text-center mb-12 max-w-2xl mx-auto">
+            When a trade partner misses a deadline or delivers a sloppy finish, it reflects on you — not them. Here&apos;s how we make sure that never happens.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {BUILDER_BENEFITS.map((b) => (
+              <div
+                key={b.title}
+                className="flex flex-col items-start bg-gray-50 rounded-xl p-6 border border-gray-100"
+              >
+                <span className="text-3xl mb-4" aria-hidden="true">{b.icon}</span>
+                <h3 className="font-playfair text-lg font-bold text-navy mb-2">{b.title}</h3>
+                <p className="font-inter text-gray-600 text-sm leading-relaxed">{b.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── HOW IT WORKS ─────────────────────────────────── */}
+      <section className="bg-navy py-20 px-4 md:px-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-white text-center mb-4">
+            How It Works for Builders
+          </h2>
+          <p className="font-inter text-white/60 text-center mb-14 max-w-2xl mx-auto">
+            A straightforward process built around your schedule, not ours.
+          </p>
+          <div className="space-y-6">
+            {BUILDER_PROCESS.map((step) => (
+              <div key={step.step} className="flex gap-6 items-start">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gold flex items-center justify-center">
+                  <span className="font-playfair font-bold text-navy text-lg">{step.step}</span>
+                </div>
+                <div>
+                  <h3 className="font-playfair text-lg font-bold text-white mb-1">{step.title}</h3>
+                  <p className="font-inter text-white/70 text-sm leading-relaxed">{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── PROJECT TYPES ────────────────────────────────── */}
+      <section className="bg-gray-50 py-20 px-4 md:px-8">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
+            Communities &amp; Project Types We Support
+          </h2>
+          <p className="font-inter text-gray-500 text-center mb-12 max-w-2xl mx-auto">
+            Whether you build one custom home a year or hundreds of lots, we have a model that works for your volume.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {PROJECT_TYPES.map((pt) => (
+              <div key={pt.label} className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+                <h3 className="font-playfair text-lg font-bold text-navy mb-2">{pt.label}</h3>
+                <p className="font-inter text-gray-600 text-sm leading-relaxed">{pt.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── B2B LEAD FORM ────────────────────────────────── */}
+      <BuilderLeadForm />
     </>
   );
 }
