@@ -16,15 +16,16 @@ type FormState = {
 
 type LeadFormProps = {
   source?: string;
+  defaultCity?: string;
 };
 
-export default function LeadForm({ source }: LeadFormProps) {
+export default function LeadForm({ source, defaultCity }: LeadFormProps) {
   const router = useRouter();
   const [form, setForm] = useState<FormState>({
     name: '',
     email: '',
     phone: '',
-    city: '',
+    city: defaultCity ?? '',
     poolType: '',
     message: '',
   });

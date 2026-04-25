@@ -1,6 +1,17 @@
 import Link from 'next/link';
 import siteConfig from '@/config/siteConfig';
 
+const CITY_LINKS = [
+  { label: 'Fort Worth', href: '/fort-worth-pool-builder' },
+  { label: 'Weatherford', href: '/weatherford-pool-builder' },
+  { label: 'Aledo', href: '#' },
+  { label: 'Granbury', href: '#' },
+  { label: 'Mineral Wells', href: '#' },
+  { label: 'Benbrook', href: '#' },
+  { label: 'Brock', href: '#' },
+  { label: 'Stephenville', href: '#' },
+];
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -29,13 +40,22 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 2 — Cities Served */}
+          {/* Column 2 — Cities We Serve */}
           <div>
-            <h3 className="font-playfair text-gold text-lg font-bold mb-5">Cities Served</h3>
+            <h3 className="font-playfair text-gold text-lg font-bold mb-5">Cities We Serve</h3>
             <ul className="space-y-3">
-              {siteConfig.serviceCities.map((city) => (
-                <li key={city}>
-                  <span className="font-inter text-white/70 text-sm">{city}, TX</span>
+              {CITY_LINKS.map((city) => (
+                <li key={city.label}>
+                  {city.href === '#' ? (
+                    <span className="font-inter text-white/50 text-sm">{city.label}, TX</span>
+                  ) : (
+                    <Link
+                      href={city.href}
+                      className="font-inter text-white/70 text-sm hover:text-white transition-colors duration-150"
+                    >
+                      {city.label}, TX
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
