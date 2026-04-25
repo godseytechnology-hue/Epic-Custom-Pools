@@ -117,11 +117,10 @@ export default function HomePage() {
               Fort Worth &mdash; DFW
             </p>
             <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
-              Where DFW Families Build Their Best Memories
+              Where DFW Families Build Epic Memories
             </h1>
             <p className="font-inter text-white/80 text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
-              Owner-operated by a DFW pool industry veteran — now serving Fort Worth, Weatherford,
-              Aledo, Granbury &amp; surrounding areas directly under his own name.
+              Owner-operated by a DFW pool industry expert — now serving Fort Worth, Aledo, Weatherford, Mineral Wells, and surrounding areas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <TrackingLink
