@@ -118,7 +118,7 @@ export default function PricingPage() {
       <PricingLeadForm
         position="mid-page"
         headline="Want a More Accurate Estimate for Your Yard?"
-        subtext="Tell us a little about your project and we'll give you a realistic range — no obligation, no sales call."
+        subtext="Tell us a little about your project and we'll give you a realistic range — no obligation."
         buttonLabel="Get My Personalized Estimate →"
       />
 

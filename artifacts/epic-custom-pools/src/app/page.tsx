@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 const trustItems = [
   { icon: '🤝', label: 'Owner-Operated' },
-  { icon: '👤', label: 'You Deal Direct With the Builder' },
+  { icon: '👤', label: 'You Deal Direct With the Owner' },
   { icon: '💡', label: 'Transparent Pricing' },
   { icon: '🎯', label: 'Free Design Consultation' },
 ];
@@ -75,7 +75,7 @@ const services = [
 const whyItems = [
   {
     icon: '👷',
-    title: 'You Talk Directly To The Builder',
+    title: 'You Talk Directly To The Owner',
     desc: 'No project managers, no salespeople. You work one-on-one with the owner from the first call through final inspection.',
   },
   {

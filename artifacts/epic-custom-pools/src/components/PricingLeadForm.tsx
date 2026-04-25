@@ -156,7 +156,7 @@ export default function PricingLeadForm({ position, headline, subtext, buttonLab
           </button>
 
           <p className="font-inter text-white/30 text-xs text-center">
-            No obligation. No sales pressure. We&apos;ll respond within one business day.
+            No obligation. No pressure. We&apos;ll respond within one business day.
           </p>
         </form>
       </div>
