@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-const PROJECT_COUNTS = ['1–5 pools/year', '6–15 pools/year', '16+ pools/year', 'Not Sure Yet'];
+const PROJECT_COUNTS = ['1–5', '6–15', '16+', 'Not Sure'];
 
 type FormState = {
   companyName: string;
