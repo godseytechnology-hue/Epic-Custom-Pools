@@ -43,6 +43,7 @@ export default function BuilderLeadForm() {
         body: JSON.stringify({
           companyName: form.companyName,
           name: form.name,
+          contactName: form.name,
           phone: form.phone,
           email: form.email,
           projectCount: form.projectCount,

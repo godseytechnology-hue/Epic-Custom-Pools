@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import PricingLeadForm from '@/components/PricingLeadForm';
+import ServiceJsonLd from '@/components/ServiceJsonLd';
 
 export const metadata: Metadata = {
   title: 'Pool Cost Fort Worth TX | Pricing & Process | Epic Custom Pools',
@@ -43,6 +44,12 @@ const PROCESS_STEPS = [
 export default function PricingPage() {
   return (
     <>
+      <ServiceJsonLd
+        serviceName="Pool Pricing & Design Consultation"
+        serviceDescription="Transparent pool pricing for Fort Worth and DFW. See real cost ranges for gunite, fiberglass, and swim spa pools — no forms, no pressure. Free design consultation included."
+        serviceUrl="/pricing"
+      />
+
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="bg-navy py-28 px-4 md:px-12">
         <div className="max-w-4xl mx-auto text-center">

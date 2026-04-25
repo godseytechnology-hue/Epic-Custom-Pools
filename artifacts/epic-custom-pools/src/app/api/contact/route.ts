@@ -20,6 +20,7 @@ export async function POST(req: NextRequest) {
     source,
     position,
     companyName,
+    contactName,
     projectCount,
   } = body;
 
@@ -65,7 +66,7 @@ export async function POST(req: NextRequest) {
   <div style="border:1px solid #e0e0e0;border-top:none;border-radius:0 0 8px 8px;padding:24px;">
     <table style="width:100%;border-collapse:collapse;">
       ${companyName?.trim() ? `<tr><td style="padding:8px 0;color:#666;width:140px;vertical-align:top;font-size:14px;">Company</td><td style="padding:8px 0;font-weight:600;">${escapeHtml(companyName)}</td></tr>` : ''}
-      <tr><td style="padding:8px 0;color:#666;width:140px;vertical-align:top;font-size:14px;">${isB2B ? 'Contact Name' : 'Name'}</td><td style="padding:8px 0;font-weight:600;">${escapeHtml(name)}</td></tr>
+      <tr><td style="padding:8px 0;color:#666;width:140px;vertical-align:top;font-size:14px;">${isB2B ? 'Contact Name' : 'Name'}</td><td style="padding:8px 0;font-weight:600;">${escapeHtml(isB2B ? (contactName || name) : name)}</td></tr>
       ${email?.trim() ? `<tr><td style="padding:8px 0;color:#666;font-size:14px;">Email</td><td style="padding:8px 0;"><a href="mailto:${escapeHtml(email)}" style="color:#1a6b7a;">${escapeHtml(email)}</a></td></tr>` : ''}
       <tr><td style="padding:8px 0;color:#666;font-size:14px;">Phone</td><td style="padding:8px 0;"><a href="tel:${escapeHtml(phone.replace(/\D/g, ''))}" style="color:#1a6b7a;">${escapeHtml(phone)}</a></td></tr>
       <tr><td style="padding:8px 0;color:#666;font-size:14px;">City / Zip</td><td style="padding:8px 0;">${escapeHtml(city)}</td></tr>
