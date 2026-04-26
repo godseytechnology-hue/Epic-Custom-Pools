@@ -1,0 +1,41 @@
+// SPRINT 6 — GALLERY & ABOUT PAGE
+
+Complete the Epic Custom Pools MVP with two final pages.
+
+PAGE 1: /gallery — Project Gallery
+SEO Title: "Custom Pool Gallery Fort Worth TX | Epic Custom Pools"
+Build a visually stunning gallery page:
+- Filterable by category: All, Gunite Pools, Fiberglass Pools, Swim Spas, Outdoor Living
+- Use 16–20 high-quality swimming pool images from Unsplash (use next/image for optimization)
+- Each image must have alt text: "[pool type] built by Epic Custom Pools in [city] TX"
+- Lightbox/modal on image click for full-size view
+- Grid layout: 3 columns desktop, 2 columns tablet, 1 column mobile
+- Below gallery: CTA section "Love What You See? Let's Build Yours." with button to /consultation
+- Add a note: "Real project photos coming soon — these represent the quality and style we deliver"
+
+PAGE 2: /about — About Epic Custom Pools
+SEO Title: "About Epic Custom Pools | Fort Worth TX Pool Builder"
+This page is the emotional core of the brand. It should feel personal, honest, and human — not corporate.
+Sections:
+- Hero: "Built on Experience. Driven by a Simple Belief: Every Family Deserves a Backyard Worth Coming Home To."
+- The Founder's Story (this is the most important section on the site — write it with warmth and authenticity):
+  "Epic Custom Pools was founded by an industry veteran with years of hands-on experience building pools across the DFW area. After years of bringing other companies' visions to life, he decided it was time to do it under his own name — with his own standards, his own accountability, and a direct relationship with every family he serves.
+  When you work with Epic Custom Pools, you're not handed off to a project manager or upsold by a salesperson. You work directly with the person who designs and builds your pool. That's not a tagline. That's just how we operate."
+  [Mark this section clearly as PLACEHOLDER — client should personalize with real years, specific story details, and personal voice]
+- The Mission: A pool isn't a home improvement — it's where summers happen, where kids grow up, where neighbors become friends. Epic Custom Pools exists to help DFW families build those moments. This section should feel genuine and emotionally resonant, not like a marketing paragraph.
+- What We Stand For: 3 values with icons (Transparency — honest pricing before you ever call, Craftsmanship — built right the first time, Accountability — you have the owner's personal number)
+- Service Area: List of all cities served with a note about the DFW west corridor the owner knows best
+- CTA: "Ready to talk? Let's design your pool together." → /consultation
+- Do NOT include: fake testimonials, placeholder review counts, certifications the business doesn't yet hold, team cards with stock photos of fake employees
+
+FINAL MVP AUDIT:
+After building the above, do a full audit:
+- Check all internal links work correctly
+- Verify all lead forms submit and email fires
+- Verify all GA4 events are tracking
+- Check mobile layout on all pages (simulate 375px width)
+- Verify all pages have unique meta title and description
+- Confirm sitemap.xml includes all pages
+
+// Output: Complete MVP — gallery and about page done, full site audit complete, ready for Sprint 7 launch
+// Note: Live chat (Tawk.to + Zapier + Twilio) is a post-MVP feature added after go-live
