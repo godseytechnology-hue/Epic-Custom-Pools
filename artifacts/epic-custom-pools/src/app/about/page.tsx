@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import LeadForm from '@/components/LeadForm';
+import TrackingLink from '@/components/TrackingLink';
 import siteConfig from '@/config/siteConfig';
 
 export const metadata: Metadata = {
@@ -178,12 +178,14 @@ export default function AboutPage() {
           <p className="font-inter text-gray-600 text-lg mb-8">
             Let&apos;s design your pool together. No sales pitch — just an honest conversation about what you want to build and what it takes to get there.
           </p>
-          <Link
+          <TrackingLink
             href="/consultation"
+            eventName="cta_click"
+            eventParams={{ button_label: 'Schedule a Free Consultation', page: 'about' }}
             className="inline-flex items-center justify-center bg-navy text-gold font-inter font-bold text-base px-10 py-4 rounded hover:bg-navy/90 transition-colors duration-200"
           >
             Schedule a Free Consultation →
-          </Link>
+          </TrackingLink>
         </div>
       </section>
 

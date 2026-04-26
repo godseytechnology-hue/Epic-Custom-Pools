@@ -1,15 +1,16 @@
 import Link from 'next/link';
 import siteConfig from '@/config/siteConfig';
 
-const CITY_LINKS = [
+const CITY_LINKS: { label: string; href: string | null }[] = [
   { label: 'Fort Worth', href: '/fort-worth-pool-builder' },
   { label: 'Weatherford', href: '/weatherford-pool-builder' },
-  { label: 'Aledo', href: '#' },
-  { label: 'Granbury', href: '#' },
-  { label: 'Mineral Wells', href: '#' },
-  { label: 'Benbrook', href: '#' },
-  { label: 'Brock', href: '#' },
-  { label: 'Stephenville', href: '#' },
+  // Pages for these cities are coming soon — rendered as plain text until live
+  { label: 'Aledo', href: null },
+  { label: 'Granbury', href: null },
+  { label: 'Mineral Wells', href: null },
+  { label: 'Benbrook', href: null },
+  { label: 'Brock', href: null },
+  { label: 'Stephenville', href: null },
 ];
 
 export default function Footer() {
@@ -46,12 +47,18 @@ export default function Footer() {
             <ul className="space-y-3">
               {CITY_LINKS.map((city) => (
                 <li key={city.label}>
-                  <Link
-                    href={city.href}
-                    className="font-inter text-white/70 text-sm hover:text-white transition-colors duration-150"
-                  >
-                    {city.label}, TX
-                  </Link>
+                  {city.href ? (
+                    <Link
+                      href={city.href}
+                      className="font-inter text-white/70 text-sm hover:text-white transition-colors duration-150"
+                    >
+                      {city.label}, TX
+                    </Link>
+                  ) : (
+                    <span className="font-inter text-white/50 text-sm">
+                      {city.label}, TX
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>
