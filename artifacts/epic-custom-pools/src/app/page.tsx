@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 const trustItems = [
   { icon: '🤝', label: 'Owner-Operated' },
-  { icon: '👤', label: 'You Deal Direct With the Owner' },
+  { icon: '👤', label: 'You Deal Directly With the Owner' },
   { icon: '💡', label: 'Transparent Pricing' },
   { icon: '🎯', label: 'Free Design Consultation' },
 ];
