@@ -1,3 +1,12 @@
+/**
+ * ROUTING NOTE: In the deployed Replit monorepo, this route is NEVER reached.
+ * The application router (artifacts/api-server/.replit-artifact/artifact.toml,
+ * `paths = ["/api"]`) forwards ALL /api/* requests to the Express api-server
+ * (port 8080) before they reach Next.js (port 19724).
+ *
+ * This file is kept for local Next.js standalone dev parity only.
+ * The live handler lives in artifacts/api-server/src/routes/contact.ts.
+ */
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 

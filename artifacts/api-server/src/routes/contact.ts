@@ -1,3 +1,12 @@
+/**
+ * Contact / lead-capture route for Epic Custom Pools.
+ *
+ * ROUTING NOTE: This file is the AUTHORITATIVE handler for POST /api/contact.
+ * The Replit application router is configured (see artifacts/api-server/.replit-artifact/artifact.toml,
+ * `paths = ["/api"]`) to forward ALL requests whose path begins with /api to this
+ * Express server (port 8080). Requests never reach the Next.js app's own
+ * /api/contact route handler — that file is kept for local-dev parity only.
+ */
 import { Router, type IRouter } from "express";
 import { Resend } from "resend";
 
