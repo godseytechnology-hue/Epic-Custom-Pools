@@ -114,7 +114,7 @@ export default function AboutPage() {
               <p className="font-inter text-gray-600 text-lg leading-relaxed">
                 Epic Custom Pools exists to help DFW families build those moments. Not just the
                 structure — the experience. We take that seriously. Every decision we make, from
-                the materials we specify to the way we communicate during the build, is shaped
+                the materials we recommend to the way we communicate during the build, is shaped
                 by the belief that you deserve a process as good as the result.
               </p>
             </div>
@@ -125,12 +125,9 @@ export default function AboutPage() {
       {/* ─── WHAT WE STAND FOR ─────────────────────────────────── */}
       <section className="bg-white py-16 md:py-20 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-12">
             What We Stand For
           </h2>
-          <p className="font-inter text-gray-500 text-center mb-12 max-w-2xl mx-auto">
-            Three things we will never compromise on, regardless of project size or timeline pressure.
-          </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {VALUES.map((value) => (
               <div
