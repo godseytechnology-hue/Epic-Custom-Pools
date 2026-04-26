@@ -94,6 +94,10 @@ export async function POST(req: NextRequest) {
 `;
 
   try {
+    // ⚠️  BEFORE LAUNCH: Update the `from` address to a verified domain address
+    // (e.g., 'Epic Custom Pools <hello@epiccustompools.com>') once DNS is verified
+    // in Resend. Also confirm CONTRACTOR_EMAIL is set to the owner's real inbox
+    // (currently reads from the CONTRACTOR_EMAIL environment secret).
     await resend.emails.send({
       from: 'Epic Custom Pools <onboarding@resend.dev>',
       to: [contractorEmail],

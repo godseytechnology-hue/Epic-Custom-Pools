@@ -5,54 +5,47 @@ import LeadForm from '@/components/LeadForm';
 import siteConfig from '@/config/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'About Epic Custom Pools | Fort Worth Pool Builder',
-  description: `Learn about Epic Custom Pools — the custom pool builder serving ${siteConfig.serviceAreaPhrase}. Family-owned, design-forward, and built on integrity.`,
+  title: 'About Epic Custom Pools | Fort Worth TX Pool Builder',
+  description:
+    'Epic Custom Pools is a Fort Worth-area pool builder built on direct owner involvement, honest pricing, and craftsmanship that lasts. Learn our story.',
   openGraph: {
-    title: 'About Epic Custom Pools',
-    description: `Family-owned custom pool builder serving ${siteConfig.serviceAreaPhrase}. Get to know the team behind your dream pool.`,
+    title: 'About Epic Custom Pools | Fort Worth TX Pool Builder',
+    description:
+      'When you work with Epic Custom Pools, you deal directly with the owner — the person who designs and builds your pool. Learn what drives us.',
   },
 };
 
+const HERO_IMAGE = '/about-pool-v3.jpg';
+
+const ALL_CITIES = [
+  'Fort Worth', 'Weatherford', 'Aledo', 'Granbury',
+  'Mineral Wells', 'Benbrook', 'Brock', 'Stephenville',
+  'White Settlement', 'Azle', 'Hudson Oaks', 'Springtown',
+];
+
 const VALUES = [
-  {
-    icon: '🏗️',
-    title: 'Craftsmanship',
-    desc: 'Every pool we build is treated as a long-term investment in your home. We do not cut corners on materials, labor, or time.',
-  },
   {
     icon: '🤝',
     title: 'Transparency',
-    desc: 'No hidden fees, no vague timelines. You receive a detailed proposal and a project schedule at contract signing — and we stick to it.',
+    desc: 'You receive honest pricing before you ever pick up the phone. No bait-and-switch, no vague estimates, no surprises at contract signing.',
   },
   {
-    icon: '🌟',
-    title: 'Design-Forward',
-    desc: 'Your backyard is unique. Our design process starts by listening to how you live, then creating a pool that fits your family and your space.',
+    icon: '🏗️',
+    title: 'Craftsmanship',
+    desc: 'Built right the first time. Every material, every detail, every timeline commitment — we hold ourselves to the same standard on every project regardless of budget.',
   },
   {
-    icon: '📞',
-    title: 'Responsive Communication',
-    desc: 'You will always know who to call. We answer our phones, return messages promptly, and keep you updated throughout your build.',
-  },
-  {
-    icon: '🔑',
-    title: 'Turnkey Delivery',
-    desc: 'From permits and excavation to finish work and final inspection, we manage every phase so you never have to coordinate multiple contractors.',
-  },
-  {
-    icon: '🌱',
-    title: 'Long-Term Relationships',
-    desc: 'Our relationship does not end at handover. We are here for warranty support, maintenance questions, and future upgrades.',
+    icon: '📱',
+    title: 'Accountability',
+    desc: "You have the owner's personal number. Not a call center, not a project manager you've never met — the person responsible for your pool.",
   },
 ];
-
-const HERO_IMAGE = '/about-pool-v3.jpg';
 
 export default function AboutPage() {
   return (
     <>
       {/* ─── HERO ──────────────────────────────────────────────── */}
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-navy">
+      <section className="relative min-h-[65vh] flex items-center overflow-hidden bg-navy">
         <Image
           src={HERO_IMAGE}
           alt="Children enjoying a custom backyard pool built by Epic Custom Pools"
@@ -63,59 +56,89 @@ export default function AboutPage() {
         />
         <div className="absolute inset-0 bg-navy/80" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-12 w-full py-20">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
             <p className="font-inter text-gold text-sm font-semibold tracking-widest uppercase mb-4">
               {siteConfig.serviceAreaPhrase}
             </p>
             <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
-              Built on Integrity. Designed for Life.
+              Built on Experience. Driven by a Simple Belief: Every Family Deserves a Backyard Worth Coming Home To.
             </h1>
-            <p className="font-inter text-white/80 text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
-              We are a family-owned custom pool builder dedicated to delivering exceptional outdoor living spaces — on time, on budget, and exactly as promised.
-            </p>
-            <Link
-              href="/consultation"
-              className="inline-flex items-center justify-center bg-gold text-navy font-inter font-bold text-base px-8 py-4 rounded hover:bg-gold-light transition-colors duration-200"
-            >
-              Book a Free Consultation
-            </Link>
           </div>
         </div>
       </section>
 
-      {/* ─── OUR STORY ─────────────────────────────────────────── */}
-      <section className="bg-white py-16 px-4 md:px-8">
-        <div className="max-w-4xl mx-auto space-y-8">
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy">Our Story</h2>
-          <p className="font-inter text-gray-600 leading-relaxed">
-            Epic Custom Pools was founded with a single belief: that building a pool should be one of the most exciting, stress-free experiences a homeowner can have. Too often we heard stories of project delays, surprise charges, and contractors who went silent mid-build. We set out to be the antidote.
-          </p>
-          <p className="font-inter text-gray-600 leading-relaxed">
-            Starting with a small crew and a commitment to doing things right, we have grown into one of the most trusted pool builders serving {siteConfig.serviceAreaPhrase}. Every pool in our portfolio was built by the same team you will meet during your consultation — no subcontracted surprises.
-          </p>
-          <p className="font-inter text-gray-600 leading-relaxed">
-            We specialize in gunite (concrete), fiberglass, and swim spa installations, and we serve residential homeowners as well as home builders and developers who need a reliable trade partner. Whatever the scope, our standard is the same: uncompromising quality and honest communication from design to handover.
-          </p>
+      {/* ─── FOUNDER'S STORY ───────────────────────────────────── */}
+      {/*
+       * ⚠️  PLACEHOLDER — Before launch, replace this entire section with the
+       * owner's real story. Fill in:
+       *   - Actual number of years in the pool industry
+       *   - Real company names / builders you worked for (if comfortable sharing)
+       *   - Personal details that make this feel human and local
+       *   - Any milestone moments that led to starting Epic Custom Pools
+       * The goal is warmth and authenticity — not a corporate bio.
+       */}
+      <section className="bg-white py-16 md:py-20 px-4 md:px-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy mb-8">
+            The Founder&apos;s Story
+          </h2>
+          <div className="space-y-6 font-inter text-gray-600 leading-relaxed text-lg">
+            <p>
+              Epic Custom Pools was founded by an industry veteran with years of hands-on experience
+              building pools across the DFW area. After years of bringing other companies&apos; visions
+              to life, he decided it was time to do it under his own name — with his own standards,
+              his own accountability, and a direct relationship with every family he serves.
+            </p>
+            <p>
+              When you work with Epic Custom Pools, you&apos;re not handed off to a project manager
+              or upsold by a salesperson. You work directly with the person who designs and builds
+              your pool. That&apos;s not a tagline. That&apos;s just how we operate.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* ─── VALUES ────────────────────────────────────────────── */}
-      <section className="bg-gray-50 py-16 px-4 md:px-8">
+      {/* ─── THE MISSION ───────────────────────────────────────── */}
+      <section className="bg-gray-50 py-16 md:py-20 px-4 md:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-start gap-6">
+            <span className="text-teal text-4xl leading-none mt-1 hidden md:block" aria-hidden="true">◈</span>
+            <div>
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy mb-6">
+                Why We Do This
+              </h2>
+              <p className="font-inter text-gray-600 text-lg leading-relaxed mb-4">
+                A pool isn&apos;t a home improvement. It&apos;s where summers happen. It&apos;s where kids
+                grow up, where neighbors become friends, where you finally have a reason to stay home on a Friday night.
+              </p>
+              <p className="font-inter text-gray-600 text-lg leading-relaxed">
+                Epic Custom Pools exists to help DFW families build those moments. Not just the
+                structure — the experience. We take that seriously. Every decision we make, from
+                the materials we specify to the way we communicate during the build, is shaped
+                by the belief that you deserve a process as good as the result.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── WHAT WE STAND FOR ─────────────────────────────────── */}
+      <section className="bg-white py-16 md:py-20 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
             What We Stand For
           </h2>
-          <p className="font-inter text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-            These are not marketing words — they are the commitments we make to every client before the first shovel breaks ground.
+          <p className="font-inter text-gray-500 text-center mb-12 max-w-2xl mx-auto">
+            Three things we will never compromise on, regardless of project size or timeline pressure.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {VALUES.map((value) => (
               <div
                 key={value.title}
-                className="flex flex-col items-start bg-white rounded-xl p-6 border border-gray-100 shadow-sm"
+                className="flex flex-col items-start bg-gray-50 rounded-xl p-8 border border-gray-100"
               >
-                <span className="text-3xl mb-4" aria-hidden="true">{value.icon}</span>
-                <h3 className="font-playfair text-lg font-bold text-navy mb-2">{value.title}</h3>
+                <span className="text-4xl mb-5" aria-hidden="true">{value.icon}</span>
+                <h3 className="font-playfair text-xl font-bold text-navy mb-3">{value.title}</h3>
                 <p className="font-inter text-gray-600 text-sm leading-relaxed">{value.desc}</p>
               </div>
             ))}
@@ -123,70 +146,48 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── SERVICE AREA CALLOUT ──────────────────────────────── */}
-      <section className="bg-navy py-16 px-4 md:px-8 text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-white mb-4">
-            Proudly Serving the Region
+      {/* ─── SERVICE AREA ──────────────────────────────────────── */}
+      <section className="bg-navy py-16 md:py-20 px-4 md:px-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-white text-center mb-4">
+            Where We Build
           </h2>
-          <p className="font-inter text-white/80 text-lg leading-relaxed mb-8">
-            We build across {siteConfig.serviceAreaPhrase}. If you are unsure whether we cover your area, give us a call — chances are we do.
+          <p className="font-inter text-white/70 text-center text-lg mb-10 max-w-2xl mx-auto">
+            We focus on the DFW west corridor — the communities west and southwest of Fort Worth
+            that the owner knows best. If you&apos;re nearby and not on this list, call us anyway.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/consultation"
-              className="inline-flex items-center justify-center bg-gold text-navy font-inter font-bold text-base px-8 py-4 rounded hover:bg-gold-light transition-colors duration-200"
-            >
-              Start Your Project
-            </Link>
-            <Link
-              href="/gunite-pools"
-              className="inline-flex items-center justify-center border-2 border-white/40 text-white font-inter font-semibold text-base px-8 py-4 rounded hover:border-white hover:bg-white/5 transition-colors duration-200"
-            >
-              Explore Pool Types
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── FAQ ──────────────────────────────────────────────── */}
-      <section className="bg-gray-50 py-16 px-4 md:px-8">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-10">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-6">
-            {[
-              {
-                question: 'How long has Epic Custom Pools been in business?',
-                answer:
-                  'We have been building custom pools throughout the DFW area for years, completing projects for hundreds of satisfied homeowners and home builders across the region.',
-              },
-              {
-                question: 'Do you handle permits and inspections?',
-                answer:
-                  'Yes. We manage the entire permitting process on your behalf, including all required inspections. You do not need to coordinate with the city — we handle it.',
-              },
-              {
-                question: `Do you build pools outside of the main service area?`,
-                answer: `Our primary service area includes ${siteConfig.serviceAreaPhrase}. We occasionally take projects in adjacent communities — contact us to confirm your location.`,
-              },
-              {
-                question: 'Are you licensed and insured?',
-                answer:
-                  'Yes. Epic Custom Pools is fully licensed, bonded, and insured. We are happy to provide proof of coverage before any project begins.',
-              },
-            ].map((item, i) => (
-              <div key={i} className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
-                <h3 className="font-playfair text-lg font-bold text-navy mb-3">{item.question}</h3>
-                <p className="font-inter text-gray-600 text-sm leading-relaxed">{item.answer}</p>
-              </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            {ALL_CITIES.map((city) => (
+              <span
+                key={city}
+                className="font-inter text-sm font-semibold text-navy bg-gold px-4 py-2 rounded-full"
+              >
+                {city}, TX
+              </span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── LEAD FORM ───────────────────────────────────────── */}
+      {/* ─── CTA ───────────────────────────────────────────────── */}
+      <section className="bg-gray-50 py-16 md:py-20 px-4 md:px-8 text-center">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy mb-4">
+            Ready to talk?
+          </h2>
+          <p className="font-inter text-gray-600 text-lg mb-8">
+            Let&apos;s design your pool together. No sales pitch — just an honest conversation about what you want to build and what it takes to get there.
+          </p>
+          <Link
+            href="/consultation"
+            className="inline-flex items-center justify-center bg-navy text-gold font-inter font-bold text-base px-10 py-4 rounded hover:bg-navy/90 transition-colors duration-200"
+          >
+            Schedule a Free Consultation →
+          </Link>
+        </div>
+      </section>
+
+      {/* ─── LEAD FORM ─────────────────────────────────────────── */}
       <LeadForm source="about-page" />
 
       {/* Mobile bottom padding */}

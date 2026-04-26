@@ -88,6 +88,18 @@ Key env vars:
 - `src/components/ServicePageTemplate.tsx` — reusable template driving all three service page layouts (hero, sections, benefits, process steps, comparison table, lead form, FAQ, internal links)
 - `src/components/ServiceJsonLd.tsx` — JSON-LD schema helper rendering LocalBusiness + Service structured data for each service page
 
+### New Sprint 6 Files
+- `src/app/gallery/page.tsx` — server component with SEO metadata; renders GalleryClient
+- `src/app/gallery/GalleryClient.tsx` — 'use client' component; 18 Unsplash images, client-side category filter (All/Gunite/Fiberglass/Swim Spas/Outdoor Living), hover overlays, lightbox modal (React state, no external lib), CTA section, placeholder note
+- `src/app/about/page.tsx` — FULL REWRITE: new hero headline, Founder's Story (⚠️ PLACEHOLDER - personalize before launch), Mission section, 3-value "What We Stand For" (Transparency/Craftsmanship/Accountability), city list, CTA, LeadForm
+
+### Sprint 6 Audit Notes
+- `/api/contact/route.ts` has a `⚠️ BEFORE LAUNCH` comment — update `from:` address to a verified Resend domain email before go-live
+- `CONTRACTOR_EMAIL` env secret currently set to `godsey.technology@gmail.com` — update to owner's real inbox before launch
+- GA4 `trackEvent('form_submit', ...)` fires on LeadForm success. Gallery has `gallery_filter` and `gallery_image_open` events.
+- Sitemap includes /gallery at priority 0.8
+- 6 footer city links still use href="#" (Aledo, Granbury, Mineral Wells, Benbrook, Brock, Stephenville) — city pages for these are a future task
+
 ### Env vars needed for lead form
 Add these to `.env.local` to activate email delivery:
 ```
@@ -99,7 +111,7 @@ CONTRACTOR_EMAIL=you@...    # where leads are delivered
 - **Sprint 1** (DONE): Global layout shell — Navbar, Footer, MobileBottomBar, siteConfig, GA4, SEO foundations
 - **Sprint 2** (DONE): Full homepage + lead form API (Resend) + /thank-you page
 - **Sprint 3** (DONE): Service pages — /gunite-pools, /fiberglass-pools, /swim-spas with full content, lead forms (sourced), JSON-LD schema, SEO metadata
-- **Sprint 4** (pending): Local SEO city pages (Fort Worth, Weatherford, Aledo, etc.)
-- **Sprint 5** (pending): Gallery, About, Pricing pages
-- **Sprint 6** (pending): Consultation/lead form + Resend email integration
-- **Sprint 7** (pending): Domain, deployment, performance, analytics
+- **Sprint 4** (DONE): /about, /home-builders, /pricing, /consultation pages
+- **Sprint 5** (DONE): CityPageTemplate, /fort-worth-pool-builder, /weatherford-pool-builder, Footer city links (8 cities), sitemap.ts
+- **Sprint 6** (DONE): /gallery (filterable, lightbox), /about rewrite (Founder's Story placeholder), GA4 on LeadForm, sitemap includes /gallery, email TODO comment, full MVP audit passed
+- **Sprint 7** (upcoming): Domain, real photography, 6 remaining city pages, Resend domain verification, go-live

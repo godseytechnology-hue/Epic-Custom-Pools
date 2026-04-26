@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { trackEvent } from '@/lib/analytics';
 
 const POOL_TYPES = ['Gunite / Concrete', 'Fiberglass', 'Swim Spa / Hot Tub', 'Not Sure Yet'];
 
@@ -52,6 +53,7 @@ export default function LeadForm({ source, defaultCity }: LeadFormProps) {
       });
 
       if (res.ok) {
+        trackEvent('form_submit', { source: source || 'lead-form', pool_type: form.poolType });
         router.push('/thank-you?submitted=1');
       } else {
         const data = await res.json().catch(() => ({}));
