@@ -114,7 +114,7 @@ router.post("/contact", async (req, res) => {
     // (e.g., 'Epic Custom Pools <hello@epiccustompools.com>') once DNS is verified
     // in Resend. Also confirm CONTRACTOR_EMAIL is set to the owner's real inbox
     // (currently reads from the CONTRACTOR_EMAIL environment secret).
-    await resend.emails.send({
+    const { data, error: resendError } = await resend.emails.send({
       from: "Epic Custom Pools <onboarding@resend.dev>",
       to: [contractorEmail],
       ...(email?.trim() ? { replyTo: email.trim() } : {}),
@@ -124,9 +124,18 @@ router.post("/contact", async (req, res) => {
       html,
     });
 
+    if (resendError) {
+      console.error("[contact] Resend API error:", resendError);
+      res
+        .status(500)
+        .json({ error: "Failed to send. Please call us directly or try again." });
+      return;
+    }
+
+    console.log("[contact] Email sent, id:", data?.id);
     res.json({ success: true });
   } catch (err) {
-    console.error("[contact] Resend error:", err);
+    console.error("[contact] Resend exception:", err);
     res
       .status(500)
       .json({ error: "Failed to send. Please call us directly or try again." });
