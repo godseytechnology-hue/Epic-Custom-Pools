@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80';
+  'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1920&q=80';
 
 export default function WeatherfordPoolBuilderPage() {
   return (

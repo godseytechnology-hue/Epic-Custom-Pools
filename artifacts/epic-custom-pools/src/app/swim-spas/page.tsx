@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1920&q=80';
+  'https://images.unsplash.com/photo-1736238846962-88ab6d49f5ee?auto=format&fit=crop&w=1920&q=80';
 
 const INSTALLATION_STEPS = [
   {

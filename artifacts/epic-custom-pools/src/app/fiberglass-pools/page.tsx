@@ -72,7 +72,7 @@ export const metadata: Metadata = {
 };
 
 const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1562788869-4ed32648eb72?auto=format&fit=crop&w=1920&q=80';
+  'https://images.unsplash.com/photo-1519315901367-f34ff9154487?auto=format&fit=crop&w=1920&q=80';
 
 export default function FiberglassPoolsPage() {
   return (

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1572385913328-54b9935ce3f1?auto=format&fit=crop&w=1920&q=80';
+  'https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1920&q=80';
 
 export default function FortWorthPoolBuilderPage() {
   return (
