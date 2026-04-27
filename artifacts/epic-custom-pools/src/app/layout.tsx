@@ -73,7 +73,8 @@ export default function RootLayout({
   const ga4Id = siteConfig.ga4Id;
   const headersList = headers();
   const previewTier = headersList.get('x-preview-tier');
-  const tierLabel = previewTier ? TIER_LABELS[previewTier] : null;
+  const isExplicit = headersList.get('x-preview-tier-explicit') === '1';
+  const tierLabel = previewTier && isExplicit ? TIER_LABELS[previewTier] : null;
 
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
