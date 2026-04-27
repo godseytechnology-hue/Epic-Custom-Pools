@@ -1,19 +1,25 @@
 import Link from 'next/link';
+import { headers } from 'next/headers';
 import siteConfig from '@/config/siteConfig';
 
-const CITY_LINKS: { label: string; href: string | null }[] = [
-  { label: 'Fort Worth', href: '/fort-worth-pool-builder' },
-  { label: 'Weatherford', href: '/weatherford-pool-builder' },
-  // Pages for these cities are coming soon — rendered as plain text until live
-  { label: 'Aledo', href: null },
-  { label: 'Granbury', href: null },
-  { label: 'Mineral Wells', href: null },
-  { label: 'Benbrook', href: null },
-  { label: 'Brock', href: null },
-  { label: 'Stephenville', href: null },
+const ALL_CITY_LINKS: { label: string; href: string | null; tier: 'foundation' | 'growth' }[] = [
+  { label: 'Fort Worth', href: '/fort-worth-pool-builder', tier: 'foundation' },
+  { label: 'Weatherford', href: '/weatherford-pool-builder', tier: 'foundation' },
+  { label: 'Aledo', href: null, tier: 'growth' },
+  { label: 'Granbury', href: null, tier: 'growth' },
+  { label: 'Mineral Wells', href: null, tier: 'growth' },
+  { label: 'Benbrook', href: null, tier: 'growth' },
+  { label: 'Brock', href: null, tier: 'growth' },
+  { label: 'Stephenville', href: null, tier: 'growth' },
 ];
 
 export default function Footer() {
+  const headersList = headers();
+  const previewTier = headersList.get('x-preview-tier');
+  const cityLinks =
+    previewTier === 'foundation'
+      ? ALL_CITY_LINKS.filter((c) => c.tier === 'foundation')
+      : ALL_CITY_LINKS;
   const year = new Date().getFullYear();
 
   return (
@@ -45,7 +51,7 @@ export default function Footer() {
           <div>
             <h3 className="font-playfair text-gold text-lg font-bold mb-5">Cities We Serve</h3>
             <ul className="space-y-3">
-              {CITY_LINKS.map((city) => (
+              {cityLinks.map((city) => (
                 <li key={city.label}>
                   {city.href ? (
                     <Link

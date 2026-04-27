@@ -1,11 +1,18 @@
 import type { Metadata } from 'next';
 import { Playfair_Display, Inter } from 'next/font/google';
 import Script from 'next/script';
+import { headers } from 'next/headers';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import MobileBottomBar from '@/components/MobileBottomBar';
 import siteConfig from '@/config/siteConfig';
+
+const TIER_LABELS: Record<string, string> = {
+  foundation: 'Foundation Package',
+  growth: 'Growth Package',
+  authority: 'Authority Package',
+};
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -64,10 +71,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const ga4Id = siteConfig.ga4Id;
+  const headersList = headers();
+  const previewTier = headersList.get('x-preview-tier');
+  const tierLabel = previewTier ? TIER_LABELS[previewTier] : null;
 
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body className="font-inter bg-white">
+        {/* Tier preview banner — only shown when ?tier= flag is active */}
+        {tierLabel && (
+          <div className="w-full bg-teal text-white text-xs font-inter font-medium text-center py-1.5 px-4 tracking-wide z-50">
+            Preview mode: <span className="font-semibold">{tierLabel}</span> · Only content included in this package is shown
+          </div>
+        )}
         {/* LocalBusiness JSON-LD Schema — placed in body to avoid hydration mismatch */}
         <script
           type="application/ld+json"
