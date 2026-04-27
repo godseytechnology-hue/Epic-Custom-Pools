@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Services — Pricing & Packages</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+–ink: #0f0f0f;
+–gold: #a07828;
+–gold-light: #d4b87a;
+–gold-pale: #faf5e8;
+–teal: #1a5c6b;
+–teal-light: #eaf3f5;
+–slate: #2c3240;
+–rule: #d8cfc0;
+–white: #fefcf8;
+–tier2: #0f0f0f;
+–tier3: #0f2830;
+
+```
+/* Dark tier text — high contrast */
+--on-dark: #f0ede8;
+--on-dark-muted: #b8b2a8;
+--on-teal: #dff0f4;
+--on-teal-muted: #8ab8c4;
+```
+
+}
+
+html {
+background: #fefcf8;
+}
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+font-family: ‘DM Sans’, sans-serif;
+background: #fefcf8;
+color: var(–ink);
+font-size: 15px;
+font-weight: 400;
+line-height: 1.7;
+}
+
+/* PAGE SHELL */
+.page {
+max-width: 860px;
+margin: 0 auto;
+padding: 52px 52px 48px;
+background: #fefcf8;
+min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+padding-bottom: 28px;
+border-bottom: 1px solid var(–rule);
+margin-bottom: 36px;
+}
+
+.eyebrow {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: var(–gold);
+margin-bottom: 8px;
+}
+
+.doc-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 38px;
+font-weight: 600;
+line-height: 1.1;
+color: var(–ink);
+letter-spacing: -0.5px;
+}
+
+.doc-title em {
+font-style: italic;
+color: var(–gold);
+}
+
+.header-right {
+text-align: right;
+padding-top: 6px;
+flex-shrink: 0;
+margin-left: 20px;
+}
+
+.for-label {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: #5a5248;
+margin-bottom: 4px;
+}
+
+.client-name {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 20px;
+font-weight: 600;
+color: var(–ink);
+}
+
+.doc-date {
+font-size: 12px;
+color: #6b6458;
+margin-top: 2px;
+}
+
+/* INTRO LINE */
+.intro {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 18px;
+font-weight: 600;
+font-style: italic;
+color: #2a2520;
+margin-bottom: 32px;
+padding-bottom: 32px;
+border-bottom: 1px solid var(–rule);
+line-height: 1.65;
+background: #fefcf8;
+}
+
+/* TIER GRID */
+.tiers {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+gap: 16px;
+margin-bottom: 32px;
+}
+
+.tier {
+border-radius: 10px;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+}
+
+/* TIER 1 */
+.tier-1 { border: 1.5px solid var(–rule); background: var(–white); }
+.tier-1 .tier-head { background: var(–gold-pale); border-bottom: 1px solid var(–rule); }
+.tier-1 .tier-name { color: var(–gold); }
+.tier-1 .tier-price-main { color: var(–ink); }
+.tier-1 .feature-dot { background: var(–gold); }
+
+/* TIER 2 */
+.tier-2 { border: 1.5px solid var(–ink); background: var(–ink); color: var(–on-dark); }
+.tier-2 .tier-head { background: #1c1c1c; border-bottom: 1px solid #333; }
+.tier-2 .tier-name { color: var(–gold-light); }
+.tier-2 .tier-price-main { color: #f5f0e8; }
+.tier-2 .tier-price-sub { color: var(–on-dark-muted); }
+.tier-2 .tier-body { background: #181818; }
+.tier-2 .feature-item { color: var(–on-dark); border-color: #2e2e2e; font-weight: 400; }
+.tier-2 .feature-dot { background: var(–gold-light); }
+.tier-2 .tier-note { color: var(–on-dark-muted); border-color: #2e2e2e; }
+
+/* TIER 3 */
+.tier-3 { border: 1.5px solid #1e6a7d; background: var(–tier3); color: var(–on-teal); }
+.tier-3 .tier-head { background: #0c2028; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.tier-3 .tier-name { color: #7ecfdf; }
+.tier-3 .tier-price-main { color: #e8f4f7; }
+.tier-3 .tier-price-sub { color: var(–on-teal-muted); }
+.tier-3 .tier-body { background: #112028; }
+.tier-3 .feature-item { color: var(–on-teal); border-color: rgba(255,255,255,0.1); font-weight: 400; }
+.tier-3 .feature-dot { background: #7ecfdf; }
+.tier-3 .tier-note { color: var(–on-teal-muted); border-color: rgba(255,255,255,0.1); }
+
+.tier-head { padding: 20px 20px 16px; }
+
+.tier-tag {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+color: #5a5248;
+margin-bottom: 4px;
+}
+
+.tier-2 .tier-tag { color: var(–on-dark-muted); }
+.tier-3 .tier-tag { color: var(–on-teal-muted); }
+
+.tier-name {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 22px;
+font-weight: 600;
+margin-bottom: 12px;
+line-height: 1;
+}
+
+.tier-price {
+display: flex;
+align-items: baseline;
+gap: 4px;
+flex-wrap: wrap;
+}
+
+.tier-price-main {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 30px;
+font-weight: 700;
+line-height: 1;
+}
+
+.tier-price-sub { font-size: 12px; color: #5a5248; line-height: 1.3; }
+
+.tier-price-note {
+font-size: 11px;
+color: var(–gold);
+font-family: ‘DM Mono’, monospace;
+margin-top: 6px;
+line-height: 1.5;
+font-weight: 500;
+}
+
+.tier-2 .tier-price-note { color: var(–gold-light); }
+.tier-3 .tier-price-note { color: #9fd8e6; }
+
+.tier-body { padding: 16px 20px 20px; flex: 1; background: var(–white); }
+
+.feature-item {
+display: flex;
+align-items: flex-start;
+gap: 10px;
+padding: 7px 0;
+border-bottom: 1px solid var(–rule);
+font-size: 13.5px;
+color: var(–slate);
+line-height: 1.45;
+font-weight: 400;
+}
+
+.feature-item:last-of-type { border-bottom: none; }
+
+.feature-dot {
+width: 6px; height: 6px;
+border-radius: 50%;
+background: var(–gold);
+flex-shrink: 0;
+margin-top: 6px;
+}
+
+.tier-note {
+font-size: 12px;
+color: #5a5248;
+border-top: 1px solid var(–rule);
+margin-top: 12px;
+padding-top: 10px;
+font-style: italic;
+line-height: 1.55;
+}
+
+/* LEAD FEE BOX */
+.lead-box {
+background: var(–gold-pale);
+border: 1.5px solid var(–gold-light);
+border-radius: 10px;
+padding: 20px 24px;
+margin-bottom: 28px;
+display: grid;
+grid-template-columns: 1fr auto;
+gap: 16px;
+align-items: center;
+}
+
+.lead-box-eyebrow {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+color: var(–gold);
+margin-bottom: 4px;
+font-weight: 500;
+}
+
+.lead-box-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 20px;
+font-weight: 600;
+color: var(–ink);
+margin-bottom: 6px;
+}
+
+.lead-box-body { font-size: 14px; color: var(–slate); line-height: 1.6; }
+.lead-box-body strong { color: var(–ink); font-weight: 600; }
+
+.lead-box-right {
+text-align: center;
+background: white;
+border: 1px solid var(–gold-light);
+border-radius: 8px;
+padding: 14px 20px;
+min-width: 140px;
+}
+
+.lead-price {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 34px;
+font-weight: 700;
+color: var(–gold);
+line-height: 1;
+}
+
+.lead-price-label { font-size: 12px; color: var(–slate); margin-top: 2px; font-weight: 500; }
+
+.lead-cap {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+color: var(–gold);
+margin-top: 6px;
+letter-spacing: 0.5px;
+font-weight: 500;
+}
+
+/* HORIZON SECTION */
+.horizon {
+border: 1.5px solid var(–rule);
+border-radius: 10px;
+overflow: hidden;
+margin-bottom: 28px;
+}
+
+.horizon-head {
+background: var(–ink);
+padding: 14px 22px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 12px;
+flex-wrap: wrap;
+}
+
+.horizon-eyebrow {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: #8a8078;
+margin-bottom: 2px;
+}
+
+.horizon-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 20px;
+font-weight: 600;
+color: #f0ede8;
+}
+
+.horizon-title em { color: var(–gold-light); font-style: italic; }
+
+.horizon-badge {
+background: rgba(255,255,255,0.07);
+border: 1px solid rgba(255,255,255,0.18);
+border-radius: 20px;
+padding: 4px 14px;
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+color: #8a8078;
+letter-spacing: 1px;
+white-space: nowrap;
+}
+
+.horizon-body {
+padding: 18px 22px;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+gap: 16px;
+}
+
+.horizon-step { position: relative; padding-left: 14px; }
+
+.horizon-step::before {
+content: ‘’;
+position: absolute;
+left: 0; top: 5px;
+width: 4px; height: 4px;
+border-radius: 50%;
+background: var(–gold);
+}
+
+.horizon-step-num {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 1.5px;
+color: var(–gold);
+text-transform: uppercase;
+margin-bottom: 4px;
+font-weight: 500;
+}
+
+.horizon-step-title { font-weight: 600; font-size: 14px; color: var(–ink); margin-bottom: 4px; }
+.horizon-step-body { font-size: 13px; color: var(–slate); line-height: 1.55; }
+
+/* FOOTER ROW */
+.footer-row {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 16px;
+margin-bottom: 28px;
+}
+
+.footer-box { border: 1px solid var(–rule); border-radius: 8px; padding: 16px 20px; }
+
+.footer-box-title {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(–gold);
+margin-bottom: 8px;
+font-weight: 500;
+}
+
+.footer-box-body { font-size: 13.5px; color: var(–slate); line-height: 1.6; }
+.footer-box-body strong { color: var(–ink); }
+
+/* SIGN OFF */
+.signoff {
+display: flex;
+justify-content: space-between;
+align-items: flex-end;
+gap: 16px;
+padding-top: 20px;
+border-top: 1px solid var(–rule);
+}
+
+.signoff-left {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 16px;
+font-style: italic;
+color: #3a3530;
+}
+
+.signoff-right {
+font-family: ‘DM Mono’, monospace;
+font-size: 11px;
+color: #8a8078;
+letter-spacing: 1px;
+text-align: right;
+flex-shrink: 0;
+}
+
+/* CITY ADD-ON BOX */
+.city-box {
+border: 1.5px solid var(–rule);
+border-radius: 10px;
+overflow: hidden;
+margin-bottom: 28px;
+}
+
+.city-box-head {
+background: var(–gold-pale);
+border-bottom: 1px solid var(–rule);
+padding: 16px 24px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 16px;
+flex-wrap: wrap;
+}
+
+.city-box-head-left {}
+
+.city-box-eyebrow {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+color: var(–gold);
+margin-bottom: 3px;
+font-weight: 500;
+}
+
+.city-box-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 20px;
+font-weight: 600;
+color: var(–ink);
+}
+
+.city-box-price {
+text-align: center;
+background: white;
+border: 1px solid var(–gold-light);
+border-radius: 8px;
+padding: 10px 20px;
+white-space: nowrap;
+}
+
+.city-box-price-num {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 28px;
+font-weight: 700;
+color: var(–gold);
+line-height: 1;
+}
+
+.city-box-price-label {
+font-size: 11px;
+color: var(–slate);
+margin-top: 2px;
+font-family: ‘DM Mono’, monospace;
+letter-spacing: 0.5px;
+}
+
+.city-box-body {
+padding: 20px 24px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+align-items: start;
+}
+
+.city-box-why {}
+
+.city-box-why-title {
+font-size: 13px;
+font-weight: 600;
+color: var(–ink);
+margin-bottom: 8px;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+}
+
+.city-box-why-body {
+font-size: 13.5px;
+color: var(–slate);
+line-height: 1.65;
+}
+
+.city-box-why-body strong { color: var(–ink); }
+
+.city-stats {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.city-stat {
+background: var(–gold-pale);
+border-left: 3px solid var(–gold);
+border-radius: 0 6px 6px 0;
+padding: 10px 14px;
+}
+
+.city-stat-number {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 22px;
+font-weight: 700;
+color: var(–gold);
+line-height: 1;
+margin-bottom: 2px;
+}
+
+.city-stat-label {
+font-size: 12px;
+color: var(–slate);
+line-height: 1.4;
+}
+
+.city-stat-source {
+font-size: 10px;
+color: #9a9080;
+margin-top: 2px;
+font-family: ‘DM Mono’, monospace;
+}
+
+/* =====================
+MOBILE RESPONSIVE
+===================== */
+
+@media (max-width: 700px) {
+.page { padding: 28px 20px 36px; }
+
+```
+/* Header stacks */
+.header { flex-direction: column; gap: 16px; margin-bottom: 24px; }
+.header-right { text-align: left; margin-left: 0; }
+.doc-title { font-size: 28px; }
+
+/* Intro smaller */
+.intro { font-size: 15px; margin-bottom: 24px; padding-bottom: 24px; }
+
+/* Tiers stack vertically */
+.tiers { grid-template-columns: 1fr; gap: 14px; margin-bottom: 24px; }
+
+/* Lead box stacks */
+.lead-box {
+  grid-template-columns: 1fr;
+  padding: 18px 18px;
+}
+.lead-box-right { min-width: unset; width: 100%; }
+
+/* Horizon body stacks */
+.horizon-body { grid-template-columns: 1fr; gap: 18px; padding: 16px 18px; }
+.horizon-head { padding: 14px 18px; }
+.horizon-title { font-size: 17px; }
+
+/* Horizon steps get a divider */
+.horizon-step {
+  padding-left: 14px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--rule);
+}
+.horizon-step:last-child { border-bottom: none; padding-bottom: 0; }
+
+/* City box stacks */
+.city-box-head { flex-direction: column; align-items: flex-start; }
+.city-box-price { align-self: flex-start; }
+.city-box-body { grid-template-columns: 1fr; gap: 16px; padding: 16px 18px; }
+
+/* Signoff stacks */
+.signoff { flex-direction: column; align-items: flex-start; gap: 10px; }
+.signoff-right { text-align: left; }
+
+/* Slightly larger touch-friendly feature items */
+.feature-item { padding: 8px 0; font-size: 13px; }
+
+.tier-name { font-size: 24px; }
+.tier-price-main { font-size: 32px; }
+```
+
+}
+
+@media (max-width: 480px) {
+.page { padding: 20px 16px 28px; }
+.doc-title { font-size: 24px; }
+.intro { font-size: 14px; }
+.lead-box-title { font-size: 17px; }
+.horizon-title { font-size: 16px; }
+}
+
+@media print {
+body { background: white; }
+.page { padding: 32px 40px; }
+.tier-2, .tier-3, .horizon-head { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+
+  <div class="header">
+    <div class="header-left">
+      <div class="eyebrow">Digital Services Proposal</div>
+      <div class="doc-title">Your Website.<br><em>Built to Generate Leads.</em></div>
+    </div>
+    <div class="header-right">
+      <div class="for-label">Prepared For</div>
+      <div class="client-name">Epic Custom Pools</div>
+      <div class="doc-date">2025</div>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+
+  <div class="intro">
+    Three tiers. One goal — a website that works while you work. Every package is built on the same premium foundation: mobile-first design, local SEO targeting your service cities, transparent pricing pages, and lead capture that notifies you the moment someone reaches out.
+  </div>
+
+  <!-- TIER CARDS -->
+
+  <div class="tiers">
+
+```
+<!-- TIER 1 -->
+<div class="tier tier-1">
+  <div class="tier-head">
+    <div class="tier-tag">Tier 1</div>
+    <div class="tier-name">Foundation</div>
+    <div class="tier-price">
+      <div class="tier-price-main">$1,000</div>
+      <div class="tier-price-sub">one-time<br>build fee</div>
+    </div>
+    <div class="tier-price-note">+ $150 / qualified lead<br>capped at $500/mo</div>
+  </div>
+  <div class="tier-body">
+    <div class="feature-item"><div class="feature-dot"></div>Premium mobile-first website</div>
+    <div class="feature-item"><div class="feature-dot"></div>Homepage with founder story & mission</div>
+    <div class="feature-item"><div class="feature-dot"></div>3 service pages (Gunite, Fiberglass, Swim Spas)</div>
+    <div class="feature-item"><div class="feature-dot"></div>Transparent pricing page with dual lead forms</div>
+    <div class="feature-item"><div class="feature-dot"></div>Free consultation landing page</div>
+    <div class="feature-item"><div class="feature-dot"></div>2 city pages (Fort Worth + Weatherford)</div>
+    <div class="feature-item"><div class="feature-dot"></div>Home builders B2B page</div>
+    <div class="feature-item"><div class="feature-dot"></div>Gallery + About page</div>
+    <div class="feature-item"><div class="feature-dot"></div>Lead forms → instant email alerts</div>
+    <div class="feature-item"><div class="feature-dot"></div>Google Analytics 4 with conversion tracking</div>
+    <div class="feature-item"><div class="feature-dot"></div>Full local SEO foundation (schema, sitemap, meta)</div>
+    <div class="feature-item"><div class="feature-dot"></div>Domain wiring & launch</div>
+    <div class="tier-note">Best for: getting live fast and proving the model before investing further.</div>
+  </div>
+</div>
+
+<!-- TIER 2 -->
+<div class="tier tier-2">
+  <div class="tier-head">
+    <div class="tier-tag">Tier 2</div>
+    <div class="tier-name">Growth</div>
+    <div class="tier-price">
+      <div class="tier-price-main">$2,500</div>
+      <div class="tier-price-sub">one-time<br>build fee</div>
+    </div>
+    <div class="tier-price-note">+ $150 / qualified lead<br>capped at $500/mo<br>+ $400/mo retainer</div>
+  </div>
+  <div class="tier-body">
+    <div class="feature-item"><div class="feature-dot"></div>Everything in Foundation</div>
+    <div class="feature-item"><div class="feature-dot"></div>6 additional city pages (full DFW arc)</div>
+    <div class="feature-item"><div class="feature-dot"></div>Blog engine — 2 SEO articles/month</div>
+    <div class="feature-item"><div class="feature-dot"></div>Live chat + SMS alerts to your phone</div>
+    <div class="feature-item"><div class="feature-dot"></div>Online consultation scheduler</div>
+    <div class="feature-item"><div class="feature-dot"></div>Google Business Profile setup & optimization</div>
+    <div class="feature-item"><div class="feature-dot"></div>Directory submissions (Houzz, Angi, BBB, Yelp)</div>
+    <div class="feature-item"><div class="feature-dot"></div>Monthly GA4 performance report</div>
+    <div class="feature-item"><div class="feature-dot"></div>Google Local Services Ads management</div>
+    <div class="feature-item"><div class="feature-dot"></div>Retainer covers ongoing updates & optimizations</div>
+    <div class="tier-note">Best for: actively growing lead volume and owning the local market.</div>
+  </div>
+</div>
+
+<!-- TIER 3 -->
+<div class="tier tier-3">
+  <div class="tier-head">
+    <div class="tier-tag">Tier 3</div>
+    <div class="tier-name">Authority</div>
+    <div class="tier-price">
+      <div class="tier-price-main">$5,000</div>
+      <div class="tier-price-sub">one-time<br>build fee</div>
+    </div>
+    <div class="tier-price-note">+ $150 / qualified lead<br>capped at $500/mo<br>+ $900/mo retainer</div>
+  </div>
+  <div class="tier-body">
+    <div class="feature-item"><div class="feature-dot"></div>Everything in Growth</div>
+    <div class="feature-item"><div class="feature-dot"></div>Interactive pool cost estimator tool</div>
+    <div class="feature-item"><div class="feature-dot"></div>AI chat auto-responder (after-hours leads)</div>
+    <div class="feature-item"><div class="feature-dot"></div>CRM integration & automated follow-up sequences</div>
+    <div class="feature-item"><div class="feature-dot"></div>Client project portal (track builds online)</div>
+    <div class="feature-item"><div class="feature-dot"></div>Full paid media management (Google + Meta ads)</div>
+    <div class="feature-item"><div class="feature-dot"></div>Monthly strategy call + competitor analysis</div>
+    <div class="feature-item"><div class="feature-dot"></div>Quarterly website refresh & new content</div>
+    <div class="feature-item"><div class="feature-dot"></div>Priority access to AI design tools (see below)</div>
+    <div class="tier-note">Best for: becoming the undisputed #1 pool brand in your market.</div>
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- LEAD FEE EXPLAINER -->
+
+  <div class="lead-box">
+    <div class="lead-box-left">
+      <div class="lead-box-eyebrow">How the Lead Fee Works</div>
+      <div class="lead-box-title">You only pay when the site performs.</div>
+      <div class="lead-box-body">
+        A <strong>qualified lead</strong> is any form submission received through your website — tracked automatically via Google Analytics. At the end of each month, you receive a report showing exactly how many leads came in and from which pages. The lead fee is invoiced monthly based on that count, <strong>capped at $500/month regardless of volume.</strong> At a 20% close rate on pool contracts averaging $60K, even 3 leads per month returns multiples on every dollar spent.
+      </div>
+    </div>
+    <div class="lead-box-right">
+      <div class="lead-price">$150</div>
+      <div class="lead-price-label">per qualified lead</div>
+      <div class="lead-cap">MAX $500 / MONTH</div>
+    </div>
+  </div>
+
+  <!-- LONG-TERM HORIZON -->
+
+  <div class="horizon">
+    <div class="horizon-head">
+      <div class="horizon-head-left">
+        <div class="horizon-eyebrow">Long-Term Vision</div>
+        <div class="horizon-title">From Local Website to <em>National Platform</em></div>
+      </div>
+      <div class="horizon-badge">PHASE 3 · YEAR 2+</div>
+    </div>
+    <div class="horizon-body">
+      <div class="horizon-step">
+        <div class="horizon-step-num">Phase 1 · Now</div>
+        <div class="horizon-step-title">Your Market, Dominated</div>
+        <div class="horizon-step-body">A lead-generating website that captures Fort Worth and the DFW west corridor — built while competitors are still relying on word of mouth.</div>
+      </div>
+      <div class="horizon-step">
+        <div class="horizon-step-num">Phase 2 · 6–12 Months</div>
+        <div class="horizon-step-title">AI Design & Estimator Tool</div>
+        <div class="horizon-step-body">An AI-powered tool that takes a backyard description and outputs pool design concepts, a full materials list, and a branded cost estimate — saving hours per proposal and converting leads faster.</div>
+      </div>
+      <div class="horizon-step">
+        <div class="horizon-step-num">Phase 3 · Year 2+</div>
+        <div class="horizon-step-title">National SaaS Product</div>
+        <div class="horizon-step-body">The same AI tool — white-labeled and licensed to pool contractors across the US. ~27,000 contractors, $150–$300/month each. A $85M+ addressable market built on the foundation we start here.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CITY PAGE ADD-ON -->
+
+  <div class="city-box">
+    <div class="city-box-head">
+      <div class="city-box-head-left">
+        <div class="city-box-eyebrow">À La Carte Add-On · Available on Any Tier</div>
+        <div class="city-box-title">Additional City Pages</div>
+      </div>
+      <div class="city-box-price">
+        <div class="city-box-price-num">$200</div>
+        <div class="city-box-price-label">per city page</div>
+      </div>
+    </div>
+    <div class="city-box-body">
+      <div class="city-box-why">
+        <div class="city-box-why-title">What is a city page — and why does it matter?</div>
+        <div class="city-box-why-body">
+          <p style="margin-bottom:10px;">When a homeowner in Granbury searches Google for <em>"pool builder Granbury TX,"</em> your website won't show up unless it has a page specifically built for that city. A city page is a dedicated page that tells Google — and the homeowner — that you serve that area.</p>
+          <p style="margin-bottom:10px;">Think of each city page as a <strong>permanent billboard on Google</strong> for that specific community. Once it ranks, it works for you every day at no ongoing cost — unlike a paid ad that stops the moment you stop paying.</p>
+          <p>The Foundation tier includes Fort Worth and Weatherford. Every additional city is an extra opportunity to appear when a local homeowner is actively looking to hire.</p>
+        </div>
+      </div>
+      <div class="city-stats">
+        <div class="city-stat">
+          <div class="city-stat-number">~46%</div>
+          <div class="city-stat-label">of all Google searches are looking for something local — a business, service, or contractor nearby</div>
+          <div class="city-stat-source">Source: LocaliQ / Google, 2024</div>
+        </div>
+        <div class="city-stat">
+          <div class="city-stat-number">88%</div>
+          <div class="city-stat-label">of people who search for a local service on their phone contact or visit a business within 24 hours</div>
+          <div class="city-stat-source">Source: Google Local Search Behavior Study, 2024</div>
+        </div>
+        <div class="city-stat">
+          <div class="city-stat-number">12×</div>
+          <div class="city-stat-label">more conversions for websites with 40+ targeted landing pages vs. those with 5 or fewer</div>
+          <div class="city-stat-source">Source: HubSpot / Ecommerce Bonsai</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER BOXES -->
+
+  <div class="footer-row">
+    <div class="footer-box">
+      <div class="footer-box-title">What's Always Included</div>
+      <div class="footer-box-body">
+        Every tier is built on <strong>Next.js</strong> for maximum SEO performance, <strong>mobile-first</strong> responsive design, <strong>GA4</strong> conversion tracking, and a <strong>transparent pricing page</strong> that outranks competitors by default. The site is yours — fully owned, no lock-in.
+      </div>
+    </div>
+    <div class="footer-box">
+      <div class="footer-box-title">How We Get Started</div>
+      <div class="footer-box-body">
+        Build fee is due at project kickoff. Lead fee billing begins 30 days after launch. Month-to-month retainer — no long-term contract required. Ready to start? A 30-minute kickoff call is all it takes to have your site in sprint within the week.
+      </div>
+    </div>
+  </div>
+
+  <!-- SIGN OFF -->
+
+  <div class="signoff">
+    <div class="signoff-left">"The best time to have a website was yesterday. The second best time is today."</div>
+    <div class="signoff-right">Confidential · 2025<br>Prices valid for 30 days</div>
+  </div>
+
+</div>
+</body>
+</html>
