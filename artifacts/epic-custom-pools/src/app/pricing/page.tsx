@@ -90,10 +90,10 @@ export default function PricingPage() {
       <section className="bg-white py-20 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
-            Typical Pool Costs in Fort Worth
+            Gunite Pool Pricing
           </h2>
           <p className="font-inter text-gray-500 text-center mb-10 max-w-2xl mx-auto">
-            These are real ranges based on current projects in the DFW area. Your actual price depends on size, features, and site conditions.
+            Real ranges based on current gunite pool projects in the DFW area. Your actual price depends on size, features, and site conditions.
           </p>
           <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
             <table className="w-full text-sm font-inter">

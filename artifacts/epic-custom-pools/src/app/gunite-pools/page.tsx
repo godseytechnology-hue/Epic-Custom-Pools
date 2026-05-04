@@ -81,6 +81,14 @@ export default function GunitePoolsPage() {
           ],
         },
         {
+          heading: 'What About Vinyl Liner Pools?',
+          body: [
+            'Vinyl liner pools use a flexible PVC liner stretched over a prefabricated frame. They are common in colder Midwestern and Northeastern markets where they\'re an economical option — but they are the wrong choice for North Texas.',
+            'Vinyl liners must be replaced every 8–12 years, typically costing $4,000–$10,000 per replacement. The DFW climate — which routinely swings from 110°F+ summers to below-freezing winters — accelerates liner degradation significantly beyond national averages. The intense UV exposure alone shortens liner life faster than manufacturers estimate for northern climates.',
+            'Vinyl liner pools also cannot support the features DFW families expect: tanning ledges with the proper slope, grottos, vanishing edges, or integrated spa spillways are structurally incompatible with liner systems. For these reasons, virtually no DFW custom pool contractors build vinyl liner pools — and the few that do primarily serve the entry-level budget market.',
+          ],
+        },
+        {
           heading: 'Design Options & Finishes',
           body: 'After the shell is complete, you choose your interior finish — from classic marcite plaster to quartz aggregate, pebble finishes, and glass tile accents. Coping options include travertine, flagstone, brick, and poured concrete. Your deck material, water features, and landscaping integration are all part of our full-service design process.',
         },

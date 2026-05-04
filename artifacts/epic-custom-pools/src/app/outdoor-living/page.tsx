@@ -96,6 +96,17 @@ export default function OutdoorLivingPage() {
             ],
           },
           {
+            heading: 'What We Build',
+            body: [
+              'Outdoor Kitchens — Custom built-in grills, pizza ovens, refrigerators, sinks, and bar counters. The most-requested upgrade in DFW, designed for serious cooking and serious entertaining.',
+              'Fire Pits & Fireplaces — Gas or wood-burning. Built-in fire pits, stacked stone outdoor fireplaces, linear fire features, and fire bowls that anchor any outdoor gathering.',
+              'Pergolas & Patio Covers — Shade is not optional in Texas. Wood and steel pergolas, attached patio covers, and louvered roof systems built to handle Texas weather while controlling light and airflow.',
+              'Hardscapes & Patios — Flagstone, travertine, concrete pavers, stamped concrete, and cool deck. The foundation of your outdoor space, designed to complement the pool and last for decades.',
+              'Outdoor Bars & Entertainment Areas — Built-in bars, TV mounts, landscape speaker systems, and dedicated entertaining zones designed around how you actually host.',
+              'Landscape Lighting — Low-voltage LED path lighting, uplighting, in-pool LED color systems, and string light structures that transform your backyard after dark.',
+            ],
+          },
+          {
             heading: 'Designed for the Texas Lifestyle',
             body: [
               'Fort Worth summers demand shade. Texas evenings — when the temperature finally breaks — call for a fire feature and an outdoor space worth being in. Spring and fall are when DFW backyards are at their best, and having the right setup makes those months feel like a luxury resort.',
