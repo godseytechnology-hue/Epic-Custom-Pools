@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { trackEvent } from '@/lib/analytics';
 
-const POOL_TYPES = ['Gunite / Concrete', 'Fiberglass', 'Swim Spa / Hot Tub', 'Not Sure Yet'];
+const POOL_TYPES = ['Gunite Pool', 'Outdoor Living Space', 'Pool + Outdoor Living', 'Not Sure Yet'];
 
 type PricingLeadFormProps = {
   position: 'mid-page' | 'bottom';
@@ -124,7 +124,7 @@ export default function PricingLeadForm({ position, headline, subtext, buttonLab
             </div>
             <div>
               <label htmlFor={`poolType-${position}`} className="block font-inter text-white/70 text-xs mb-1.5 ml-1">
-                Pool Type Interest
+                What Are You Interested In?
               </label>
               <select
                 id={`poolType-${position}`}
@@ -133,7 +133,7 @@ export default function PricingLeadForm({ position, headline, subtext, buttonLab
                 onChange={handleChange}
                 className={`${inputClass} cursor-pointer`}
               >
-                <option value="" className="bg-navy">Select a pool type...</option>
+                <option value="" className="bg-navy">Select an option...</option>
                 {POOL_TYPES.map((t) => (
                   <option key={t} value={t} className="bg-navy">{t}</option>
                 ))}

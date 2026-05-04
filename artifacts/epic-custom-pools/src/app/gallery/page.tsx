@@ -4,11 +4,11 @@ import GalleryClient from './GalleryClient';
 export const metadata: Metadata = {
   title: 'Custom Pool Gallery Fort Worth TX | Epic Custom Pools',
   description:
-    'Browse our custom pool gallery — gunite, fiberglass, swim spas, and outdoor living spaces built across the Fort Worth and DFW west corridor.',
+    'Browse our custom pool and outdoor living gallery — gunite pools, outdoor kitchens, fire pits, and hardscapes built across Fort Worth and the DFW west corridor.',
   openGraph: {
     title: 'Custom Pool Gallery | Epic Custom Pools',
     description:
-      'See the quality and style we deliver — gunite pools, fiberglass pools, swim spas, and outdoor living spaces across Fort Worth, Weatherford, Aledo, and beyond.',
+      'See the quality and style we deliver — custom gunite pools, outdoor kitchens, fire pits, and hardscapes across Fort Worth, Weatherford, Aledo, and beyond.',
   },
 };
 

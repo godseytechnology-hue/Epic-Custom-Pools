@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { trackEvent } from '@/lib/analytics';
 
-const POOL_TYPES = ['Gunite / Concrete', 'Fiberglass', 'Swim Spa / Hot Tub', 'Not Sure Yet'];
+const POOL_TYPES = ['Gunite Pool', 'Outdoor Living Space', 'Pool + Outdoor Living', 'Not Sure Yet'];
 
 type FormState = {
   name: string;
@@ -149,7 +149,7 @@ export default function LeadForm({ source, defaultCity }: LeadFormProps) {
 
           <div>
             <label htmlFor="poolType" className="block font-inter text-white/70 text-xs mb-1.5 ml-1">
-              Pool Type Interest
+              What Are You Interested In?
             </label>
             <select
               id="poolType"
@@ -158,7 +158,7 @@ export default function LeadForm({ source, defaultCity }: LeadFormProps) {
               onChange={handleChange}
               className={`${inputClass} cursor-pointer`}
             >
-              <option value="" className="bg-navy">Select a pool type...</option>
+              <option value="" className="bg-navy">Select an option...</option>
               {POOL_TYPES.map((t) => (
                 <option key={t} value={t} className="bg-navy">
                   {t}

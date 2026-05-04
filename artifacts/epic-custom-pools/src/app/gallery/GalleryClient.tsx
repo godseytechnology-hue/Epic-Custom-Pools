@@ -42,38 +42,38 @@ const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     src: `${BASE}/photo-1519315901367-f34ff9154487${OPT}`,
-    alt: 'Fiberglass pool built by Epic Custom Pools in Fort Worth TX',
-    category: 'Fiberglass Pools',
+    alt: 'Custom gunite pool with modern design built by Epic Custom Pools in Fort Worth TX',
+    category: 'Gunite Pools',
   },
   {
     src: `${BASE}/photo-1544551763-46a013bb70d5${OPT}`,
-    alt: 'Fiberglass pool installation built by Epic Custom Pools in Weatherford TX',
-    category: 'Fiberglass Pools',
+    alt: 'Custom pool with spa built by Epic Custom Pools in Weatherford TX',
+    category: 'Gunite Pools',
   },
   {
     src: `${BASE}/photo-1600566753190-17f0baa2a6c3${OPT}`,
-    alt: 'Beautiful fiberglass pool with lounge area built by Epic Custom Pools in Aledo TX',
-    category: 'Fiberglass Pools',
+    alt: 'Custom gunite pool with lounge deck built by Epic Custom Pools in Aledo TX',
+    category: 'Gunite Pools',
   },
   {
     src: `${BASE}/photo-1509749837427-ac94a2553d0e${OPT}`,
-    alt: 'Fiberglass pool and deck built by Epic Custom Pools in Mineral Wells TX',
-    category: 'Fiberglass Pools',
+    alt: 'Gunite pool with travertine deck built by Epic Custom Pools in Mineral Wells TX',
+    category: 'Gunite Pools',
   },
   {
     src: `${BASE}/photo-1736238846962-88ab6d49f5ee${OPT}`,
-    alt: 'Swim spa installation on deck built by Epic Custom Pools in Fort Worth TX',
-    category: 'Swim Spas',
+    alt: 'Outdoor patio and entertainment area built by Epic Custom Pools in Fort Worth TX',
+    category: 'Outdoor Living',
   },
   {
     src: `${BASE}/photo-1634253539564-8887939e239f${OPT}`,
-    alt: 'Outdoor hot tub and swim spa built by Epic Custom Pools in Weatherford TX',
-    category: 'Swim Spas',
+    alt: 'Backyard outdoor living space with fire feature built by Epic Custom Pools in Weatherford TX',
+    category: 'Outdoor Living',
   },
   {
     src: `${BASE}/photo-1499793983690-e29da59ef1c2${OPT}`,
-    alt: 'Luxury swim spa installation built by Epic Custom Pools in Granbury TX',
-    category: 'Swim Spas',
+    alt: 'Luxury outdoor entertaining area built by Epic Custom Pools in Granbury TX',
+    category: 'Outdoor Living',
   },
   {
     src: `${BASE}/photo-1657383543451-e47d1589195d${OPT}`,
@@ -107,7 +107,7 @@ const GALLERY_IMAGES: GalleryImage[] = [
   },
 ];
 
-const CATEGORIES = ['All', 'Gunite Pools', 'Fiberglass Pools', 'Swim Spas', 'Outdoor Living'];
+const CATEGORIES = ['All', 'Gunite Pools', 'Outdoor Living'];
 
 export default function GalleryClient() {
   const [activeCategory, setActiveCategory] = useState('All');

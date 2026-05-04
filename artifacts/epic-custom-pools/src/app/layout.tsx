@@ -35,12 +35,12 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.siteName}`,
   },
   description:
-    'Epic Custom Pools designs and builds premium custom gunite, fiberglass, and swim spa pools throughout the Fort Worth and DFW area. Get your free design consultation today.',
+    'Epic Custom Pools designs and builds custom gunite pools and outdoor living spaces throughout the Fort Worth and DFW area. Get your free design consultation today.',
   keywords: [
     'pool builder Fort Worth TX',
     'gunite pool Fort Worth',
-    'fiberglass pool installation DFW',
-    'swim spa Fort Worth',
+    'outdoor kitchen Fort Worth TX',
+    'outdoor living Fort Worth',
     'custom pool contractor Texas',
     'pool builder Weatherford TX',
   ],

@@ -75,15 +75,14 @@ export default function CityPageTemplate({
         ],
         serviceType: [
           'Gunite Pool Installation',
-          'Fiberglass Pool Installation',
-          'Swim Spa Installation',
+          'Outdoor Living Construction',
           'Custom Pool Design',
         ],
       },
       {
         '@type': 'Service',
         name: `Custom Pool Builder in ${cityName}, TX`,
-        description: `Expert custom pool design and installation serving ${cityName} and ${county} County, TX. Gunite, fiberglass, and swim spas.`,
+        description: `Expert custom gunite pool design and outdoor living construction serving ${cityName} and ${county} County, TX.`,
         url: `${siteConfig.siteUrl}/${citySlug}`,
         provider: {
           '@type': 'LocalBusiness',
@@ -206,10 +205,10 @@ export default function CityPageTemplate({
               Gunite Pools →
             </Link>
             <Link
-              href="/fiberglass-pools"
+              href="/outdoor-living"
               className="inline-flex items-center justify-center border border-white/30 text-white font-inter font-semibold text-sm px-6 py-3 rounded hover:bg-white/10 transition-colors"
             >
-              Fiberglass Pools →
+              Outdoor Living →
             </Link>
             <Link
               href="/pricing"
