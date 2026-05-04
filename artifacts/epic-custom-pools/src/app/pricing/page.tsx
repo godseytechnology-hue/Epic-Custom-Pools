@@ -6,11 +6,11 @@ import ServiceJsonLd from '@/components/ServiceJsonLd';
 export const metadata: Metadata = {
   title: 'Pool Cost Fort Worth TX | Pricing & Process | Epic Custom Pools',
   description:
-    'Honest pool pricing for Fort Worth and DFW. See typical costs for gunite, fiberglass, and swim spas. No surprises. Free design consultation included.',
+    'Honest gunite pool and outdoor living pricing for Fort Worth and DFW. See typical costs for custom pools, outdoor kitchens, fire pits, and hardscapes. No surprises.',
   openGraph: {
     title: 'Pool Cost Fort Worth TX | Pricing & Process | Epic Custom Pools',
     description:
-      'Transparent pool pricing for Fort Worth and DFW. Gunite, fiberglass, and swim spa cost ranges — no forms, no pressure.',
+      'Transparent pricing for Fort Worth and DFW. Gunite pool and outdoor living cost ranges — no forms, no pressure.',
   },
 };
 
@@ -18,8 +18,15 @@ const PRICING_ROWS = [
   { type: 'Entry Level Gunite', range: '$55,000 – $80,000', notes: 'Simple shapes, standard finishes, basic equipment' },
   { type: 'Mid-Range Gunite', range: '$80,000 – $130,000', notes: 'Custom shapes, upgraded tile/coping, automation' },
   { type: 'Luxury Gunite', range: '$130,000 – $250,000+', notes: 'Vanishing edge, grotto, full outdoor living integration' },
-  { type: 'Fiberglass', range: '$45,000 – $85,000', notes: 'Factory shell, faster install, lower maintenance' },
-  { type: 'Swim Spa', range: '$20,000 – $50,000', notes: 'Year-round use, above or in-ground installation' },
+];
+
+const OUTDOOR_LIVING_ROWS = [
+  { type: 'Outdoor Kitchen (basic grill station)', range: '$8,000 – $15,000', notes: 'Built-in grill, counter, storage' },
+  { type: 'Outdoor Kitchen (full)', range: '$25,000 – $60,000+', notes: 'Grill, fridge, sink, pizza oven, bar seating' },
+  { type: 'Fire Pit (built-in gas)', range: '$5,000 – $12,000', notes: 'Custom gas fire pit or linear fire feature' },
+  { type: 'Pergola / Patio Cover', range: '$12,000 – $35,000', notes: 'Wood or steel, attached or freestanding' },
+  { type: 'Hardscape / Patio', range: '$8,000 – $25,000', notes: 'Flagstone, travertine, pavers, or stamped concrete' },
+  { type: 'Complete Backyard Package', range: 'Priced as full project', notes: 'Pool + outdoor living built together — most cost-effective' },
 ];
 
 const COST_FACTORS = [
@@ -46,7 +53,7 @@ export default function PricingPage() {
     <>
       <ServiceJsonLd
         serviceName="Pool Pricing & Design Consultation"
-        serviceDescription="Transparent pool pricing for Fort Worth and DFW. See real cost ranges for gunite, fiberglass, and swim spa pools — no forms, no pressure. Free design consultation included."
+        serviceDescription="Transparent pricing for Fort Worth and DFW. See real cost ranges for custom gunite pools, outdoor kitchens, fire pits, and hardscapes — no forms, no pressure. Free design consultation included."
         serviceUrl="/pricing"
       />
 
@@ -92,7 +99,7 @@ export default function PricingPage() {
             <table className="w-full text-sm font-inter">
               <thead>
                 <tr className="bg-navy text-white">
-                  <th className="text-left px-6 py-4 font-semibold">Pool Type</th>
+                  <th className="text-left px-6 py-4 font-semibold">Gunite Pool</th>
                   <th className="text-left px-6 py-4 font-semibold">Typical Range</th>
                   <th className="text-left px-6 py-4 font-semibold hidden md:table-cell">What&apos;s Included</th>
                 </tr>
@@ -110,6 +117,41 @@ export default function PricingPage() {
           </div>
           <p className="font-inter text-gray-400 text-sm text-center mt-4">
             Final pricing depends on size, features, and site conditions. All estimates are provided in writing before any work begins.
+          </p>
+        </div>
+      </section>
+
+      {/* ─── OUTDOOR LIVING PRICING ───────────────────────── */}
+      <section className="bg-gray-50 py-20 px-4 md:px-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
+            Outdoor Living Estimates
+          </h2>
+          <p className="font-inter text-gray-500 text-center mb-10 max-w-2xl mx-auto">
+            Build your outdoor kitchen, fire pit, pergola, and hardscape at the same time as your pool — one mobilization, better coordination, and no scheduling delays.
+          </p>
+          <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+            <table className="w-full text-sm font-inter">
+              <thead>
+                <tr className="bg-teal text-white">
+                  <th className="text-left px-6 py-4 font-semibold">Outdoor Living Service</th>
+                  <th className="text-left px-6 py-4 font-semibold">Typical Range</th>
+                  <th className="text-left px-6 py-4 font-semibold hidden md:table-cell">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                {OUTDOOR_LIVING_ROWS.map((row, i) => (
+                  <tr key={row.type} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                    <td className="px-6 py-4 text-navy font-semibold">{row.type}</td>
+                    <td className="px-6 py-4 text-teal font-bold text-base">{row.range}</td>
+                    <td className="px-6 py-4 text-gray-500 hidden md:table-cell">{row.notes}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="font-inter text-gray-400 text-sm text-center mt-4">
+            Outdoor living estimates vary by materials, square footage, and site conditions. All pricing provided in writing before any work begins.
           </p>
         </div>
       </section>

@@ -24,8 +24,7 @@ const siteConfig = {
   ],
   services: [
     { label: 'Gunite Pools', href: '/gunite-pools' },
-    { label: 'Fiberglass Pools', href: '/fiberglass-pools' },
-    { label: 'Swim Spas & Hot Tubs', href: '/swim-spas' },
+    { label: 'Outdoor Living', href: '/outdoor-living' },
     { label: 'For Home Builders', href: '/home-builders' },
     { label: 'Pricing & Process', href: '/pricing' },
   ],

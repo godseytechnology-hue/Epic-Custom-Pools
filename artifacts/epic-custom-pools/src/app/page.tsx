@@ -13,11 +13,11 @@ const OG_IMAGE =
 export const metadata: Metadata = {
   title: 'Epic Custom Pools | Fort Worth Custom Pool Builder',
   description:
-    `Fort Worth's premier custom pool builder. Gunite, fiberglass, and swim spas. Serving ${siteConfig.serviceAreaPhrase}. Get your free design consultation today.`,
+    `Fort Worth's premier custom gunite pool builder and outdoor living contractor. Custom pools, outdoor kitchens, fire pits & hardscapes across ${siteConfig.serviceAreaPhrase}.`,
   openGraph: {
     title: 'Epic Custom Pools | Fort Worth Custom Pool Builder',
     description:
-      "Fort Worth's premier custom pool builder. Gunite, fiberglass, and swim spas across the DFW area.",
+      "Fort Worth's premier custom gunite pool builder. Custom pools, outdoor kitchens, fire pits, and hardscapes across the DFW area.",
     images: [{ url: OG_IMAGE, width: 1200, height: 800, alt: 'Luxury custom pool by Epic Custom Pools' }],
   },
 };
@@ -42,33 +42,23 @@ const services = [
     ),
     title: 'Gunite / Concrete Pools',
     href: '/gunite-pools',
-    desc: 'Fully custom shapes, depths, and finishes built to your exact vision. Gunite is the gold standard for lasting, one-of-a-kind pools.',
+    desc: 'Fully custom shapes, depths, and finishes built to your exact vision. Gunite is the gold standard for lasting, one-of-a-kind pools in DFW.',
   },
   {
     icon: (
       <svg viewBox="0 0 48 48" fill="none" className="w-10 h-10" aria-hidden="true">
-        <ellipse cx="24" cy="28" rx="18" ry="10" stroke="currentColor" strokeWidth="2" fill="none" />
-        <path d="M6 28 C6 18 18 12 24 12 C30 12 42 18 42 28" stroke="currentColor" strokeWidth="2" fill="none" />
-        <path d="M6 35 C10 30 14 33 20 30 C26 27 30 33 36 30 C40 28 43 31 44 33" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+        <rect x="6" y="28" width="36" height="8" rx="2" stroke="currentColor" strokeWidth="2" fill="none" />
+        <path d="M14 28 V20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <path d="M34 28 V20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <rect x="10" y="14" width="28" height="8" rx="1" stroke="currentColor" strokeWidth="2" fill="none" />
+        <circle cx="24" cy="10" r="3" stroke="currentColor" strokeWidth="2" fill="none" />
+        <path d="M21 10 Q24 6 27 10" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+        <path d="M8 36 Q12 33 16 36 Q20 39 24 36 Q28 33 32 36 Q36 39 40 36" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.4" />
       </svg>
     ),
-    title: 'Fiberglass Pools',
-    href: '/fiberglass-pools',
-    desc: 'Smooth, low-maintenance shells installed in days. Fiberglass is ideal for families who want a beautiful pool without the upkeep of concrete.',
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 48 48" fill="none" className="w-10 h-10" aria-hidden="true">
-        <rect x="8" y="18" width="32" height="20" rx="4" stroke="currentColor" strokeWidth="2" fill="none" />
-        <path d="M8 30 C12 26 16 29 20 26 C24 23 28 28 32 25 C35 23 38 26 40 28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" />
-        <path d="M16 18 V12 M32 18 V12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="24" cy="12" r="2" fill="currentColor" opacity="0.4" />
-        <path d="M20 10 Q24 6 28 10" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-      </svg>
-    ),
-    title: 'Swim Spas & Hot Tubs',
-    href: '/swim-spas',
-    desc: 'Year-round aquatic wellness — swim, exercise, or unwind regardless of the season. Perfect for Fort Worth families who want it all.',
+    title: 'Outdoor Living Spaces',
+    href: '/outdoor-living',
+    desc: 'Outdoor kitchens, fire pits, pergolas, hardscapes, and entertainment areas — the complete backyard transformation around your pool.',
   },
 ];
 
@@ -176,7 +166,7 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {services.map((s) => (
               <div
                 key={s.title}

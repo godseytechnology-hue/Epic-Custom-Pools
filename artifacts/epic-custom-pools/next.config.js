@@ -9,6 +9,12 @@ const nextConfig = {
       { protocol: 'https', hostname: '**.unsplash.com' },
     ],
   },
+  async redirects() {
+    return [
+      { source: '/fiberglass-pools', destination: '/gunite-pools', permanent: true },
+      { source: '/swim-spas', destination: '/gunite-pools', permanent: true },
+    ];
+  },
 };
 
 module.exports = nextConfig;

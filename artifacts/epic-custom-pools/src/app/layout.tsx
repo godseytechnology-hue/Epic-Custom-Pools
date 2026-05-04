@@ -112,7 +112,7 @@ export default function RootLayout({
                 '@type': 'City',
                 name: city,
               })),
-              serviceType: ['Gunite Pool Installation', 'Fiberglass Pool Installation', 'Swim Spa Installation'],
+              serviceType: ['Gunite Pool Installation', 'Outdoor Kitchen Construction', 'Fire Pit Installation', 'Hardscape Construction', 'Pergola Installation'],
             }),
           }}
         />

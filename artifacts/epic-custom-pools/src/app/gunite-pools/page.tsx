@@ -39,7 +39,7 @@ const guniteExtraContent = (
 export const metadata: Metadata = {
   title: 'Gunite Pools Fort Worth TX | Custom Concrete Pool Builder',
   description:
-    `Fully custom gunite pools designed and built in ${siteConfig.serviceAreaPhrase}. Any shape, any size — built to last a lifetime. Get a free consultation.`,
+    `Fully custom gunite pools designed and built in ${siteConfig.serviceAreaPhrase}. Any shape, any size — the only material built to last a lifetime in Texas soil. Get a free consultation.`,
   openGraph: {
     title: 'Fully Custom Gunite Pools — Built to Last a Lifetime | Epic Custom Pools',
     description:
@@ -149,6 +149,48 @@ export default function GunitePoolsPage() {
           desc: 'Coping, tile, decking, and interior plaster are completed. Equipment is installed, the pool is filled, and we walk you through everything before handoff.',
         },
       ]}
+      comparisonTable={{
+        caption: 'Why Gunite Is the Right Choice for Texas',
+        leftHeader: 'Gunite (Concrete)',
+        rightHeader: 'Fiberglass',
+        rows: [
+          {
+            feature: 'Shape & Size',
+            left: 'Any shape, any size — no limits',
+            right: 'Fixed factory molds (max ~16 ft wide)',
+          },
+          {
+            feature: 'DFW Expansive Clay Soil',
+            left: 'Engineered to your specific lot — handles ground movement',
+            right: 'Shells shift, crack, or "pop" in Blackland Prairie clay',
+          },
+          {
+            feature: 'Lifespan',
+            left: '50+ years with normal maintenance',
+            right: '15–25 years before gelcoat degradation',
+          },
+          {
+            feature: 'Texas Sun & Heat',
+            left: 'Replasterable — finish refreshed as needed',
+            right: 'Gelcoat fades and oxidizes; cannot be refinished',
+          },
+          {
+            feature: 'Features (spa, grotto, tanning ledge)',
+            left: 'Any combination, fully integrated',
+            right: 'Limited by pre-cast shell geometry',
+          },
+          {
+            feature: 'Resale Value',
+            left: 'Highest premium in DFW luxury market',
+            right: 'Lower return — buyers recognize the limitations',
+          },
+          {
+            feature: 'Renovation',
+            left: 'New plaster, tile, coping, or features — anytime',
+            right: 'Cannot be updated; shell is permanent',
+          },
+        ],
+      }}
       extraContent={guniteExtraContent}
       faq={[
         {
