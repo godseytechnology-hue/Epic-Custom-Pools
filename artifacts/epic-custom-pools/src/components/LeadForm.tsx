@@ -149,7 +149,7 @@ export default function LeadForm({ source, defaultCity }: LeadFormProps) {
 
           <div>
             <label htmlFor="poolType" className="block font-inter text-white/70 text-xs mb-1.5 ml-1">
-              What Are You Interested In?
+              What are you interested in?
             </label>
             <select
               id="poolType"
