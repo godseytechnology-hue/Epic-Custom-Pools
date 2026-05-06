@@ -24,7 +24,7 @@ const FAQS = [
   {
     question: 'Can you build a pool in HOA communities like Walsh Ranch or Ventana?',
     answer:
-      'Yes — and we have done it many times. Master-planned communities like Walsh Ranch and Ventana require design pre-approval from their architectural review boards before any permit can be filed. We prepare and submit the full ARB package on your behalf, including drawings, material samples, and equipment specs, and coordinate directly with the HOA so you don't have to navigate that process yourself.',
+      "Yes — and we have done it many times. Master-planned communities like Walsh Ranch and Ventana require design pre-approval from their architectural review boards before any permit can be filed. We prepare and submit the full ARB package on your behalf, including drawings, material samples, and equipment specs, and coordinate directly with the HOA so you don't have to navigate that process yourself.",
   },
   {
     question: 'How does the Tarrant County permitting process work for a pool?',
