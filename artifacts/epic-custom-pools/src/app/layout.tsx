@@ -47,16 +47,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: siteConfig.siteName,
-    title: `${siteConfig.siteName} | ${siteConfig.tagline}`,
+    title: 'Custom Pool Builder Fort Worth TX | Epic Custom Pools',
     description:
-      `Premium custom pool design and installation in ${siteConfig.serviceAreaPhrase}`,
+      'Custom gunite pools and outdoor living spaces in Fort Worth and DFW. Free design consultation from an owner-operated local builder.',
     url: siteConfig.siteUrl,
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${siteConfig.siteName} | ${siteConfig.tagline}`,
+    title: 'Custom Pool Builder Fort Worth TX | Epic Custom Pools',
     description:
-      'Premium custom pool design and installation in the Fort Worth DFW area.',
+      'Custom gunite pools and outdoor living spaces in Fort Worth and DFW. Free design consultation from an owner-operated local builder.',
   },
   robots: {
     index: true,

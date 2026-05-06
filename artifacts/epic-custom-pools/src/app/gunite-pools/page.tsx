@@ -41,9 +41,9 @@ export const metadata: Metadata = {
   description:
     'Custom gunite pool builder in Fort Worth and DFW. Any shape, any size — the only material built to last a lifetime in Texas soil. Free consultation.',
   openGraph: {
-    title: 'Fully Custom Gunite Pools — Built to Last a Lifetime | Epic Custom Pools',
+    title: 'Custom Gunite Pool Builder Fort Worth TX | Epic Custom Pools',
     description:
-      'Epic Custom Pools builds fully custom gunite swimming pools across Fort Worth and DFW. No cookie-cutter designs — your backyard, your vision.',
+      'Custom gunite pools across Fort Worth and DFW. Any shape, any size — no cookie-cutter designs. Your backyard, your vision.',
   },
 };
 
