@@ -1,0 +1,246 @@
+You are an expert SEO engineer working inside an existing Next.js / React codebase for Epic Custom Pools.
+
+## IMPORTANT: READ THE CODEBASE BEFORE WRITING ANY CODE
+
+The site lives at: artifacts/epic-custom-pools/src/
+
+Before making any changes, familiarize yourself with these existing files:
+- src/app/layout.tsx — metadata, GA4, LocalBusiness JSON-LD schema already implemented
+- src/app/sitemap.ts — sitemap already exists, needs 2 new city pages added
+- src/app/robots.ts — already exists, do NOT touch
+- src/config/siteConfig.js — central config; siteUrl, siteName, serviceCities, phone, etc. all live here
+- src/components/CityPageTemplate.tsx — fully built reusable component for all city pages
+- src/components/ServiceJsonLd.tsx — JSON-LD schema component already exists
+- src/app/weatherford-pool-builder/page.tsx — the pattern to follow for all new city pages
+
+Do NOT recreate or replace any of these. Work within the existing patterns.
+
+---
+
+## WHAT IS ALREADY BUILT
+
+The following routes already exist — do not touch their page content:
+- / (homepage)
+- /gunite-pools
+- /outdoor-living
+- /pricing
+- /consultation
+- /fort-worth-pool-builder
+- /weatherford-pool-builder ← use this as your city page template reference
+- /gallery
+- /about
+- /home-builders
+- /thank-you
+- src/app/robots.ts ← already correct, do not modify
+
+The following infrastructure is already in place — update only where specified:
+- LocalBusiness JSON-LD schema in layout.tsx ← already implemented
+- GA4 tracking via siteConfig.ga4Id ← already wired
+- CityPageTemplate component ← fully built, use it for new pages
+- ServiceJsonLd component ← already exists
+
+---
+
+## BUSINESS CONTEXT
+
+**Business:** Epic Custom Pools
+**Stack:** Next.js App Router, TypeScript, Tailwind CSS, pnpm
+**All source files are under:** artifacts/epic-custom-pools/src/
+**Config file:** src/config/siteConfig.js
+**Site URL:** pulled from siteConfig.siteUrl (env: NEXT_PUBLIC_SITE_URL)
+
+**Primary Markets to add:** Aledo TX, Possum Kingdom Lake TX
+**Services:** Gunite pools, outdoor living, swim spas
+**Unique angles:** Founder/veteran story, transparent pricing, acreage/rural builds, home builder B2B
+
+---
+
+## COMPETITOR INTELLIGENCE
+
+Six competitors were audited. Key gaps identified:
+
+**J. Caldwell Custom Pools** — 34 indexed pages, has city/service pages
+- WEAKNESS: Targets Fort Worth broadly, no Aledo or Possum Kingdom pages
+
+**Jake Womack / Cornerstone Pools** — 0 city pages, 0 service pages
+- WEAKNESS: Pure brand name title tag, zero keyword or local SEO intent
+
+**Redfin Pools** — 0 city pages, 0 service pages
+- WEAKNESS: No city name or state anywhere in title or meta — invisible to local search
+
+**Farmhouse Pools** — targets Weatherford only, 0 other city/service pages
+- WEAKNESS: Single-city coverage, no Aledo, no Possum Kingdom, no service pages
+
+**Brazos Custom Pools** — 0 city pages, 0 service pages
+- WEAKNESS: Phone number in title tag wastes keyword space. "Where Dreams Meet Water" meta has zero SEO value
+
+**PTX Custom Pools** — 0 city pages, 0 service pages
+- WEAKNESS: Title tag repeats brand name twice. "North Texas" too vague to rank for any specific city
+
+**Gaps no competitor is filling:**
+1. Aledo TX — zero competitor has a dedicated page
+2. Possum Kingdom Lake TX — zero competitor has a dedicated page
+3. FAQ schema / AEO-optimized content — nobody has it
+4. Home builder B2B page — already built on this site, unique in market
+
+---
+
+## YOUR TASKS
+
+### TASK 1 — SEO AUDIT OF EXISTING PAGES
+
+Review the existing metadata in layout.tsx and weatherford-pool-builder/page.tsx. Produce a markdown audit covering:
+
+1. What's working well in the current implementation (be specific)
+2. What's missing or suboptimal across existing pages (title tag length, keyword placement, missing FAQ schema, etc.)
+3. Prioritized list of changes to make, ordered by SEO impact
+
+---
+
+### TASK 2 — UPDATE METADATA ON EXISTING PAGES
+
+For each existing page below, check if its metadata export needs improvement. If so, update it. Apply these rules:
+
+**Title tag rules:**
+- Max 60 characters
+- Lead with primary keyword, not brand name
+- Include city name where relevant
+- End with " | Epic Custom Pools" only if characters allow
+
+**Meta description rules:**
+- Max 155 characters
+- Include primary keyword naturally
+- Include local signal (city or region)
+- End with a clear CTA
+- Never use a tagline — always a value proposition
+
+Pages to audit and update if needed:
+1. / (homepage — check layout.tsx default metadata)
+2. /gunite-pools
+3. /outdoor-living
+4. /pricing
+5. /consultation
+6. /fort-worth-pool-builder
+7. /weatherford-pool-builder
+8. /home-builders
+
+For the homepage, update the metadata object inside layout.tsx only — do not change any other part of that file. Preserve all existing imports, schema, GA4 logic, font setup, tier banner, and component structure exactly as-is.
+
+---
+
+### TASK 3 — UPDATE siteConfig.js
+
+Update src/config/siteConfig.js to:
+
+1. Add "Possum Kingdom Lake" and "Aledo" to DEFAULT_CITIES if not already present (keep Fort Worth, Weatherford, Mineral Wells)
+2. Add new nav/service entries for the two new city pages being created in Task 4:
+   - { label: 'Aledo', href: '/aledo-pool-builder' }
+   - { label: 'Possum Kingdom Lake', href: '/possum-kingdom-pool-builder' }
+   Add these under services[], not navLinks[] — the nav is already clean
+
+Do not change any other values in siteConfig.js.
+
+---
+
+### TASK 4 — CREATE TWO NEW CITY PAGES
+
+Following the exact pattern of src/app/weatherford-pool-builder/page.tsx, create:
+
+**A) src/app/aledo-pool-builder/page.tsx**
+
+export const metadata: Metadata = {
+  title: 'Pool Builder Aledo TX | Epic Custom Pools',
+  description: 'Custom pool builder serving Aledo, TX. Gunite pools and outdoor living for Parker County acreage and new construction. Free design consultation.',
+  openGraph: {
+    title: 'Pool Builder Aledo TX | Epic Custom Pools',
+    description: 'Aledo\'s custom pool builder. Gunite pools and outdoor living spaces for acreage properties and new construction in Parker County.',
+  },
+};
+
+Use CityPageTemplate with these props:
+- cityName: "Aledo"
+- county: "Parker"
+- heroImageAlt: "Custom pool builder serving Aledo and Parker County Texas"
+- headline: "Aledo's Custom Pool Builder"
+- subheadline: "Aledo is one of the fastest-growing communities in Parker County — and one of the most underserved by local pool contractors who actually know the area. We build here."
+- source: "aledo-landing"
+- defaultCity: "Aledo"
+- citySlug: "aledo-pool-builder"
+- geo: { lat: 32.6957, lng: -97.6044 }
+
+Write original, specific content for openingParagraphs, neighborhoods, localConsiderations, poolTypesSection, and ownerOperatedParagraph. Focus on: Aledo ISD growth, Parker County acreage lots, the combination of suburban new construction and rural properties, proximity to Fort Worth, and the fact that no local pool contractor has a dedicated Aledo page. Include neighborhoods: Aledo, Annetta, Annetta North, Annetta South, Walsh Ranch, Parker County.
+
+**B) src/app/possum-kingdom-pool-builder/page.tsx**
+
+export const metadata: Metadata = {
+  title: 'Pool Builder Possum Kingdom Lake TX | Epic Custom Pools',
+  description: 'Custom pool builder serving Possum Kingdom Lake, TX. Lakefront pool design and installation for second homes and vacation properties. Free consultation.',
+  openGraph: {
+    title: 'Pool Builder Possum Kingdom Lake TX | Epic Custom Pools',
+    description: 'Possum Kingdom Lake\'s custom pool builder. Lakefront and vacation home pool design for Palo Pinto County properties.',
+  },
+};
+
+Use CityPageTemplate with these props:
+- cityName: "Possum Kingdom Lake"
+- county: "Palo Pinto"
+- heroImageAlt: "Custom pool builder serving Possum Kingdom Lake and Palo Pinto County Texas"
+- headline: "Possum Kingdom Lake's Custom Pool Builder"
+- subheadline: "Possum Kingdom Lake is a high-value, underserved market. Second-home and vacation property owners here want pools that match the setting — and there's virtually no competition online for this market."
+- source: "possum-kingdom-landing"
+- defaultCity: "Possum Kingdom Lake"
+- citySlug: "possum-kingdom-pool-builder"
+- geo: { lat: 32.9207, lng: -98.5126 }
+
+Write original, specific content for openingParagraphs, neighborhoods, localConsiderations, poolTypesSection, and ownerOperatedParagraph. Focus on: lakefront second-home market, Palo Pinto County permitting considerations, vacation property builds, high-income buyer profile, the fact that no competitor has a page for this market, and designs that complement lake settings. Include neighborhoods: Possum Kingdom Lake, Graford, Palo Pinto, Gordon, Mineral Wells.
+
+---
+
+### TASK 5 — UPDATE SITEMAP
+
+Update src/app/sitemap.ts to add the two new city pages. Insert them after the weatherford-pool-builder entry:
+
+{ url: '/aledo-pool-builder', priority: 0.85 },
+{ url: '/possum-kingdom-pool-builder', priority: 0.85 },
+
+Do not change any other entries or the file structure.
+
+---
+
+### TASK 6 — ADD FAQ SCHEMA COMPONENT AND IMPLEMENT ON CITY PAGES
+
+**6A — Create src/components/FAQSchema.tsx**
+
+This component does not yet exist. Create it as a reusable component that accepts a faqs prop (array of { question: string; answer: string } objects) and outputs FAQPage JSON-LD schema in a <script> tag. Use the same pattern as the existing ServiceJsonLd.tsx component. Use 'beforeInteractive' strategy and a unique id prop to avoid duplicate script tags.
+
+**6B — Add FAQSchema to CityPageTemplate.tsx**
+
+Import FAQSchema into CityPageTemplate.tsx. Add an optional faqs prop (FAQItem[] | undefined) to CityPageTemplateProps. If faqs are provided, render <FAQSchema> just before the closing fragment and add a visible FAQ section above the LeadForm with an H2 "Frequently Asked Questions", each Q rendered as <h3> and each A as <p>. This makes every city page AEO-eligible without requiring changes to existing pages.
+
+**6C — Pass FAQ content to the two new city pages**
+
+For /aledo-pool-builder, pass these faqs:
+1. Q: "Do you build pools in Aledo TX?" A: "Yes. Epic Custom Pools builds custom gunite pools and outdoor living spaces throughout Aledo and Parker County. We're familiar with local permitting, acreage lot builds, and new construction timelines in the Aledo ISD area."
+2. Q: "How much does a pool cost in Aledo TX?" A: "Custom inground pools in Aledo typically range from $75,000 to $150,000+ depending on size, design, and features. We provide transparent pricing ranges upfront — no surprises. Visit our pricing page for detailed estimates."
+3. Q: "Do you work on acreage properties near Aledo?" A: "Yes. Many of our Aledo builds are on larger acreage lots where terrain, well water, and county permitting add complexity. We've navigated Parker County's permitting process many times and factor all of this into your scope from day one."
+4. Q: "What cities near Aledo do you serve?" A: "We serve Aledo, Annetta, Walsh Ranch, Weatherford, Fort Worth, and the surrounding Parker County area. If you're in or near Parker County, we can build for you."
+
+For /possum-kingdom-pool-builder, pass these faqs:
+1. Q: "Do you build pools at Possum Kingdom Lake?" A: "Yes. Epic Custom Pools designs and installs custom pools for lakefront homes, vacation properties, and second homes at Possum Kingdom Lake and throughout Palo Pinto County."
+2. Q: "What makes building a pool at Possum Kingdom Lake different?" A: "Lakefront properties often have unique site conditions — sloped terrain, shoreline proximity rules, and Palo Pinto County permitting requirements that differ from city builds. We've worked with these constraints and know how to design pools that complement the lake setting while meeting local regulations."
+3. Q: "How much does a pool cost at Possum Kingdom Lake?" A: "Pool costs at Possum Kingdom Lake typically range from $80,000 to $200,000+ depending on lot conditions, design complexity, and features. Lakefront and vacation home builds often include added features like outdoor kitchens, fire features, and elevated decking."
+4. Q: "Do you serve the Graford and Palo Pinto areas?" A: "Yes. We serve the entire Possum Kingdom Lake area including Graford, Palo Pinto, Gordon, and Mineral Wells. Call us or schedule a free consultation to discuss your property."
+
+---
+
+## CONSTRAINTS
+
+- Work entirely within artifacts/epic-custom-pools/src/
+- Use TypeScript for all new files
+- Use the App Router pattern (no pages/ directory)
+- Import from @/components and @/config using existing aliases
+- Do not install new packages
+- Do not modify robots.ts
+- Do not change the visual design, layout, or non-metadata content of any existing page
+- Preserve all existing imports, logic, and structure in layout.tsx — only update the metadata object
+- Match the code style of existing files exactly (single quotes, 2-space indent, no semicolons on exports)
