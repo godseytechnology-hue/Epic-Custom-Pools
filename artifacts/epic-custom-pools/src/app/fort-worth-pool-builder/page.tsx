@@ -15,6 +15,29 @@ export const metadata: Metadata = {
 const HERO_IMAGE =
   'https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1920&q=80';
 
+const FAQS = [
+  {
+    question: 'How much does a custom pool cost in Fort Worth?',
+    answer:
+      'Most custom gunite pools in Fort Worth range from $80,000 to $160,000 depending on size, features, and finishes. Homes in neighborhoods like Walsh Ranch and Westover Hills often add outdoor kitchens, fire pits, or spa features that bring total projects to $120,000–$200,000+. We provide detailed, itemized quotes after a free on-site consultation so you know exactly what you are getting before signing anything.',
+  },
+  {
+    question: 'Can you build a pool in HOA communities like Walsh Ranch or Ventana?',
+    answer:
+      'Yes — and we have done it many times. Master-planned communities like Walsh Ranch and Ventana require design pre-approval from their architectural review boards before any permit can be filed. We prepare and submit the full ARB package on your behalf, including drawings, material samples, and equipment specs, and coordinate directly with the HOA so you don't have to navigate that process yourself.',
+  },
+  {
+    question: 'How does the Tarrant County permitting process work for a pool?',
+    answer:
+      'Permitting requirements in Tarrant County vary by municipality — the City of Fort Worth has its own process, while unincorporated Tarrant County follows county-level rules. Either way, we handle every permit submission, inspection coordination, and sign-off on your behalf. Typical permit timelines run 3–6 weeks depending on city workload. We factor this into your project schedule from day one so there are no surprises.',
+  },
+  {
+    question: 'What cities and areas do you serve in and around Fort Worth?',
+    answer:
+      'We serve the full Fort Worth metro and west Tarrant County, including Westover Hills, Ridglea, Benbrook, the TCU area, Hulen, Walsh Ranch, Ventana, Riverton, Mira Vista, and Aledo. If you are in Tarrant County or just across the Parker County line, reach out — we are likely already working in your area.',
+  },
+];
+
 export default function FortWorthPoolBuilderPage() {
   return (
     <CityPageTemplate
@@ -53,6 +76,7 @@ export default function FortWorthPoolBuilderPage() {
       defaultCity="Fort Worth"
       citySlug="fort-worth-pool-builder"
       geo={{ lat: 32.7555, lng: -97.3308 }}
+      faqs={FAQS}
     />
   );
 }

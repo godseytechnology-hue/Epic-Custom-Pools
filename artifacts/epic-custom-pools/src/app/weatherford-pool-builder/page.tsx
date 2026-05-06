@@ -15,6 +15,29 @@ export const metadata: Metadata = {
 const HERO_IMAGE =
   'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1920&q=80';
 
+const FAQS = [
+  {
+    question: 'Can you build a pool on acreage or a property with well water in Weatherford?',
+    answer:
+      'Yes — this is one of our specialties. Acreage builds often involve sloped terrain, elevated equipment pads, retaining walls, and custom excavation plans that require extra coordination. Properties on well water need additional planning around the pool fill process, chemical balance, and equipment selection to ensure the system runs properly long-term. We account for all of this in your quote from day one so there are no surprises mid-project.',
+  },
+  {
+    question: 'How does permitting work in Parker County?',
+    answer:
+      'Permitting in Parker County depends on where your property sits — inside a city like Weatherford or Willow Park, within an extraterritorial jurisdiction (ETJ), or in unincorporated county territory. Each has different requirements and timelines. We have worked through all three scenarios and handle every permit submission, inspection request, and final sign-off on your behalf. Typical timelines run 3–6 weeks depending on jurisdiction.',
+  },
+  {
+    question: 'How much does a custom pool cost in the Weatherford area?',
+    answer:
+      'Custom gunite pools in the Weatherford and Parker County area typically range from $85,000 to $170,000 depending on size, terrain, and features. Larger acreage properties that take advantage of hillside views, vanishing edges, or full outdoor living integration often run $150,000–$250,000+. We provide a detailed, itemized quote after a free on-site consultation — no ballpark estimates, no surprises.',
+  },
+  {
+    question: 'What cities and communities near Weatherford do you serve?',
+    answer:
+      'We serve Weatherford and the surrounding Parker County area, including Willow Park, Hudson Oaks, Brock, Millsap, Springtown, Mineral Wells, and Aledo. We also work across the Tarrant County line for clients in far west Fort Worth. If you are in Parker County or nearby, we are likely already working in your area — reach out for a free consultation.',
+  },
+];
+
 export default function WeatherfordPoolBuilderPage() {
   return (
     <CityPageTemplate
@@ -50,6 +73,7 @@ export default function WeatherfordPoolBuilderPage() {
       defaultCity="Weatherford"
       citySlug="weatherford-pool-builder"
       geo={{ lat: 32.759, lng: -97.7976 }}
+      faqs={FAQS}
     />
   );
 }
