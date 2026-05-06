@@ -4,11 +4,11 @@ import CityPageTemplate from '@/components/CityPageTemplate';
 export const metadata: Metadata = {
   title: 'Pool Builder Weatherford TX | Epic Custom Pools',
   description:
-    "Custom pool builder in Weatherford, TX. Parker County's choice for gunite pools and outdoor living spaces. Acreage properties welcome. Free design consultation.",
+    "Custom pool builder in Weatherford, TX. Gunite pools and outdoor living for Parker County acreage. Acreage builds welcome. Free consultation.",
   openGraph: {
     title: 'Pool Builder Weatherford TX | Epic Custom Pools',
     description:
-      "Parker County's custom pool builder. Gunite pools and outdoor living spaces for acreage, ranch properties, and growing Weatherford communities.",
+      "Parker County's custom pool builder. Gunite pools and outdoor living for acreage, ranch properties, and growing Weatherford communities.",
   },
 };
 

@@ -39,7 +39,7 @@ const guniteExtraContent = (
 export const metadata: Metadata = {
   title: 'Gunite Pools Fort Worth TX | Custom Concrete Pool Builder',
   description:
-    `Fully custom gunite pools designed and built in ${siteConfig.serviceAreaPhrase}. Any shape, any size — the only material built to last a lifetime in Texas soil. Get a free consultation.`,
+    'Custom gunite pool builder in Fort Worth and DFW. Any shape, any size — the only material built to last a lifetime in Texas soil. Free consultation.',
   openGraph: {
     title: 'Fully Custom Gunite Pools — Built to Last a Lifetime | Epic Custom Pools',
     description:

@@ -13,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/consultation', priority: 0.9 },
     { url: '/fort-worth-pool-builder', priority: 0.95 },
     { url: '/weatherford-pool-builder', priority: 0.85 },
+    { url: '/aledo-pool-builder', priority: 0.85 },
+    { url: '/possum-kingdom-pool-builder', priority: 0.85 },
     { url: '/gallery', priority: 0.8 },
     { url: '/about', priority: 0.7 },
     { url: '/home-builders', priority: 0.75 },

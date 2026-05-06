@@ -1,4 +1,4 @@
-const DEFAULT_CITIES = 'Fort Worth,Aledo,Weatherford,Mineral Wells';
+const DEFAULT_CITIES = 'Fort Worth,Aledo,Weatherford,Mineral Wells,Possum Kingdom Lake';
 
 const serviceCities = (process.env.NEXT_PUBLIC_SERVICE_CITIES || DEFAULT_CITIES)
   .split(',')
@@ -27,6 +27,8 @@ const siteConfig = {
     { label: 'Outdoor Living', href: '/outdoor-living' },
     { label: 'For Home Builders', href: '/home-builders' },
     { label: 'Pricing & Process', href: '/pricing' },
+    { label: 'Aledo', href: '/aledo-pool-builder' },
+    { label: 'Possum Kingdom Lake', href: '/possum-kingdom-pool-builder' },
   ],
 };
 

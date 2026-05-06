@@ -3,11 +3,11 @@ import BuilderLeadForm from '@/components/BuilderLeadForm';
 import siteConfig from '@/config/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Pool Contractor for Home Builders Fort Worth TX | Epic Custom Pools',
+  title: 'Builder Pool Contractor Fort Worth TX | Epic Custom Pools',
   description:
-    'Reliable pool installation partner for home builders and developers in Fort Worth and DFW. Volume pricing, on-time delivery, warranty. Contact Epic Custom Pools.',
+    'Reliable pool installation partner for home builders in Fort Worth and DFW. Volume pricing, on-time delivery, and warranty. Schedule a call today.',
   openGraph: {
-    title: 'Pool Contractor for Home Builders Fort Worth TX | Epic Custom Pools',
+    title: 'Builder Pool Contractor Fort Worth TX | Epic Custom Pools',
     description:
       'Epic Custom Pools is the pool trade partner Fort Worth builders trust — on-time delivery, volume pricing, full permit handling, and a warranty your buyers will love.',
   },

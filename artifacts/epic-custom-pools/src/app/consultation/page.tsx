@@ -5,7 +5,7 @@ import siteConfig from '@/config/siteConfig';
 export const metadata: Metadata = {
   title: 'Free Pool Design Consultation Fort Worth | Epic Custom Pools',
   description:
-    'Schedule your free pool design consultation in Fort Worth and DFW. No obligation — we listen, design, estimate, and plan. Epic Custom Pools.',
+    'Schedule your free pool design consultation in Fort Worth and DFW. No obligation — we listen, design, and deliver a real estimate. Book today.',
   openGraph: {
     title: 'Free Pool Design Consultation Fort Worth | Epic Custom Pools',
     description:

@@ -31,11 +31,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
   title: {
-    default: `${siteConfig.siteName} | ${siteConfig.tagline}`,
+    default: 'Custom Pool Builder Fort Worth TX | Epic Custom Pools',
     template: `%s | ${siteConfig.siteName}`,
   },
   description:
-    'Epic Custom Pools designs and builds custom gunite pools and outdoor living spaces throughout the Fort Worth and DFW area. Get your free design consultation today.',
+    'Custom gunite pools and outdoor living spaces in Fort Worth and DFW. Free design consultation from an owner-operated local builder.',
   keywords: [
     'pool builder Fort Worth TX',
     'gunite pool Fort Worth',

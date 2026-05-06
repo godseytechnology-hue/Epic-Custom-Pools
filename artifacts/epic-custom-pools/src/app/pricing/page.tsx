@@ -4,11 +4,11 @@ import PricingLeadForm from '@/components/PricingLeadForm';
 import ServiceJsonLd from '@/components/ServiceJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Pool Cost Fort Worth TX | Pricing & Process | Epic Custom Pools',
+  title: 'Pool Pricing Fort Worth TX | Epic Custom Pools',
   description:
-    'Honest gunite pool and outdoor living pricing for Fort Worth and DFW. See typical costs for custom pools, outdoor kitchens, fire pits, and hardscapes. No surprises.',
+    'Transparent gunite pool and outdoor living pricing for Fort Worth and DFW. Typical cost ranges — no forms, no pressure, no surprises.',
   openGraph: {
-    title: 'Pool Cost Fort Worth TX | Pricing & Process | Epic Custom Pools',
+    title: 'Pool Pricing Fort Worth TX | Epic Custom Pools',
     description:
       'Transparent pricing for Fort Worth and DFW. Gunite pool and outdoor living cost ranges — no forms, no pressure.',
   },

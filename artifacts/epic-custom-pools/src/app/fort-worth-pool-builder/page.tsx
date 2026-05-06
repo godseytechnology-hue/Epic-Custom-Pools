@@ -4,11 +4,11 @@ import CityPageTemplate from '@/components/CityPageTemplate';
 export const metadata: Metadata = {
   title: 'Pool Builder Fort Worth TX | Epic Custom Pools',
   description:
-    "Fort Worth's trusted custom gunite pool builder and outdoor living contractor. Serving all Fort Worth neighborhoods and Tarrant County. Free design consultation.",
+    "Fort Worth's custom gunite pool builder and outdoor living contractor. Serving Tarrant County neighborhoods. Free design consultation.",
   openGraph: {
     title: 'Pool Builder Fort Worth TX | Epic Custom Pools',
     description:
-      "Fort Worth's trusted custom gunite pool builder and outdoor living contractor. Pools, kitchens, fire pits, and hardscapes for every Tarrant County neighborhood.",
+      "Fort Worth's custom gunite pool builder. Pools, kitchens, fire pits, and hardscapes for every Tarrant County neighborhood.",
   },
 };
 

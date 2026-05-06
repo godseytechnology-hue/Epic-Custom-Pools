@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Script from 'next/script';
 import LeadForm from '@/components/LeadForm';
+import FAQSchema, { FAQItem } from '@/components/FAQSchema';
 import siteConfig from '@/config/siteConfig';
 
 export type CityPageTemplateProps = {
@@ -23,6 +24,7 @@ export type CityPageTemplateProps = {
   defaultCity: string;
   citySlug: string;
   geo?: { lat: number; lng: number };
+  faqs?: FAQItem[];
 };
 
 export default function CityPageTemplate({
@@ -44,6 +46,7 @@ export default function CityPageTemplate({
   defaultCity,
   citySlug,
   geo,
+  faqs,
 }: CityPageTemplateProps) {
   const schema = {
     '@context': 'https://schema.org',
@@ -230,6 +233,27 @@ export default function CityPageTemplate({
         </div>
       </section>
 
+      {/* ─── FAQ ──────────────────────────────────────────── */}
+      {faqs && faqs.length > 0 && (
+        <section className="bg-white py-16 px-4 md:px-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-playfair text-2xl md:text-3xl font-bold text-navy mb-10">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-8">
+              {faqs.map((faq, i) => (
+                <div key={i} className="border-b border-gray-100 pb-8 last:border-0 last:pb-0">
+                  <h3 className="font-inter text-lg font-semibold text-navy mb-3">
+                    {faq.question}
+                  </h3>
+                  <p className="font-inter text-gray-600 leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ─── INTERNAL LINKS ───────────────────────────────── */}
       <section className="bg-gray-50 py-10 px-4 md:px-8">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -253,6 +277,10 @@ export default function CityPageTemplate({
 
       {/* Mobile bottom padding */}
       <div className="md:hidden h-14" aria-hidden="true" />
+
+      {faqs && faqs.length > 0 && (
+        <FAQSchema id={`faq-schema-${citySlug}`} faqs={faqs} />
+      )}
     </>
   );
 }
