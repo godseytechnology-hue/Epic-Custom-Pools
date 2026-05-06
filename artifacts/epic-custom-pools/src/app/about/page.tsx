@@ -5,11 +5,11 @@ import TrackingLink from '@/components/TrackingLink';
 import siteConfig from '@/config/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'About Epic Custom Pools | Fort Worth TX Pool Builder',
+  title: 'Fort Worth Pool Builder | About Epic Custom Pools',
   description:
     'Epic Custom Pools is a Fort Worth-area pool builder built on direct owner involvement, honest pricing, and craftsmanship that lasts. Learn our story.',
   openGraph: {
-    title: 'About Epic Custom Pools | Fort Worth TX Pool Builder',
+    title: 'Fort Worth Pool Builder | About Epic Custom Pools',
     description:
       'When you work with Epic Custom Pools, you deal directly with the owner — the person who designs and builds your pool. Learn what drives us.',
   },

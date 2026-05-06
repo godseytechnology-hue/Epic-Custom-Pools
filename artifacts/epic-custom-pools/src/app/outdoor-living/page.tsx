@@ -7,7 +7,7 @@ import siteConfig from '@/config/siteConfig';
 export const metadata: Metadata = {
   title: 'Outdoor Living Fort Worth TX | Epic Custom Pools',
   description:
-    'Custom outdoor kitchens, fire pits, pergolas, and hardscapes in Fort Worth and DFW. Complete backyard transformations by an owner-operated local builder. Free consultation.',
+    'Custom outdoor kitchens, fire pits, pergolas, and hardscapes in Fort Worth and DFW. Complete backyard transformations. Free consultation.',
   openGraph: {
     title: 'Outdoor Living Fort Worth TX | Epic Custom Pools',
     description:

@@ -4,7 +4,7 @@ import GalleryClient from './GalleryClient';
 export const metadata: Metadata = {
   title: 'Custom Pool Gallery Fort Worth TX | Epic Custom Pools',
   description:
-    'Browse our custom pool and outdoor living gallery — gunite pools, outdoor kitchens, fire pits, and hardscapes built across Fort Worth and the DFW west corridor.',
+    'Browse our pool and outdoor living gallery — gunite pools, outdoor kitchens, fire pits, and hardscapes built across Fort Worth and DFW.',
   openGraph: {
     title: 'Custom Pool Gallery | Epic Custom Pools',
     description:

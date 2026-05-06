@@ -11,11 +11,11 @@ const OG_IMAGE =
   'https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1200&q=80';
 
 export const metadata: Metadata = {
-  title: 'Epic Custom Pools | Fort Worth Custom Pool Builder',
+  title: 'Custom Pool Builder Fort Worth TX | Epic Custom Pools',
   description:
-    `Fort Worth's premier custom gunite pool builder and outdoor living contractor. Custom pools, outdoor kitchens, fire pits & hardscapes across ${siteConfig.serviceAreaPhrase}.`,
+    "Fort Worth's premier custom gunite pool builder and outdoor living contractor. Custom pools, outdoor kitchens, fire pits, and hardscapes. Free consultation.",
   openGraph: {
-    title: 'Epic Custom Pools | Fort Worth Custom Pool Builder',
+    title: 'Custom Pool Builder Fort Worth TX | Epic Custom Pools',
     description:
       "Fort Worth's premier custom gunite pool builder. Custom pools, outdoor kitchens, fire pits, and hardscapes across the DFW area.",
     images: [{ url: OG_IMAGE, width: 1200, height: 800, alt: 'Luxury custom pool by Epic Custom Pools' }],
