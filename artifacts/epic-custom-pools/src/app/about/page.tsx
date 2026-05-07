@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const HERO_IMAGE = '/about-pool-v3.jpg';
 
 const ALL_CITIES = [
-  'Fort Worth', 'Weatherford', 'Aledo', 'Possum Kingdom Lake',
+  'Fort Worth', 'Weatherford', 'Aledo', 'Possum Kingdom',
 ];
 
 const VALUES = [

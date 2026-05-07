@@ -57,7 +57,7 @@ const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     src: `${BASE}/photo-1509749837427-ac94a2553d0e${OPT}`,
-    alt: 'Custom pool with travertine deck built by Epic Custom Pools in Possum Kingdom Lake TX',
+    alt: 'Custom pool with travertine deck built by Epic Custom Pools in Possum Kingdom TX',
     category: 'Custom Pools',
   },
   {
@@ -92,7 +92,7 @@ const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     src: `${BASE}/photo-1519167758481-83f550bb49b3${OPT}`,
-    alt: 'Poolside outdoor living space built by Epic Custom Pools in Possum Kingdom Lake TX',
+    alt: 'Poolside outdoor living space built by Epic Custom Pools in Possum Kingdom TX',
     category: 'Outdoor Living',
   },
   {
