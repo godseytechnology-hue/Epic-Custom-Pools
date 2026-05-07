@@ -32,12 +32,12 @@ const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     src: `${BASE}/photo-1566073771259-6a8506099945${OPT}`,
-    alt: 'Aerial view of custom pool built by Epic Custom Pools in Granbury TX',
+    alt: 'Aerial view of custom pool built by Epic Custom Pools in Aledo TX',
     category: 'Custom Pools',
   },
   {
     src: `${BASE}/photo-1578683010236-d716f9a3f461${OPT}`,
-    alt: 'Custom pool with spa built by Epic Custom Pools in Benbrook TX',
+    alt: 'Custom pool with spa built by Epic Custom Pools in Fort Worth TX',
     category: 'Custom Pools',
   },
   {
@@ -72,7 +72,7 @@ const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     src: `${BASE}/photo-1499793983690-e29da59ef1c2${OPT}`,
-    alt: 'Luxury outdoor entertaining area built by Epic Custom Pools in Granbury TX',
+    alt: 'Luxury outdoor entertaining area built by Epic Custom Pools in Weatherford TX',
     category: 'Outdoor Living',
   },
   {
@@ -92,12 +92,12 @@ const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     src: `${BASE}/photo-1519167758481-83f550bb49b3${OPT}`,
-    alt: 'Poolside outdoor living space built by Epic Custom Pools in Granbury TX',
+    alt: 'Poolside outdoor living space built by Epic Custom Pools in Possum Kingdom Lake TX',
     category: 'Outdoor Living',
   },
   {
     src: `${BASE}/photo-1571019614242-c5c5dee9f50b${OPT}`,
-    alt: 'Aerial view of pool and outdoor living space built by Epic Custom Pools in Benbrook TX',
+    alt: 'Aerial view of pool and outdoor living space built by Epic Custom Pools in Aledo TX',
     category: 'Outdoor Living',
   },
   {

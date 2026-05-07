@@ -5,12 +5,8 @@ import siteConfig from '@/config/siteConfig';
 const ALL_CITY_LINKS: { label: string; href: string | null; tier: 'foundation' | 'growth' }[] = [
   { label: 'Fort Worth', href: '/fort-worth-pool-builder', tier: 'foundation' },
   { label: 'Weatherford', href: '/weatherford-pool-builder', tier: 'foundation' },
-  { label: 'Aledo', href: '/aledo-pool-builder', tier: 'growth' },
-  { label: 'Possum Kingdom Lake', href: '/possum-kingdom-pool-builder', tier: 'growth' },
-  { label: 'Granbury', href: null, tier: 'growth' },
-  { label: 'Benbrook', href: null, tier: 'growth' },
-  { label: 'Brock', href: null, tier: 'growth' },
-  { label: 'Stephenville', href: null, tier: 'growth' },
+  { label: 'Aledo', href: '/aledo-pool-builder', tier: 'foundation' },
+  { label: 'Possum Kingdom Lake', href: '/possum-kingdom-pool-builder', tier: 'foundation' },
 ];
 
 export default function Footer() {

@@ -18,9 +18,7 @@ export const metadata: Metadata = {
 const HERO_IMAGE = '/about-pool-v3.jpg';
 
 const ALL_CITIES = [
-  'Fort Worth', 'Weatherford', 'Aledo', 'Granbury',
-  'Benbrook', 'Brock', 'Stephenville',
-  'White Settlement', 'Azle', 'Hudson Oaks', 'Springtown',
+  'Fort Worth', 'Weatherford', 'Aledo', 'Possum Kingdom Lake',
 ];
 
 const VALUES = [
