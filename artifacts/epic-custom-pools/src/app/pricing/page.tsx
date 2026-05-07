@@ -6,18 +6,60 @@ import ServiceJsonLd from '@/components/ServiceJsonLd';
 export const metadata: Metadata = {
   title: 'Pool Pricing Fort Worth TX | Epic Custom Pools',
   description:
-    'Transparent gunite pool and outdoor living pricing for Fort Worth and DFW. Typical cost ranges — no forms, no pressure, no surprises.',
+    'Transparent pool and outdoor living pricing for Fort Worth and DFW. Typical cost ranges — no forms, no pressure, no surprises.',
   openGraph: {
     title: 'Pool Pricing Fort Worth TX | Epic Custom Pools',
     description:
-      'Transparent pricing for Fort Worth and DFW. Gunite pool and outdoor living cost ranges — no forms, no pressure.',
+      'Transparent pricing for Fort Worth and DFW. Pool and outdoor living cost ranges — no forms, no pressure.',
   },
 };
 
-const PRICING_ROWS = [
-  { type: 'Entry Level Gunite', range: '$55,000 – $80,000', notes: 'Simple shapes, standard finishes, basic equipment' },
-  { type: 'Mid-Range Gunite', range: '$80,000 – $130,000', notes: 'Custom shapes, upgraded tile/coping, automation' },
-  { type: 'Luxury Gunite', range: '$130,000 – $250,000+', notes: 'Vanishing edge, grotto, full outdoor living integration' },
+const PRICING_TIERS = [
+  {
+    name: 'Entry Level',
+    range: '$55,000 – $80,000',
+    tagline: 'A clean, well-built pool at a price that makes sense.',
+    features: [
+      'Typical size: 12×24 ft – 14×28 ft',
+      'Rectangular or simple freeform shape',
+      'White plaster finish',
+      'Standard pump and filter package',
+      'Basic LED lighting',
+      'No attached spa or water features',
+      'Minimal decking included',
+    ],
+  },
+  {
+    name: 'Mid-Range',
+    range: '$80,000 – $130,000',
+    tagline: 'Custom shape, upgraded finishes, and real features.',
+    features: [
+      'Typical size: 14×28 ft – 18×36 ft',
+      'Custom freeform or geometric shape',
+      'Quartz or pebble finish',
+      'Variable-speed pump, salt-system ready',
+      'Color LED lighting package',
+      'Tanning ledge or attached spa',
+      '1–2 water features (deck jets or sheer descent)',
+      'Automation-compatible equipment',
+    ],
+    highlight: true,
+  },
+  {
+    name: 'Luxury',
+    range: '$130,000 – $250,000+',
+    tagline: 'A fully realized backyard experience — no compromises.',
+    features: [
+      'Any shape and size — no limitations',
+      'Vanishing or negative edge option',
+      'Glass tile or premium plaster finish',
+      'Full smart automation (phone-controlled)',
+      'Integrated spa and multiple water features',
+      'Grotto, fire/water feature, or custom lighting design',
+      'Premium coping, travertine, or natural stone decking',
+      'Full outdoor living integration available',
+    ],
+  },
 ];
 
 const OUTDOOR_LIVING_ROWS = [
@@ -53,7 +95,7 @@ export default function PricingPage() {
     <>
       <ServiceJsonLd
         serviceName="Pool Pricing & Design Consultation"
-        serviceDescription="Transparent pricing for Fort Worth and DFW. See real cost ranges for custom gunite pools, outdoor kitchens, fire pits, and hardscapes — no forms, no pressure. Free design consultation included."
+        serviceDescription="Transparent pricing for Fort Worth and DFW. See real cost ranges for custom pools, outdoor kitchens, fire pits, and hardscapes — no forms, no pressure. Free design consultation included."
         serviceUrl="/pricing"
       />
 
@@ -86,37 +128,54 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* ─── PRICING TABLE ────────────────────────────────── */}
+      {/* ─── PRICING TIER CARDS ───────────────────────────── */}
       <section className="bg-white py-20 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
-            Gunite Pool Pricing
+            Pool Pricing
           </h2>
           <p className="font-inter text-gray-500 text-center mb-10 max-w-2xl mx-auto">
-            Real ranges based on current gunite pool projects in the DFW area. Your actual price depends on size, features, and site conditions.
+            Real ranges based on current pool projects in the DFW area. Find the tier that fits your vision — your actual price depends on size, features, and site conditions.
           </p>
-          <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
-            <table className="w-full text-sm font-inter">
-              <thead>
-                <tr className="bg-navy text-white">
-                  <th className="text-left px-6 py-4 font-semibold">Gunite Pool</th>
-                  <th className="text-left px-6 py-4 font-semibold">Typical Range</th>
-                  <th className="text-left px-6 py-4 font-semibold hidden md:table-cell">What&apos;s Included</th>
-                </tr>
-              </thead>
-              <tbody>
-                {PRICING_ROWS.map((row, i) => (
-                  <tr key={row.type} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                    <td className="px-6 py-4 text-navy font-semibold">{row.type}</td>
-                    <td className="px-6 py-4 text-gold font-bold text-base">{row.range}</td>
-                    <td className="px-6 py-4 text-gray-500 hidden md:table-cell">{row.notes}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="space-y-6">
+            {PRICING_TIERS.map((tier) => (
+              <div
+                key={tier.name}
+                className={`rounded-2xl border p-6 md:p-8 ${
+                  tier.highlight
+                    ? 'border-gold bg-navy text-white shadow-xl'
+                    : 'border-gray-200 bg-white text-navy shadow-sm'
+                }`}
+              >
+                {tier.highlight && (
+                  <span className="inline-block font-inter text-xs font-bold text-navy bg-gold px-3 py-1 rounded-full mb-4 uppercase tracking-widest">
+                    Most Popular
+                  </span>
+                )}
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
+                  <h3 className={`font-playfair text-2xl font-bold ${tier.highlight ? 'text-white' : 'text-navy'}`}>
+                    {tier.name}
+                  </h3>
+                  <span className={`font-inter text-2xl font-bold ${tier.highlight ? 'text-gold' : 'text-gold'}`}>
+                    {tier.range}
+                  </span>
+                </div>
+                <p className={`font-inter text-sm mb-5 ${tier.highlight ? 'text-white/70' : 'text-gray-500'}`}>
+                  {tier.tagline}
+                </p>
+                <ul className="space-y-2">
+                  {tier.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2.5">
+                      <span className="text-gold mt-0.5 flex-shrink-0" aria-hidden="true">✓</span>
+                      <span className={`font-inter text-sm ${tier.highlight ? 'text-white/85' : 'text-gray-600'}`}>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-          <p className="font-inter text-gray-400 text-sm text-center mt-4">
-            Final pricing depends on size, features, and site conditions. All estimates are provided in writing before any work begins.
+          <p className="font-inter text-gray-400 text-sm text-center mt-6">
+            All estimates are provided in writing before any work begins. No surprises.
           </p>
         </div>
       </section>

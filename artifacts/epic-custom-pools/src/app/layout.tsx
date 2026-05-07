@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.siteName}`,
   },
   description:
-    'Custom gunite pools and outdoor living spaces in Fort Worth and DFW. Free design consultation from an owner-operated local builder.',
+    'Custom pools and outdoor living spaces in Fort Worth and DFW. Free design consultation from an owner-operated local builder.',
   keywords: [
     'pool builder Fort Worth TX',
     'gunite pool Fort Worth',
@@ -49,14 +49,14 @@ export const metadata: Metadata = {
     siteName: siteConfig.siteName,
     title: 'Custom Pool Builder Fort Worth TX | Epic Custom Pools',
     description:
-      'Custom gunite pools and outdoor living spaces in Fort Worth and DFW. Free design consultation from an owner-operated local builder.',
+      'Custom pools and outdoor living spaces in Fort Worth and DFW. Free design consultation from an owner-operated local builder.',
     url: siteConfig.siteUrl,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Custom Pool Builder Fort Worth TX | Epic Custom Pools',
     description:
-      'Custom gunite pools and outdoor living spaces in Fort Worth and DFW. Free design consultation from an owner-operated local builder.',
+      'Custom pools and outdoor living spaces in Fort Worth and DFW. Free design consultation from an owner-operated local builder.',
   },
   robots: {
     index: true,
@@ -112,7 +112,7 @@ export default function RootLayout({
                 '@type': 'City',
                 name: city,
               })),
-              serviceType: ['Gunite Pool Installation', 'Outdoor Kitchen Construction', 'Fire Pit Installation', 'Hardscape Construction', 'Pergola Installation'],
+              serviceType: ['Custom Pool Installation', 'Outdoor Kitchen Construction', 'Fire Pit Installation', 'Hardscape Construction', 'Pergola Installation'],
             }),
           }}
         />

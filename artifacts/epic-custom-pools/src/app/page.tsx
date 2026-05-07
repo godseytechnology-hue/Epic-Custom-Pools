@@ -13,11 +13,11 @@ const OG_IMAGE =
 export const metadata: Metadata = {
   title: 'Custom Pool Builder Fort Worth TX | Epic Custom Pools',
   description:
-    "Fort Worth's premier custom gunite pool builder and outdoor living contractor. Custom pools, outdoor kitchens, fire pits, and hardscapes. Free consultation.",
+    "Fort Worth's premier custom pool builder and outdoor living contractor. Custom pools, outdoor kitchens, fire pits, and hardscapes. Free consultation.",
   openGraph: {
     title: 'Custom Pool Builder Fort Worth TX | Epic Custom Pools',
     description:
-      "Fort Worth's premier custom gunite pool builder. Custom pools, outdoor kitchens, fire pits, and hardscapes across the DFW area.",
+      "Fort Worth's premier custom pool builder. Custom pools, outdoor kitchens, fire pits, and hardscapes across the DFW area.",
     images: [{ url: OG_IMAGE, width: 1200, height: 800, alt: 'Luxury custom pool by Epic Custom Pools' }],
   },
 };
@@ -40,9 +40,9 @@ const services = [
         <path d="M10 32 V38 M38 32 V38" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
-    title: 'Gunite / Concrete Pools',
+    title: 'Custom Inground Pools',
     href: '/gunite-pools',
-    desc: 'Fully custom shapes, depths, and finishes built to your exact vision. Gunite is the gold standard for lasting, one-of-a-kind pools in DFW.',
+    desc: 'Fully custom shapes, depths, and finishes built to your exact vision. Any shape, any size — the only material built to last a lifetime in North Texas soil.',
   },
   {
     icon: (

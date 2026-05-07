@@ -77,7 +77,7 @@ export default function CityPageTemplate({
           { '@type': 'AdministrativeArea', name: `${county} County, TX` },
         ],
         serviceType: [
-          'Gunite Pool Installation',
+          'Custom Pool Installation',
           'Outdoor Living Construction',
           'Custom Pool Design',
         ],
@@ -85,7 +85,7 @@ export default function CityPageTemplate({
       {
         '@type': 'Service',
         name: `Custom Pool Builder in ${cityName}, TX`,
-        description: `Expert custom gunite pool design and outdoor living construction serving ${cityName} and ${county} County, TX.`,
+        description: `Expert custom pool design and outdoor living construction serving ${cityName} and ${county} County, TX.`,
         url: `${siteConfig.siteUrl}/${citySlug}`,
         provider: {
           '@type': 'LocalBusiness',
@@ -205,7 +205,7 @@ export default function CityPageTemplate({
               href="/gunite-pools"
               className="inline-flex items-center justify-center bg-gold text-navy font-inter font-semibold text-sm px-6 py-3 rounded hover:bg-gold-light transition-colors"
             >
-              Gunite Pools →
+              Custom Pools →
             </Link>
             <Link
               href="/outdoor-living"

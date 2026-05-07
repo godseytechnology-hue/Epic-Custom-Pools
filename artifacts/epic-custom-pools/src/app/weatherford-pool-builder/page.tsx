@@ -4,11 +4,11 @@ import CityPageTemplate from '@/components/CityPageTemplate';
 export const metadata: Metadata = {
   title: 'Pool Builder Weatherford TX | Epic Custom Pools',
   description:
-    "Custom pool builder in Weatherford, TX. Gunite pools and outdoor living for Parker County acreage. Acreage builds welcome. Free consultation.",
+    "Custom pool builder in Weatherford, TX. Custom pools and outdoor living for Parker County acreage. Acreage builds welcome. Free consultation.",
   openGraph: {
     title: 'Pool Builder Weatherford TX | Epic Custom Pools',
     description:
-      "Parker County's custom pool builder. Gunite pools and outdoor living for acreage, ranch properties, and growing Weatherford communities.",
+      "Parker County's custom pool builder. Custom pools and outdoor living for acreage, ranch properties, and growing Weatherford communities.",
   },
 };
 
@@ -29,7 +29,7 @@ const FAQS = [
   {
     question: 'How much does a custom pool cost in the Weatherford area?',
     answer:
-      'Custom gunite pools in the Weatherford and Parker County area typically range from $85,000 to $170,000 depending on size, terrain, and features. Larger acreage properties that take advantage of hillside views, vanishing edges, or full outdoor living integration often run $150,000–$250,000+. We provide a detailed, itemized quote after a free on-site consultation — no ballpark estimates, no surprises.',
+      'Custom inground pools in the Weatherford and Parker County area typically range from $85,000 to $170,000 depending on size, terrain, and features. Larger acreage properties that take advantage of hillside views, vanishing edges, or full outdoor living integration often run $150,000–$250,000+. We provide a detailed, itemized quote after a free on-site consultation — no ballpark estimates, no surprises.',
   },
   {
     question: 'What cities and communities near Weatherford do you serve?',
@@ -67,7 +67,7 @@ export default function WeatherfordPoolBuilderPage() {
       localConsiderationsHeading="Parker County Permits, Well Water & Acreage Builds"
       localConsiderations="Building a pool in Parker County involves permitting through multiple jurisdictions depending on your property's location — city, ETJ, or unincorporated county. Properties on well water require additional planning around the pool fill process, chemical balance, and equipment selection. Sloped or terraced lots often call for retaining walls, elevated equipment pads, or custom excavation plans that a contractor unfamiliar with the terrain won't anticipate. We've managed all of these scenarios and factor them into your scope and price from day one — no surprises mid-project."
       poolTypesHeading="Pool Designs for Parker County Properties"
-      poolTypesSection="Larger Weatherford properties open the door to pool designs that simply aren't possible on typical suburban lots. Freeform gunite pools with natural rock features, resort-scale vanishing edges that frame a hillside view, dedicated swim-up bars, and full-length lap pools are all within reach when you have the space. Many Weatherford homeowners also take advantage of their acreage to add outdoor kitchens, fire pits, and covered pergolas — features that transform a pool project into a complete backyard destination. Whatever the design, we size it to the property — not the other way around."
+      poolTypesSection="Larger Weatherford properties open the door to pool designs that simply aren't possible on typical suburban lots. Freeform pools with natural rock features, resort-scale vanishing edges that frame a hillside view, dedicated swim-up bars, and full-length lap pools are all within reach when you have the space. Many Weatherford homeowners also take advantage of their acreage to add outdoor kitchens, fire pits, and covered pergolas — features that transform a pool project into a complete backyard destination. Whatever the design, we size it to the property — not the other way around."
       ownerOperatedParagraph="Weatherford is still the kind of place where your reputation travels fast. Your neighbors know which contractors show up on time, do what they say, and stand behind their work. As an owner-operated business, we've built our reputation in small communities like Parker County by being exactly that contractor — no excuses, no handoffs, no franchise playbook. When you call, you talk to the person running your project. When something needs fixing, it gets fixed. That's the standard we've held since day one, and it's why we keep earning referrals in communities where trust is everything."
       source="weatherford-landing"
       defaultCity="Weatherford"

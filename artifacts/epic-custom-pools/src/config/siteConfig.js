@@ -27,8 +27,6 @@ const siteConfig = {
     { label: 'Outdoor Living', href: '/outdoor-living' },
     { label: 'For Home Builders', href: '/home-builders' },
     { label: 'Pricing & Process', href: '/pricing' },
-    { label: 'Aledo', href: '/aledo-pool-builder' },
-    { label: 'Possum Kingdom Lake', href: '/possum-kingdom-pool-builder' },
   ],
 };
 

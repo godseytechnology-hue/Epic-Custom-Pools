@@ -17,48 +17,48 @@ const OPT = '?w=800&h=600&q=80&auto=format&fit=crop';
 const GALLERY_IMAGES: GalleryImage[] = [
   {
     src: `${BASE}/photo-1613977257365-aaae5a9817ff${OPT}`,
-    alt: 'Custom gunite pool with modern home built by Epic Custom Pools in Fort Worth TX',
-    category: 'Gunite Pools',
+    alt: 'Custom pool with modern home built by Epic Custom Pools in Fort Worth TX',
+    category: 'Custom Pools',
   },
   {
     src: `${BASE}/photo-1512917774080-9991f1c4c750${OPT}`,
-    alt: 'Luxury gunite pool and outdoor area built by Epic Custom Pools in Weatherford TX',
-    category: 'Gunite Pools',
+    alt: 'Luxury pool and outdoor area built by Epic Custom Pools in Weatherford TX',
+    category: 'Custom Pools',
   },
   {
     src: `${BASE}/photo-1575429198097-0414ec08e8cd${OPT}`,
-    alt: 'Custom gunite pool with lounge area built by Epic Custom Pools in Aledo TX',
-    category: 'Gunite Pools',
+    alt: 'Custom pool with lounge area built by Epic Custom Pools in Aledo TX',
+    category: 'Custom Pools',
   },
   {
     src: `${BASE}/photo-1566073771259-6a8506099945${OPT}`,
     alt: 'Aerial view of custom pool built by Epic Custom Pools in Granbury TX',
-    category: 'Gunite Pools',
+    category: 'Custom Pools',
   },
   {
     src: `${BASE}/photo-1578683010236-d716f9a3f461${OPT}`,
-    alt: 'Custom gunite pool with spa built by Epic Custom Pools in Benbrook TX',
-    category: 'Gunite Pools',
+    alt: 'Custom pool with spa built by Epic Custom Pools in Benbrook TX',
+    category: 'Custom Pools',
   },
   {
     src: `${BASE}/photo-1519315901367-f34ff9154487${OPT}`,
-    alt: 'Custom gunite pool with modern design built by Epic Custom Pools in Fort Worth TX',
-    category: 'Gunite Pools',
+    alt: 'Custom pool with modern design built by Epic Custom Pools in Fort Worth TX',
+    category: 'Custom Pools',
   },
   {
     src: `${BASE}/photo-1544551763-46a013bb70d5${OPT}`,
     alt: 'Custom pool with spa built by Epic Custom Pools in Weatherford TX',
-    category: 'Gunite Pools',
+    category: 'Custom Pools',
   },
   {
     src: `${BASE}/photo-1600566753190-17f0baa2a6c3${OPT}`,
-    alt: 'Custom gunite pool with lounge deck built by Epic Custom Pools in Aledo TX',
-    category: 'Gunite Pools',
+    alt: 'Custom pool with lounge deck built by Epic Custom Pools in Aledo TX',
+    category: 'Custom Pools',
   },
   {
     src: `${BASE}/photo-1509749837427-ac94a2553d0e${OPT}`,
-    alt: 'Gunite pool with travertine deck built by Epic Custom Pools in Mineral Wells TX',
-    category: 'Gunite Pools',
+    alt: 'Custom pool with travertine deck built by Epic Custom Pools in Mineral Wells TX',
+    category: 'Custom Pools',
   },
   {
     src: `${BASE}/photo-1736238846962-88ab6d49f5ee${OPT}`,
@@ -107,7 +107,7 @@ const GALLERY_IMAGES: GalleryImage[] = [
   },
 ];
 
-const CATEGORIES = ['All', 'Gunite Pools', 'Outdoor Living'];
+const CATEGORIES = ['All', 'Custom Pools', 'Outdoor Living'];
 
 export default function GalleryClient() {
   const [activeCategory, setActiveCategory] = useState('All');

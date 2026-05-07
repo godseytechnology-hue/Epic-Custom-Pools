@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { trackEvent } from '@/lib/analytics';
 
-const POOL_TYPES = ['Gunite Pool', 'Outdoor Living Space', 'Pool + Outdoor Living', 'Not Sure Yet'];
+const POOL_TYPES = ['Custom Pool', 'Outdoor Living Space', 'Pool + Outdoor Living', 'Not Sure Yet'];
 
 type PricingLeadFormProps = {
   position: 'mid-page' | 'bottom';

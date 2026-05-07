@@ -4,11 +4,11 @@ import CityPageTemplate from '@/components/CityPageTemplate';
 export const metadata: Metadata = {
   title: 'Pool Builder Aledo TX | Epic Custom Pools',
   description:
-    'Custom pool builder serving Aledo, TX. Gunite pools and outdoor living for Parker County acreage and new construction. Free design consultation.',
+    'Custom pool builder serving Aledo, TX. Custom pools and outdoor living for Parker County acreage and new construction. Free design consultation.',
   openGraph: {
     title: 'Pool Builder Aledo TX | Epic Custom Pools',
     description:
-      "Aledo's custom pool builder. Gunite pools and outdoor living spaces for acreage properties and new construction in Parker County.",
+      "Aledo's custom pool builder. Custom pools and outdoor living spaces for acreage properties and new construction in Parker County.",
   },
 };
 
@@ -19,7 +19,7 @@ const FAQS = [
   {
     question: 'Do you build pools in Aledo TX?',
     answer:
-      'Yes. Epic Custom Pools builds custom gunite pools and outdoor living spaces throughout Aledo and Parker County. We\'re familiar with local permitting, acreage lot builds, and new construction timelines in the Aledo ISD area.',
+      'Yes. Epic Custom Pools builds custom inground pools and outdoor living spaces throughout Aledo and Parker County. We\'re familiar with local permitting, acreage lot builds, and new construction timelines in the Aledo ISD area.',
   },
   {
     question: 'How much does a pool cost in Aledo TX?',
@@ -64,7 +64,7 @@ export default function AledoPoolBuilderPage() {
       localConsiderationsHeading="Aledo Permitting, Acreage Lots & New Construction"
       localConsiderations="Building a pool in Aledo and the surrounding Parker County areas involves different permitting paths depending on whether your property is inside Aledo city limits, in the ETJ, or in unincorporated Parker County. Aledo ISD-area new construction often involves tight coordination between your home builder's schedule and pool construction sequencing — we've done this many times and know how to work within those timelines. Properties with well water require a separate planning layer around fill volume and chemical setup. We factor all of this into your scope at the beginning, not as a surprise after the contract is signed."
       poolTypesHeading="Pool Designs for Aledo Properties"
-      poolTypesSection="Aledo properties range from quarter-acre lots in newer subdivisions to sprawling acreage with room for serious ambition. On larger lots we regularly design freeform gunite pools with natural stone features, attached spas, tanning ledges, and vanishing edges that frame the open Parker County sky. Smaller subdivision lots in Walsh Ranch and Annetta South are perfect for well-proportioned custom pools with outdoor kitchen and pergola combinations that make the most of every square foot. Whatever your lot, we design to it — and Aledo acreage makes some of the most impressive finished projects we build."
+      poolTypesSection="Aledo properties range from quarter-acre lots in newer subdivisions to sprawling acreage with room for serious ambition. On larger lots we regularly design freeform pools with natural stone features, attached spas, tanning ledges, and vanishing edges that frame the open Parker County sky. Smaller subdivision lots in Walsh Ranch and Annetta South are perfect for well-proportioned custom pools with outdoor kitchen and pergola combinations that make the most of every square foot. Whatever your lot, we design to it — and Aledo acreage makes some of the most impressive finished projects we build."
       ownerOperatedParagraph="Aledo is the kind of community where word travels fast and reputations are earned over time. New residents ask their neighbors who built their pool before they call anyone else. We've built our reputation in Parker County by doing things the hard way — being honest about timelines, transparent about costs, and personally accountable to every client. As an owner-operated business, the same person who walks your property and designs your pool is the one who shows up during construction and picks up the phone when you call. No handoffs. No franchise playbook. Just a contractor who cares what gets built with their name on it."
       source="aledo-landing"
       defaultCity="Aledo"
