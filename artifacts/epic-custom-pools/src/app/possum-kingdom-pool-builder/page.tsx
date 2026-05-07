@@ -34,7 +34,7 @@ const FAQS = [
   {
     question: 'Do you serve the Graford and Palo Pinto areas?',
     answer:
-      "Yes. We serve the entire Possum Kingdom Lake area including Graford, Palo Pinto, Gordon, and Mineral Wells. Call us or schedule a free consultation to discuss your property.",
+      "Yes. We serve the entire Possum Kingdom Lake area including Graford, Palo Pinto, and Gordon. Call us or schedule a free consultation to discuss your property.",
   },
 ];
 
@@ -58,7 +58,6 @@ export default function PossumKingdomPoolBuilderPage() {
         'Graford',
         'Palo Pinto',
         'Gordon',
-        'Mineral Wells',
       ]}
       localConsiderationsHeading="Palo Pinto County Permitting & Lakefront Site Conditions"
       localConsiderations="Construction at Possum Kingdom Lake involves Palo Pinto County permitting, which differs significantly from permits in urban DFW counties. Lakefront properties may be subject to shoreline setback rules, Texas Commission on Environmental Quality (TCEQ) considerations for work near water, and elevation grading requirements that demand careful excavation planning. Properties without city utilities require planning for water access during construction and pool fill. Rocky terrain common to the Palo Pinto hills can also affect excavation depth and cost. We assess all of these factors during the site visit and give you a scope that reflects the real work involved — before you sign anything."

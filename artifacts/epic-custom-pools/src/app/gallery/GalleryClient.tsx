@@ -57,7 +57,7 @@ const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     src: `${BASE}/photo-1509749837427-ac94a2553d0e${OPT}`,
-    alt: 'Custom pool with travertine deck built by Epic Custom Pools in Mineral Wells TX',
+    alt: 'Custom pool with travertine deck built by Epic Custom Pools in Possum Kingdom Lake TX',
     category: 'Custom Pools',
   },
   {

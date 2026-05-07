@@ -34,7 +34,7 @@ const FAQS = [
   {
     question: 'What cities and communities near Weatherford do you serve?',
     answer:
-      'We serve Weatherford and the surrounding Parker County area, including Willow Park, Hudson Oaks, Brock, Millsap, Springtown, Mineral Wells, and Aledo. We also work across the Tarrant County line for clients in far west Fort Worth. If you are in Parker County or nearby, we are likely already working in your area — reach out for a free consultation.',
+      'We serve Weatherford and the surrounding Parker County area, including Willow Park, Hudson Oaks, Brock, Millsap, Springtown, and Aledo. We also work across the Tarrant County line for clients in far west Fort Worth. If you are in Parker County or nearby, we are likely already working in your area — reach out for a free consultation.',
   },
 ];
 
@@ -61,7 +61,6 @@ export default function WeatherfordPoolBuilderPage() {
         'Millsap',
         'Aledo',
         'Springtown',
-        'Mineral Wells',
         'Parker County',
       ]}
       localConsiderationsHeading="Parker County Permits, Well Water & Acreage Builds"

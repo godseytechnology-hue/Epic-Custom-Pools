@@ -8,7 +8,6 @@ const ALL_CITY_LINKS: { label: string; href: string | null; tier: 'foundation' |
   { label: 'Aledo', href: '/aledo-pool-builder', tier: 'growth' },
   { label: 'Possum Kingdom Lake', href: '/possum-kingdom-pool-builder', tier: 'growth' },
   { label: 'Granbury', href: null, tier: 'growth' },
-  { label: 'Mineral Wells', href: null, tier: 'growth' },
   { label: 'Benbrook', href: null, tier: 'growth' },
   { label: 'Brock', href: null, tier: 'growth' },
   { label: 'Stephenville', href: null, tier: 'growth' },

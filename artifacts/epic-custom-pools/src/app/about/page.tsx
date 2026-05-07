@@ -19,7 +19,7 @@ const HERO_IMAGE = '/about-pool-v3.jpg';
 
 const ALL_CITIES = [
   'Fort Worth', 'Weatherford', 'Aledo', 'Granbury',
-  'Mineral Wells', 'Benbrook', 'Brock', 'Stephenville',
+  'Benbrook', 'Brock', 'Stephenville',
   'White Settlement', 'Azle', 'Hudson Oaks', 'Springtown',
 ];
 
