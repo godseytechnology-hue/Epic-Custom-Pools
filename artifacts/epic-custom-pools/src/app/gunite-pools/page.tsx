@@ -37,7 +37,7 @@ const guniteExtraContent = (
 );
 
 export const metadata: Metadata = {
-  title: 'Gunite Pools Fort Worth TX | Custom Concrete Pool Builder',
+  title: 'Custom Pool Builder Fort Worth TX | Concrete Pool Specialists',
   description:
     'Custom gunite pool builder in Fort Worth and DFW. Any shape, any size — the only material built to last a lifetime in Texas soil. Free consultation.',
   openGraph: {
@@ -66,18 +66,18 @@ export default function GunitePoolsPage() {
         source="gunite-page"
       sections={[
         {
+          heading: 'Why Fort Worth Families Choose Gunite',
+          body: [
+            'North Texas soil conditions — including the expansive clay common throughout the DFW area — demand a construction method that can handle ground movement without cracking or shifting. Gunite\'s structural strength and the ability to engineer the thickness and steel reinforcement to match your specific lot give it a significant advantage in our region.',
+            'The DFW climate also means your pool will see serious use from April through October. Gunite can accommodate the features that active families want: tanning ledges, swim-up bars, water features, LED lighting, and automation systems that make pool ownership effortless.',
+          ],
+        },
+        {
           heading: 'What Is a Gunite Pool?',
           body: [
             'Gunite pools — also called concrete or shotcrete pools — are the gold standard for custom residential swimming pools. Unlike prefabricated fiberglass shells, gunite is sprayed directly onto a steel rebar framework, allowing our team to build any shape, depth, or size you can envision.',
             'The result is a pool that is uniquely yours. Freeform lagoons, geometric lap pools, vanishing edges, beach entries, grottos, attached spas — all are possible with gunite construction. There are no factory molds and no limitations.',
             'With proper care, a well-built gunite pool will last 50 years or more. It\'s an investment in your property and your family\'s quality of life that pays dividends every summer for generations.',
-          ],
-        },
-        {
-          heading: 'Why Fort Worth Families Choose Gunite',
-          body: [
-            'North Texas soil conditions — including the expansive clay common throughout the DFW area — demand a construction method that can handle ground movement without cracking or shifting. Gunite\'s structural strength and the ability to engineer the thickness and steel reinforcement to match your specific lot give it a significant advantage in our region.',
-            'The DFW climate also means your pool will see serious use from April through October. Gunite can accommodate the features that active families want: tanning ledges, swim-up bars, water features, LED lighting, and automation systems that make pool ownership effortless.',
           ],
         },
         {
