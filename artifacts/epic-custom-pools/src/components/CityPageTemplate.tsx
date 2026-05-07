@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Script from 'next/script';
 import LeadForm from '@/components/LeadForm';
 import FAQSchema, { FAQItem } from '@/components/FAQSchema';
 import siteConfig from '@/config/siteConfig';
@@ -103,10 +102,8 @@ export default function CityPageTemplate({
 
   return (
     <>
-      <Script
-        id={`city-schema-${citySlug}`}
+      <script
         type="application/ld+json"
-        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 

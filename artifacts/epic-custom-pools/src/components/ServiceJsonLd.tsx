@@ -1,4 +1,3 @@
-import Script from 'next/script';
 import siteConfig from '@/config/siteConfig';
 
 type ServiceJsonLdProps = {
@@ -52,13 +51,9 @@ export default function ServiceJsonLd({ serviceName, serviceDescription, service
     ],
   };
 
-  const id = `service-schema${serviceUrl.replace(/\//g, '-')}`;
-
   return (
-    <Script
-      id={id}
+    <script
       type="application/ld+json"
-      strategy="beforeInteractive"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
   );
