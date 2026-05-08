@@ -18,7 +18,6 @@ const siteConfig = {
   navLinks: [
     { label: 'Home', href: '/' },
     { label: 'Pricing', href: '/pricing' },
-    { label: 'Gallery', href: '/gallery' },
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/consultation' },
   ],

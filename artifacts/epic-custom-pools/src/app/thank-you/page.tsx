@@ -48,10 +48,10 @@ export default function ThankYouPage() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/gallery"
+              href="/about"
               className="font-inter text-sm font-medium text-white/70 hover:text-white border border-white/20 hover:border-white/40 px-6 py-2.5 rounded transition-colors"
             >
-              Browse Our Gallery
+              Our Story
             </Link>
             <Link
               href="/pricing"
