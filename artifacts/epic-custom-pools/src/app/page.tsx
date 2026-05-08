@@ -42,7 +42,7 @@ const services = [
       </svg>
     ),
     title: 'Custom Inground Pools',
-    href: '/gunite-pools',
+    href: '/custom-pools',
     desc: 'Fully custom shapes, depths, and finishes built to your exact vision. Any shape, any size — the only material built to last a lifetime in North Texas soil.',
   },
   {

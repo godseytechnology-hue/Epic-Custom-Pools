@@ -109,7 +109,7 @@ export default function PricingPage() {
             Honest Pricing. No Surprises.
           </h1>
           <p className="font-inter text-white/75 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-10">
-            We publish our pricing because we&apos;re confident in our value — and because you deserve to know what you&apos;re getting into before you ever pick up the phone.
+            We publish our pricing because we&apos;re confident in our value, and because you deserve to know what you&apos;re getting into before you ever pick up the phone.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

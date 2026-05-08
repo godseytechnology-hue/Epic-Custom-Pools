@@ -199,7 +199,7 @@ export default function CityPageTemplate({
           <p className="font-inter text-white/75 text-lg leading-relaxed">{poolTypesSection}</p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <Link
-              href="/gunite-pools"
+              href="/custom-pools"
               className="inline-flex items-center justify-center bg-gold text-navy font-inter font-semibold text-sm px-6 py-3 rounded hover:bg-gold-light transition-colors"
             >
               Custom Pools →

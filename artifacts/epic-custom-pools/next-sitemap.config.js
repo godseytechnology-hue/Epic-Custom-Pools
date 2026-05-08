@@ -9,7 +9,7 @@ module.exports = {
   transform: async (config, path) => {
     const priorities = {
       '/': 1.0,
-      '/gunite-pools': 0.9,
+      '/custom-pools': 0.9,
       '/fiberglass-pools': 0.9,
       '/swim-spas': 0.9,
       '/pricing': 0.9,

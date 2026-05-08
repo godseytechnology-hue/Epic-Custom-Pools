@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   description:
     'Custom gunite pool builder in Fort Worth and DFW. Any shape, any size — the only material built to last a lifetime in Texas soil. Free consultation.',
   openGraph: {
-    title: 'Custom Gunite Pool Builder Fort Worth TX | Epic Custom Pools',
+    title: 'Custom Pool Builder Fort Worth TX | Epic Custom Pools',
     description:
       'Custom gunite pools across Fort Worth and DFW. Any shape, any size — no cookie-cutter designs. Your backyard, your vision.',
   },
@@ -56,12 +56,12 @@ export default function GunitePoolsPage() {
       <ServiceJsonLd
         serviceName="Gunite Pool Installation"
         serviceDescription={`Custom gunite (concrete) swimming pool design and construction serving ${siteConfig.serviceAreaPhrase}`}
-        serviceUrl="/gunite-pools"
+        serviceUrl="/custom-pools"
       />
       <ServicePageTemplate
         heroImage={HERO_IMAGE}
         heroImageAlt="gunite pool builder Fort Worth TX"
-        heroHeadline="Fully Custom Gunite Pools — Built to Last a Lifetime"
+        heroHeadline="Fully Custom Pools — Built to Last a Lifetime"
         heroSubheadline="Sculpted from reinforced concrete to any shape, depth, and finish you can imagine. If you can dream it, we can build it."
         source="gunite-page"
       sections={[

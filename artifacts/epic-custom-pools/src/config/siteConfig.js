@@ -22,7 +22,7 @@ const siteConfig = {
     { label: 'Contact', href: '/consultation' },
   ],
   services: [
-    { label: 'Custom Pools', href: '/gunite-pools' },
+    { label: 'Custom Pools', href: '/custom-pools' },
     { label: 'Outdoor Living', href: '/outdoor-living' },
     { label: 'For Home Builders', href: '/home-builders' },
     { label: 'Pricing & Process', href: '/pricing' },

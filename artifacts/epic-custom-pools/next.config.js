@@ -11,8 +11,9 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      { source: '/fiberglass-pools', destination: '/gunite-pools', permanent: true },
-      { source: '/swim-spas', destination: '/gunite-pools', permanent: true },
+      { source: '/gunite-pools', destination: '/custom-pools', permanent: true },
+      { source: '/fiberglass-pools', destination: '/custom-pools', permanent: true },
+      { source: '/swim-spas', destination: '/custom-pools', permanent: true },
     ];
   },
 };

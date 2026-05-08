@@ -7,7 +7,7 @@ const NOW = new Date().toISOString();
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [
     { url: '/', priority: 1.0 },
-    { url: '/gunite-pools', priority: 0.9 },
+    { url: '/custom-pools', priority: 0.9 },
     { url: '/outdoor-living', priority: 0.9 },
     { url: '/pricing', priority: 0.9 },
     { url: '/consultation', priority: 0.9 },
