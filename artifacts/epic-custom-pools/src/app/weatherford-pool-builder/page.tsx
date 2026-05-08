@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1920&q=80';
+  'https://images.unsplash.com/photo-1711114377419-09b0cd2d786b?auto=format&fit=crop&w=1920&q=80';
 
 const FAQS = [
   {

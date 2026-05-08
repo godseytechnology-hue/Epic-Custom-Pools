@@ -48,7 +48,7 @@ export const metadata: Metadata = {
 };
 
 const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80';
+  'https://images.unsplash.com/photo-1603077864615-538e955d1ad1?auto=format&fit=crop&w=1920&q=80';
 
 export default function GunitePoolsPage() {
   return (

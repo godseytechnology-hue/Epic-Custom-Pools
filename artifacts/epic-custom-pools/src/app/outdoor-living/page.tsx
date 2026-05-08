@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80';
+  'https://images.unsplash.com/photo-1657383543451-e47d1589195d?auto=format&fit=crop&w=1920&q=80';
 
 const COMBINATIONS = [
   {
