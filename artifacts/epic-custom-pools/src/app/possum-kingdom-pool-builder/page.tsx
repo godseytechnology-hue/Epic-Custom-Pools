@@ -17,11 +17,6 @@ const HERO_IMAGE =
 
 const FAQS = [
   {
-    question: 'Do you build pools at Possum Kingdom?',
-    answer:
-      'Yes. Epic Custom Pools designs and installs custom pools for lakefront homes, vacation properties, and second homes at Possum Kingdom and throughout Palo Pinto County.',
-  },
-  {
     question: 'What makes building a pool at Possum Kingdom different?',
     answer:
       "Lakefront properties often have unique site conditions — sloped terrain, shoreline proximity rules, and Palo Pinto County permitting requirements that differ from city builds. We've worked with these constraints and know how to design pools that complement the lake setting while meeting local regulations.",
@@ -46,11 +41,11 @@ export default function PossumKingdomPoolBuilderPage() {
       heroImage={HERO_IMAGE}
       heroImageAlt="Custom pool builder serving Possum Kingdom and Palo Pinto County Texas"
       headline="Possum Kingdom's Custom Pool Builder"
-      subheadline="Possum Kingdom is a high-value, underserved market. Second-home and vacation property owners here want pools that match the setting — and there's virtually no competition online for this market."
+      subheadline="Possum Kingdom is where Texas families come to exhale. The water, the bluffs, the open sky — a pool here isn't a luxury add-on. It's the centerpiece of every summer your family will talk about for years."
       openingParagraphs={[
         "Possum Kingdom is one of Texas's most striking waterfront destinations — deep blue water, dramatic limestone bluffs, and a buyer profile unlike anything you'll find in a suburban DFW neighborhood. The people who own property here aren't looking for a cookie-cutter pool. They're designing a second home or vacation retreat that should feel as impressive as the lake it overlooks.",
         "Building at Possum Kingdom comes with its own set of considerations. Palo Pinto County permitting is different from Tarrant or Parker County. Lakefront lots often have elevation changes, shoreline setback requirements, and site access challenges that require a contractor with real rural and semi-rural build experience. We've worked in these conditions and know how to deliver a finished product that meets regulations without compromising the design.",
-        "There is virtually no contractor in this market with a dedicated presence targeting Possum Kingdom. That's an opportunity for property owners who want to work with someone who takes their project seriously — and it's an opportunity we intend to fill with the same owner-operated quality we bring to every build.",
+        "A Possum Kingdom property is not like a suburban backyard project — and it shouldn't be treated like one. When you build here, you're investing in the place your family will return to summer after summer. That deserves an owner who shows up, understands the site, and builds something worthy of what this place means to you.",
       ]}
       neighborhoodLabel="Areas We Serve at Possum Kingdom"
       neighborhoods={[
