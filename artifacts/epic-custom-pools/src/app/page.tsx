@@ -6,7 +6,7 @@ import LeadForm from '@/components/LeadForm';
 import TrackingLink from '@/components/TrackingLink';
 
 const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1920&q=80';
+  'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=1920&q=80';
 
 const OG_IMAGE =
   'https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1200&q=80';
