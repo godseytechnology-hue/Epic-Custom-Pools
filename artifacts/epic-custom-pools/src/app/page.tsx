@@ -66,7 +66,7 @@ const whyItems = [
   {
     icon: '📍',
     title: "DFW's Local Expert",
-    desc: 'Years of hands-on pool construction across Fort Worth and surrounding communities. We know local soil, permits, and neighborhoods.',
+    desc: 'Deep knowledge of Fort Worth\'s soil, permits, and neighborhoods. We build here because we know here.',
   },
 ];
 

@@ -24,7 +24,7 @@ const FAQS = [
   {
     question: 'Can you build a pool in HOA communities like Walsh Ranch or Ventana?',
     answer:
-      "Yes — and we have done it many times. Master-planned communities like Walsh Ranch and Ventana require design pre-approval from their architectural review boards before any permit can be filed. We prepare and submit the full ARB package on your behalf, including drawings, material samples, and equipment specs, and coordinate directly with the HOA so you don't have to navigate that process yourself.",
+      "Yes. Master-planned communities like Walsh Ranch and Ventana require design pre-approval from their architectural review boards before any permit can be filed. We prepare and submit the full ARB package on your behalf, including drawings, material samples, and equipment specs, and coordinate directly with the HOA so you don't have to navigate that process yourself.",
   },
   {
     question: 'How does the Tarrant County permitting process work for a pool?',
@@ -68,7 +68,7 @@ export default function FortWorthPoolBuilderPage() {
         'Tarrant County',
       ]}
       localConsiderationsHeading="Tarrant County Permits & HOA Requirements"
-      localConsiderations="Building a pool in Fort Worth and Tarrant County comes with specific permitting requirements that vary by municipality and HOA. Some west-side communities — particularly master-planned developments like Walsh Ranch and Ventana — have architectural review boards that require design pre-approval before any permit can be filed. We've worked through these processes dozens of times and handle every submission on your behalf. You don't need to navigate the permit office or decode the HOA design guidelines — we do that work so you can focus on choosing your tile and finish."
+      localConsiderations="Building a pool in Fort Worth and Tarrant County comes with specific permitting requirements that vary by municipality and HOA. Some west-side communities — particularly master-planned developments like Walsh Ranch and Ventana — have architectural review boards that require design pre-approval before any permit can be filed. We handle every submission on your behalf. You don't need to navigate the permit office or decode the HOA design guidelines — we do that work so you can focus on choosing your tile and finish."
       poolTypesHeading="Pool Types for Fort Worth Properties"
       poolTypesSection="Most Fort Worth lots — from Ridglea to Benbrook — suit a mid-size custom pool with room for a spa, tanning ledge, or water feature. Homes on larger west-side acreage have even more opportunity: vanishing edges, full outdoor living integration, and resort-scale designs that take full advantage of the landscape. Many Fort Worth families also add outdoor kitchens, fire pits, and pergolas to complete the backyard — we design the pool and outdoor living spaces together so everything flows as one finished project."
       ownerOperatedParagraph="You won't be handed off to a project manager you've never met or a crew that changes week to week. Epic Custom Pools is an owner-operated business — the same person who gives you your consultation is the same person who shows up at your site, knows your permit status, and answers your calls. In a market full of franchises and large-scale operations, that personal accountability is increasingly rare. It's also the reason our clients in Westover Hills, Walsh Ranch, and Aledo refer us to their neighbors without hesitation."

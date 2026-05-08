@@ -7,11 +7,11 @@ import siteConfig from '@/config/siteConfig';
 export const metadata: Metadata = {
   title: 'Outdoor Living Fort Worth TX | Epic Custom Pools',
   description:
-    'Custom outdoor kitchens, fire pits, pergolas, and hardscapes in Fort Worth and DFW. Complete backyard transformations. Free consultation.',
+    'Custom outdoor kitchens, fire pits, pergolas, and hardscapes in Fort Worth and DFW. Free consultation.',
   openGraph: {
     title: 'Outdoor Living Fort Worth TX | Epic Custom Pools',
     description:
-      'Outdoor kitchens, fire pits, pergolas, and hardscapes — complete backyard transformations in Fort Worth and DFW.',
+      'Outdoor kitchens, fire pits, pergolas, and hardscapes in Fort Worth and DFW. Your backyard, designed as one.',
   },
 };
 
@@ -28,11 +28,6 @@ const COMBINATIONS = [
     title: 'Pool + Pergola + Hardscape',
     desc: 'Shade, structure, and beautiful paving that ties the whole yard together. Perfect for families who want a polished, resort-style feel without the complexity.',
     tags: ['Pool', 'Pergola', 'Pavers'],
-  },
-  {
-    title: 'Complete Backyard Transformation',
-    desc: 'Pool, outdoor kitchen, fire feature, pergola, hardscape, and lighting — designed as one cohesive project from the start. Built together, finished together.',
-    tags: ['Everything', 'One Build', 'Best Value'],
   },
 ];
 

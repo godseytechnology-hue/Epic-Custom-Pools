@@ -29,7 +29,7 @@ const FAQS = [
   {
     question: 'Do you work on acreage properties near Aledo?',
     answer:
-      "Yes. Many of our Aledo builds are on larger acreage lots where terrain, well water, and county permitting add complexity. We've navigated Parker County's permitting process many times and factor all of this into your scope from day one.",
+      "Yes. Aledo properties on larger acreage lots often involve terrain, well water, and county permitting that adds complexity. We know Parker County's permitting process and factor all of this into your scope from day one.",
   },
   {
     question: 'What cities near Aledo do you serve?',
@@ -62,10 +62,10 @@ export default function AledoPoolBuilderPage() {
         'Parker County',
       ]}
       localConsiderationsHeading="Aledo Permitting, Acreage Lots & New Construction"
-      localConsiderations="Building a pool in Aledo and the surrounding Parker County areas involves different permitting paths depending on whether your property is inside Aledo city limits, in the ETJ, or in unincorporated Parker County. Aledo ISD-area new construction often involves tight coordination between your home builder's schedule and pool construction sequencing — we've done this many times and know how to work within those timelines. Properties with well water require a separate planning layer around fill volume and chemical setup. We factor all of this into your scope at the beginning, not as a surprise after the contract is signed."
+      localConsiderations="Building a pool in Aledo and the surrounding Parker County areas involves different permitting paths depending on whether your property is inside Aledo city limits, in the ETJ, or in unincorporated Parker County. Aledo ISD-area new construction often involves tight coordination between your home builder's schedule and pool construction sequencing — we know how to work within those timelines. Properties with well water require a separate planning layer around fill volume and chemical setup. We factor all of this into your scope at the beginning, not as a surprise after the contract is signed."
       poolTypesHeading="Pool Designs for Aledo Properties"
       poolTypesSection="Aledo properties range from quarter-acre lots in newer subdivisions to sprawling acreage with room for serious ambition. On larger lots we regularly design freeform pools with natural stone features, attached spas, tanning ledges, and vanishing edges that frame the open Parker County sky. Smaller subdivision lots in Walsh Ranch and Annetta South are perfect for well-proportioned custom pools with outdoor kitchen and pergola combinations that make the most of every square foot. Whatever your lot, we design to it — and Aledo acreage makes some of the most impressive finished projects we build."
-      ownerOperatedParagraph="Aledo is the kind of community where word travels fast and reputations are earned over time. New residents ask their neighbors who built their pool before they call anyone else. We've built our reputation in Parker County by doing things the hard way — being honest about timelines, transparent about costs, and personally accountable to every client. As an owner-operated business, the same person who walks your property and designs your pool is the one who shows up during construction and picks up the phone when you call. No handoffs. No franchise playbook. Just a contractor who cares what gets built with their name on it."
+      ownerOperatedParagraph="Aledo is the kind of community where word travels fast and reputations are earned over time. New residents ask their neighbors who built their pool before they call anyone else. We build our reputation by doing things the right way — being honest about timelines, transparent about costs, and personally accountable to every client. As an owner-operated business, the same person who walks your property and designs your pool is the one who shows up during construction and picks up the phone when you call. No handoffs. No franchise playbook. Just a contractor who cares what gets built with their name on it."
       source="aledo-landing"
       defaultCity="Aledo"
       citySlug="aledo-pool-builder"
