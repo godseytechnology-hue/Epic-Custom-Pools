@@ -45,22 +45,6 @@ const services = [
     href: '/custom-pools',
     desc: 'Fully custom shapes, depths, and finishes built to your exact vision. Any shape, any size — the only material built to last a lifetime in North Texas soil.',
   },
-  {
-    icon: (
-      <svg viewBox="0 0 48 48" fill="none" className="w-10 h-10" aria-hidden="true">
-        <rect x="6" y="28" width="36" height="8" rx="2" stroke="currentColor" strokeWidth="2" fill="none" />
-        <path d="M14 28 V20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        <path d="M34 28 V20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        <rect x="10" y="14" width="28" height="8" rx="1" stroke="currentColor" strokeWidth="2" fill="none" />
-        <circle cx="24" cy="10" r="3" stroke="currentColor" strokeWidth="2" fill="none" />
-        <path d="M21 10 Q24 6 27 10" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-        <path d="M8 36 Q12 33 16 36 Q20 39 24 36 Q28 33 32 36 Q36 39 40 36" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.4" />
-      </svg>
-    ),
-    title: 'Outdoor Living Spaces',
-    href: '/outdoor-living',
-    desc: 'Outdoor kitchens, fire pits, pergolas, hardscapes, and entertainment areas — the complete backyard transformation around your pool.',
-  },
 ];
 
 const whyItems = [

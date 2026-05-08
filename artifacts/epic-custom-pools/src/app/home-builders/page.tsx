@@ -81,7 +81,7 @@ export default function HomeBuildersPage() {
             For Home Builders &amp; Developers
           </p>
           <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6 max-w-3xl">
-            A Pool Partner Your Buyers Will Love — And Your Schedule Won&apos;t Fear
+            A Pool Partner Your Buyers Will Love, and Your Schedule Won&apos;t Fear
           </h1>
           <p className="font-inter text-white/75 text-lg md:text-xl leading-relaxed max-w-2xl mb-10">
             Epic Custom Pools works with home builders and developers across {siteConfig.serviceAreaPhrase}. We deliver finished pools on schedule, handle every permit, and give your buyers something to brag about.
