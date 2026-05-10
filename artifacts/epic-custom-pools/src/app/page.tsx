@@ -1,12 +1,9 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import siteConfig from '@/config/siteConfig';
 import LeadForm from '@/components/LeadForm';
 import TrackingLink from '@/components/TrackingLink';
-
-const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=1920&q=80';
+import HeroVideoCarousel from '@/components/HeroVideoCarousel';
 
 const OG_IMAGE =
   'https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1200&q=80';
@@ -91,14 +88,7 @@ export default function HomePage() {
     <>
       {/* ─── 1. HERO ─────────────────────────────────────────── */}
       <section className="relative min-h-[88vh] flex items-center overflow-hidden">
-        <Image
-          src={HERO_IMAGE}
-          alt="Luxury custom swimming pool in a Fort Worth backyard"
-          fill
-          className="object-cover object-center"
-          priority
-          sizes="100vw"
-        />
+        <HeroVideoCarousel />
         <div className="absolute inset-0 bg-navy/70" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-12 w-full py-20">
