@@ -88,7 +88,7 @@ export default function HomePage() {
     <>
       {/* ─── 1. HERO ─────────────────────────────────────────── */}
       <section className="relative min-h-[88vh] flex items-center overflow-hidden">
-        <HeroVideoCarousel />
+        <HeroVideoCarousel className="absolute inset-0 w-full h-full" />
         <div className="absolute inset-0 bg-navy/70" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-12 w-full py-20">

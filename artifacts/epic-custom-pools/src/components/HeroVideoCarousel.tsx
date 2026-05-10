@@ -27,7 +27,11 @@ const POSTER =
 const INTERVAL_MS = 9000;
 const FADE_MS = 1200;
 
-export default function HeroVideoCarousel() {
+interface Props {
+  className?: string;
+}
+
+export default function HeroVideoCarousel({ className }: Props) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [failed, setFailed] = useState<Set<number>>(new Set());
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
@@ -76,14 +80,14 @@ export default function HeroVideoCarousel() {
   };
 
   return (
-    <div className="absolute inset-0 w-full h-full">
+    <div className={className ?? 'absolute inset-0 w-full h-full'}>
       {VIDEOS.map((video, i) => (
         <video
           key={video.id}
           ref={(el) => { videoRefs.current[i] = el; }}
           src={video.src}
           poster={POSTER}
-          autoPlay={i === 0}
+          autoPlay
           muted
           playsInline
           loop
