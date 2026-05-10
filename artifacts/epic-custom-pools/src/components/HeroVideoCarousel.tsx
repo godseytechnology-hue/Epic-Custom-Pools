@@ -8,12 +8,12 @@ const VIDEOS = [
     id: '12525959',
   },
   {
-    src: 'https://videos.pexels.com/video-files/7578543/uhd_30fps.mp4',
-    id: '7578543',
+    src: 'https://videos.pexels.com/video-files/35638521/15103586_2560_1440_60fps.mp4',
+    id: '35638521',
   },
   {
-    src: 'https://videos.pexels.com/video-files/7578555/7578555-uhd_2560_1440_30fps.mp4',
-    id: '7578555',
+    src: 'https://videos.pexels.com/video-files/15607364/15607364-uhd_2560_1440_24fps.mp4',
+    id: '15607364',
   },
   {
     src: 'https://videos.pexels.com/video-files/17045602/17045602-hd_1920_1080_50fps.mp4',
