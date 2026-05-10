@@ -4,20 +4,20 @@ import { useEffect, useRef, useState } from 'react';
 
 const VIDEOS = [
   {
-    src: 'https://videos.pexels.com/video-files/12525959/12525959-uhd_2560_1440_60fps.mp4',
-    id: '12525959',
+    src: 'https://videos.pexels.com/video-files/17045602/17045602-hd_1920_1080_50fps.mp4',
+    id: '17045602',
   },
   {
-    src: 'https://videos.pexels.com/video-files/35638521/15103586_2560_1440_60fps.mp4',
-    id: '35638521',
+    src: 'https://videos.pexels.com/video-files/12525959/12525959-uhd_2560_1440_60fps.mp4',
+    id: '12525959',
   },
   {
     src: 'https://videos.pexels.com/video-files/15607364/15607364-uhd_2560_1440_24fps.mp4',
     id: '15607364',
   },
   {
-    src: 'https://videos.pexels.com/video-files/17045602/17045602-hd_1920_1080_50fps.mp4',
-    id: '17045602',
+    src: 'https://videos.pexels.com/video-files/35638521/15103586_2560_1440_60fps.mp4',
+    id: '35638521',
   },
 ];
 
