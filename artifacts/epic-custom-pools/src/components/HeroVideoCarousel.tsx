@@ -48,11 +48,15 @@ export default function HeroVideoCarousel({ className }: Props) {
   }, [failed]);
 
   useEffect(() => {
-    const video = videoRefs.current[activeIndex];
-    if (video) {
-      video.currentTime = 0;
-      video.play().catch(() => {});
-    }
+    videoRefs.current.forEach((video, i) => {
+      if (!video) return;
+      if (i === activeIndex) {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
   }, [activeIndex]);
 
   const handleError = (index: number) => {
@@ -83,7 +87,6 @@ export default function HeroVideoCarousel({ className }: Props) {
           ref={(el) => { videoRefs.current[i] = el; }}
           src={video.src}
           poster={POSTER}
-          autoPlay
           muted
           playsInline
           loop
