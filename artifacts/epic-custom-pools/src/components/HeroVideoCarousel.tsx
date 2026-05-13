@@ -12,8 +12,8 @@ const VIDEOS = [
     id: '12525959',
   },
   {
-    src: 'https://videos.pexels.com/video-files/36065030/15294715_1080_1920_50fps.mp4',
-    id: '36065030',
+    src: 'https://videos.pexels.com/video-files/6528623/6528623-uhd_2560_1440_30fps.mp4',
+    id: '6528623',
   },
 ];
 
