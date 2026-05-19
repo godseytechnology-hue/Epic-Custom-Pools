@@ -51,12 +51,21 @@ export const metadata: Metadata = {
     description:
       'Custom pools and outdoor living spaces in Fort Worth and DFW. Free design consultation from an owner-operated local builder.',
     url: siteConfig.siteUrl,
+    images: [
+      {
+        url: '/opengraph.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Custom pool builder Fort Worth TX — Epic Custom Pools',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Custom Pool Builder Fort Worth TX | Epic Custom Pools',
     description:
       'Custom pools and outdoor living spaces in Fort Worth and DFW. Free design consultation from an owner-operated local builder.',
+    images: ['/opengraph.jpg'],
   },
   robots: {
     index: true,
