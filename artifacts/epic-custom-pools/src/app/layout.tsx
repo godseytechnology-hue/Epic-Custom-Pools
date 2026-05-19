@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.siteName}`,
   },
   description:
-    'Custom pools and outdoor living spaces in Fort Worth and DFW. Free design consultation from an owner-operated local builder.',
+    "Fort Worth's owner-operated custom pool builder. Custom pools, outdoor kitchens & living spaces designed for DFW families. Get a free design consultation and start making epic memories in your backyard.",
   keywords: [
     'pool builder Fort Worth TX',
     'gunite pool Fort Worth',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.siteName,
     title: 'Custom Pool Builder Fort Worth TX | Epic Custom Pools',
     description:
-      'Custom pools and outdoor living spaces in Fort Worth and DFW. Free design consultation from an owner-operated local builder.',
+      "Fort Worth's owner-operated custom pool builder. Custom pools, outdoor kitchens & living spaces designed for DFW families. Get a free design consultation and start making epic memories in your backyard.",
     url: siteConfig.siteUrl,
     images: [
       {
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Custom Pool Builder Fort Worth TX | Epic Custom Pools',
     description:
-      'Custom pools and outdoor living spaces in Fort Worth and DFW. Free design consultation from an owner-operated local builder.',
+      "Fort Worth's owner-operated custom pool builder. Custom pools, outdoor kitchens & living spaces designed for DFW families. Get a free design consultation and start making epic memories in your backyard.",
     images: ['/opengraph.jpg'],
   },
   robots: {
