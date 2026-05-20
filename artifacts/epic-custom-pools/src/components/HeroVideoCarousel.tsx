@@ -59,6 +59,13 @@ export default function HeroVideoCarousel({ className }: Props) {
     });
   }, [activeIndex]);
 
+  const handleCanPlay = (index: number) => {
+    if (index === activeIndex) {
+      const video = videoRefs.current[index];
+      if (video) video.play().catch(() => {});
+    }
+  };
+
   const handleError = (index: number) => {
     setFailed((prev) => {
       const next = new Set(prev);
@@ -90,7 +97,9 @@ export default function HeroVideoCarousel({ className }: Props) {
           muted
           playsInline
           loop
+          autoPlay={i === 0}
           preload={i === 0 ? 'auto' : 'metadata'}
+          onCanPlay={() => handleCanPlay(i)}
           onError={() => handleError(i)}
           aria-hidden="true"
           style={{
