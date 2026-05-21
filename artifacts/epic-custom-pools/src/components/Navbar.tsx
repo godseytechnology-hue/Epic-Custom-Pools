@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import siteConfig from '@/config/siteConfig';
 import { trackEvent } from '@/lib/analytics';
@@ -28,7 +29,14 @@ export default function Navbar() {
             className="flex items-center gap-2 shrink-0"
             aria-label="Epic Custom Pools — Home"
           >
-            <span className="text-gold text-2xl select-none" aria-hidden="true">◆</span>
+            <Image
+              src="/logo-icon.png"
+              alt="Epic Custom Pools logo"
+              width={38}
+              height={38}
+              className="shrink-0"
+              priority
+            />
             <span className="font-playfair text-gold text-lg md:text-xl font-bold tracking-wide leading-tight">
               Epic Custom Pools
             </span>
