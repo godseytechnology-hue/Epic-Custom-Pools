@@ -84,7 +84,7 @@ export default function HeroVideoCarousel({ className }: Props) {
   };
 
   return (
-    <div className={className ?? 'absolute inset-0 w-full h-full'} style={{ background: '#0a1628' }}>
+    <div className={className ?? 'absolute inset-0 w-full h-full'} style={{ background: '#080e06' }}>
       {VIDEOS.map((video, i) => (
         <video
           key={video.id}

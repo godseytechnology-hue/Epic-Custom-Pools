@@ -69,15 +69,15 @@ export async function POST(req: NextRequest) {
 <html>
 <head><meta charset="utf-8" /></head>
 <body style="font-family:sans-serif;color:#1a1a1a;max-width:600px;margin:auto;padding:24px;">
-  <div style="background:#0a1628;padding:20px 24px;border-radius:8px 8px 0 0;">
-    <h1 style="color:#c9a84c;font-size:20px;margin:0;">${isB2B ? 'New Builder Inquiry' : 'New Lead'} — Epic Custom Pools</h1>
+  <div style="background:#080e06;padding:20px 24px;border-radius:8px 8px 0 0;">
+    <h1 style="color:#4cd137;font-size:20px;margin:0;">${isB2B ? 'New Builder Inquiry' : 'New Lead'} — Epic Custom Pools</h1>
   </div>
   <div style="border:1px solid #e0e0e0;border-top:none;border-radius:0 0 8px 8px;padding:24px;">
     <table style="width:100%;border-collapse:collapse;">
       ${companyName?.trim() ? `<tr><td style="padding:8px 0;color:#666;width:140px;vertical-align:top;font-size:14px;">Company</td><td style="padding:8px 0;font-weight:600;">${escapeHtml(companyName)}</td></tr>` : ''}
       <tr><td style="padding:8px 0;color:#666;width:140px;vertical-align:top;font-size:14px;">${isB2B ? 'Contact Name' : 'Name'}</td><td style="padding:8px 0;font-weight:600;">${escapeHtml(isB2B ? (contactName || name) : name)}</td></tr>
-      ${email?.trim() ? `<tr><td style="padding:8px 0;color:#666;font-size:14px;">Email</td><td style="padding:8px 0;"><a href="mailto:${escapeHtml(email)}" style="color:#1a6b7a;">${escapeHtml(email)}</a></td></tr>` : ''}
-      <tr><td style="padding:8px 0;color:#666;font-size:14px;">Phone</td><td style="padding:8px 0;"><a href="tel:${escapeHtml(phone.replace(/\D/g, ''))}" style="color:#1a6b7a;">${escapeHtml(phone)}</a></td></tr>
+      ${email?.trim() ? `<tr><td style="padding:8px 0;color:#666;font-size:14px;">Email</td><td style="padding:8px 0;"><a href="mailto:${escapeHtml(email)}" style="color:#00b4d8;">${escapeHtml(email)}</a></td></tr>` : ''}
+      <tr><td style="padding:8px 0;color:#666;font-size:14px;">Phone</td><td style="padding:8px 0;"><a href="tel:${escapeHtml(phone.replace(/\D/g, ''))}" style="color:#00b4d8;">${escapeHtml(phone)}</a></td></tr>
       <tr><td style="padding:8px 0;color:#666;font-size:14px;">City / Zip</td><td style="padding:8px 0;">${escapeHtml(city)}</td></tr>
       ${isB2B
         ? projectCount?.trim()

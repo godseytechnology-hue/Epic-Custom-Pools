@@ -4,16 +4,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        navy: '#0a1628',
-        gold: '#c9a84c',
-        'gold-light': '#e8d5a3',
-        teal: '#1a6b7a',
-        'teal-light': '#e8f4f6',
+        navy: '#080e06',
+        gold: '#4cd137',
+        'gold-light': '#7ed957',
+        teal: '#00b4d8',
+        'teal-light': '#caf0f8',
         slate: '#4a5568',
       },
       fontFamily: {
-        playfair: ['var(--font-playfair)', 'Georgia', 'serif'],
+        playfair: ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
         inter: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        montserrat: ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
       },
     },
   },

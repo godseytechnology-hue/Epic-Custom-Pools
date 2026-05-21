@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Playfair_Display, Inter } from 'next/font/google';
+import { Montserrat, Inter } from 'next/font/google';
 import Script from 'next/script';
 import { headers } from 'next/headers';
 import './globals.css';
@@ -14,10 +14,10 @@ const TIER_LABELS: Record<string, string> = {
   authority: 'Authority Package',
 };
 
-const playfair = Playfair_Display({
+const montserrat = Montserrat({
   subsets: ['latin'],
-  variable: '--font-playfair',
-  weight: ['400', '700'],
+  variable: '--font-montserrat',
+  weight: ['400', '600', '700', '800', '900'],
   display: 'swap',
 });
 
@@ -86,7 +86,7 @@ export default function RootLayout({
   const tierLabel = previewTier && isExplicit ? TIER_LABELS[previewTier] : null;
 
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="en" className={`${montserrat.variable} ${inter.variable}`}>
       <body className="font-inter bg-white">
         {/* Tier preview banner — only shown when ?tier= flag is active */}
         {tierLabel && (
@@ -151,4 +151,3 @@ export default function RootLayout({
     </html>
   );
 }
-

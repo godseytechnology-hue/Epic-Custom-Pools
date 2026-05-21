@@ -1,4 +1,4 @@
-const DEFAULT_CITIES = 'Fort Worth,Aledo,Weatherford,Possum Kingdom';
+const DEFAULT_CITIES = 'Fort Worth,Aledo,Weatherford,Possum Kingdom,Granbury';
 
 const serviceCities = (process.env.NEXT_PUBLIC_SERVICE_CITIES || DEFAULT_CITIES)
   .split(',')
