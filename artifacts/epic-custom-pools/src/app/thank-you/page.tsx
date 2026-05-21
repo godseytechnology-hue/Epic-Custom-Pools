@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import siteConfig from '@/config/siteConfig';
 import FormSubmitTracker from '@/components/FormSubmitTracker';
 import PhoneLink from '@/components/PhoneLink';
@@ -20,7 +21,7 @@ export default function ThankYouPage() {
       <main className="min-h-screen bg-navy flex flex-col items-center justify-center px-4 text-center py-24">
         <div className="max-w-xl mx-auto">
           <div className="mb-8">
-            <span className="text-gold text-5xl select-none" aria-hidden="true">◆</span>
+            <Image src="/logo-icon.png" alt="" width={64} height={64} className="mx-auto" aria-hidden="true" />
           </div>
 
           <h1 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-4">

@@ -8,11 +8,11 @@ const VIDEOS = [
     id: '17045602',
   },
   {
-    src: 'https://videos.pexels.com/video-files/12525959/12525959-uhd_2560_1440_60fps.mp4',
+    src: 'https://videos.pexels.com/video-files/12525959/12525959-hd_1920_1080_60fps.mp4',
     id: '12525959',
   },
   {
-    src: 'https://videos.pexels.com/video-files/6528623/6528623-uhd_2560_1440_30fps.mp4',
+    src: 'https://videos.pexels.com/video-files/6528623/6528623-hd_1920_1080_30fps.mp4',
     id: '6528623',
   },
 ];

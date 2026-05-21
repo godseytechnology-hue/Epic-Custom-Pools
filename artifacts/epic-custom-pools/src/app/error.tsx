@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function GlobalError({
   reset,
@@ -11,7 +12,7 @@ export default function GlobalError({
   return (
     <div className="min-h-screen bg-navy flex items-center justify-center px-4">
       <div className="text-center max-w-md">
-        <span className="text-gold text-5xl select-none" aria-hidden="true">◆</span>
+        <Image src="/logo-icon.png" alt="" width={64} height={64} className="mx-auto" aria-hidden="true" />
         <h1 className="font-playfair text-3xl font-bold text-white mt-6 mb-3">
           Something went wrong
         </h1>

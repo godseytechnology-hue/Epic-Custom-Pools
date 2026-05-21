@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import siteConfig from '@/config/siteConfig';
 import LeadForm from '@/components/LeadForm';
 import TrackingLink from '@/components/TrackingLink';
@@ -212,7 +213,7 @@ export default function HomePage() {
       {/* ─── 6. CTA BANNER ───────────────────────────────────── */}
       <section className="bg-navy py-20 px-4 md:px-8 text-center">
         <div className="max-w-3xl mx-auto">
-          <span className="text-gold/40 text-5xl select-none" aria-hidden="true">◆</span>
+          <Image src="/logo-icon.png" alt="" width={56} height={56} className="mx-auto opacity-50" aria-hidden="true" />
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-white mt-4 mb-6 leading-tight">
             Every great backyard starts with a conversation.
           </h2>
