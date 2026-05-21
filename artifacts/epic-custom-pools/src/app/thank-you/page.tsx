@@ -44,7 +44,6 @@ export default function ThankYouPage() {
               <span aria-hidden="true">📞</span>
               {siteConfig.phone}
             </PhoneLink>
-            <p className="font-inter text-white/40 text-xs mt-2">Mon–Sat, 7am–7pm Central</p>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

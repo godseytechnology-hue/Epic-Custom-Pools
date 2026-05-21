@@ -89,18 +89,6 @@ export default function Footer() {
                   <span>{siteConfig.email}</span>
                 </a>
               </li>
-              <li>
-                <div className="font-inter text-white/70 text-sm flex items-start gap-2">
-                  <span className="text-gold mt-0.5" aria-hidden="true">🕐</span>
-                  <span>Mon–Sat: 7am–7pm</span>
-                </div>
-              </li>
-              <li>
-                <div className="font-inter text-white/70 text-sm flex items-start gap-2">
-                  <span className="text-gold mt-0.5" aria-hidden="true">📍</span>
-                  <span>{siteConfig.address}</span>
-                </div>
-              </li>
             </ul>
 
             <div className="mt-6">

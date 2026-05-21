@@ -9,7 +9,7 @@ const siteConfig = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://epiccustompools.com',
   siteName: process.env.NEXT_PUBLIC_SITE_NAME || 'Epic Custom Pools',
   tagline: process.env.NEXT_PUBLIC_TAGLINE || "Fort Worth's Premier Custom Pool Builder",
-  phone: process.env.NEXT_PUBLIC_PHONE || '(817) 555-0100',
+  phone: process.env.NEXT_PUBLIC_PHONE || '(817) 313-2034',
   email: process.env.NEXT_PUBLIC_EMAIL || 'info@epiccustompools.com',
   address: process.env.NEXT_PUBLIC_ADDRESS || 'Fort Worth, TX',
   ga4Id: process.env.NEXT_PUBLIC_GA4_ID || '',
