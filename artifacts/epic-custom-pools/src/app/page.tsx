@@ -6,8 +6,7 @@ import LeadForm from '@/components/LeadForm';
 import TrackingLink from '@/components/TrackingLink';
 import HeroVideoCarousel from '@/components/HeroVideoCarousel';
 
-const OG_IMAGE =
-  'https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1200&q=80';
+const OG_IMAGE = `${siteConfig.siteUrl}/logo-icon.png`;
 
 export const metadata: Metadata = {
   title: 'Custom Pool Builder Fort Worth TX | Epic Custom Pools',
