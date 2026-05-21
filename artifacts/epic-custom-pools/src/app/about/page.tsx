@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const HERO_IMAGE = '/about-pool-v3.jpg';
 
 const ALL_CITIES = [
-  'Fort Worth', 'Weatherford', 'Aledo', 'Possum Kingdom',
+  'Fort Worth', 'Weatherford', 'Aledo', 'Possum Kingdom', 'Granbury',
 ];
 
 const VALUES = [
@@ -137,6 +137,33 @@ export default function AboutPage() {
                 <p className="font-inter text-gray-600 text-sm leading-relaxed">{value.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── MEET THE TEAM ─────────────────────────────────────── */}
+      <section className="bg-gray-50 py-16 md:py-20 px-4 md:px-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
+            Meet the Team
+          </h2>
+          <p className="font-inter text-gray-600 text-center text-lg mb-10 max-w-2xl mx-auto">
+            We believe the pool building process should be as enjoyable as the finished result. Our team is genuinely invested in helping your family create memories that last — and we have a good time doing it.
+          </p>
+          <div className="relative rounded-2xl overflow-hidden shadow-xl">
+            <Image
+              src="/team-photo.jpeg"
+              alt="The Epic Custom Pools team — from left to right: Dana, Jeff, and Billy — at a Fort Worth event"
+              width={1080}
+              height={1080}
+              className="w-full object-cover"
+              sizes="(max-width: 768px) 100vw, 896px"
+            />
+            <div className="bg-navy/90 px-6 py-4 flex items-center justify-center gap-2">
+              <span className="font-inter text-sm text-white/80 italic">
+                Left to right: Dana, Jeff, and Billy
+              </span>
+            </div>
           </div>
         </div>
       </section>
