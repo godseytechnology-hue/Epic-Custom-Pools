@@ -17,9 +17,6 @@ const VIDEOS = [
   },
 ];
 
-const POSTER =
-  'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=1920&q=80';
-
 const INTERVAL_MS = 9000;
 const FADE_MS = 1200;
 
@@ -87,13 +84,12 @@ export default function HeroVideoCarousel({ className }: Props) {
   };
 
   return (
-    <div className={className ?? 'absolute inset-0 w-full h-full'}>
+    <div className={className ?? 'absolute inset-0 w-full h-full'} style={{ background: '#0a1628' }}>
       {VIDEOS.map((video, i) => (
         <video
           key={video.id}
           ref={(el) => { videoRefs.current[i] = el; }}
           src={video.src}
-          poster={POSTER}
           muted
           playsInline
           loop
