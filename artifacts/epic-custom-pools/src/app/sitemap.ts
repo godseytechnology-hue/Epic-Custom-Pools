@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/weatherford-pool-builder', priority: 0.85 },
     { url: '/aledo-pool-builder', priority: 0.85 },
     { url: '/possum-kingdom-pool-builder', priority: 0.85 },
+    { url: '/granbury-pool-builder', priority: 0.85 },
     { url: '/about', priority: 0.7 },
     { url: '/home-builders', priority: 0.75 },
   ];
