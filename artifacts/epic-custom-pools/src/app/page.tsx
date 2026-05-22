@@ -5,6 +5,7 @@ import siteConfig from '@/config/siteConfig';
 import LeadForm from '@/components/LeadForm';
 import TrackingLink from '@/components/TrackingLink';
 import HeroVideoCarousel from '@/components/HeroVideoCarousel';
+import ScrollReveal from '@/components/ScrollReveal';
 
 const OG_IMAGE = `${siteConfig.siteUrl}/logo-icon.png`;
 
@@ -135,27 +136,21 @@ export default function HomePage() {
           aria-hidden="true"
         />
 
-        {/* Ripple rings — right side, desktop only */}
-        <div
-          className="absolute right-[6%] top-1/2 -translate-y-1/2 hidden xl:block pointer-events-none"
-          style={{ width: 280, height: 280 }}
-          aria-hidden="true"
-        >
-          {[0, 1, 2].map((i) => (
-            <div
-              key={i}
-              className="absolute inset-0 rounded-full border-2 animate-ripple-out"
-              style={{
-                borderColor: i % 2 === 0 ? 'rgba(126,211,33,0.30)' : 'rgba(26,179,232,0.25)',
-                animationDelay: `${i * 1.33}s`,
-              }}
-            />
-          ))}
-        </div>
-
         {/* Hero content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-12 w-full py-20">
           <div className="max-w-2xl">
+
+            {/* Logo lockup */}
+            <div className="mb-7 animate-word" style={{ animationDelay: '0ms' }}>
+              <Image
+                src="/logo-icon.png"
+                alt="Epic Custom Pools"
+                width={84}
+                height={84}
+                className="drop-shadow-[0_4px_18px_rgba(26,179,232,0.55)]"
+                priority
+              />
+            </div>
 
             {/* Location badge */}
             <div className="inline-flex items-center gap-2.5 border border-gold/50 text-gold text-xs font-inter font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-7">
@@ -164,7 +159,7 @@ export default function HomePage() {
             </div>
 
             {/* 3-line colored headline with word stagger */}
-            <h1 className="font-barlow font-black uppercase leading-[1.0] mb-6" style={{ fontSize: 'clamp(48px, 7vw, 78px)', letterSpacing: '-0.01em' }}>
+            <h1 className="font-barlow font-black uppercase leading-[1.0] mb-6" style={{ fontSize: 'clamp(50px, 7.5vw, 84px)', letterSpacing: '-0.02em' }}>
               <span className="block text-white animate-word" style={{ animationDelay: '0ms' }}>
                 Where DFW Families
               </span>
@@ -228,165 +223,155 @@ export default function HomePage() {
             />
           </svg>
         </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-0.5 pointer-events-none" aria-hidden="true">
-          {[0, 1, 2].map((i) => (
-            <svg
-              key={i}
-              className="w-4 h-4 text-gold animate-chevron"
-              style={{ animationDelay: `${i * 160}ms`, opacity: 1 - i * 0.28 }}
-              viewBox="0 0 16 16"
-              fill="none"
-            >
-              <path d="M3 6l5 5 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          ))}
-          <span className="font-inter text-[9px] text-gold/50 tracking-[0.2em] uppercase mt-1">Scroll</span>
-        </div>
       </section>
 
       {/* ─── 2. TRUST BAR ────────────────────────────────────── */}
       <section className="bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
-            {trustItems.map((item, i) => {
-              const inner = (
-                <>
-                  <span className="text-2xl flex-shrink-0" aria-hidden="true">{item.icon}</span>
-                  <span className="font-inter text-navy font-semibold text-sm text-center sm:text-left leading-snug">
-                    {item.label}
-                  </span>
-                </>
-              );
-              return item.href ? (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="animate-stagger flex flex-col sm:flex-row items-center sm:items-start gap-3 p-4 rounded-lg border border-gold/30 bg-gold/5 hover:bg-gold/10 transition-colors duration-200"
-                  style={{ animationDelay: `${i * 120}ms` }}
-                >
-                  {inner}
-                </a>
-              ) : (
-                <div
-                  key={item.label}
-                  className="animate-stagger flex flex-col sm:flex-row items-center sm:items-start gap-3 p-4 rounded-lg border border-gray-100 bg-gray-50"
-                  style={{ animationDelay: `${i * 120}ms` }}
-                >
-                  {inner}
-                </div>
-              );
-            })}
+        <ScrollReveal>
+          <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
+              {trustItems.map((item, i) => {
+                const inner = (
+                  <>
+                    <span className="text-2xl flex-shrink-0" aria-hidden="true">{item.icon}</span>
+                    <span className="font-inter text-navy font-semibold text-sm text-center sm:text-left leading-snug">
+                      {item.label}
+                    </span>
+                  </>
+                );
+                return item.href ? (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="animate-stagger flex flex-col sm:flex-row items-center sm:items-start gap-3 p-4 rounded-lg border border-gold/30 bg-gold/5 hover:bg-gold/10 transition-colors duration-200"
+                    style={{ animationDelay: `${i * 120}ms` }}
+                  >
+                    {inner}
+                  </a>
+                ) : (
+                  <div
+                    key={item.label}
+                    className="animate-stagger flex flex-col sm:flex-row items-center sm:items-start gap-3 p-4 rounded-lg border border-gray-100 bg-gray-50"
+                    style={{ animationDelay: `${i * 120}ms` }}
+                  >
+                    {inner}
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* ─── 3. SERVICES OVERVIEW ────────────────────────────── */}
-      <section className="bg-mid-dark py-20 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="font-inter text-gold font-semibold text-sm tracking-widest uppercase mb-3">
-              Our Work
-            </p>
-            <h2 className="font-barlow text-4xl md:text-5xl font-black text-white uppercase">
-              What We Build
-            </h2>
-          </div>
+      <section className="bg-slate-50 py-20 px-4 md:px-8">
+        <ScrollReveal>
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-14">
+              <p className="font-inter text-teal font-semibold text-sm tracking-widest uppercase mb-3">
+                Our Work
+              </p>
+              <h2 className="font-barlow text-5xl md:text-6xl font-black text-navy uppercase" style={{ letterSpacing: '-0.02em' }}>
+                What We Build
+              </h2>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {services.map((s) => (
-              <div
-                key={s.title}
-                className="group relative flex flex-col border border-border-dark rounded-2xl overflow-hidden bg-card-dark hover:shadow-[0_8px_40px_rgba(126,211,33,0.15)] hover:-translate-y-2 transition-all duration-300"
-              >
-                {/* Left-edge gradient bar animates on hover */}
-                <div className="absolute left-0 top-0 w-[3px] h-0 bg-gradient-to-b from-gold to-teal group-hover:h-full transition-all duration-[400ms] ease-out rounded-l-sm" aria-hidden="true" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {services.map((s) => (
+                <div
+                  key={s.title}
+                  className="group relative flex flex-col border border-gray-200 rounded-2xl overflow-hidden bg-white hover:shadow-[0_8px_40px_rgba(13,37,64,0.10)] hover:-translate-y-2 transition-all duration-300"
+                >
+                  {/* Left-edge gradient bar animates on hover */}
+                  <div className="absolute left-0 top-0 w-[3px] h-0 bg-gradient-to-b from-teal to-gold group-hover:h-full transition-all duration-[400ms] ease-out rounded-l-sm" aria-hidden="true" />
 
-                {/* Icon / top area */}
-                <div className="relative p-8 pb-4 overflow-hidden">
-                  {/* Category pill */}
-                  <div className="absolute top-4 right-4 text-[10px] font-inter font-bold tracking-widest uppercase text-gold bg-navy/80 px-2.5 py-1 rounded-full border border-gold/30">
-                    {s.category}
+                  {/* Icon / top area */}
+                  <div className="relative p-8 pb-4 overflow-hidden">
+                    {/* Category pill */}
+                    <div className="absolute top-4 right-4 text-[10px] font-inter font-bold tracking-widest uppercase text-teal bg-teal/10 px-2.5 py-1 rounded-full border border-teal/20">
+                      {s.category}
+                    </div>
+                    {/* Shimmer sweep */}
+                    <div
+                      className="absolute inset-0 pointer-events-none"
+                      style={{
+                        background: 'linear-gradient(105deg, transparent 40%, rgba(26,179,232,0.04) 50%, transparent 60%)',
+                        transform: 'translateX(-100%)',
+                        transition: 'transform 1.2s ease',
+                      }}
+                      aria-hidden="true"
+                    />
+                    <div className="text-teal mt-2">{s.icon}</div>
                   </div>
-                  {/* Shimmer sweep */}
-                  <div
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                      background: 'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.04) 50%, transparent 60%)',
-                      transform: 'translateX(-100%)',
-                      transition: 'transform 1.2s ease',
-                    }}
-                    aria-hidden="true"
-                  />
-                  <div className="text-gold mt-2">{s.icon}</div>
-                </div>
 
-                {/* Text content */}
-                <div className="px-8 pb-8 flex flex-col flex-1">
-                  <h3 className="font-barlow text-xl font-black text-white mb-3 uppercase tracking-wide">
-                    {s.title}
-                  </h3>
-                  <p className="font-inter text-muted text-sm leading-relaxed flex-1">{s.desc}</p>
-                  <Link
-                    href={s.href}
-                    className="mt-6 inline-flex items-center font-inter text-sm font-semibold text-gold gap-1.5"
-                  >
-                    Learn More{' '}
-                    <span className="group-hover:translate-x-[5px] transition-transform duration-200" aria-hidden="true">→</span>
-                  </Link>
+                  {/* Text content */}
+                  <div className="px-8 pb-8 flex flex-col flex-1">
+                    <h3 className="font-barlow text-xl font-black text-navy mb-3 uppercase tracking-wide">
+                      {s.title}
+                    </h3>
+                    <p className="font-inter text-gray-600 text-sm leading-relaxed flex-1">{s.desc}</p>
+                    <Link
+                      href={s.href}
+                      className="mt-6 inline-flex items-center font-inter text-sm font-semibold text-teal gap-1.5"
+                    >
+                      Learn More{' '}
+                      <span className="group-hover:translate-x-[5px] transition-transform duration-200" aria-hidden="true">→</span>
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* ─── 4. INLINE LEAD FORM ─────────────────────────────── */}
       <LeadForm />
 
       {/* ─── 5. WHY EPIC CUSTOM POOLS ────────────────────────── */}
-      <section className="bg-mid-dark py-20 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="font-inter text-gold font-semibold text-sm tracking-widest uppercase mb-3">
-              Why Choose Us
-            </p>
-            <h2 className="font-barlow text-4xl md:text-5xl font-black text-white uppercase">
-              Why Epic Custom Pools
-            </h2>
-          </div>
+      <section className="bg-white py-20 px-4 md:px-8">
+        <ScrollReveal>
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-14">
+              <p className="font-inter text-teal font-semibold text-sm tracking-widest uppercase mb-3">
+                Why Choose Us
+              </p>
+              <h2 className="font-barlow text-5xl md:text-6xl font-black text-navy uppercase" style={{ letterSpacing: '-0.02em' }}>
+                Why Epic Custom Pools
+              </h2>
+            </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            {whyItems.map((item) => (
-              <div
-                key={item.title}
-                className="group flex gap-5 p-6 bg-card-dark rounded-xl border border-border-dark hover:-translate-y-1 hover:border-gold/35 hover:shadow-[0_4px_24px_rgba(126,211,33,0.14)] transition-all duration-[250ms]"
-              >
-                {/* SVG icon in green rounded container */}
-                <div className="flex-shrink-0 mt-0.5 group-hover:-translate-y-[3px] transition-transform duration-[250ms]">
-                  <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center text-gold border border-gold/20"
-                    style={{ background: 'rgba(126,211,33,0.10)' }}
-                  >
-                    {item.icon}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              {whyItems.map((item) => (
+                <div
+                  key={item.title}
+                  className="group flex gap-5 p-6 bg-slate-50 rounded-xl border border-gray-200 hover:-translate-y-1 hover:border-teal/30 hover:shadow-[0_4px_24px_rgba(26,179,232,0.10)] transition-all duration-[250ms]"
+                >
+                  {/* Icon in rounded teal container */}
+                  <div className="flex-shrink-0 mt-0.5 group-hover:-translate-y-[3px] transition-transform duration-[250ms]">
+                    <div
+                      className="w-11 h-11 rounded-xl flex items-center justify-center text-teal border border-teal/20"
+                      style={{ background: 'rgba(26,179,232,0.08)' }}
+                    >
+                      {item.icon}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="font-barlow text-lg font-black text-navy mb-1 uppercase tracking-wide">
+                      {item.title}
+                    </h3>
+                    {/* Animated underline */}
+                    <div className="w-0 group-hover:w-9 h-0.5 bg-gradient-to-r from-teal to-gold mb-2 transition-[width] duration-[350ms] ease-out" aria-hidden="true" />
+                    <p className="font-inter text-gray-600 text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
-
-                <div>
-                  <h3 className="font-barlow text-lg font-black text-white mb-1 uppercase tracking-wide">
-                    {item.title}
-                  </h3>
-                  {/* Animated underline */}
-                  <div className="w-0 group-hover:w-9 h-0.5 bg-gradient-to-r from-gold to-teal mb-2 transition-[width] duration-[350ms] ease-out" aria-hidden="true" />
-                  <p className="font-inter text-muted text-sm leading-relaxed">{item.desc}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* ─── 6. CTA BANNER ───────────────────────────────────── */}
@@ -409,31 +394,33 @@ export default function HomePage() {
           ))}
         </div>
 
-        <div className="relative z-10 max-w-3xl mx-auto">
-          <Image src="/logo-icon.png" alt="" width={56} height={56} className="mx-auto opacity-50" aria-hidden="true" />
+        <ScrollReveal>
+          <div className="relative z-10 max-w-3xl mx-auto">
+            <Image src="/logo-icon.png" alt="" width={56} height={56} className="mx-auto opacity-50" aria-hidden="true" />
 
-          <h2 className="font-barlow font-black uppercase leading-tight mt-4 mb-6" style={{ fontSize: 'clamp(36px, 5vw, 56px)' }}>
-            <span className="block text-gradient-green">Every great backyard</span>
-            <span className="block text-gradient-blue">starts with a conversation.</span>
-          </h2>
+            <h2 className="font-barlow font-black uppercase leading-tight mt-4 mb-6" style={{ fontSize: 'clamp(38px, 5.5vw, 62px)', letterSpacing: '-0.02em' }}>
+              <span className="block text-gradient-green">Every great backyard</span>
+              <span className="block text-gradient-blue">starts with a conversation.</span>
+            </h2>
 
-          {/* CTA with pulse ring */}
-          <div className="inline-flex relative">
-            <span className="absolute inset-0 rounded animate-pulse-ring border-2 border-gold pointer-events-none" aria-hidden="true" />
-            <TrackingLink
-              href="/consultation"
-              eventName="cta_click"
-              eventParams={{ button_location: 'cta_banner', destination: '/consultation' }}
-              className="relative inline-flex items-center justify-center bg-gradient-to-r from-gold to-gold-light text-navy font-inter font-black text-lg uppercase px-10 py-4 rounded hover:brightness-110 transition-all duration-200"
-            >
-              Schedule Your Free Consultation
-            </TrackingLink>
+            {/* CTA with pulse ring */}
+            <div className="inline-flex relative">
+              <span className="absolute inset-0 rounded animate-pulse-ring border-2 border-gold pointer-events-none" aria-hidden="true" />
+              <TrackingLink
+                href="/consultation"
+                eventName="cta_click"
+                eventParams={{ button_location: 'cta_banner', destination: '/consultation' }}
+                className="relative inline-flex items-center justify-center bg-gradient-to-r from-gold to-gold-light text-navy font-inter font-black text-lg uppercase px-10 py-4 rounded hover:brightness-110 transition-all duration-200"
+              >
+                Schedule Your Free Consultation
+              </TrackingLink>
+            </div>
+
+            <p className="font-inter text-xs mt-6 tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.20)' }}>
+              Serving {siteConfig.serviceAreaPhrase}
+            </p>
           </div>
-
-          <p className="font-inter text-xs mt-6 tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.20)' }}>
-            Serving {siteConfig.serviceAreaPhrase}
-          </p>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Mobile bottom padding so sticky bar doesn't cover the CTA */}

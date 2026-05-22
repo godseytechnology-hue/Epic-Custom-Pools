@@ -4,16 +4,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        navy:         '#080e14',
+        navy:         '#0d2540',
         gold:         '#7ed321',
         'gold-light': '#a8e63a',
         teal:         '#1ab3e8',
         'teal-light': '#5dd0f5',
         slate:        '#4a5568',
-        'mid-dark':   '#0f1a24',
-        'card-dark':  '#111e2b',
-        'border-dark':'#1e3347',
-        muted:        '#7a9bb5',
+        'mid-dark':   '#122d4a',
+        'card-dark':  '#163354',
+        'border-dark':'#1e3a52',
+        muted:        '#5b8ab0',
       },
       fontFamily: {
         barlow:    ['var(--font-barlow)', 'system-ui', 'sans-serif'],
