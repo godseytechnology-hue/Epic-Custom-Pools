@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import LeadForm from '@/components/LeadForm';
 import TrackingLink from '@/components/TrackingLink';
+import ScrollReveal from '@/components/ScrollReveal';
 import siteConfig from '@/config/siteConfig';
 
 export const metadata: Metadata = {
@@ -169,26 +170,28 @@ export default function AboutPage() {
       </section>
 
       {/* ─── SERVICE AREA ──────────────────────────────────────── */}
-      <section className="bg-navy py-16 md:py-20 px-4 md:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-white text-center mb-4">
-            Where We Build
-          </h2>
-          <p className="font-inter text-white/70 text-center text-lg mb-10 max-w-2xl mx-auto">
-            We focus on the DFW west corridor — the communities west and southwest of Fort Worth
-            that the owner knows best. If you&apos;re nearby and not on this list, call us anyway.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {ALL_CITIES.map((city) => (
-              <span
-                key={city}
-                className="font-inter text-sm font-semibold text-navy bg-gold px-4 py-2 rounded-full"
-              >
-                {city}, TX
-              </span>
-            ))}
+      <section className="bg-slate-50 py-16 md:py-20 px-4 md:px-8">
+        <ScrollReveal>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
+              Where We Build
+            </h2>
+            <p className="font-inter text-gray-600 text-center text-lg mb-10 max-w-2xl mx-auto">
+              We focus on the DFW west corridor — the communities west and southwest of Fort Worth
+              that the owner knows best. If you&apos;re nearby and not on this list, call us anyway.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {ALL_CITIES.map((city) => (
+                <span
+                  key={city}
+                  className="font-inter text-sm font-semibold text-white bg-navy px-4 py-2 rounded-full"
+                >
+                  {city}, TX
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* ─── CTA ───────────────────────────────────────────────── */}

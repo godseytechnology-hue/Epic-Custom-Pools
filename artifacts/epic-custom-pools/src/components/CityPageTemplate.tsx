@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import LeadForm from '@/components/LeadForm';
 import FAQSchema, { FAQItem } from '@/components/FAQSchema';
+import ScrollReveal from '@/components/ScrollReveal';
 import siteConfig from '@/config/siteConfig';
 
 export type CityPageTemplateProps = {
@@ -191,33 +192,35 @@ export default function CityPageTemplate({
       </section>
 
       {/* ─── POOL TYPES ───────────────────────────────────── */}
-      <section className="bg-navy py-16 px-4 md:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-playfair text-2xl md:text-3xl font-bold text-white mb-5">
-            {poolTypesHeading}
-          </h2>
-          <p className="font-inter text-white/75 text-lg leading-relaxed">{poolTypesSection}</p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/custom-pools"
-              className="inline-flex items-center justify-center bg-gold text-navy font-inter font-semibold text-sm px-6 py-3 rounded hover:bg-gold-light transition-colors"
-            >
-              Custom Pools →
-            </Link>
-            <Link
-              href="/outdoor-living"
-              className="inline-flex items-center justify-center border border-white/30 text-white font-inter font-semibold text-sm px-6 py-3 rounded hover:bg-white/10 transition-colors"
-            >
-              Outdoor Living →
-            </Link>
-            <Link
-              href="/pricing"
-              className="inline-flex items-center justify-center border border-white/30 text-white font-inter font-semibold text-sm px-6 py-3 rounded hover:bg-white/10 transition-colors"
-            >
-              View Pricing →
-            </Link>
+      <section className="bg-slate-50 py-16 px-4 md:px-8">
+        <ScrollReveal>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-playfair text-2xl md:text-3xl font-bold text-navy mb-5">
+              {poolTypesHeading}
+            </h2>
+            <p className="font-inter text-gray-600 text-lg leading-relaxed">{poolTypesSection}</p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/custom-pools"
+                className="inline-flex items-center justify-center bg-navy text-white font-inter font-semibold text-sm px-6 py-3 rounded hover:bg-navy/80 transition-colors"
+              >
+                Custom Pools →
+              </Link>
+              <Link
+                href="/outdoor-living"
+                className="inline-flex items-center justify-center border border-navy/20 text-navy font-inter font-semibold text-sm px-6 py-3 rounded hover:bg-navy/5 transition-colors"
+              >
+                Outdoor Living →
+              </Link>
+              <Link
+                href="/pricing"
+                className="inline-flex items-center justify-center border border-navy/20 text-navy font-inter font-semibold text-sm px-6 py-3 rounded hover:bg-navy/5 transition-colors"
+              >
+                View Pricing →
+              </Link>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* ─── OWNER-OPERATED TRUST ─────────────────────────── */}
