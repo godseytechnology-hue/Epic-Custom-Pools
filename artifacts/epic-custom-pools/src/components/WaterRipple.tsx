@@ -2,10 +2,12 @@
 
 import { useEffect, useRef } from 'react';
 
-const CELL_SIZE = 6;   // px — wave resolution
-const TENSION  = 0.025;
-const DAMPING  = 0.984;
-const CANVAS_H = 100;  // px — strip height
+const CELL_SIZE    = 6;    // px — wave resolution
+const TENSION      = 0.025;
+const DAMPING      = 0.984;
+const CANVAS_H     = 100;  // px — strip height
+const MOBILE_BAR_H = 56;   // px — MobileBottomBar height (h-14)
+const MOBILE_BP    = 768;  // px — md breakpoint
 
 export default function WaterRipple() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -20,15 +22,19 @@ export default function WaterRipple() {
     const gfx = ctx;
     const dpr = window.devicePixelRatio || 1;
     let cols = 0;
-    let heights   = new Float32Array(0);
+    let heights    = new Float32Array(0);
     let velocities = new Float32Array(0);
     let animId = 0;
 
-    /* ── sizing ─────────────────────────────────── */
+    /* ── sizing + mobile offset ───────────────────── */
     function resize() {
-      const w = window.innerWidth;
+      const w      = window.innerWidth;
+      const mobile = w < MOBILE_BP;
+
       cvs.style.width  = `${w}px`;
       cvs.style.height = `${CANVAS_H}px`;
+      cvs.style.bottom = mobile ? `${MOBILE_BAR_H}px` : '0px';
+
       cvs.width  = Math.round(w * dpr);
       cvs.height = Math.round(CANVAS_H * dpr);
       gfx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -63,10 +69,14 @@ export default function WaterRipple() {
       const h = CANVAS_H;
       gfx.clearRect(0, 0, w, h);
 
-      // Water surface rests at 30 % from top of the strip
+      // Dark base so the wave reads on navy backgrounds
+      gfx.fillStyle = 'rgba(5,14,26,0.72)';
+      gfx.fillRect(0, 0, w, h);
+
+      // Water surface rests at 30% from top of the strip
       const surfaceY = h * 0.30;
 
-      // Build smooth wave path using midpoint quadratic bezier
+      // Filled wave body
       gfx.beginPath();
       gfx.moveTo(-2, h + 2);
       gfx.lineTo(-2, surfaceY + heights[0]);
@@ -84,11 +94,11 @@ export default function WaterRipple() {
       gfx.lineTo(w + 2, h + 2);
       gfx.closePath();
 
-      // Gradient fill — logo blue fading to near-black
+      // Teal gradient fill
       const grad = gfx.createLinearGradient(0, surfaceY, 0, h);
-      grad.addColorStop(0,   'rgba(26,179,232,0.28)');
-      grad.addColorStop(0.55,'rgba(26,179,232,0.16)');
-      grad.addColorStop(1,   'rgba(8,14,20,0.70)');
+      grad.addColorStop(0,    'rgba(26,179,232,0.45)');
+      grad.addColorStop(0.55, 'rgba(26,179,232,0.22)');
+      grad.addColorStop(1,    'rgba(5,14,26,0.00)');
       gfx.fillStyle = grad;
       gfx.fill();
 
@@ -105,7 +115,7 @@ export default function WaterRipple() {
         gfx.quadraticCurveTo(x0, y0, xmid, ymid);
       }
       gfx.lineTo(w + 2, surfaceY + heights[cols - 1]);
-      gfx.strokeStyle = 'rgba(93,208,245,0.55)';
+      gfx.strokeStyle = 'rgba(93,208,245,0.70)';
       gfx.lineWidth   = 1.5;
       gfx.stroke();
     }
@@ -117,7 +127,7 @@ export default function WaterRipple() {
     }
 
     /* ── scroll / touch ──────────────────────────── */
-    let lastScrollY   = window.scrollY;
+    let lastScrollY    = window.scrollY;
     let lastScrollTime = performance.now();
 
     const onScroll = () => {
@@ -154,10 +164,10 @@ export default function WaterRipple() {
     resize();
     loop();
 
-    window.addEventListener('scroll',      onScroll,      { passive: true });
-    window.addEventListener('touchstart',  onTouchStart,  { passive: true });
-    window.addEventListener('touchmove',   onTouchMove,   { passive: true });
-    window.addEventListener('resize',      onResize);
+    window.addEventListener('scroll',     onScroll,     { passive: true });
+    window.addEventListener('touchstart', onTouchStart, { passive: true });
+    window.addEventListener('touchmove',  onTouchMove,  { passive: true });
+    window.addEventListener('resize',     onResize);
 
     return () => {
       cancelAnimationFrame(animId);
@@ -171,8 +181,8 @@ export default function WaterRipple() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed bottom-0 left-0 pointer-events-none select-none"
-      style={{ zIndex: 5, display: 'block' }}
+      className="fixed left-0 pointer-events-none select-none"
+      style={{ zIndex: 51, display: 'block', bottom: 0 }}
       aria-hidden="true"
     />
   );
