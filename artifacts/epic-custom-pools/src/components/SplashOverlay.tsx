@@ -98,10 +98,6 @@ export default function SplashOverlay() {
 
       gfx.clearRect(0, 0, vw, vh);
 
-      /* dark teal wash */
-      gfx.fillStyle = 'rgba(4, 16, 32, 0.62)';
-      gfx.fillRect(0, 0, vw, vh);
-
       let allSettled = true;
 
       for (const drop of state.drops) {
@@ -115,19 +111,19 @@ export default function SplashOverlay() {
           allSettled = false;
 
           const radius    = MAX_R * Math.pow(t, 0.60);
-          const ringAlpha = (1 - t) * 0.72;
+          const ringAlpha = (1 - t) * 0.85;
 
           /* subtle fill */
           gfx.beginPath();
           gfx.arc(drop.x, drop.y, radius, 0, Math.PI * 2);
-          gfx.fillStyle = `rgba(26,179,232,${(ringAlpha * 0.09).toFixed(3)})`;
+          gfx.fillStyle = `rgba(26,179,232,${(ringAlpha * 0.12).toFixed(3)})`;
           gfx.fill();
 
           /* crisp stroke */
           gfx.beginPath();
           gfx.arc(drop.x, drop.y, radius, 0, Math.PI * 2);
           gfx.strokeStyle = `rgba(26,179,232,${ringAlpha.toFixed(3)})`;
-          gfx.lineWidth   = Math.max(0.5, (1 - t) * 2.5);
+          gfx.lineWidth   = Math.max(0.5, (1 - t) * 3);
           gfx.stroke();
         }
       }
