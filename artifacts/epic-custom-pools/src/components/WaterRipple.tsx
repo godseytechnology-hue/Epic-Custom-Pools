@@ -55,11 +55,6 @@ export default function WaterRipple() {
       }
       heights[0]        = heights[1];
       heights[cols - 1] = heights[cols - 2];
-
-      // Idle micro-ripples so the surface is never completely still
-      if (Math.random() < 0.025) {
-        addDisturbance(Math.random(), 0.3 + Math.random() * 0.5);
-      }
     }
 
     /* ── rendering ───────────────────────────────── */
@@ -89,11 +84,11 @@ export default function WaterRipple() {
       gfx.lineTo(w + 2, h + 2);
       gfx.closePath();
 
-      // Very transparent gradient fill — logo blue fading to near-black
+      // Gradient fill — logo blue fading to near-black
       const grad = gfx.createLinearGradient(0, surfaceY, 0, h);
-      grad.addColorStop(0,   'rgba(26,179,232,0.13)');
-      grad.addColorStop(0.55,'rgba(26,179,232,0.08)');
-      grad.addColorStop(1,   'rgba(8,14,20,0.55)');
+      grad.addColorStop(0,   'rgba(26,179,232,0.28)');
+      grad.addColorStop(0.55,'rgba(26,179,232,0.16)');
+      grad.addColorStop(1,   'rgba(8,14,20,0.70)');
       gfx.fillStyle = grad;
       gfx.fill();
 
@@ -110,7 +105,7 @@ export default function WaterRipple() {
         gfx.quadraticCurveTo(x0, y0, xmid, ymid);
       }
       gfx.lineTo(w + 2, surfaceY + heights[cols - 1]);
-      gfx.strokeStyle = 'rgba(93,208,245,0.30)';
+      gfx.strokeStyle = 'rgba(93,208,245,0.55)';
       gfx.lineWidth   = 1.5;
       gfx.stroke();
     }
