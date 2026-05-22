@@ -16,8 +16,6 @@ export const metadata: Metadata = {
   },
 };
 
-const HERO_IMAGE = '/about-pool-v3.jpg';
-
 const ALL_CITIES = [
   'Fort Worth', 'Weatherford', 'Aledo', 'Possum Kingdom', 'Granbury',
 ];
@@ -43,27 +41,48 @@ const VALUES = [
 export default function AboutPage() {
   return (
     <>
-      {/* ─── HERO ──────────────────────────────────────────────── */}
-      <section className="relative min-h-[65vh] flex items-center overflow-hidden bg-navy">
-        <Image
-          src={HERO_IMAGE}
-          alt="Children enjoying a custom backyard pool built by Epic Custom Pools"
-          fill
-          className="object-cover object-center"
-          priority
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-navy/80" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-12 w-full py-20">
+      {/* ─── HERO — plain navy, no background image ────────────── */}
+      <section className="bg-navy py-24 md:py-32 px-4 md:px-12">
+        <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
             <p className="font-inter text-gold text-sm font-semibold tracking-widest uppercase mb-4">
               {siteConfig.serviceAreaPhrase}
             </p>
-            <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
+            <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
               Built on Experience. Driven by a Simple Belief: Every Family Deserves a Backyard Worth Coming Home To.
             </h1>
           </div>
         </div>
+      </section>
+
+      {/* ─── MEET THE TEAM ─────────────────────────────────────── */}
+      <section className="bg-white py-16 md:py-20 px-4 md:px-8">
+        <ScrollReveal>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
+              Meet the Team
+            </h2>
+            <p className="font-inter text-gray-600 text-center text-lg mb-10 max-w-2xl mx-auto">
+              We believe the pool building process should be as enjoyable as the finished result. Our team is genuinely invested in helping your family create memories that last — and we have a good time doing it.
+            </p>
+            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/team-photo.jpeg"
+                alt="The Epic Custom Pools team — from left to right: Dana, Jeff, and Billy — at a Fort Worth event"
+                width={1080}
+                height={1080}
+                className="w-full object-cover"
+                sizes="(max-width: 768px) 100vw, 896px"
+                priority
+              />
+              <div className="bg-navy/90 px-6 py-4 flex items-center justify-center gap-2">
+                <span className="font-inter text-sm text-white/80 italic">
+                  Left to right: Dana, Jeff, and Billy
+                </span>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
       </section>
 
       {/* ─── FOUNDER'S STORY ───────────────────────────────────── */}
@@ -76,97 +95,76 @@ export default function AboutPage() {
        *   - Any milestone moments that led to starting Epic Custom Pools
        * The goal is warmth and authenticity — not a corporate bio.
        */}
-      <section className="bg-white py-16 md:py-20 px-4 md:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy mb-8">
-            The Founder&apos;s Story
-          </h2>
-          <div className="space-y-6 font-inter text-gray-600 leading-relaxed text-lg">
-            <p>
-              Epic Custom Pools was founded by an industry veteran with years of hands-on experience
-              building pools across the DFW area. After years of bringing other companies&apos; visions
-              to life, he decided it was time to do it under his own name — with his own standards,
-              his own accountability, and a direct relationship with every family he serves.
-            </p>
-            <p>
-              When you work with Epic Custom Pools, you&apos;re not handed off to a project manager
-              or upsold by a salesperson. You work directly with the person who designs and builds
-              your pool. That&apos;s not a tagline. That&apos;s just how we operate.
-            </p>
+      <section className="bg-gray-50 py-16 md:py-20 px-4 md:px-8">
+        <ScrollReveal>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy mb-8">
+              The Founder&apos;s Story
+            </h2>
+            <div className="space-y-6 font-inter text-gray-600 leading-relaxed text-lg">
+              <p>
+                Epic Custom Pools was founded by an industry veteran with years of hands-on experience
+                building pools across the DFW area. After years of bringing other companies&apos; visions
+                to life, he decided it was time to do it under his own name — with his own standards,
+                his own accountability, and a direct relationship with every family he serves.
+              </p>
+              <p>
+                When you work with Epic Custom Pools, you&apos;re not handed off to a project manager
+                or upsold by a salesperson. You work directly with the person who designs and builds
+                your pool. That&apos;s not a tagline. That&apos;s just how we operate.
+              </p>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* ─── THE MISSION ───────────────────────────────────────── */}
-      <section className="bg-gray-50 py-16 md:py-20 px-4 md:px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-start gap-6">
-            <span className="text-teal text-4xl leading-none mt-1 hidden md:block" aria-hidden="true">◈</span>
-            <div>
-              <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy mb-6">
-                Why We Do This
-              </h2>
-              <p className="font-inter text-gray-600 text-lg leading-relaxed mb-4">
-                A pool isn&apos;t a home improvement. It&apos;s where summers happen. It&apos;s where kids
-                grow up, where neighbors become friends, where you finally have a reason to stay home on a Friday night.
-              </p>
-              <p className="font-inter text-gray-600 text-lg leading-relaxed">
-                Epic Custom Pools exists to help DFW families build those moments. Not just the
-                structure — the experience. We take that seriously. Every decision we make, from
-                the materials we recommend to the way we communicate during the build, is shaped
-                by the belief that you deserve a process as good as the result.
-              </p>
+      <section className="bg-white py-16 md:py-20 px-4 md:px-8">
+        <ScrollReveal>
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-start gap-6">
+              <span className="text-teal text-4xl leading-none mt-1 hidden md:block" aria-hidden="true">◈</span>
+              <div>
+                <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy mb-6">
+                  Why We Do This
+                </h2>
+                <p className="font-inter text-gray-600 text-lg leading-relaxed mb-4">
+                  A pool isn&apos;t a home improvement. It&apos;s where summers happen. It&apos;s where kids
+                  grow up, where neighbors become friends, where you finally have a reason to stay home on a Friday night.
+                </p>
+                <p className="font-inter text-gray-600 text-lg leading-relaxed">
+                  Epic Custom Pools exists to help DFW families build those moments. Not just the
+                  structure — the experience. We take that seriously. Every decision we make, from
+                  the materials we recommend to the way we communicate during the build, is shaped
+                  by the belief that you deserve a process as good as the result.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* ─── WHAT WE STAND FOR ─────────────────────────────────── */}
-      <section className="bg-white py-16 md:py-20 px-4 md:px-8">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-12">
-            What We Stand For
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {VALUES.map((value) => (
-              <div
-                key={value.title}
-                className="flex flex-col items-start bg-gray-50 rounded-xl p-8 border border-gray-100"
-              >
-                <span className="text-4xl mb-5" aria-hidden="true">{value.icon}</span>
-                <h3 className="font-playfair text-xl font-bold text-navy mb-3">{value.title}</h3>
-                <p className="font-inter text-gray-600 text-sm leading-relaxed">{value.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── MEET THE TEAM ─────────────────────────────────────── */}
       <section className="bg-gray-50 py-16 md:py-20 px-4 md:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
-            Meet the Team
-          </h2>
-          <p className="font-inter text-gray-600 text-center text-lg mb-10 max-w-2xl mx-auto">
-            We believe the pool building process should be as enjoyable as the finished result. Our team is genuinely invested in helping your family create memories that last — and we have a good time doing it.
-          </p>
-          <div className="relative rounded-2xl overflow-hidden shadow-xl">
-            <Image
-              src="/team-photo.jpeg"
-              alt="The Epic Custom Pools team — from left to right: Dana, Jeff, and Billy — at a Fort Worth event"
-              width={1080}
-              height={1080}
-              className="w-full object-cover"
-              sizes="(max-width: 768px) 100vw, 896px"
-            />
-            <div className="bg-navy/90 px-6 py-4 flex items-center justify-center gap-2">
-              <span className="font-inter text-sm text-white/80 italic">
-                Left to right: Dana, Jeff, and Billy
-              </span>
+        <ScrollReveal>
+          <div className="max-w-5xl mx-auto">
+            <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-12">
+              What We Stand For
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {VALUES.map((value) => (
+                <div
+                  key={value.title}
+                  className="flex flex-col items-start bg-white rounded-xl p-8 border border-gray-100"
+                >
+                  <span className="text-4xl mb-5" aria-hidden="true">{value.icon}</span>
+                  <h3 className="font-playfair text-xl font-bold text-navy mb-3">{value.title}</h3>
+                  <p className="font-inter text-gray-600 text-sm leading-relaxed">{value.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* ─── SERVICE AREA ──────────────────────────────────────── */}
@@ -195,7 +193,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── CTA ───────────────────────────────────────────────── */}
-      <section className="bg-gray-50 py-16 md:py-20 px-4 md:px-8 text-center">
+      <section className="bg-white py-16 md:py-20 px-4 md:px-8 text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy mb-4">
             Ready to talk?
