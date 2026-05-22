@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Montserrat, Inter } from 'next/font/google';
+import { Barlow_Condensed, Inter } from 'next/font/google';
 import Script from 'next/script';
 import { headers } from 'next/headers';
 import './globals.css';
@@ -14,10 +14,11 @@ const TIER_LABELS: Record<string, string> = {
   authority: 'Authority Package',
 };
 
-const montserrat = Montserrat({
+const barlow = Barlow_Condensed({
   subsets: ['latin'],
-  variable: '--font-montserrat',
+  variable: '--font-barlow',
   weight: ['400', '600', '700', '800', '900'],
+  style: ['normal', 'italic'],
   display: 'swap',
 });
 
@@ -86,15 +87,13 @@ export default function RootLayout({
   const tierLabel = previewTier && isExplicit ? TIER_LABELS[previewTier] : null;
 
   return (
-    <html lang="en" className={`${montserrat.variable} ${inter.variable}`}>
+    <html lang="en" className={`${barlow.variable} ${inter.variable}`}>
       <body className="font-inter bg-white">
-        {/* Tier preview banner — only shown when ?tier= flag is active */}
         {tierLabel && (
           <div className="w-full bg-teal text-white text-xs font-inter font-medium text-center py-1.5 px-4 tracking-wide z-50">
             Preview mode: <span className="font-semibold">{tierLabel}</span> · Only content included in this package is shown
           </div>
         )}
-        {/* LocalBusiness JSON-LD Schema — placed in body to avoid hydration mismatch */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -117,7 +116,7 @@ export default function RootLayout({
                 latitude: 32.7555,
                 longitude: -97.3308,
               },
-              areaServed: siteConfig.serviceCities.map((city) => ({
+              areaServed: siteConfig.serviceCities.map((city: string) => ({
                 '@type': 'City',
                 name: city,
               })),
@@ -125,7 +124,6 @@ export default function RootLayout({
             }),
           }}
         />
-        {/* GA4 — only injected when ga4Id is configured */}
         {ga4Id && (
           <>
             <Script

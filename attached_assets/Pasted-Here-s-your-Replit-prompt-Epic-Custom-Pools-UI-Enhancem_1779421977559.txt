@@ -1,0 +1,83 @@
+Here’s your Replit prompt:
+
+Epic Custom Pools — UI Enhancement Prompt
+
+Enhance the visual design and user experience of the existing site without altering any written content, page structure, or site performance. Do not add, remove, or reword any text. Do not change routing, page layout, or data/form functionality. Only apply the visual and interaction improvements below.
+
+Typography
+Replace the current font stack with Barlow Condensed (or a similar bold condensed sans-serif) for all headings and display text. Use Inter (or similar clean sans-serif) for body text and UI elements. Import both from Google Fonts.
+
+Brand Colors
+Use these as the design system throughout the site:
+
+	•	Primary green: #7ed321 / bright variant #a8e63a
+	•	Primary blue: #1ab3e8 / light variant #5dd0f5
+	•	Dark backgrounds: #080e14 (darkest), #0f1a24 (mid), #111e2b (cards)
+	•	Border color: #1e3347
+	•	Muted text: #7a9bb5
+
+Navigation
+
+	•	Apply frosted glass effect on the nav bar: backdrop-filter: blur(16px) with a semi-transparent dark background. Nav should start transparent over the hero video and transition to the frosted glass style on scroll.
+	•	Add a bottom border to the nav: 1px solid rgba(126,211,33,0.2)
+	•	On hover, nav links should show a lime green underline that slides in from left to right (CSS transition, 250ms)
+	•	The active nav link should remain green with the underline visible
+	•	The “Free Consultation” CTA button in the nav should use a lime green gradient background (#7ed321 → #a8e63a) with dark text, and have a subtle repeating pulse ring animation around it (green border, fades out on loop, ~2s)
+	•	Display the logo image at 52×52px next to the brand name text in the nav
+
+Hero Section
+
+	•	Keep the existing video background. Add a dark gradient overlay fading from #060d14 at the top to transparent at the bottom third, so text reads clearly without obscuring the video.
+	•	Add two subtle glowing orbs behind the content: one green (rgba(126,211,33,0.12)), one blue (rgba(26,179,232,0.10)), both using filter: blur(80px), positioned top-right and bottom-right respectively.
+	•	Split the hero headline across three lines with distinct colors: first line white, second line lime green (#a8e63a), third line pool blue (#5dd0f5). Use Barlow Condensed, ~76px, 900 weight, uppercase.
+	•	Animate the headline words staggering in on page load: each word fades up from translateY(20px) to translateY(0) with 80–100ms delay between words.
+	•	The location badge above the headline (“Fort Worth — DFW West Corridor”) should be a pill with a green border, green text, and a small blinking dot on the left.
+	•	Animate the trust badges below the CTA buttons to stagger in on load (each 120ms apart), sliding up from translateY(16px).
+	•	Add animated water wave shapes across the bottom of the hero using CSS SVG waves in rgba(26,179,232,0.07) — two layers animating in opposite directions.
+	•	Add 3 concentric ripple rings on the right side of the hero that animate outward and fade (alternating green and blue, 4s loop, staggered).
+	•	Add a scroll indicator at the bottom center: three stacked animated chevrons in lime green pointing downward, with a small “SCROLL” label below.
+
+Service Cards
+
+	•	Give cards a dark background (#111e2b), dark border (#1e3347), and border-radius: 16px
+	•	On hover: lift card translateY(-8px), apply a lime green box-shadow glow (rgba(126,211,33,0.15)), and transition border color to rgba(126,211,33,0.4)
+	•	On hover: animate a 3px gradient bar (lime green → pool blue) down the left edge of the card from 0 height to 100% height (0.4s ease)
+	•	Card image area should have a shimmer sweep animation (subtle light passes left to right, 3s loop)
+	•	Add a small category pill label in the bottom-left of each card image area (e.g. “CUSTOM POOLS”), styled with a dark semi-transparent background and green text
+	•	“Learn More →” link text should be lime green; the arrow should translate right 5px on card hover (200ms ease)
+	•	Card titles use Barlow Condensed, uppercase
+
+Lead Capture Form
+
+	•	Form section background: #080e14
+	•	Add animated water ripple rings in the bottom-right corner of the form section (same style as hero ripples, slower — 5s loop)
+	•	Add a subtle blue radial glow in the center background of the form section
+	•	Form title uses Barlow Condensed, large (52px+), uppercase, split into two color lines: first line white, second line pool blue (#5dd0f5)
+	•	Input fields: dark semi-transparent background (rgba(255,255,255,0.05)), subtle border (rgba(255,255,255,0.1)), border-radius: 10px, padding 22px 16px 8px to accommodate floating labels
+	•	Implement floating labels: the label text rises to the top of the field and shrinks on focus or when the field has a value (CSS transition, 200ms)
+	•	On focus, input border transitions to lime green
+	•	Submit button: full-width, lime green gradient, dark text, uppercase, 900 weight, border-radius: 10px
+	•	On form submission success, trigger a confetti burst using the canvas-confetti library in lime green (#7ed321), pool blue (#1ab3e8), and white. Show a success message in place of the form.
+
+“Why Epic Custom Pools” Section
+
+	•	Section background: #0f1a24
+	•	Replace the current emoji icons with custom SVG icons (person, dollar-sign, heart, map-pin) rendered in lime green (#a8e63a) inside a rounded square container with a green-tinted background (rgba(126,211,33,0.1)) and subtle green border
+	•	Card titles: Barlow Condensed, uppercase, white
+	•	On hover: card lifts translateY(-4px), border transitions to rgba(126,211,33,0.35), green box-shadow appears
+	•	On hover: a short gradient underline (lime green → pool blue, 2px tall) animates from width 0 to 36px beneath the card title (350ms ease)
+	•	On hover: the icon container translates up 3px
+
+Footer CTA Section
+
+	•	Background: #080e14, top border 1px solid #1e3347
+	•	Add animated ripple rings radiating from the center (same style as hero, slower — 7s loop, alternating green and blue)
+	•	CTA headline: Barlow Condensed, large (~56px), uppercase, split across two lines — first line lime green gradient, second line pool blue gradient
+	•	CTA button: lime green gradient, dark text, uppercase, 900 weight, with the same pulse ring animation as the nav CTA button
+	•	Cities served line at the bottom in very muted white (rgba(255,255,255,0.2)), small uppercase tracking
+
+Global
+
+	•	Add scroll-behavior: smooth globally
+	•	All color transitions on interactive elements should be 250ms ease unless otherwise specified
+	•	No changes to any written content, meta tags, SEO fields, form logic, routing, or analytics

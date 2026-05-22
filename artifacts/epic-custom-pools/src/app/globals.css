@@ -17,24 +17,135 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-montserrat), system-ui, sans-serif;
-    line-height: 1.15;
-    font-weight: 800;
-    letter-spacing: -0.02em;
+    font-family: var(--font-barlow), system-ui, sans-serif;
+    line-height: 1.1;
+    font-weight: 900;
+    letter-spacing: -0.01em;
   }
 }
 
 @layer utilities {
   .font-playfair {
-    font-family: var(--font-montserrat), system-ui, sans-serif;
+    font-family: var(--font-barlow), system-ui, sans-serif;
     font-weight: 800;
   }
-
   .font-inter {
     font-family: var(--font-inter), system-ui, sans-serif;
   }
-
   .font-montserrat {
-    font-family: var(--font-montserrat), system-ui, sans-serif;
+    font-family: var(--font-barlow), system-ui, sans-serif;
   }
+  .font-barlow {
+    font-family: var(--font-barlow), system-ui, sans-serif;
+  }
+
+  /* Nav link underline slide-in */
+  .nav-link {
+    position: relative;
+    padding-bottom: 2px;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #7ed321;
+    transition: width 250ms ease;
+  }
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  /* Gradient text */
+  .text-gradient-green {
+    background: linear-gradient(90deg, #7ed321, #a8e63a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-blue {
+    background: linear-gradient(90deg, #1ab3e8, #5dd0f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* ── Keyframe Animations ─────────────────────────── */
+
+@keyframes ripple-out {
+  0%   { transform: scale(0.5); opacity: 0.7; }
+  100% { transform: scale(2.8); opacity: 0; }
+}
+.animate-ripple-out {
+  animation: ripple-out 4s ease-out infinite;
+}
+
+@keyframes ripple-slow {
+  0%   { transform: scale(0.5); opacity: 0.6; }
+  100% { transform: scale(2.8); opacity: 0; }
+}
+.animate-ripple-slow {
+  animation: ripple-slow 7s ease-out infinite;
+}
+
+@keyframes blink-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.15; }
+}
+.animate-blink {
+  animation: blink-dot 1.5s ease-in-out infinite;
+}
+
+@keyframes word-fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-word {
+  opacity: 0;
+  animation: word-fade-up 0.55s ease forwards;
+}
+
+@keyframes stagger-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-stagger {
+  opacity: 0;
+  animation: stagger-up 0.5s ease forwards;
+}
+
+@keyframes wave-scroll-1 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-wave-1 {
+  animation: wave-scroll-1 9s linear infinite;
+}
+
+@keyframes wave-scroll-2 {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.animate-wave-2 {
+  animation: wave-scroll-2 12s linear infinite;
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(1);   opacity: 0.55; }
+  100% { transform: scale(1.55); opacity: 0; }
+}
+.animate-pulse-ring {
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+@keyframes chevron-scroll {
+  0%, 100% { transform: translateY(0);  opacity: 1; }
+  50%       { transform: translateY(6px); opacity: 0.25; }
+}
+.animate-chevron {
+  animation: chevron-scroll 1.3s ease-in-out infinite;
 }
