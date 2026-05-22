@@ -32,33 +32,33 @@ const COMBINATIONS = [
 ];
 
 const outdoorExtraContent = (
-  <section className="bg-navy py-16 px-4 md:px-8">
+  <section className="bg-slate-50 py-16 px-4 md:px-8">
     <div className="max-w-5xl mx-auto">
-      <h2 className="font-playfair text-3xl md:text-4xl font-bold text-white text-center mb-4">
+      <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
         Most Popular Combinations
       </h2>
-      <p className="font-inter text-white/70 text-center mb-10 max-w-2xl mx-auto">
+      <p className="font-inter text-gray-600 text-center mb-10 max-w-2xl mx-auto">
         The best backyards are designed as a whole — pool and outdoor living together from day one.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
         {COMBINATIONS.map((combo) => (
-          <div key={combo.title} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+          <div key={combo.title} className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
             <div className="flex flex-wrap gap-2 mb-4">
               {combo.tags.map((tag) => (
-                <span key={tag} className="font-inter text-xs font-semibold text-gold bg-gold/15 px-3 py-1 rounded-full">
+                <span key={tag} className="font-inter text-xs font-semibold text-teal bg-teal/10 px-3 py-1 rounded-full">
                   {tag}
                 </span>
               ))}
             </div>
-            <h3 className="font-playfair text-lg font-bold text-white mb-3">{combo.title}</h3>
-            <p className="font-inter text-white/70 text-sm leading-relaxed">{combo.desc}</p>
+            <h3 className="font-playfair text-lg font-bold text-navy mb-3">{combo.title}</h3>
+            <p className="font-inter text-gray-600 text-sm leading-relaxed">{combo.desc}</p>
           </div>
         ))}
       </div>
       <div className="text-center">
         <Link
           href="/consultation"
-          className="inline-flex items-center justify-center bg-gold text-navy font-inter font-bold text-base px-8 py-4 rounded hover:bg-gold-light transition-colors duration-200"
+          className="inline-flex items-center justify-center bg-navy text-white font-inter font-bold text-base px-8 py-4 rounded hover:bg-navy/80 transition-colors duration-200"
         >
           Plan Your Backyard — Free Consultation
         </Link>

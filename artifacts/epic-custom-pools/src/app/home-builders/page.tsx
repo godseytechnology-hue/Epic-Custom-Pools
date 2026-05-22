@@ -120,23 +120,23 @@ export default function HomeBuildersPage() {
       </section>
 
       {/* ─── HOW IT WORKS ─────────────────────────────────── */}
-      <section className="bg-navy py-20 px-4 md:px-8">
+      <section className="bg-white py-20 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-white text-center mb-4">
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
             How It Works for Builders
           </h2>
-          <p className="font-inter text-white/60 text-center mb-14 max-w-2xl mx-auto">
+          <p className="font-inter text-gray-500 text-center mb-14 max-w-2xl mx-auto">
             A straightforward process built around your schedule, not ours.
           </p>
           <div className="space-y-6">
             {BUILDER_PROCESS.map((step) => (
               <div key={step.step} className="flex gap-6 items-start">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gold flex items-center justify-center">
-                  <span className="font-playfair font-bold text-navy text-lg">{step.step}</span>
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-navy flex items-center justify-center">
+                  <span className="font-playfair font-bold text-white text-lg">{step.step}</span>
                 </div>
                 <div>
-                  <h3 className="font-playfair text-lg font-bold text-white mb-1">{step.title}</h3>
-                  <p className="font-inter text-white/70 text-sm leading-relaxed">{step.desc}</p>
+                  <h3 className="font-playfair text-lg font-bold text-navy mb-1">{step.title}</h3>
+                  <p className="font-inter text-gray-600 text-sm leading-relaxed">{step.desc}</p>
                 </div>
               </div>
             ))}

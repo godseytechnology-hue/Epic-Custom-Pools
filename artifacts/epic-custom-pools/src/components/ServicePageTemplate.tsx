@@ -153,20 +153,20 @@ export default function ServicePageTemplate({
 
       {/* ─── PROCESS STEPS ────────────────────────────────── */}
       {processSteps && processSteps.length > 0 && (
-        <section className="bg-navy py-16 px-4 md:px-8">
+        <section className="bg-slate-50 py-16 px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="font-playfair text-3xl md:text-4xl font-bold text-white text-center mb-12">
+            <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-12">
               Our Build Process
             </h2>
             <div className="space-y-6">
               {processSteps.map((step) => (
                 <div key={step.step} className="flex gap-6 items-start">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gold flex items-center justify-center">
-                    <span className="font-playfair font-bold text-navy text-lg">{step.step}</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-navy flex items-center justify-center">
+                    <span className="font-playfair font-bold text-white text-lg">{step.step}</span>
                   </div>
                   <div>
-                    <h3 className="font-playfair text-lg font-bold text-white mb-1">{step.title}</h3>
-                    <p className="font-inter text-white/70 text-sm leading-relaxed">{step.desc}</p>
+                    <h3 className="font-playfair text-lg font-bold text-navy mb-1">{step.title}</h3>
+                    <p className="font-inter text-gray-600 text-sm leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
               ))}
@@ -185,7 +185,7 @@ export default function ServicePageTemplate({
             <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
               <table className="w-full text-sm font-inter">
                 <thead>
-                  <tr className="bg-navy text-white">
+                  <tr className="bg-teal text-white">
                     <th className="text-left px-6 py-4 font-semibold">Feature</th>
                     <th className="text-center px-6 py-4 font-semibold">{comparisonTable.leftHeader}</th>
                     <th className="text-center px-6 py-4 font-semibold">{comparisonTable.rightHeader}</th>
