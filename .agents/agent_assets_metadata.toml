@@ -1,0 +1,32 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "0-pA2yreiM-yOCJLWwZS1"
+uri = "file://attached_assets/image_search/pool_1.jpg"
+type = "image"
+title = "A — Backyard pool with house & patio"
+
+[[outputs]]
+id = "hiu3C4GYrJzXa3VpsoNRp"
+uri = "file://attached_assets/image_search/pool_2.jpg"
+type = "image"
+title = "B — Stone patio pool, suburban backyard"
+
+[[outputs]]
+id = "eZg3fDX9hKgy5rnOL7uQe"
+uri = "file://attached_assets/image_search/pool_3.jpg"
+type = "image"
+title = "C — Pool with lounge chairs, daytime"
+
+[[outputs]]
+id = "ZuEesOn0moE_0JKwI0TF_"
+uri = "file://attached_assets/image_search/pool_5.jpg"
+type = "image"
+title = "E — Pool patio outdoor living"
+
+[[outputs]]
+id = "OXANgzZViK4UYL5CDDPck"
+uri = "file://attached_assets/image_search/pool_6.jpg"
+type = "image"
+title = "F — Sunny suburban pool, wide shot"
