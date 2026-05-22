@@ -6,6 +6,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import MobileBottomBar from '@/components/MobileBottomBar';
+import WaterRipple from '@/components/WaterRipple';
 import siteConfig from '@/config/siteConfig';
 
 const TIER_LABELS: Record<string, string> = {
@@ -145,6 +146,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <MobileBottomBar />
+        <WaterRipple />
       </body>
     </html>
   );
