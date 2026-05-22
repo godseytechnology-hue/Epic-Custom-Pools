@@ -128,6 +128,31 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* ─── FINANCING CALLOUT ────────────────────────────── */}
+      <section className="bg-teal/10 border-y border-teal/20 py-8 px-4 md:px-8">
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <span className="text-3xl flex-shrink-0" aria-hidden="true">💳</span>
+            <div>
+              <p className="font-playfair text-navy text-lg font-bold leading-snug">
+                Pool Financing Available Through Lyon Financial
+              </p>
+              <p className="font-inter text-gray-600 text-sm mt-0.5">
+                Low monthly payments, quick approval — get your dream pool without waiting.
+              </p>
+            </div>
+          </div>
+          <a
+            href="https://www.lyonfinancial.net/dealer/epic-custom-pools-llc-tx/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-shrink-0 inline-flex items-center justify-center bg-teal text-white font-inter font-semibold text-sm px-6 py-3 rounded hover:bg-teal/90 transition-colors duration-200 whitespace-nowrap"
+          >
+            Explore Financing Options →
+          </a>
+        </div>
+      </section>
+
       {/* ─── PRICING TIER CARDS ───────────────────────────── */}
       <section className="bg-white py-20 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">

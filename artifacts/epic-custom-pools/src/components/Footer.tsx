@@ -66,7 +66,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3 — Contact */}
+          {/* Column 3 — Contact & Resources */}
           <div>
             <h3 className="font-playfair text-gold text-lg font-bold mb-5">Contact</h3>
             <ul className="space-y-4">
@@ -90,13 +90,22 @@ export default function Footer() {
               </li>
             </ul>
 
-            <div className="mt-6">
+            <div className="mt-6 flex flex-col gap-3">
               <Link
                 href="/consultation"
                 className="inline-block bg-gold text-navy font-inter font-semibold text-sm px-6 py-2.5 rounded hover:bg-gold-light transition-colors duration-200"
               >
                 Free Consultation
               </Link>
+              <a
+                href="https://www.lyonfinancial.net/dealer/epic-custom-pools-llc-tx/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-inter text-white/70 text-sm hover:text-gold transition-colors duration-150 flex items-center gap-2"
+              >
+                <span className="text-gold" aria-hidden="true">💳</span>
+                Financing Available
+              </a>
             </div>
           </div>
         </div>

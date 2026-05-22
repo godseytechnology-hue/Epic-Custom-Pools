@@ -20,11 +20,14 @@ export const metadata: Metadata = {
   },
 };
 
+const LYON_FINANCIAL_URL = 'https://www.lyonfinancial.net/dealer/epic-custom-pools-llc-tx/';
+
 const trustItems = [
-  { icon: '🤝', label: 'Owner-Operated' },
-  { icon: '👤', label: 'You Deal Directly With the Owner' },
-  { icon: '💡', label: 'Transparent Pricing' },
-  { icon: '🎯', label: 'Free Design Consultation' },
+  { icon: '🤝', label: 'Owner-Operated', href: null },
+  { icon: '👤', label: 'You Deal Directly With the Owner', href: null },
+  { icon: '💡', label: 'Transparent Pricing', href: null },
+  { icon: '🎯', label: 'Free Design Consultation', href: null },
+  { icon: '💳', label: 'Financing Available', href: LYON_FINANCIAL_URL },
 ];
 
 const services = [
@@ -246,19 +249,37 @@ export default function HomePage() {
       {/* ─── 2. TRUST BAR ────────────────────────────────────── */}
       <section className="bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {trustItems.map((item, i) => (
-              <div
-                key={item.label}
-                className="animate-stagger flex flex-col sm:flex-row items-center sm:items-start gap-3 p-4 rounded-lg border border-gray-100 bg-gray-50"
-                style={{ animationDelay: `${i * 120}ms` }}
-              >
-                <span className="text-2xl flex-shrink-0" aria-hidden="true">{item.icon}</span>
-                <span className="font-inter text-navy font-semibold text-sm text-center sm:text-left leading-snug">
-                  {item.label}
-                </span>
-              </div>
-            ))}
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
+            {trustItems.map((item, i) => {
+              const inner = (
+                <>
+                  <span className="text-2xl flex-shrink-0" aria-hidden="true">{item.icon}</span>
+                  <span className="font-inter text-navy font-semibold text-sm text-center sm:text-left leading-snug">
+                    {item.label}
+                  </span>
+                </>
+              );
+              return item.href ? (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="animate-stagger flex flex-col sm:flex-row items-center sm:items-start gap-3 p-4 rounded-lg border border-gold/30 bg-gold/5 hover:bg-gold/10 transition-colors duration-200"
+                  style={{ animationDelay: `${i * 120}ms` }}
+                >
+                  {inner}
+                </a>
+              ) : (
+                <div
+                  key={item.label}
+                  className="animate-stagger flex flex-col sm:flex-row items-center sm:items-start gap-3 p-4 rounded-lg border border-gray-100 bg-gray-50"
+                  style={{ animationDelay: `${i * 120}ms` }}
+                >
+                  {inner}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
