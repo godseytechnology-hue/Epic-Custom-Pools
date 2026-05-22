@@ -6,7 +6,6 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import MobileBottomBar from '@/components/MobileBottomBar';
-import SplashOverlay from '@/components/SplashOverlay';
 import siteConfig from '@/config/siteConfig';
 
 const TIER_LABELS: Record<string, string> = {
@@ -146,7 +145,6 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <MobileBottomBar />
-        <SplashOverlay />
       </body>
     </html>
   );
