@@ -36,7 +36,7 @@ export default function PricingLeadForm({ position, headline, subtext, buttonLab
     setError('');
 
     try {
-      trackEvent('form_submit', { page: 'pricing', position });
+      trackEvent('generate_lead', { page: 'pricing', position });
 
       const res = await fetch('/api/contact', {
         method: 'POST',

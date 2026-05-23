@@ -53,7 +53,7 @@ export default function LeadForm({ source, defaultCity }: LeadFormProps) {
       });
 
       if (res.ok) {
-        trackEvent('form_submit', { source: source || 'lead-form', pool_type: form.poolType });
+        trackEvent('generate_lead', { source: source || 'lead-form', pool_type: form.poolType });
         router.push('/thank-you?submitted=1');
       } else {
         const data = await res.json().catch(() => ({}));

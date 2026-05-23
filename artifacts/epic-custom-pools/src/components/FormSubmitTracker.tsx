@@ -9,7 +9,7 @@ export default function FormSubmitTracker() {
 
   useEffect(() => {
     if (searchParams.get('submitted') === '1') {
-      trackEvent('form_submit', { page: 'home' });
+      trackEvent('generate_lead', { page: 'home' });
     }
   }, [searchParams]);
 
