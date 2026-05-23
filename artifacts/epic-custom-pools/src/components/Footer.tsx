@@ -40,6 +40,14 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/about"
+                  className="font-inter text-white/70 text-sm hover:text-white transition-colors duration-150"
+                >
+                  About Us
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -90,13 +98,7 @@ export default function Footer() {
               </li>
             </ul>
 
-            <div className="mt-6 flex flex-col gap-3">
-              <Link
-                href="/consultation"
-                className="inline-block bg-gold text-navy font-inter font-semibold text-sm px-6 py-2.5 rounded hover:bg-gold-light transition-colors duration-200"
-              >
-                Free Consultation
-              </Link>
+            <div className="mt-4">
               <a
                 href="https://www.lyonfinancial.net/dealer/epic-custom-pools-llc-tx/"
                 target="_blank"
@@ -114,7 +116,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <Image src="/logo-icon.png" alt="" width={24} height={24} aria-hidden="true" />
+              <Image src="/logo-icon.png" alt="" width={52} height={52} aria-hidden="true" />
               <span className="font-playfair text-white font-bold text-lg">Epic Custom Pools</span>
             </div>
             <p className="font-inter text-gold/70 text-sm italic text-center md:text-right">

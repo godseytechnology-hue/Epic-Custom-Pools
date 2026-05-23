@@ -56,7 +56,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── MEET THE TEAM ─────────────────────────────────────── */}
-      <section className="bg-white py-16 md:py-20 px-4 md:px-8">
+      <section id="meet-the-team" className="bg-white py-16 md:py-20 px-4 md:px-8">
         <ScrollReveal>
           <div className="max-w-4xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">

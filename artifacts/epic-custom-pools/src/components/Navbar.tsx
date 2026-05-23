@@ -52,7 +52,15 @@ export default function Navbar() {
               className="shrink-0"
               priority
             />
-            <span className="font-barlow text-gold text-lg md:text-xl font-black tracking-wide leading-tight uppercase">
+            <span
+              className="font-barlow text-lg md:text-xl font-black tracking-wide leading-tight uppercase"
+              style={{
+                background: 'linear-gradient(to bottom, #ffffff 0%, #7ed321 52%, #1ab3e8 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
               Epic Custom Pools
             </span>
           </Link>

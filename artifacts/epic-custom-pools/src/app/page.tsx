@@ -374,7 +374,61 @@ export default function HomePage() {
         </ScrollReveal>
       </section>
 
-      {/* ─── 6. CTA BANNER ───────────────────────────────────── */}
+      {/* ─── 6. MEET THE TEAM ────────────────────────────────── */}
+      <section className="bg-slate-50 py-20 px-4 md:px-8">
+        <style>{`
+          @keyframes team-link-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(26,179,232,0), 0 0 0 0 rgba(26,179,232,0); }
+            50% { box-shadow: 0 0 20px 5px rgba(26,179,232,0.30), inset 0 0 10px 0 rgba(26,179,232,0.06); }
+          }
+          .team-cta-link { animation: team-link-glow 2.6s ease-in-out infinite; }
+        `}</style>
+        <ScrollReveal>
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+
+              {/* Large logo */}
+              <div className="flex-shrink-0 flex items-center justify-center">
+                <Image
+                  src="/logo-icon.png"
+                  alt="Epic Custom Pools"
+                  width={220}
+                  height={220}
+                  className="drop-shadow-[0_8px_36px_rgba(26,179,232,0.28)]"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="flex-1 text-center md:text-left">
+                <p className="font-inter text-teal font-semibold text-sm tracking-widest uppercase mb-3">
+                  The People Behind the Pool
+                </p>
+                <h2
+                  className="font-barlow font-black text-navy uppercase mb-5"
+                  style={{ fontSize: 'clamp(34px, 5vw, 56px)', letterSpacing: '-0.02em', lineHeight: 1.05 }}
+                >
+                  Real People.<br />Real Craftsmanship.
+                </h2>
+                <p className="font-inter text-gray-600 text-lg leading-relaxed mb-8 max-w-xl mx-auto md:mx-0">
+                  Epic Custom Pools is a family-first business run by people who genuinely care about the work they do. Come see the faces behind every pool we build.
+                </p>
+                <div className="group inline-flex">
+                  <Link
+                    href="/about#meet-the-team"
+                    className="team-cta-link inline-flex items-center gap-3 border-2 border-teal text-teal font-inter font-bold text-base px-8 py-4 rounded-lg hover:bg-teal hover:text-navy transition-colors duration-300"
+                  >
+                    Meet the Team
+                    <span className="group-hover:translate-x-2 transition-transform duration-300" aria-hidden="true">→</span>
+                  </Link>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* ─── 7. CTA BANNER ───────────────────────────────────── */}
       <section className="relative bg-navy py-20 px-4 md:px-8 text-center overflow-hidden border-t border-border-dark">
         {/* Ripple rings from center */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true">
