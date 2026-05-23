@@ -12,8 +12,7 @@ export const metadata: Metadata = {
   },
 };
 
-const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?auto=format&fit=crop&w=1920&q=80';
+const HERO_IMAGE = '/hero-fort-worth.jpg';
 
 const FAQS = [
   {

@@ -40,7 +40,7 @@ const outdoorExtraContent = (
       <p className="font-inter text-gray-600 text-center mb-10 max-w-2xl mx-auto">
         The best backyards are designed as a whole — pool and outdoor living together from day one.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 max-w-3xl mx-auto">
         {COMBINATIONS.map((combo) => (
           <div key={combo.title} className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
             <div className="flex flex-wrap gap-2 mb-4">
