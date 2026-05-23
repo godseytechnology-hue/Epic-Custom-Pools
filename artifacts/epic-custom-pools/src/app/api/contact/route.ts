@@ -42,6 +42,8 @@ export async function POST(req: NextRequest) {
 
   const apiKey = process.env.RESEND_API_KEY;
   const contractorEmail = process.env.CONTRACTOR_EMAIL;
+  const fromEmail = process.env.FROM_EMAIL ?? 'Epic Custom Pools <onboarding@resend.dev>';
+  const bccEmail = process.env.BCC_EMAIL;
 
   if (!apiKey) {
     console.error('[contact] RESEND_API_KEY is not set');
@@ -108,8 +110,9 @@ export async function POST(req: NextRequest) {
     // in Resend. Also confirm CONTRACTOR_EMAIL is set to the owner's real inbox
     // (currently reads from the CONTRACTOR_EMAIL environment secret).
     const { data, error: resendError } = await resend.emails.send({
-      from: 'Epic Custom Pools <onboarding@resend.dev>',
+      from: fromEmail,
       to: [contractorEmail],
+      ...(bccEmail ? { bcc: [bccEmail] } : {}),
       ...(email?.trim() ? { replyTo: email.trim() } : {}),
       subject: isB2B
         ? `New Builder Inquiry — Epic Custom Pools — ${companyName || name}`
