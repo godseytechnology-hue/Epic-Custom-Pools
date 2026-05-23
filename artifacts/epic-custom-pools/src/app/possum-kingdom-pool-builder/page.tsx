@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   },
 };
 
-const HERO_IMAGE = '/hero-possum-kingdom.jpg';
+const HERO_IMAGE =
+  'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1920&q=80';
 
 const FAQS = [
   {

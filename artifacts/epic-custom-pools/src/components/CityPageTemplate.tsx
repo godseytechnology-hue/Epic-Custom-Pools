@@ -8,8 +8,8 @@ import siteConfig from '@/config/siteConfig';
 export type CityPageTemplateProps = {
   cityName: string;
   county: string;
-  heroImage: string;
-  heroImageAlt: string;
+  heroImage?: string;
+  heroImageAlt?: string;
   headline: string;
   subheadline: string;
   openingParagraphs: string[];
@@ -110,14 +110,16 @@ export default function CityPageTemplate({
 
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-navy">
-        <Image
-          src={heroImage}
-          alt={heroImageAlt}
-          fill
-          className="object-cover object-center"
-          priority
-          sizes="100vw"
-        />
+        {heroImage && (
+          <Image
+            src={heroImage}
+            alt={heroImageAlt ?? ''}
+            fill
+            className="object-cover object-center"
+            priority
+            sizes="100vw"
+          />
+        )}
         <div className="absolute inset-0 bg-navy/75" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-12 w-full py-20">
           <div className="max-w-2xl">

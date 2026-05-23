@@ -12,8 +12,6 @@ export const metadata: Metadata = {
   },
 };
 
-const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1920&q=80';
 
 const FAQS = [
   {
@@ -43,8 +41,7 @@ export default function GranburyPoolBuilderPage() {
     <CityPageTemplate
       cityName="Granbury"
       county="Hood"
-      heroImage={HERO_IMAGE}
-      heroImageAlt="Custom pool builder serving Granbury and Lake Granbury Texas"
+
       headline="Granbury's Custom Pool Builder"
       subheadline="Granbury is one of the most distinctive communities in the DFW area — a historic lakefront town where the properties are unique and the expectations are high. We build pools that match both."
       openingParagraphs={[
