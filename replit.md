@@ -95,7 +95,7 @@ Key env vars:
 
 ### Sprint 6 Audit Notes
 - `/api/contact/route.ts` has a `⚠️ BEFORE LAUNCH` comment — update `from:` address to a verified Resend domain email before go-live
-- `CONTRACTOR_EMAIL` env secret currently set to `godsey.technology@gmail.com` — update to owner's real inbox before launch
+- `CONTRACTOR_EMAIL` env secret updated to the owner's real business inbox (was `godsey.technology@gmail.com`)
 - GA4 `trackEvent('form_submit', ...)` fires on LeadForm success. Gallery has `gallery_filter` and `gallery_image_open` events.
 - Sitemap includes /gallery at priority 0.8
 - 6 footer city links still use href="#" (Aledo, Granbury, Mineral Wells, Benbrook, Brock, Stephenville) — city pages for these are a future task
