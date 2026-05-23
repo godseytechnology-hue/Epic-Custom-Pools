@@ -104,7 +104,9 @@ Key env vars:
 Add these to `.env.local` to activate email delivery:
 ```
 RESEND_API_KEY=re_...       # from resend.com
-CONTRACTOR_EMAIL=you@...    # where leads are delivered
+CONTRACTOR_EMAIL=you@...    # where leads are delivered (owner's inbox)
+FROM_EMAIL=Epic Custom Pools <info@epiccustompools.com>   # verified Resend domain sender; falls back to this value if unset
+BCC_EMAIL=godsey.technology@gmail.com                     # silent BCC on every lead email; omit field if unset
 ```
 
 ### Sprint Status
