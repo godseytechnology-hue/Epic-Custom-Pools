@@ -106,16 +106,17 @@ export default function AboutPage() {
                 Epic Custom Pools was founded by an industry veteran with years of hands-on experience
                 building pools across the DFW area. After years of bringing other companies&apos; visions
                 to life, he decided it was time to do it under his own name — with his own standards,
-                his own accountability, and a direct relationship with every family he serves. Going
-                out on his own didn&apos;t mean going it alone. It meant hand-picking a small team of
-                people who hold the same line he does: craftsmen and coordinators who treat every
-                build as if their name is on it, because in a company this size, it effectively is.
+                his own accountability, and a direct relationship with every family he serves. He also
+                knew that serving more families the right way meant building a small, hand-picked team
+                around him. Not to grow for growth&apos;s sake — but because the standard he holds
+                requires people beside him who hold it just as tightly.
               </p>
               <p>
-                When you work with Epic Custom Pools, you&apos;re not handed off to a project manager
-                or upsold by a salesperson. You work directly with the founder and the tight-knit
-                team he built — the people who design, source, and build your pool from start to
-                finish. That&apos;s not a tagline. That&apos;s just how we operate.
+                That team is what makes it possible to reach more families across DFW without the
+                handoffs, the upsells, and the impersonal experience that come with a larger operation.
+                When you work with Epic Custom Pools, you work with the founder and the people he
+                chose — the ones who design, source, and build your pool from start to finish, and
+                who know their name is attached to every project they touch.
               </p>
             </div>
           </div>
