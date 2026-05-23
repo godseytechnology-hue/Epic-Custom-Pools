@@ -450,7 +450,7 @@ export default function HomePage() {
 
         <ScrollReveal>
           <div className="relative z-10 max-w-3xl mx-auto">
-            <Image src="/logo-icon.png" alt="" width={56} height={56} className="mx-auto opacity-50" aria-hidden="true" />
+            <Image src="/logo-icon.png" alt="" width={88} height={88} className="mx-auto opacity-80" aria-hidden="true" />
 
             <h2 className="font-barlow font-black uppercase leading-tight mt-4 mb-6" style={{ fontSize: 'clamp(38px, 5.5vw, 62px)', letterSpacing: '-0.02em' }}>
               <span className="block text-gradient-green">Every great backyard</span>
@@ -470,7 +470,7 @@ export default function HomePage() {
               </TrackingLink>
             </div>
 
-            <p className="font-inter text-xs mt-6 tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.20)' }}>
+            <p className="font-inter text-xs mt-6 tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.60)' }}>
               Serving {siteConfig.serviceAreaPhrase}
             </p>
           </div>
