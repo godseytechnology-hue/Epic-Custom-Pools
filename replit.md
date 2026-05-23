@@ -1,4 +1,4 @@
-# Epic Custom Pools — Workspace
+# Epic Custom Pools – Workspace
 
 ## Overview
 
