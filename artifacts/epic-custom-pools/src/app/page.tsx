@@ -130,10 +130,6 @@ const HOME_FAQS = [
     answer: `We serve Fort Worth, Weatherford, Aledo, Possum Kingdom, Granbury, and surrounding communities in the DFW west corridor. If you're in or near Tarrant, Parker, Hood, or Palo Pinto County, reach out — we're likely already working in your area.`,
   },
   {
-    question: 'Are you licensed and insured?',
-    answer: 'Yes. Epic Custom Pools is licensed and insured in the state of Texas. We carry full general liability and workers\' compensation coverage on every project. Documentation is available upon request.',
-  },
-  {
     question: 'Do you handle permits and HOA approvals?',
     answer: 'Yes — we manage every permit submission, inspection, and city or county approval from start to finish. For communities with HOA architectural review boards (like Walsh Ranch or Ventana), we prepare and submit the full ARB package on your behalf. You never have to navigate the permit office or decode HOA design guidelines.',
   },

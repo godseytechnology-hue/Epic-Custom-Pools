@@ -9,7 +9,7 @@ import siteConfig from '@/config/siteConfig';
 export const metadata: Metadata = {
   title: 'Fort Worth Pool Builder',
   description:
-    'Fort Worth pool builder — owner-operated, licensed & insured in Texas. You deal directly with the owner from design to finish. Learn our story.',
+    'Fort Worth pool builder — owner-operated, hands-on from design to finish. You deal directly with the owner on every project. Learn our story.',
   alternates: {
     canonical: `${siteConfig.siteUrl}/about`,
   },
@@ -105,16 +105,11 @@ export default function AboutPage() {
       <section className="bg-teal/5 border-y border-teal/15 py-10 px-4 md:px-8">
         <ScrollReveal>
           <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-center">
               <div className="flex flex-col items-center gap-2">
                 <span className="text-3xl" aria-hidden="true">🏗️</span>
                 <p className="font-inter font-semibold text-navy text-base">10+ Years in the DFW Pool Industry</p>
                 <p className="font-inter text-gray-500 text-sm">Hands-on experience building pools across the Fort Worth area before founding Epic Custom Pools</p>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <span className="text-3xl" aria-hidden="true">🛡️</span>
-                <p className="font-inter font-semibold text-navy text-base">Licensed &amp; Insured in Texas</p>
-                <p className="font-inter text-gray-500 text-sm">Full general liability and workers&apos; compensation coverage on every project. Documentation available on request.</p>
               </div>
               <div className="flex flex-col items-center gap-2">
                 <span className="text-3xl" aria-hidden="true">📍</span>
