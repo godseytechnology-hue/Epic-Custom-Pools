@@ -106,6 +106,7 @@ export default function HeroVideoCarousel({ className }: Props) {
             objectFit: 'cover',
             opacity: activeIndex === i ? 1 : 0,
             transition: `opacity ${FADE_MS}ms ease-in-out`,
+            display: failed.has(i) ? 'none' : undefined,
           }}
         />
       ))}
