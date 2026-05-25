@@ -38,17 +38,17 @@ Fort Worth/DFW-area swimming pool contractor website. New business. Sprint-based
 ### Tech Stack
 - **Framework**: Next.js 14 (App Router, SSR required for local SEO city pages)
 - **Styling**: Tailwind CSS 3 with custom brand tokens
-- **Fonts**: Playfair Display + Inter via `next/font/google` (self-hosted, CSS variables)
+- **Fonts**: Barlow Condensed + Inter via `next/font/google` (self-hosted, CSS variables)
 - **Email**: Resend (Sprint 6+)
 - **Analytics**: GA4 via `window.gtag` + `trackEvent()` helper
 - **SEO**: Built-in Next.js `metadata` export (NOT next-seo — App Router makes it unnecessary)
 - **Sitemap**: next-sitemap (post-build step)
 
 ### Brand Tokens
-- Navy: `#0a1628` (backgrounds, navbar, footer)
-- Gold: `#c9a84c` (accents, CTAs, headings)
-- Gold Light: `#e8d5a3` (hover states)
-- Teal: `#1a6b7a` (secondary accents)
+- Navy: `#0d2540` (backgrounds, navbar, footer) — token: `navy`
+- Lime green: `#7ed321` (accents, CTAs) — token: `gold` (legacy name, it's actually lime green)
+- Lime green light: `#a8e63a` (hover states) — token: `gold-light`
+- Sky blue: `#1ab3e8` (water/wave accents) — token: `teal`
 
 ### Site Configuration
 All site-wide values live in `src/config/siteConfig.js` and are read from `NEXT_PUBLIC_*` env vars.
@@ -82,23 +82,24 @@ Key env vars:
 - `src/components/FormSubmitTracker.tsx` — fires form_submit GA4 event on /thank-you mount
 
 ### New Sprint 3 Files
-- `src/app/gunite-pools/page.tsx` — Gunite Pools service page with hero, educational content, 6 benefits, 6-step process, FAQ
-- `src/app/fiberglass-pools/page.tsx` — Fiberglass Pools service page with hero, content, benefits, gunite-vs-fiberglass comparison table, FAQ
-- `src/app/swim-spas/page.tsx` — Swim Spas & Hot Tubs service page with hero, content, benefits, swim spa vs pool comparison table, hot tub options, FAQ
-- `src/components/ServicePageTemplate.tsx` — reusable template driving all three service page layouts (hero, sections, benefits, process steps, comparison table, lead form, FAQ, internal links)
+- `src/app/custom-pools/page.tsx` — Custom Pools service page (gunite focus) with hero, educational content, benefits, process, FAQ
+- `src/app/outdoor-living/page.tsx` — Outdoor Living service page with hero, content, benefits, FAQ
+- `src/components/ServicePageTemplate.tsx` — reusable template driving all service page layouts (hero, sections, benefits, process steps, comparison table, lead form, FAQ, internal links)
 - `src/components/ServiceJsonLd.tsx` — JSON-LD schema helper rendering LocalBusiness + Service structured data for each service page
 
+Note: `/gunite-pools`, `/fiberglass-pools`, and `/swim-spas` are 301 redirects to `/custom-pools` (see `next.config.js`).
+
 ### New Sprint 6 Files
-- `src/app/gallery/page.tsx` — server component with SEO metadata; renders GalleryClient
-- `src/app/gallery/GalleryClient.tsx` — 'use client' component; 18 Unsplash images, client-side category filter (All/Gunite/Fiberglass/Swim Spas/Outdoor Living), hover overlays, lightbox modal (React state, no external lib), CTA section, placeholder note
 - `src/app/about/page.tsx` — FULL REWRITE: new hero headline, Founder's Story (⚠️ PLACEHOLDER - personalize before launch), Mission section, 3-value "What We Stand For" (Transparency/Craftsmanship/Accountability), city list, CTA, LeadForm
+
+Note: `/gallery` was built in Sprint 6 but has since been removed from the codebase.
 
 ### Sprint 6 Audit Notes
 - `/api/contact/route.ts` has a `⚠️ BEFORE LAUNCH` comment — update `from:` address to a verified Resend domain email before go-live
 - `CONTRACTOR_EMAIL` env secret updated to the owner's real business inbox (was `godsey.technology@gmail.com`)
-- GA4 `trackEvent('form_submit', ...)` fires on LeadForm success. Gallery has `gallery_filter` and `gallery_image_open` events.
-- Sitemap includes /gallery at priority 0.8
-- 6 footer city links still use href="#" (Aledo, Granbury, Mineral Wells, Benbrook, Brock, Stephenville) — city pages for these are a future task
+- GA4 `trackEvent('form_submit', ...)` fires on LeadForm success
+- Sitemap is now handled by `src/app/sitemap.ts` (Next.js 14 built-in); `next-sitemap.config.js` also exists but is partially stale (still references old redirected routes)
+- Footer city links for Aledo, Granbury, and Possum Kingdom now point to real pages; Mineral Wells, Benbrook, Brock, Stephenville still need city pages
 
 ### Env vars needed for lead form
 Add these to `.env.local` to activate email delivery:
@@ -115,5 +116,5 @@ BCC_EMAIL=godsey.technology@gmail.com                     # silent BCC on every 
 - **Sprint 3** (DONE): Service pages — /gunite-pools, /fiberglass-pools, /swim-spas with full content, lead forms (sourced), JSON-LD schema, SEO metadata
 - **Sprint 4** (DONE): /about, /home-builders, /pricing, /consultation pages
 - **Sprint 5** (DONE): CityPageTemplate, /fort-worth-pool-builder, /weatherford-pool-builder, Footer city links (8 cities), sitemap.ts
-- **Sprint 6** (DONE): /gallery (filterable, lightbox), /about rewrite (Founder's Story placeholder), GA4 on LeadForm, sitemap includes /gallery, email TODO comment, full MVP audit passed
-- **Sprint 7** (upcoming): Domain, real photography, 6 remaining city pages, Resend domain verification, go-live
+- **Sprint 6** (DONE): /about rewrite (Founder's Story placeholder), GA4 on LeadForm, email TODO comment, full MVP audit passed; /gallery was built then removed
+- **Sprint 7** (IN PROGRESS): Domain live (epiccustompools.com), real photography, 4 remaining city pages (Mineral Wells, Benbrook, Brock, Stephenville), Resend domain verification
