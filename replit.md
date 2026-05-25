@@ -117,4 +117,4 @@ BCC_EMAIL=godsey.technology@gmail.com                     # silent BCC on every 
 - **Sprint 4** (DONE): /about, /home-builders, /pricing, /consultation pages
 - **Sprint 5** (DONE): CityPageTemplate, /fort-worth-pool-builder, /weatherford-pool-builder, Footer city links (8 cities), sitemap.ts
 - **Sprint 6** (DONE): /about rewrite (Founder's Story placeholder), GA4 on LeadForm, email TODO comment, full MVP audit passed; /gallery was built then removed
-- **Sprint 7** (IN PROGRESS): Domain live (epiccustompools.com), real photography, 4 remaining city pages (Mineral Wells, Benbrook, Brock, Stephenville), Resend domain verification
+- **Sprint 7** (DONE): Domain live (epiccustompools.com), Resend domain verified (FROM_EMAIL set in env secrets)
