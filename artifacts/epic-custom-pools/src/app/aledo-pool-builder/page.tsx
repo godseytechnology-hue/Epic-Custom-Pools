@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
 import CityPageTemplate from '@/components/CityPageTemplate';
+import siteConfig from '@/config/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Pool Builder Aledo TX | Epic Custom Pools',
+  title: 'Pool Builder Aledo TX',
   description:
     'Custom pool builder serving Aledo, TX. Custom pools and outdoor living for Parker County acreage and new construction. Free design consultation.',
+  alternates: {
+    canonical: `${siteConfig.siteUrl}/aledo-pool-builder`,
+  },
   openGraph: {
     title: 'Pool Builder Aledo TX | Epic Custom Pools',
     description:

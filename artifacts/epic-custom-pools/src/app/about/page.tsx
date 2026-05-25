@@ -3,21 +3,29 @@ import Image from 'next/image';
 import LeadForm from '@/components/LeadForm';
 import TrackingLink from '@/components/TrackingLink';
 import ScrollReveal from '@/components/ScrollReveal';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 import siteConfig from '@/config/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Fort Worth Pool Builder | About Epic Custom Pools',
+  title: 'Fort Worth Pool Builder',
   description:
-    'Epic Custom Pools is a Fort Worth-area pool builder built on direct owner involvement, honest pricing, and craftsmanship that lasts. Learn our story.',
+    'Fort Worth pool builder — owner-operated, licensed & insured in Texas. You deal directly with the owner from design to finish. Learn our story.',
+  alternates: {
+    canonical: `${siteConfig.siteUrl}/about`,
+  },
   openGraph: {
-    title: 'Fort Worth Pool Builder | About Epic Custom Pools',
+    title: 'About Epic Custom Pools | Fort Worth Pool Builder',
     description:
       'When you work with Epic Custom Pools, you deal directly with the owner — the person who designs and builds your pool. Learn what drives us.',
   },
 };
 
 const ALL_CITIES = [
-  'Fort Worth', 'Weatherford', 'Aledo', 'Possum Kingdom', 'Granbury',
+  { name: 'Fort Worth', slug: 'fort-worth-pool-builder' },
+  { name: 'Weatherford', slug: 'weatherford-pool-builder' },
+  { name: 'Aledo', slug: 'aledo-pool-builder' },
+  { name: 'Possum Kingdom', slug: 'possum-kingdom-pool-builder' },
+  { name: 'Granbury', slug: 'granbury-pool-builder' },
 ];
 
 const VALUES = [
@@ -41,6 +49,14 @@ const VALUES = [
 export default function AboutPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        siteUrl={siteConfig.siteUrl}
+        items={[
+          { name: 'Home', href: '/' },
+          { name: 'About', href: '/about' },
+        ]}
+      />
+
       {/* ─── HERO — plain navy, no background image ────────────── */}
       <section className="bg-navy py-24 md:py-32 px-4 md:px-12">
         <div className="max-w-7xl mx-auto">
@@ -49,7 +65,7 @@ export default function AboutPage() {
               {siteConfig.serviceAreaPhrase}
             </p>
             <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
-              Built on Experience. Driven by a Simple Belief: Every Family Deserves a Backyard Worth Coming Home To.
+              Fort Worth Pool Builder — Built on Experience, Driven by Craftsmanship
             </h1>
           </div>
         </div>
@@ -68,7 +84,7 @@ export default function AboutPage() {
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/team-photo.jpeg"
-                alt="The Epic Custom Pools team — from left to right: Dana, Jeff, and Billy — at a Fort Worth event"
+                alt="The Epic Custom Pools team — Dana, Jeff, and Billy — at a Fort Worth, TX event"
                 width={1080}
                 height={1080}
                 className="w-full object-cover"
@@ -79,6 +95,31 @@ export default function AboutPage() {
                 <span className="font-inter text-sm text-white/80 italic">
                   Left to right: Dana, Jeff, and Billy
                 </span>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* ─── E-E-A-T TRUST SIGNALS ──────────────────────────────── */}
+      <section className="bg-teal/5 border-y border-teal/15 py-10 px-4 md:px-8">
+        <ScrollReveal>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-3xl" aria-hidden="true">🏗️</span>
+                <p className="font-inter font-semibold text-navy text-base">10+ Years in the DFW Pool Industry</p>
+                <p className="font-inter text-gray-500 text-sm">Hands-on experience building pools across the Fort Worth area before founding Epic Custom Pools</p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-3xl" aria-hidden="true">🛡️</span>
+                <p className="font-inter font-semibold text-navy text-base">Licensed &amp; Insured in Texas</p>
+                <p className="font-inter text-gray-500 text-sm">Full general liability and workers&apos; compensation coverage on every project. Documentation available on request.</p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-3xl" aria-hidden="true">📍</span>
+                <p className="font-inter font-semibold text-navy text-base">Serving the DFW West Corridor</p>
+                <p className="font-inter text-gray-500 text-sm">Fort Worth, Weatherford, Aledo, Possum Kingdom, Granbury, and surrounding communities</p>
               </div>
             </div>
           </div>
@@ -179,18 +220,22 @@ export default function AboutPage() {
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
               Where We Build
             </h2>
-            <p className="font-inter text-gray-600 text-center text-lg mb-10 max-w-2xl mx-auto">
+            <p className="font-inter text-gray-600 text-center text-lg mb-6 max-w-2xl mx-auto">
               We focus on the DFW west corridor — the communities west and southwest of Fort Worth
               that the owner knows best. If you&apos;re nearby and not on this list, call us anyway.
             </p>
+            <p className="font-inter text-gray-600 text-center mb-8 max-w-2xl mx-auto">
+              Our primary service area covers <strong>Fort Worth</strong> (Tarrant County), <strong>Weatherford</strong> and <strong>Aledo</strong> (Parker County), <strong>Granbury</strong> (Hood County), and <strong>Possum Kingdom</strong> (Palo Pinto County) — along with the surrounding neighborhoods, acreage communities, and unincorporated areas in between.
+            </p>
             <div className="flex flex-wrap justify-center gap-3">
               {ALL_CITIES.map((city) => (
-                <span
-                  key={city}
-                  className="font-inter text-sm font-semibold text-white bg-navy px-4 py-2 rounded-full"
+                <a
+                  key={city.name}
+                  href={`/${city.slug}`}
+                  className="font-inter text-sm font-semibold text-white bg-navy px-4 py-2 rounded-full hover:bg-navy/80 transition-colors"
                 >
-                  {city}, TX
-                </span>
+                  {city.name}, TX
+                </a>
               ))}
             </div>
           </div>

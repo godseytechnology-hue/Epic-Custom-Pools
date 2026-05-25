@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import ServiceJsonLd from '@/components/ServiceJsonLd';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import Link from 'next/link';
 import siteConfig from '@/config/siteConfig';
 
 const POPULAR_FEATURES = [
@@ -14,32 +16,68 @@ const POPULAR_FEATURES = [
   { icon: '📱', name: 'Smart Automation', desc: 'Control lights, heat, jets, and cleaning schedules from your phone with connected pool automation.' },
 ];
 
+const SERVICE_AREA_CITIES = [
+  { name: 'Fort Worth pool builder', href: '/fort-worth-pool-builder' },
+  { name: 'Weatherford pool builder', href: '/weatherford-pool-builder' },
+  { name: 'Aledo pool builder', href: '/aledo-pool-builder' },
+  { name: 'Possum Kingdom pool builder', href: '/possum-kingdom-pool-builder' },
+  { name: 'Granbury pool builder', href: '/granbury-pool-builder' },
+];
+
 const guniteExtraContent = (
-  <section className="bg-white py-16 px-4 md:px-8">
-    <div className="max-w-5xl mx-auto">
-      <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
-        Popular Features & Add-Ons
-      </h2>
-      <p className="font-inter text-gray-600 text-center mb-10 max-w-2xl mx-auto">
-        Every gunite pool we build is unique. Here are the features our Fort Worth clients request most — any combination can be designed in from the start.
-      </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        {POPULAR_FEATURES.map((f) => (
-          <div key={f.name} className="bg-gray-50 rounded-xl p-5 border border-gray-100">
-            <span className="text-2xl mb-3 block" aria-hidden="true">{f.icon}</span>
-            <h3 className="font-playfair text-base font-bold text-navy mb-2">{f.name}</h3>
-            <p className="font-inter text-gray-600 text-xs leading-relaxed">{f.desc}</p>
-          </div>
-        ))}
+  <>
+    <section className="bg-white py-16 px-4 md:px-8">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
+          Popular Features & Add-Ons
+        </h2>
+        <p className="font-inter text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+          Every pool we build is unique. Here are the features our Fort Worth clients request most — any combination can be designed in from the start.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {POPULAR_FEATURES.map((f) => (
+            <div key={f.name} className="bg-gray-50 rounded-xl p-5 border border-gray-100">
+              <span className="text-2xl mb-3 block" aria-hidden="true">{f.icon}</span>
+              <h3 className="font-playfair text-base font-bold text-navy mb-2">{f.name}</h3>
+              <p className="font-inter text-gray-600 text-xs leading-relaxed">{f.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    {/* ─── SERVICE AREAS ──────────────────────────────────────── */}
+    <section className="bg-slate-50 py-16 px-4 md:px-8 border-t border-gray-100">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="font-playfair text-2xl md:text-3xl font-bold text-navy text-center mb-4">
+          Custom Pool Service Areas
+        </h2>
+        <p className="font-inter text-gray-600 text-center mb-8 max-w-2xl mx-auto">
+          We build custom pools throughout the Fort Worth area and DFW west corridor. Click your city for local information, pricing, and site-specific details.
+        </p>
+        <div className="flex flex-wrap gap-3 justify-center">
+          {SERVICE_AREA_CITIES.map((city) => (
+            <Link
+              key={city.href}
+              href={city.href}
+              className="font-inter text-sm font-semibold text-teal border border-teal/30 bg-teal/5 px-5 py-2.5 rounded-full hover:bg-teal hover:text-white transition-colors duration-200"
+            >
+              {city.name}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  </>
 );
 
 export const metadata: Metadata = {
-  title: 'Custom Pool Builder Fort Worth TX | Concrete Pool Specialists',
+  title: 'Custom Pool Builder Fort Worth TX',
   description:
-    'Custom gunite pool builder in Fort Worth and DFW. Any shape, any size — the only material built to last a lifetime in Texas soil. Free consultation.',
+    'Custom pool builder in Fort Worth and DFW. Any shape, any size — built for Texas soil. Owner-operated, no subs. Free design consultation today.',
+  alternates: {
+    canonical: `${siteConfig.siteUrl}/custom-pools`,
+  },
   openGraph: {
     title: 'Custom Pool Builder Fort Worth TX | Epic Custom Pools',
     description:
@@ -53,14 +91,21 @@ const HERO_IMAGE =
 export default function GunitePoolsPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        siteUrl={siteConfig.siteUrl}
+        items={[
+          { name: 'Home', href: '/' },
+          { name: 'Custom Pools', href: '/custom-pools' },
+        ]}
+      />
       <ServiceJsonLd
-        serviceName="Gunite Pool Installation"
+        serviceName="Custom Pool Installation"
         serviceDescription={`Custom gunite (concrete) swimming pool design and construction serving ${siteConfig.serviceAreaPhrase}`}
         serviceUrl="/custom-pools"
       />
       <ServicePageTemplate
         heroImage={HERO_IMAGE}
-        heroImageAlt="gunite pool builder Fort Worth TX"
+        heroImageAlt="Custom gunite pool Fort Worth TX backyard — concrete pool construction"
         heroHeadline="Fully Custom Pools — Built to Last a Lifetime"
         heroSubheadline="Sculpted from reinforced concrete to any shape, depth, and finish you can imagine. If you can dream it, we can build it."
         source="gunite-page"

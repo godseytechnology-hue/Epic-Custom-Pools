@@ -2,11 +2,16 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import PricingLeadForm from '@/components/PricingLeadForm';
 import ServiceJsonLd from '@/components/ServiceJsonLd';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import siteConfig from '@/config/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Pool Pricing Fort Worth TX | Epic Custom Pools',
+  title: 'Pool Pricing Fort Worth TX',
   description:
-    'Transparent pool and outdoor living pricing for Fort Worth and DFW. Typical cost ranges — no forms, no pressure, no surprises.',
+    'Transparent pool and outdoor living pricing for Fort Worth and DFW. Real cost ranges published openly — no forms, no pressure, no surprises.',
+  alternates: {
+    canonical: `${siteConfig.siteUrl}/pricing`,
+  },
   openGraph: {
     title: 'Pool Pricing Fort Worth TX | Epic Custom Pools',
     description:
@@ -93,6 +98,13 @@ const PROCESS_STEPS = [
 export default function PricingPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        siteUrl={siteConfig.siteUrl}
+        items={[
+          { name: 'Home', href: '/' },
+          { name: 'Pricing & Process', href: '/pricing' },
+        ]}
+      />
       <ServiceJsonLd
         serviceName="Pool Pricing & Design Consultation"
         serviceDescription="Transparent pricing for Fort Worth and DFW. See real cost ranges for custom pools, outdoor kitchens, fire pits, and hardscapes — no forms, no pressure. Free design consultation included."

@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
 import CityPageTemplate from '@/components/CityPageTemplate';
+import siteConfig from '@/config/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Pool Builder Weatherford TX | Epic Custom Pools',
+  title: 'Pool Builder Weatherford TX',
   description:
     "Custom pool builder in Weatherford, TX. Custom pools and outdoor living for Parker County acreage. Acreage builds welcome. Free consultation.",
+  alternates: {
+    canonical: `${siteConfig.siteUrl}/weatherford-pool-builder`,
+  },
   openGraph: {
     title: 'Pool Builder Weatherford TX | Epic Custom Pools',
     description:

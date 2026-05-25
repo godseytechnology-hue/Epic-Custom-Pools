@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
 import CityPageTemplate from '@/components/CityPageTemplate';
+import siteConfig from '@/config/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Pool Builder Possum Kingdom TX | Epic Custom Pools',
+  title: 'Pool Builder Possum Kingdom TX',
   description:
     'Custom pool builder serving Possum Kingdom, TX. Lakefront pool design and installation for second homes and vacation properties. Free consultation.',
+  alternates: {
+    canonical: `${siteConfig.siteUrl}/possum-kingdom-pool-builder`,
+  },
   openGraph: {
     title: 'Pool Builder Possum Kingdom TX | Epic Custom Pools',
     description:

@@ -7,9 +7,12 @@ import FormSubmitTracker from '@/components/FormSubmitTracker';
 import PhoneLink from '@/components/PhoneLink';
 
 export const metadata: Metadata = {
-  title: 'Thank You — We\'ll Be in Touch Soon',
+  title: { absolute: "Thank You — We'll Be in Touch Soon" },
   description: 'Your consultation request has been received. Epic Custom Pools will call you within one business day.',
   robots: { index: false, follow: false },
+  alternates: {
+    canonical: `${siteConfig.siteUrl}/thank-you`,
+  },
 };
 
 export default function ThankYouPage() {

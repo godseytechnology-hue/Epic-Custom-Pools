@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
 import CityPageTemplate from '@/components/CityPageTemplate';
+import siteConfig from '@/config/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Pool Builder Granbury TX | Epic Custom Pools',
+  title: 'Pool Builder Granbury TX',
   description:
     'Custom pool builder serving Granbury, TX. Custom pools and outdoor living for Lake Granbury lakefront and Hood County properties. Free design consultation.',
+  alternates: {
+    canonical: `${siteConfig.siteUrl}/granbury-pool-builder`,
+  },
   openGraph: {
     title: 'Pool Builder Granbury TX | Epic Custom Pools',
     description:

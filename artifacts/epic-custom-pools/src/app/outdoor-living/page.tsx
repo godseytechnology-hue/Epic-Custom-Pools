@@ -1,13 +1,17 @@
 import type { Metadata } from 'next';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import ServiceJsonLd from '@/components/ServiceJsonLd';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 import Link from 'next/link';
 import siteConfig from '@/config/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Outdoor Living Fort Worth TX | Epic Custom Pools',
+  title: 'Outdoor Living Fort Worth TX',
   description:
-    'Custom outdoor kitchens, fire pits, pergolas, and hardscapes in Fort Worth and DFW. Free consultation.',
+    'Outdoor kitchens, fire pits, pergolas & hardscapes in Fort Worth and DFW. Owner-operated, no subs. Complete backyard design. Free consultation.',
+  alternates: {
+    canonical: `${siteConfig.siteUrl}/outdoor-living`,
+  },
   openGraph: {
     title: 'Outdoor Living Fort Worth TX | Epic Custom Pools',
     description:
@@ -31,45 +35,85 @@ const COMBINATIONS = [
   },
 ];
 
+const SERVICE_AREA_CITIES = [
+  { name: 'Fort Worth outdoor living', href: '/fort-worth-pool-builder' },
+  { name: 'Weatherford outdoor kitchens', href: '/weatherford-pool-builder' },
+  { name: 'Aledo outdoor living', href: '/aledo-pool-builder' },
+  { name: 'Possum Kingdom outdoor spaces', href: '/possum-kingdom-pool-builder' },
+  { name: 'Granbury outdoor kitchens', href: '/granbury-pool-builder' },
+];
+
 const outdoorExtraContent = (
-  <section className="bg-slate-50 py-16 px-4 md:px-8">
-    <div className="max-w-5xl mx-auto">
-      <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
-        Most Popular Combinations
-      </h2>
-      <p className="font-inter text-gray-600 text-center mb-10 max-w-2xl mx-auto">
-        The best backyards are designed as a whole — pool and outdoor living together from day one.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 max-w-3xl mx-auto">
-        {COMBINATIONS.map((combo) => (
-          <div key={combo.title} className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
-            <div className="flex flex-wrap gap-2 mb-4">
-              {combo.tags.map((tag) => (
-                <span key={tag} className="font-inter text-xs font-semibold text-teal bg-teal/10 px-3 py-1 rounded-full">
-                  {tag}
-                </span>
-              ))}
+  <>
+    <section className="bg-slate-50 py-16 px-4 md:px-8">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
+          Most Popular Combinations
+        </h2>
+        <p className="font-inter text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+          The best backyards are designed as a whole — pool and outdoor living together from day one.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 max-w-3xl mx-auto">
+          {COMBINATIONS.map((combo) => (
+            <div key={combo.title} className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
+              <div className="flex flex-wrap gap-2 mb-4">
+                {combo.tags.map((tag) => (
+                  <span key={tag} className="font-inter text-xs font-semibold text-teal bg-teal/10 px-3 py-1 rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <h3 className="font-playfair text-lg font-bold text-navy mb-3">{combo.title}</h3>
+              <p className="font-inter text-gray-600 text-sm leading-relaxed">{combo.desc}</p>
             </div>
-            <h3 className="font-playfair text-lg font-bold text-navy mb-3">{combo.title}</h3>
-            <p className="font-inter text-gray-600 text-sm leading-relaxed">{combo.desc}</p>
-          </div>
-        ))}
+          ))}
+        </div>
+        <div className="text-center">
+          <Link
+            href="/consultation"
+            className="inline-flex items-center justify-center bg-navy text-white font-inter font-bold text-base px-8 py-4 rounded hover:bg-navy/80 transition-colors duration-200"
+          >
+            Plan Your Backyard — Free Consultation
+          </Link>
+        </div>
       </div>
-      <div className="text-center">
-        <Link
-          href="/consultation"
-          className="inline-flex items-center justify-center bg-navy text-white font-inter font-bold text-base px-8 py-4 rounded hover:bg-navy/80 transition-colors duration-200"
-        >
-          Plan Your Backyard — Free Consultation
-        </Link>
+    </section>
+
+    {/* ─── SERVICE AREAS ──────────────────────────────────────── */}
+    <section className="bg-white py-16 px-4 md:px-8 border-t border-gray-100">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="font-playfair text-2xl md:text-3xl font-bold text-navy text-center mb-4">
+          Outdoor Living Service Areas
+        </h2>
+        <p className="font-inter text-gray-600 text-center mb-8 max-w-2xl mx-auto">
+          We build outdoor kitchens, fire pits, pergolas, and hardscapes throughout the Fort Worth area and DFW west corridor.
+        </p>
+        <div className="flex flex-wrap gap-3 justify-center">
+          {SERVICE_AREA_CITIES.map((city) => (
+            <Link
+              key={city.href}
+              href={city.href}
+              className="font-inter text-sm font-semibold text-teal border border-teal/30 bg-teal/5 px-5 py-2.5 rounded-full hover:bg-teal hover:text-white transition-colors duration-200"
+            >
+              {city.name}
+            </Link>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </>
 );
 
 export default function OutdoorLivingPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        siteUrl={siteConfig.siteUrl}
+        items={[
+          { name: 'Home', href: '/' },
+          { name: 'Outdoor Living', href: '/outdoor-living' },
+        ]}
+      />
       <ServiceJsonLd
         serviceName="Outdoor Living Construction"
         serviceDescription={`Custom outdoor kitchens, fire pits, pergolas, hardscapes, and patio covers serving ${siteConfig.serviceAreaPhrase}`}
@@ -77,7 +121,7 @@ export default function OutdoorLivingPage() {
       />
       <ServicePageTemplate
         heroImage={HERO_IMAGE}
-        heroImageAlt="outdoor living space with kitchen and fire pit Fort Worth TX"
+        heroImageAlt="Custom outdoor kitchen and fire pit Fort Worth TX backyard living space"
         heroHeadline="Your Backyard, Completely Transformed"
         heroSubheadline="From outdoor kitchens and fire pits to pergolas, hardscapes, and entertainment areas — we build everything beyond the pool edge."
         source="outdoor-living-page"

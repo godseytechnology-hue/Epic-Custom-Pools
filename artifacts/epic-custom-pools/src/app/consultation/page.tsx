@@ -1,11 +1,15 @@
 import type { Metadata } from 'next';
 import LeadForm from '@/components/LeadForm';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 import siteConfig from '@/config/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Free Pool Design Consultation Fort Worth | Epic Custom Pools',
+  title: 'Free Pool Design Consultation Fort Worth',
   description:
     'Schedule your free pool design consultation in Fort Worth and DFW. No obligation — we listen, design, and deliver a real estimate. Book today.',
+  alternates: {
+    canonical: `${siteConfig.siteUrl}/consultation`,
+  },
   openGraph: {
     title: 'Free Pool Design Consultation Fort Worth | Epic Custom Pools',
     description:
@@ -61,6 +65,14 @@ const FAQS = [
 export default function ConsultationPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        siteUrl={siteConfig.siteUrl}
+        items={[
+          { name: 'Home', href: '/' },
+          { name: 'Free Consultation', href: '/consultation' },
+        ]}
+      />
+
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="bg-navy py-28 px-4 md:px-12">
         <div className="max-w-4xl mx-auto text-center">

@@ -6,13 +6,17 @@ import LeadForm from '@/components/LeadForm';
 import TrackingLink from '@/components/TrackingLink';
 import HeroVideoCarousel from '@/components/HeroVideoCarousel';
 import ScrollReveal from '@/components/ScrollReveal';
+import FAQSchema from '@/components/FAQSchema';
 
 const OG_IMAGE = `${siteConfig.siteUrl}/logo-icon.png`;
 
 export const metadata: Metadata = {
-  title: 'Custom Pool Builder Fort Worth TX | Epic Custom Pools',
+  title: 'Custom Pool Builder Fort Worth TX',
   description:
-    "Fort Worth's premier custom pool builder and outdoor living contractor. Custom pools, outdoor kitchens, fire pits, and hardscapes. Free consultation.",
+    "Fort Worth's owner-operated pool builder — no subs, no handoffs. Custom pools, outdoor kitchens & hardscapes across DFW. Free design consultation.",
+  alternates: {
+    canonical: `${siteConfig.siteUrl}/`,
+  },
   openGraph: {
     title: 'Custom Pool Builder Fort Worth TX | Epic Custom Pools',
     description:
@@ -108,9 +112,42 @@ const whyItems = [
   },
 ];
 
+const HOME_FAQS = [
+  {
+    question: 'How much does a custom pool cost in Fort Worth?',
+    answer: 'Custom inground pools in Fort Worth and the DFW area typically range from $55,000 for a straightforward entry-level build up to $250,000+ for luxury projects with full outdoor living integration. Most families land in the $80,000–$130,000 range for a mid-size custom pool with quality finishes and a feature or two. We publish our full pricing ranges on our Pricing page — no forms required.',
+  },
+  {
+    question: 'How long does it take to build a pool?',
+    answer: 'Most custom pool builds in the Fort Worth area take 8 to 14 weeks from permit approval to final fill. Factor in 3–6 weeks for permitting and you\'re typically looking at 4–5 months from first call to first swim. We provide a detailed milestone schedule at contract signing so you always know what to expect.',
+  },
+  {
+    question: 'Do you build gunite (concrete) pools?',
+    answer: 'Yes — all of our pools are custom gunite (concrete) construction. Gunite is the gold standard for custom residential pools in North Texas because it handles DFW\'s expansive clay soil better than any alternative, allows any shape and size, and lasts 50+ years with proper care. We do not build vinyl liner pools — they are poorly suited to the Texas climate and soil conditions.',
+  },
+  {
+    question: 'What areas do you serve?',
+    answer: `We serve Fort Worth, Weatherford, Aledo, Possum Kingdom, Granbury, and surrounding communities in the DFW west corridor. If you're in or near Tarrant, Parker, Hood, or Palo Pinto County, reach out — we're likely already working in your area.`,
+  },
+  {
+    question: 'Are you licensed and insured?',
+    answer: 'Yes. Epic Custom Pools is licensed and insured in the state of Texas. We carry full general liability and workers\' compensation coverage on every project. Documentation is available upon request.',
+  },
+  {
+    question: 'Do you handle permits and HOA approvals?',
+    answer: 'Yes — we manage every permit submission, inspection, and city or county approval from start to finish. For communities with HOA architectural review boards (like Walsh Ranch or Ventana), we prepare and submit the full ARB package on your behalf. You never have to navigate the permit office or decode HOA design guidelines.',
+  },
+  {
+    question: 'Can I finance my pool?',
+    answer: 'Yes. We offer pool financing through Lyon Financial, one of the nation\'s leading pool lending specialists. They offer competitive rates and quick approvals, allowing you to get your pool started sooner. Visit our Pricing page for the financing link or ask us about it during your free consultation.',
+  },
+];
+
 export default function HomePage() {
   return (
     <>
+      <FAQSchema id="homepage-faq-schema" faqs={HOME_FAQS} />
+
       {/* ─── 1. HERO ─────────────────────────────────────────── */}
       <section className="relative min-h-[88vh] flex items-center overflow-hidden">
         <HeroVideoCarousel className="absolute inset-0 w-full h-full" />
@@ -144,7 +181,7 @@ export default function HomePage() {
             <div className="mb-7 animate-word" style={{ animationDelay: '0ms' }}>
               <Image
                 src="/logo-icon.png"
-                alt="Epic Custom Pools"
+                alt="Epic Custom Pools logo"
                 width={84}
                 height={84}
                 className="drop-shadow-[0_4px_18px_rgba(26,179,232,0.55)]"
@@ -374,8 +411,37 @@ export default function HomePage() {
         </ScrollReveal>
       </section>
 
-      {/* ─── 6. MEET THE TEAM ────────────────────────────────── */}
+      {/* ─── 6. FAQ SECTION ──────────────────────────────────── */}
       <section className="bg-slate-50 py-20 px-4 md:px-8">
+        <ScrollReveal>
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-12">
+              <p className="font-inter text-teal font-semibold text-sm tracking-widest uppercase mb-3">
+                Common Questions
+              </p>
+              <h2 className="font-barlow text-4xl md:text-5xl font-black text-navy uppercase" style={{ letterSpacing: '-0.02em' }}>
+                Pool Builder FAQ
+              </h2>
+            </div>
+            <div className="space-y-6">
+              {HOME_FAQS.map((faq, i) => (
+                <div
+                  key={i}
+                  className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm"
+                >
+                  <h3 className="font-inter text-base font-semibold text-navy mb-3">
+                    {faq.question}
+                  </h3>
+                  <p className="font-inter text-gray-600 text-sm leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* ─── 7. MEET THE TEAM ────────────────────────────────── */}
+      <section className="bg-white py-20 px-4 md:px-8">
         <style>{`
           @keyframes team-link-glow {
             0%, 100% { box-shadow: 0 0 0 0 rgba(26,179,232,0), 0 0 0 0 rgba(26,179,232,0); }
@@ -391,7 +457,7 @@ export default function HomePage() {
               <div className="flex-shrink-0 flex items-center justify-center">
                 <Image
                   src="/logo-icon.png"
-                  alt="Epic Custom Pools"
+                  alt="Epic Custom Pools logo"
                   width={220}
                   height={220}
                   className="drop-shadow-[0_8px_36px_rgba(26,179,232,0.28)]"
@@ -428,7 +494,7 @@ export default function HomePage() {
         </ScrollReveal>
       </section>
 
-      {/* ─── 7. CTA BANNER ───────────────────────────────────── */}
+      {/* ─── 8. CTA BANNER ───────────────────────────────────── */}
       <section className="relative bg-navy py-20 px-4 md:px-8 text-center overflow-hidden border-t border-border-dark">
         {/* Ripple rings from center */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true">

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import LeadForm from '@/components/LeadForm';
 import FAQSchema, { FAQItem } from '@/components/FAQSchema';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 import ScrollReveal from '@/components/ScrollReveal';
 import siteConfig from '@/config/siteConfig';
 
@@ -26,6 +27,14 @@ export type CityPageTemplateProps = {
   geo?: { lat: number; lng: number };
   faqs?: FAQItem[];
 };
+
+const SIBLING_CITIES = [
+  { name: 'Fort Worth', slug: 'fort-worth-pool-builder' },
+  { name: 'Weatherford', slug: 'weatherford-pool-builder' },
+  { name: 'Aledo', slug: 'aledo-pool-builder' },
+  { name: 'Possum Kingdom', slug: 'possum-kingdom-pool-builder' },
+  { name: 'Granbury', slug: 'granbury-pool-builder' },
+];
 
 export default function CityPageTemplate({
   cityName,
@@ -101,11 +110,20 @@ export default function CityPageTemplate({
     ],
   };
 
+  const nearbyCities = SIBLING_CITIES.filter((c) => c.slug !== citySlug);
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <BreadcrumbJsonLd
+        siteUrl={siteConfig.siteUrl}
+        items={[
+          { name: 'Home', href: '/' },
+          { name: `Pool Builder ${cityName} TX`, href: `/${citySlug}` },
+        ]}
       />
 
       {/* ─── HERO ─────────────────────────────────────────── */}
@@ -113,7 +131,7 @@ export default function CityPageTemplate({
         {heroImage && (
           <Image
             src={heroImage}
-            alt={heroImageAlt ?? ''}
+            alt={heroImageAlt ?? `Custom pool builder ${cityName} TX backyard`}
             fill
             className="object-cover object-center"
             priority
@@ -271,6 +289,26 @@ export default function CityPageTemplate({
           >
             Book Free Consultation →
           </Link>
+        </div>
+      </section>
+
+      {/* ─── ALSO SERVING NEARBY ──────────────────────────── */}
+      <section className="bg-white py-12 px-4 md:px-8 border-t border-gray-100">
+        <div className="max-w-4xl mx-auto">
+          <p className="font-inter text-sm font-semibold text-gray-400 tracking-widest uppercase text-center mb-5">
+            Also Serving Nearby Communities
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            {nearbyCities.map((city) => (
+              <Link
+                key={city.slug}
+                href={`/${city.slug}`}
+                className="font-inter text-sm font-semibold text-navy border border-navy/15 bg-navy/5 px-5 py-2 rounded-full hover:bg-navy hover:text-white transition-colors duration-200"
+              >
+                {city.name} pool builder
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

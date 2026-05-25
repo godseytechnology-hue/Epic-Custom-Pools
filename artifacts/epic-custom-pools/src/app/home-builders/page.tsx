@@ -1,11 +1,15 @@
 import type { Metadata } from 'next';
 import BuilderLeadForm from '@/components/BuilderLeadForm';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 import siteConfig from '@/config/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Builder Pool Contractor Fort Worth TX | Epic Custom Pools',
+  title: 'Builder Pool Contractor Fort Worth TX',
   description:
     'Reliable pool installation partner for home builders in Fort Worth and DFW. Volume pricing, on-time delivery, and warranty. Schedule a call today.',
+  alternates: {
+    canonical: `${siteConfig.siteUrl}/home-builders`,
+  },
   openGraph: {
     title: 'Builder Pool Contractor Fort Worth TX | Epic Custom Pools',
     description:
@@ -74,6 +78,14 @@ const PROJECT_TYPES = [
 export default function HomeBuildersPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        siteUrl={siteConfig.siteUrl}
+        items={[
+          { name: 'Home', href: '/' },
+          { name: 'For Home Builders', href: '/home-builders' },
+        ]}
+      />
+
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="bg-navy py-28 px-4 md:px-12">
         <div className="max-w-4xl mx-auto">

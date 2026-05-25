@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
 import CityPageTemplate from '@/components/CityPageTemplate';
+import siteConfig from '@/config/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Pool Builder Fort Worth TX | Epic Custom Pools',
+  title: 'Pool Builder Fort Worth TX',
   description:
-    "Fort Worth's custom pool builder and outdoor living contractor. Serving Tarrant County neighborhoods. Free design consultation.",
+    "Pool builder Fort Worth TX — owner-operated, no subs. Serving Walsh Ranch, Westover Hills & Tarrant County. You deal with the owner. Free consultation.",
+  alternates: {
+    canonical: `${siteConfig.siteUrl}/fort-worth-pool-builder`,
+  },
   openGraph: {
     title: 'Pool Builder Fort Worth TX | Epic Custom Pools',
     description:

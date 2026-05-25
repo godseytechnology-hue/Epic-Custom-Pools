@@ -81,6 +81,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const ga4Id = siteConfig.ga4Id;
+  const googleSiteVerification = process.env.GOOGLE_SITE_VERIFICATION;
   const headersList = headers();
   const previewTier = headersList.get('x-preview-tier');
   const isExplicit = headersList.get('x-preview-tier-explicit') === '1';
@@ -88,6 +89,11 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`${barlow.variable} ${inter.variable}`}>
+      <head>
+        {googleSiteVerification && (
+          <meta name="google-site-verification" content={googleSiteVerification} />
+        )}
+      </head>
       <body className="font-inter bg-white">
         {tierLabel && (
           <div className="w-full bg-teal text-white text-xs font-inter font-medium text-center py-1.5 px-4 tracking-wide z-50">
@@ -99,12 +105,23 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'LocalBusiness',
+              '@type': ['LocalBusiness', 'PoolContractor'],
               name: siteConfig.siteName,
               description: siteConfig.tagline,
               url: siteConfig.siteUrl,
               telephone: siteConfig.phone,
               email: siteConfig.email,
+              priceRange: '$$$$',
+              openingHours: ['Mo-Fr 08:00-18:00', 'Sa 09:00-14:00'],
+              paymentAccepted: 'Cash, Check, Financing',
+              hasMap: 'https://maps.google.com/?q=Epic+Custom+Pools+Fort+Worth+TX',
+              sameAs: [
+                'https://www.facebook.com/epiccustompools',
+                'https://www.instagram.com/epiccustompools',
+                // TODO: replace with real BBB listing URL once verified — e.g. 'https://www.bbb.org/us/tx/fort-worth/profile/swimming-pool-contractors/epic-custom-pools-...'
+              ],
+              // TODO: add aggregateRating once real review data is available — do NOT fabricate.
+              // aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '1', bestRating: '5' }
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: 'Fort Worth',

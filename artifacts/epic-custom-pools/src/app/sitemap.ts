@@ -2,7 +2,6 @@ import { MetadataRoute } from 'next';
 import siteConfig from '@/config/siteConfig';
 
 const BASE = siteConfig.siteUrl;
-const NOW = new Date().toISOString();
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [
@@ -22,8 +21,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return pages.map(({ url, priority }) => ({
     url: `${BASE}${url}`,
-    lastModified: NOW,
-    changeFrequency: 'monthly' as const,
+    lastModified: new Date().toISOString(),
+    changeFrequency: 'weekly' as const,
     priority,
   }));
 }
