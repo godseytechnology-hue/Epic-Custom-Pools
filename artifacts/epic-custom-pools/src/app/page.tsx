@@ -13,7 +13,7 @@ const OG_IMAGE = `${siteConfig.siteUrl}/logo-icon.png`;
 export const metadata: Metadata = {
   title: 'Custom Pool Builder Fort Worth TX',
   description:
-    "Fort Worth's owner-operated pool builder — no subs, no handoffs. Custom pools, outdoor kitchens & hardscapes across DFW. Free design consultation.",
+    "Fort Worth's owner-operated pool builder. Custom pools, outdoor kitchens & hardscapes across DFW. You deal directly with the owner. Free design consultation.",
   alternates: {
     canonical: `${siteConfig.siteUrl}/`,
   },

@@ -8,7 +8,7 @@ import siteConfig from '@/config/siteConfig';
 export const metadata: Metadata = {
   title: 'Outdoor Living Fort Worth TX',
   description:
-    'Outdoor kitchens, fire pits, pergolas & hardscapes in Fort Worth and DFW. Owner-operated, no subs. Complete backyard design. Free consultation.',
+    'Outdoor kitchens, fire pits, pergolas & hardscapes in Fort Worth and DFW. Owner-operated, hands-on from design to finish. Complete backyard design. Free consultation.',
   alternates: {
     canonical: `${siteConfig.siteUrl}/outdoor-living`,
   },

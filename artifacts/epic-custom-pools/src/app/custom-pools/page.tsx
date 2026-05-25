@@ -74,7 +74,7 @@ const guniteExtraContent = (
 export const metadata: Metadata = {
   title: 'Custom Pool Builder Fort Worth TX',
   description:
-    'Custom pool builder in Fort Worth and DFW. Any shape, any size — built for Texas soil. Owner-operated, no subs. Free design consultation today.',
+    'Custom pool builder in Fort Worth and DFW. Any shape, any size — built for Texas soil. Owner-operated, hands-on from design to finish. Free design consultation today.',
   alternates: {
     canonical: `${siteConfig.siteUrl}/custom-pools`,
   },
