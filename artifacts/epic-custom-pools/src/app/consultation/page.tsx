@@ -26,7 +26,7 @@ const CONSULTATION_STEPS = [
   {
     icon: '✏️',
     title: 'We Design',
-    desc: 'Our designer creates a 3D rendering of your custom pool. You see exactly what it will look like in your yard before any money changes hands.',
+    desc: 'You get the chance to review design specs before any money changes hands.',
   },
   {
     icon: '📋',
@@ -80,7 +80,7 @@ export default function ConsultationPage() {
             Fort Worth &mdash; DFW
           </p>
           <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
-            Let&apos;s Design Your Dream Pool — At No Cost to You
+            Let&apos;s Design Your Dream Pool
           </h1>
           <p className="font-inter text-white/75 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
             Our free design consultations are the first step for every pool we build. No pressure. No obligation. Just a real conversation about what&apos;s possible in your backyard.

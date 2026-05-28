@@ -46,7 +46,6 @@ const PRICING_TIERS = [
       'Color LED lighting package',
       'Tanning ledge or attached spa',
       '1–2 water features (deck jets or sheer descent)',
-      'Automation-compatible equipment',
     ],
     highlight: true,
   },
@@ -58,7 +57,6 @@ const PRICING_TIERS = [
       'Any shape and size — no limitations',
       'Vanishing or negative edge option',
       'Glass tile or premium plaster finish',
-      'Full smart automation (phone-controlled)',
       'Integrated spa and multiple water features',
       'Grotto, fire/water feature, or custom lighting design',
       'Premium coping, travertine, or natural stone decking',
@@ -81,7 +79,7 @@ const COST_FACTORS = [
   { icon: '🏊', label: 'Depth', desc: 'Deep end upgrades, beach entries, and tanning ledges all affect excavation and concrete costs.' },
   { icon: '✨', label: 'Water Features', desc: 'Waterfalls, grottos, deck jets, and sheer descents add dramatic value — and real cost.' },
   { icon: '🪨', label: 'Finish & Tile', desc: 'Plaster is the entry point. Quartz and glass tile finishes last longer and cost more upfront.' },
-  { icon: '⚙️', label: 'Equipment', desc: 'Variable-speed pumps, saltwater systems, and smart automation raise upfront cost but lower long-term expenses.' },
+  { icon: '⚙️', label: 'Equipment', desc: 'Variable-speed pumps and saltwater systems raise upfront cost but lower long-term expenses.' },
   { icon: '🚧', label: 'Site Access', desc: 'Difficult lots, retaining walls, and limited equipment access add excavation and staging costs.' },
   { icon: '🪵', label: 'Decking', desc: 'Travertine, cool deck, and pavers vary significantly in price. Deck size is often as big a factor as the pool.' },
   { icon: '🌿', label: 'Landscaping & Fencing', desc: 'Required fencing and landscaping restoration around the pool area adds to total project cost.' },
@@ -89,7 +87,7 @@ const COST_FACTORS = [
 
 const PROCESS_STEPS = [
   { step: 1, title: 'Free Consultation', weeks: '1–2 weeks', desc: 'We visit your yard, discuss your vision, and deliver a detailed proposal with no obligation.' },
-  { step: 2, title: 'Design', weeks: '2–3 weeks', desc: 'Our designer creates a 3D rendering of your pool. You review and approve every detail before we break ground.' },
+  { step: 2, title: 'Design', weeks: '2–3 weeks', desc: 'You get the chance to review design specs and approve every detail before we break ground.' },
   { step: 3, title: 'Permitting', weeks: '3–6 weeks', desc: 'We handle all permit submissions and city approvals. Timeline varies by jurisdiction.' },
   { step: 4, title: 'Construction', weeks: '8–14 weeks', desc: 'Excavation through final finish. We keep you updated at every milestone and coordinate all trades.' },
   { step: 5, title: 'Final Walkthrough', weeks: '1 week', desc: 'We walk the finished pool with you, run equipment checks, and hand over your operating manual and warranty.' },
