@@ -428,8 +428,60 @@ export default function HomePage() {
         </ScrollReveal>
       </section>
 
-      {/* ─── 4. INLINE LEAD FORM ─────────────────────────────── */}
-      <LeadForm />
+      <SectionDivider fill="#0d2540" bg="#f1f5f9" variant="wave" height={80} />
+
+      {/* ─── CTA BANNER ──────────────────────────────────────── */}
+      <section data-dark-section className="relative bg-navy py-20 px-4 md:px-8 text-center overflow-hidden">
+        {/* Ghost watermark */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
+          <Image src="/logo-icon.png" alt="" width={460} height={460} className="opacity-[0.05]" />
+        </div>
+        {/* Ripple rings from center */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true">
+          {[0, 1, 2].map((i) => (
+            <div
+              key={i}
+              className="absolute inset-0 rounded-full border animate-ripple-slow"
+              style={{
+                width: 320,
+                height: 320,
+                marginLeft: -160,
+                marginTop: -160,
+                borderColor: i % 2 === 0 ? 'rgba(126,211,33,0.12)' : 'rgba(26,179,232,0.10)',
+                animationDelay: `${i * 2.33}s`,
+              }}
+            />
+          ))}
+        </div>
+
+        <ScrollReveal>
+          <div className="relative z-10 max-w-3xl mx-auto">
+            <Image src="/logo-icon.png" alt="" width={88} height={88} className="mx-auto opacity-80" aria-hidden="true" />
+
+            <h2 className="font-barlow font-black uppercase leading-tight mt-4 mb-6" style={{ fontSize: 'clamp(38px, 5.5vw, 62px)', letterSpacing: '-0.02em' }}>
+              <span className="block text-gradient-green">Every great backyard</span>
+              <span className="block text-gradient-blue">starts with a conversation.</span>
+            </h2>
+
+            {/* CTA with pulse ring */}
+            <div className="inline-flex relative">
+              <span className="absolute inset-0 rounded animate-pulse-ring border-2 border-gold pointer-events-none" aria-hidden="true" />
+              <TrackingLink
+                href="/consultation"
+                eventName="cta_click"
+                eventParams={{ button_location: 'cta_banner', destination: '/consultation' }}
+                className="relative inline-flex items-center justify-center bg-gradient-to-r from-gold to-gold-light text-navy font-inter font-black text-lg uppercase px-10 py-4 rounded hover:brightness-110 transition-all duration-200"
+              >
+                Schedule Your Free Consultation
+              </TrackingLink>
+            </div>
+
+            <p className="font-inter text-xs mt-6 tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.60)' }}>
+              Serving {siteConfig.serviceAreaPhrase}
+            </p>
+          </div>
+        </ScrollReveal>
+      </section>
 
       {/* ─── 5. WHY EPIC CUSTOM POOLS ────────────────────────── */}
       <section className="bg-white py-20 px-4 md:px-8">
@@ -511,62 +563,10 @@ export default function HomePage() {
         </ScrollReveal>
       </section>
 
-      <SectionDivider fill="#0d2540" bg="#f1f5f9" variant="wave" height={80} />
+      {/* ─── INLINE LEAD FORM ────────────────────────────────── */}
+      <LeadForm />
 
-      {/* ─── 8. CTA BANNER ───────────────────────────────────── */}
-      <section data-dark-section className="relative bg-navy py-20 px-4 md:px-8 text-center overflow-hidden">
-        {/* Ghost watermark */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
-          <Image src="/logo-icon.png" alt="" width={460} height={460} className="opacity-[0.05]" />
-        </div>
-        {/* Ripple rings from center */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true">
-          {[0, 1, 2].map((i) => (
-            <div
-              key={i}
-              className="absolute inset-0 rounded-full border animate-ripple-slow"
-              style={{
-                width: 320,
-                height: 320,
-                marginLeft: -160,
-                marginTop: -160,
-                borderColor: i % 2 === 0 ? 'rgba(126,211,33,0.12)' : 'rgba(26,179,232,0.10)',
-                animationDelay: `${i * 2.33}s`,
-              }}
-            />
-          ))}
-        </div>
-
-        <ScrollReveal>
-          <div className="relative z-10 max-w-3xl mx-auto">
-            <Image src="/logo-icon.png" alt="" width={88} height={88} className="mx-auto opacity-80" aria-hidden="true" />
-
-            <h2 className="font-barlow font-black uppercase leading-tight mt-4 mb-6" style={{ fontSize: 'clamp(38px, 5.5vw, 62px)', letterSpacing: '-0.02em' }}>
-              <span className="block text-gradient-green">Every great backyard</span>
-              <span className="block text-gradient-blue">starts with a conversation.</span>
-            </h2>
-
-            {/* CTA with pulse ring */}
-            <div className="inline-flex relative">
-              <span className="absolute inset-0 rounded animate-pulse-ring border-2 border-gold pointer-events-none" aria-hidden="true" />
-              <TrackingLink
-                href="/consultation"
-                eventName="cta_click"
-                eventParams={{ button_location: 'cta_banner', destination: '/consultation' }}
-                className="relative inline-flex items-center justify-center bg-gradient-to-r from-gold to-gold-light text-navy font-inter font-black text-lg uppercase px-10 py-4 rounded hover:brightness-110 transition-all duration-200"
-              >
-                Schedule Your Free Consultation
-              </TrackingLink>
-            </div>
-
-            <p className="font-inter text-xs mt-6 tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.60)' }}>
-              Serving {siteConfig.serviceAreaPhrase}
-            </p>
-          </div>
-        </ScrollReveal>
-      </section>
-
-      {/* Mobile bottom padding so sticky bar doesn't cover the CTA */}
+      {/* Mobile bottom padding so sticky bar doesn't cover the lead form */}
       <div className="md:hidden h-14" aria-hidden="true" />
     </>
   );
