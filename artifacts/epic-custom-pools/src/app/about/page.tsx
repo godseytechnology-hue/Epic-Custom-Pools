@@ -144,19 +144,22 @@ export default function AboutPage() {
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy mb-8">
               The Founder&apos;s Story
             </h2>
-            <div className="space-y-6 font-inter text-gray-600 leading-relaxed text-lg">
+            <div className="space-y-8 font-inter text-gray-600 leading-relaxed text-lg">
               <p>
-                Epic Custom Pools was founded by an industry veteran with years of hands-on experience
-                building pools across the DFW area. After years of bringing other companies&apos; visions
-                to life, he decided it was time to do it under his own name — with his own standards,
-                his own accountability, and a direct relationship with every family he serves. He also
-                knew that serving more families the right way meant building a small, hand-picked team
-                around him. Not to grow for growth&apos;s sake — but because the standard he holds
-                requires people beside him who hold it just as tightly.
+                Epic Custom Pools was founded by Billy Ford, an industry veteran with years of
+                hands-on experience building pools across the area. After years of bringing other
+                companies&apos; visions to life, he decided it was time to do it under his own name
+                — with his own standards, his own accountability, and a direct relationship with
+                every family he serves.
               </p>
               <p>
-                That team is what makes it possible to reach more families across DFW without the
-                handoffs, the upsells, and the impersonal experience that come with a larger operation.
+                Billy knew that serving more families the right way meant building a small,
+                hand-picked team around him. Not to grow for growth&apos;s sake — but because the
+                standard he holds requires people beside him who hold it just as tightly. That team
+                is what makes it possible to reach more families across DFW without the handoffs,
+                the upsells, and the impersonal experience that come with a larger operation.
+              </p>
+              <p>
                 When you work with Epic Custom Pools, you work with the founder and the people he
                 chose — the ones who design, source, and build your pool from start to finish, and
                 who know their name is attached to every project they touch.
