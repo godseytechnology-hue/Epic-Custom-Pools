@@ -21,7 +21,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-navy text-white border-t border-border-dark">
+    <footer data-dark-section className="bg-navy text-white border-t border-border-dark">
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-14 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">

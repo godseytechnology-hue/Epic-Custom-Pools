@@ -144,7 +144,9 @@ export default function ServicePageTemplate({
 
       {/* ─── BENEFITS ─────────────────────────────────────── */}
       {benefits && benefits.length > 0 && (
-        <section className="bg-gray-50 py-16 px-4 md:px-8">
+        <>
+          <SectionDivider fill="#f9fafb" bg="white" variant="tilt" height={48} />
+          <section className="bg-gray-50 py-16 px-4 md:px-8">
           <div className="max-w-5xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-12">
               Key Benefits
@@ -163,11 +165,14 @@ export default function ServicePageTemplate({
             </div>
           </div>
         </section>
+        </>
       )}
 
       {/* ─── PROCESS STEPS ────────────────────────────────── */}
       {processSteps && processSteps.length > 0 && (
-        <section className="bg-slate-50 py-16 px-4 md:px-8">
+        <>
+          <SectionDivider fill="#f8fafc" bg="#f9fafb" variant="wave" height={52} />
+          <section className="bg-slate-50 py-16 px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-12">
               Our Build Process
@@ -187,11 +192,14 @@ export default function ServicePageTemplate({
             </div>
           </div>
         </section>
+        </>
       )}
 
       {/* ─── COMPARISON TABLE ─────────────────────────────── */}
       {comparisonTable && (
-        <section className="bg-white py-16 px-4 md:px-8">
+        <>
+          <SectionDivider fill="white" bg="#f8fafc" variant="curve" height={48} />
+          <section className="bg-white py-16 px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-10">
               {comparisonTable.caption}
@@ -218,6 +226,7 @@ export default function ServicePageTemplate({
             </div>
           </div>
         </section>
+        </>
       )}
 
       {/* ─── EXTRA CONTENT ────────────────────────────────── */}

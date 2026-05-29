@@ -37,10 +37,5 @@ export default function GlobalEffects() {
     };
   }, []);
 
-  return (
-    <>
-      <div className="grain-overlay" aria-hidden="true" />
-      <div ref={spotlightRef} className="cursor-spotlight" aria-hidden="true" />
-    </>
-  );
+  return <div ref={spotlightRef} className="cursor-spotlight" aria-hidden="true" />;
 }
