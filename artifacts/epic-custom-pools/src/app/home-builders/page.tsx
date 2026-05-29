@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import BuilderLeadForm from '@/components/BuilderLeadForm';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import MarqueeTicker from '@/components/MarqueeTicker';
+import SectionDivider from '@/components/SectionDivider';
 import siteConfig from '@/config/siteConfig';
 
 export const metadata: Metadata = {
@@ -87,7 +89,7 @@ export default function HomeBuildersPage() {
       />
 
       {/* ─── HERO ─────────────────────────────────────────── */}
-      <section className="bg-navy py-28 px-4 md:px-12">
+      <section data-dark-section className="bg-navy py-28 px-4 md:px-12">
         <div className="max-w-4xl mx-auto">
           <p className="font-inter text-gold text-sm font-semibold tracking-widest uppercase mb-4">
             For Home Builders &amp; Developers
@@ -106,6 +108,9 @@ export default function HomeBuildersPage() {
           </a>
         </div>
       </section>
+
+      <MarqueeTicker />
+      <SectionDivider fill="white" bg="#0d2540" variant="wave" height={56} />
 
       {/* ─── WHY BUILDERS CHOOSE US ───────────────────────── */}
       <section className="bg-white py-20 px-4 md:px-8">

@@ -67,7 +67,7 @@ export default function ServicePageTemplate({
   return (
     <>
       {/* ─── HERO ─────────────────────────────────────────── */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-navy">
+      <section data-dark-section className="relative min-h-[70vh] flex items-center overflow-hidden bg-navy">
         <Image
           src={heroImage}
           alt={heroImageAlt}

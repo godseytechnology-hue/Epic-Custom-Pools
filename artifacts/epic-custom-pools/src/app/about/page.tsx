@@ -60,7 +60,7 @@ export default function AboutPage() {
       />
 
       {/* ─── HERO — plain navy, no background image ────────────── */}
-      <section className="bg-navy py-24 md:py-32 px-4 md:px-12">
+      <section data-dark-section className="bg-navy py-24 md:py-32 px-4 md:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
             <p className="font-inter text-gold text-sm font-semibold tracking-widest uppercase mb-4">
@@ -164,6 +164,8 @@ export default function AboutPage() {
         </ScrollReveal>
       </section>
 
+      <SectionDivider fill="white" bg="#f9fafb" variant="curve" height={52} />
+
       {/* ─── THE MISSION ───────────────────────────────────────── */}
       <section className="bg-white py-16 md:py-20 px-4 md:px-8">
         <ScrollReveal>
@@ -190,6 +192,8 @@ export default function AboutPage() {
         </ScrollReveal>
       </section>
 
+      <SectionDivider fill="#f9fafb" bg="white" variant="tilt" flipX height={48} />
+
       {/* ─── WHAT WE STAND FOR ─────────────────────────────────── */}
       <section className="bg-gray-50 py-16 md:py-20 px-4 md:px-8">
         <ScrollReveal>
@@ -212,6 +216,8 @@ export default function AboutPage() {
           </div>
         </ScrollReveal>
       </section>
+
+      <SectionDivider fill="#f8fafc" bg="#f9fafb" variant="wave" height={48} />
 
       {/* ─── SERVICE AREA ──────────────────────────────────────── */}
       <section className="bg-slate-50 py-16 md:py-20 px-4 md:px-8">

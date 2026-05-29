@@ -3,6 +3,8 @@ import Link from 'next/link';
 import PricingLeadForm from '@/components/PricingLeadForm';
 import ServiceJsonLd from '@/components/ServiceJsonLd';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import MarqueeTicker from '@/components/MarqueeTicker';
+import SectionDivider from '@/components/SectionDivider';
 import siteConfig from '@/config/siteConfig';
 
 export const metadata: Metadata = {
@@ -110,7 +112,7 @@ export default function PricingPage() {
       />
 
       {/* ─── HERO ─────────────────────────────────────────── */}
-      <section className="bg-navy py-28 px-4 md:px-12">
+      <section data-dark-section className="bg-navy py-28 px-4 md:px-12">
         <div className="max-w-4xl mx-auto text-center">
           <p className="font-inter text-gold text-sm font-semibold tracking-widest uppercase mb-4">
             Fort Worth &mdash; DFW
@@ -137,6 +139,9 @@ export default function PricingPage() {
           </div>
         </div>
       </section>
+
+      <MarqueeTicker />
+      <SectionDivider fill="white" bg="#0d2540" variant="wave" height={56} />
 
       {/* ─── FINANCING CALLOUT ────────────────────────────── */}
       <section className="bg-teal/10 border-y border-teal/20 py-8 px-4 md:px-8">

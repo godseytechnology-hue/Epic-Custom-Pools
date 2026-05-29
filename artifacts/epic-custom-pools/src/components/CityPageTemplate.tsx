@@ -129,7 +129,7 @@ export default function CityPageTemplate({
       />
 
       {/* ─── HERO ─────────────────────────────────────────── */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-navy">
+      <section data-dark-section className="relative min-h-[70vh] flex items-center overflow-hidden bg-navy">
         {heroImage && (
           <Image
             src={heroImage}

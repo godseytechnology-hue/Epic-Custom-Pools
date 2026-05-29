@@ -146,7 +146,7 @@ export default function HomePage() {
       <FAQSchema id="homepage-faq-schema" faqs={HOME_FAQS} />
 
       {/* ─── 1. HERO ─────────────────────────────────────────── */}
-      <section className="relative min-h-[88vh] flex items-center overflow-hidden">
+      <section data-dark-section className="relative min-h-[88vh] flex items-center overflow-hidden">
         <HeroVideoCarousel className="absolute inset-0 w-full h-full" />
 
         {/* Gradient overlay — dark at top, fades to transparent */}
@@ -514,7 +514,7 @@ export default function HomePage() {
       <SectionDivider fill="#0d2540" bg="#f8fafc" variant="wave" height={80} />
 
       {/* ─── 8. CTA BANNER ───────────────────────────────────── */}
-      <section className="relative bg-navy py-20 px-4 md:px-8 text-center overflow-hidden">
+      <section data-dark-section className="relative bg-navy py-20 px-4 md:px-8 text-center overflow-hidden">
         {/* Ghost watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
           <Image src="/logo-icon.png" alt="" width={460} height={460} className="opacity-[0.05]" />

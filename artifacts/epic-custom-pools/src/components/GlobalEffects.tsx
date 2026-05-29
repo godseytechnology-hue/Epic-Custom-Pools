@@ -15,9 +15,11 @@ export default function GlobalEffects() {
     const onMove = (e: MouseEvent) => {
       cancelAnimationFrame(rafId);
       rafId = requestAnimationFrame(() => {
+        const target = document.elementFromPoint(e.clientX, e.clientY);
+        const overDark = !!target?.closest('[data-dark-section]');
         el.style.setProperty('--cursor-x', `${e.clientX}px`);
         el.style.setProperty('--cursor-y', `${e.clientY}px`);
-        el.style.opacity = '1';
+        el.style.opacity = overDark ? '1' : '0';
       });
     };
 
