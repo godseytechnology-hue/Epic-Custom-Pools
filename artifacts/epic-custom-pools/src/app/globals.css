@@ -24,6 +24,13 @@
   }
 }
 
+/* Ambient mesh gradient — white sections get a barely-there brand colour wash */
+section.bg-white {
+  background-image:
+    radial-gradient(ellipse 80% 60% at 95% 5%,  rgba(126,211,33,0.05) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 5%  95%, rgba(26,179,232,0.05) 0%, transparent 55%);
+}
+
 @layer utilities {
   .font-playfair {
     font-family: var(--font-barlow), system-ui, sans-serif;
