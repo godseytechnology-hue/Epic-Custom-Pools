@@ -21,8 +21,8 @@ const siteConfig = {
   serviceAreaPhrase: serviceCities.join(', ') + ', and surrounding areas',
   navLinks: [
     { label: 'Home', href: '/' },
-    { label: 'Pricing', href: '/pricing' },
     { label: 'About', href: '/about' },
+    { label: 'Pricing', href: '/pricing' },
     { label: 'Contact', href: '/consultation' },
   ],
   services: [
