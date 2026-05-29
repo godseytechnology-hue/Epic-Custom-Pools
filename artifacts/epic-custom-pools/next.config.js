@@ -1,3 +1,4 @@
+// v1.1.0
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
