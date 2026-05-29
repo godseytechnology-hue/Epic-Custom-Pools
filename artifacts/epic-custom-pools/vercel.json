@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.epiccustompools.com" }],
+      "destination": "https://epiccustompools.com/:path*",
+      "permanent": true
+    }
+  ]
+}

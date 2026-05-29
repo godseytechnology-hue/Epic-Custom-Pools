@@ -175,6 +175,7 @@ export default function HomePage() {
           <Image
             src="/logo-icon.webp"
             alt=""
+            aria-hidden="true"
             width={480}
             height={480}
             className="opacity-[0.04]"
@@ -434,7 +435,7 @@ export default function HomePage() {
       <section data-dark-section className="relative bg-navy py-20 px-4 md:px-8 text-center overflow-hidden">
         {/* Ghost watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
-          <Image src="/logo-icon.webp" alt="" width={460} height={460} className="opacity-[0.05]" />
+          <Image src="/logo-icon.webp" alt="" aria-hidden="true" width={460} height={460} className="opacity-[0.05]" />
         </div>
         {/* Ripple rings from center */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true">
@@ -530,7 +531,7 @@ export default function HomePage() {
       {/* Logo mark section divider */}
       <div className="flex items-center justify-center gap-4 bg-slate-100 py-3" aria-hidden="true">
         <div className="h-px w-16 bg-gradient-to-r from-transparent to-teal/30" />
-        <Image src="/logo-icon.webp" alt="" width={48} height={48} className="opacity-50" />
+        <Image src="/logo-icon.webp" alt="" aria-hidden="true" width={48} height={48} className="opacity-50" />
         <div className="h-px w-16 bg-gradient-to-l from-transparent to-teal/30" />
       </div>
 
