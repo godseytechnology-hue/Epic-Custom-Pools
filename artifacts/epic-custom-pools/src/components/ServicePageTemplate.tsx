@@ -145,8 +145,8 @@ export default function ServicePageTemplate({
       {/* ─── BENEFITS ─────────────────────────────────────── */}
       {benefits && benefits.length > 0 && (
         <>
-          <SectionDivider fill="#f9fafb" bg="white" variant="tilt" height={48} />
-          <section className="bg-gray-50 py-16 px-4 md:px-8">
+          <SectionDivider fill="#f3f4f6" bg="white" variant="tilt" height={48} />
+          <section className="bg-gray-100 py-16 px-4 md:px-8">
           <div className="max-w-5xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-12">
               Key Benefits
@@ -171,8 +171,8 @@ export default function ServicePageTemplate({
       {/* ─── PROCESS STEPS ────────────────────────────────── */}
       {processSteps && processSteps.length > 0 && (
         <>
-          <SectionDivider fill="#f8fafc" bg="#f9fafb" variant="wave" height={52} />
-          <section className="bg-slate-50 py-16 px-4 md:px-8">
+          <SectionDivider fill="#f1f5f9" bg="#f3f4f6" variant="wave" height={52} />
+          <section className="bg-slate-100 py-16 px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-12">
               Our Build Process
@@ -198,7 +198,7 @@ export default function ServicePageTemplate({
       {/* ─── COMPARISON TABLE ─────────────────────────────── */}
       {comparisonTable && (
         <>
-          <SectionDivider fill="white" bg="#f8fafc" variant="curve" height={48} />
+          <SectionDivider fill="white" bg="#f1f5f9" variant="curve" height={48} />
           <section className="bg-white py-16 px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-10">
@@ -233,7 +233,7 @@ export default function ServicePageTemplate({
       {extraContent}
 
       {/* ─── INTERNAL LINKS ───────────────────────────────── */}
-      <section className="bg-gray-50 py-10 px-4 md:px-8">
+      <section className="bg-gray-100 py-10 px-4 md:px-8">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link
             href="/pricing"
@@ -254,7 +254,7 @@ export default function ServicePageTemplate({
       <LeadForm source={source} />
 
       {/* ─── FAQ ──────────────────────────────────────────── */}
-      <section className="bg-gray-50 py-16 px-4 md:px-8">
+      <section className="bg-gray-100 py-16 px-4 md:px-8">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-10">
             Frequently Asked Questions

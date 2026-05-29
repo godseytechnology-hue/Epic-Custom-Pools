@@ -193,10 +193,10 @@ export default function CityPageTemplate({
         </div>
       </section>
 
-      <SectionDivider fill="#f9fafb" bg="white" variant="tilt" height={48} />
+      <SectionDivider fill="#f3f4f6" bg="white" variant="tilt" height={48} />
 
       {/* ─── NEIGHBORHOODS ────────────────────────────────── */}
-      <section className="bg-gray-50 py-16 px-4 md:px-8">
+      <section className="bg-gray-100 py-16 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
             {neighborhoodLabel}
@@ -217,7 +217,7 @@ export default function CityPageTemplate({
         </div>
       </section>
 
-      <SectionDivider fill="white" bg="#f9fafb" variant="curve" height={52} />
+      <SectionDivider fill="white" bg="#f3f4f6" variant="curve" height={52} />
 
       {/* ─── LOCAL CONSIDERATIONS ─────────────────────────── */}
       <section className="bg-white py-16 px-4 md:px-8">
@@ -229,10 +229,10 @@ export default function CityPageTemplate({
         </div>
       </section>
 
-      <SectionDivider fill="#f8fafc" bg="white" variant="tilt" flipX height={48} />
+      <SectionDivider fill="#f1f5f9" bg="white" variant="tilt" flipX height={48} />
 
       {/* ─── POOL TYPES ───────────────────────────────────── */}
-      <section className="bg-slate-50 py-16 px-4 md:px-8">
+      <section className="bg-slate-100 py-16 px-4 md:px-8">
         <ScrollReveal>
           <div className="max-w-4xl mx-auto">
             <h2 className="font-playfair text-2xl md:text-3xl font-bold text-navy mb-5">
@@ -295,7 +295,7 @@ export default function CityPageTemplate({
       )}
 
       {/* ─── INTERNAL LINKS ───────────────────────────────── */}
-      <section className="bg-gray-50 py-10 px-4 md:px-8">
+      <section className="bg-gray-100 py-10 px-4 md:px-8">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link
             href="/pricing"

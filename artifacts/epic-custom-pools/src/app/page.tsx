@@ -364,10 +364,10 @@ export default function HomePage() {
         </ScrollReveal>
       </section>
 
-      <SectionDivider fill="#f8fafc" bg="white" variant="tilt" flipX height={52} />
+      <SectionDivider fill="#f1f5f9" bg="white" variant="tilt" flipX height={52} />
 
       {/* ─── 4. SERVICES OVERVIEW ────────────────────────────── */}
-      <section className="bg-slate-50 py-20 px-4 md:px-8">
+      <section className="bg-slate-100 py-20 px-4 md:px-8">
         <ScrollReveal>
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-14">
@@ -476,14 +476,14 @@ export default function HomePage() {
       </section>
 
       {/* Logo mark section divider */}
-      <div className="flex items-center justify-center gap-4 bg-slate-50 py-3" aria-hidden="true">
+      <div className="flex items-center justify-center gap-4 bg-slate-100 py-3" aria-hidden="true">
         <div className="h-px w-16 bg-gradient-to-r from-transparent to-teal/30" />
         <Image src="/logo-icon.png" alt="" width={48} height={48} className="opacity-50" />
         <div className="h-px w-16 bg-gradient-to-l from-transparent to-teal/30" />
       </div>
 
       {/* ─── 6. FAQ SECTION ──────────────────────────────────── */}
-      <section className="bg-slate-50 py-20 px-4 md:px-8">
+      <section className="bg-slate-100 py-20 px-4 md:px-8">
         <ScrollReveal>
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
@@ -511,7 +511,7 @@ export default function HomePage() {
         </ScrollReveal>
       </section>
 
-      <SectionDivider fill="#0d2540" bg="#f8fafc" variant="wave" height={80} />
+      <SectionDivider fill="#0d2540" bg="#f1f5f9" variant="wave" height={80} />
 
       {/* ─── 8. CTA BANNER ───────────────────────────────────── */}
       <section data-dark-section className="relative bg-navy py-20 px-4 md:px-8 text-center overflow-hidden">

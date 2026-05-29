@@ -120,10 +120,10 @@ export default function ConsultationPage() {
       {/* ─── LEAD FORM ────────────────────────────────────── */}
       <LeadForm source="consultation-page" />
 
-      <SectionDivider fill="#f9fafb" bg="white" variant="tilt" height={48} />
+      <SectionDivider fill="#f3f4f6" bg="white" variant="tilt" height={48} />
 
       {/* ─── FAQ ──────────────────────────────────────────── */}
-      <section className="bg-gray-50 py-20 px-4 md:px-8">
+      <section className="bg-gray-100 py-20 px-4 md:px-8">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-10">
             Common Questions
@@ -139,7 +139,7 @@ export default function ConsultationPage() {
         </div>
       </section>
 
-      <SectionDivider fill="white" bg="#f9fafb" variant="curve" height={48} />
+      <SectionDivider fill="white" bg="#f3f4f6" variant="curve" height={48} />
 
       {/* ─── SERVICE CITIES ───────────────────────────────── */}
       <section className="bg-white py-14 px-4 md:px-8 border-t border-gray-100">
