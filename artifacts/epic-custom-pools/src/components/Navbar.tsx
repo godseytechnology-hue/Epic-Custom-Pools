@@ -49,7 +49,7 @@ export default function Navbar() {
               alt="Epic Custom Pools logo"
               width={66}
               height={66}
-              className="shrink-0 drop-shadow-[0_2px_10px_rgba(26,179,232,0.45)]"
+              className="shrink-0 animate-logo-breathe"
               priority
             />
             <span

@@ -168,63 +168,72 @@ export default function HomePage() {
           aria-hidden="true"
         />
 
+        {/* Ghost watermark */}
+        <div className="absolute inset-0 flex items-center justify-center z-[2] pointer-events-none" aria-hidden="true">
+          <Image
+            src="/logo-icon.png"
+            alt=""
+            width={480}
+            height={480}
+            className="opacity-[0.04]"
+          />
+        </div>
+
         {/* Hero content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-12 w-full py-20">
-          <div className="max-w-2xl">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-12 w-full py-20 flex flex-col items-center text-center">
 
-            {/* Logo lockup */}
-            <div className="mb-7 animate-word" style={{ animationDelay: '0ms' }}>
-              <Image
-                src="/logo-icon.png"
-                alt="Epic Custom Pools logo"
-                width={120}
-                height={120}
-                className="drop-shadow-[0_6px_28px_rgba(26,179,232,0.70)]"
-                priority
-              />
-            </div>
+          {/* Logo lockup */}
+          <div className="mb-8 animate-logo-surface">
+            <Image
+              src="/logo-icon.png"
+              alt="Epic Custom Pools logo"
+              width={160}
+              height={160}
+              className="drop-shadow-[0_8px_40px_rgba(26,179,232,0.80)] mx-auto"
+              priority
+            />
+          </div>
 
-            {/* Location badge */}
-            <div className="inline-flex items-center gap-2.5 border border-gold/50 text-gold text-xs font-inter font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-7">
-              <span className="w-2 h-2 rounded-full bg-gold flex-shrink-0 animate-blink" aria-hidden="true" />
-              Fort Worth &mdash; DFW
-            </div>
+          {/* Location badge */}
+          <div className="inline-flex items-center gap-2.5 border border-gold/50 text-gold text-xs font-inter font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-7">
+            <span className="w-2 h-2 rounded-full bg-gold flex-shrink-0 animate-blink" aria-hidden="true" />
+            Fort Worth &mdash; DFW
+          </div>
 
-            {/* 3-line colored headline with word stagger */}
-            <h1 className="font-barlow font-black uppercase leading-[1.0] mb-6" style={{ fontSize: 'clamp(50px, 7.5vw, 84px)', letterSpacing: '-0.02em' }}>
-              <span className="block text-white animate-word" style={{ animationDelay: '0ms' }}>
-                Where DFW Families
-              </span>
-              <span className="block text-gold animate-word" style={{ animationDelay: '90ms' }}>
-                Build Epic
-              </span>
-              <span className="block text-teal-light animate-word" style={{ animationDelay: '180ms' }}>
-                Memories
-              </span>
-            </h1>
+          {/* 3-line colored headline with word stagger */}
+          <h1 className="font-barlow font-black uppercase leading-[1.0] mb-6" style={{ fontSize: 'clamp(50px, 7.5vw, 84px)', letterSpacing: '-0.02em' }}>
+            <span className="block text-white animate-word" style={{ animationDelay: '0ms' }}>
+              Where DFW Families
+            </span>
+            <span className="block text-gold animate-word" style={{ animationDelay: '90ms' }}>
+              Build Epic
+            </span>
+            <span className="block text-teal-light animate-word" style={{ animationDelay: '180ms' }}>
+              Memories
+            </span>
+          </h1>
 
-            <p className="font-inter text-white/80 text-lg md:text-xl leading-relaxed mb-10 max-w-xl animate-word" style={{ animationDelay: '280ms' }}>
-              Owner-operated by a DFW pool industry expert — now serving {siteConfig.serviceAreaPhrase}
-            </p>
+          <p className="font-inter text-white/80 text-lg md:text-xl leading-relaxed mb-10 max-w-xl mx-auto animate-word" style={{ animationDelay: '280ms' }}>
+            Owner-operated by a DFW pool industry expert — now serving {siteConfig.serviceAreaPhrase}
+          </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 animate-word" style={{ animationDelay: '360ms' }}>
-              <TrackingLink
-                href="/consultation"
-                eventName="cta_click"
-                eventParams={{ button_location: 'hero', destination: '/consultation' }}
-                className="inline-flex items-center justify-center bg-gradient-to-r from-gold to-gold-light text-navy font-inter font-bold text-base px-8 py-4 rounded hover:brightness-110 transition-all duration-200"
-              >
-                Get Your Free Design Consultation
-              </TrackingLink>
-              <TrackingLink
-                href="/about"
-                eventName="cta_click"
-                eventParams={{ button_location: 'hero', destination: '/about' }}
-                className="inline-flex items-center justify-center border-2 border-white/40 text-white font-inter font-semibold text-base px-8 py-4 rounded hover:border-white hover:bg-white/5 transition-colors duration-200"
-              >
-                Our Story
-              </TrackingLink>
-            </div>
+          <div className="flex flex-col sm:flex-row gap-4 sm:justify-center animate-word" style={{ animationDelay: '360ms' }}>
+            <TrackingLink
+              href="/consultation"
+              eventName="cta_click"
+              eventParams={{ button_location: 'hero', destination: '/consultation' }}
+              className="inline-flex items-center justify-center bg-gradient-to-r from-gold to-gold-light text-navy font-inter font-bold text-base px-8 py-4 rounded hover:brightness-110 transition-all duration-200"
+            >
+              Get Your Free Design Consultation
+            </TrackingLink>
+            <TrackingLink
+              href="/about"
+              eventName="cta_click"
+              eventParams={{ button_location: 'hero', destination: '/about' }}
+              className="inline-flex items-center justify-center border-2 border-white/40 text-white font-inter font-semibold text-base px-8 py-4 rounded hover:border-white hover:bg-white/5 transition-colors duration-200"
+            >
+              Our Story
+            </TrackingLink>
           </div>
         </div>
 
@@ -460,6 +469,13 @@ export default function HomePage() {
         </ScrollReveal>
       </section>
 
+      {/* Logo mark section divider */}
+      <div className="flex items-center justify-center gap-4 bg-slate-50 py-3" aria-hidden="true">
+        <div className="h-px w-16 bg-gradient-to-r from-transparent to-teal/30" />
+        <Image src="/logo-icon.png" alt="" width={48} height={48} className="opacity-50" />
+        <div className="h-px w-16 bg-gradient-to-l from-transparent to-teal/30" />
+      </div>
+
       {/* ─── 6. FAQ SECTION ──────────────────────────────────── */}
       <section className="bg-slate-50 py-20 px-4 md:px-8">
         <ScrollReveal>
@@ -491,6 +507,10 @@ export default function HomePage() {
 
       {/* ─── 8. CTA BANNER ───────────────────────────────────── */}
       <section className="relative bg-navy py-20 px-4 md:px-8 text-center overflow-hidden border-t border-border-dark">
+        {/* Ghost watermark */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
+          <Image src="/logo-icon.png" alt="" width={460} height={460} className="opacity-[0.05]" />
+        </div>
         {/* Ripple rings from center */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true">
           {[0, 1, 2].map((i) => (

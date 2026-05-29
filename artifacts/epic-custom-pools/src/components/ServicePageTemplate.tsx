@@ -77,6 +77,15 @@ export default function ServicePageTemplate({
         <div className="absolute inset-0 bg-navy/72" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-12 w-full py-20">
           <div className="max-w-2xl">
+            <div className="mb-5">
+              <Image
+                src="/logo-icon.png"
+                alt="Epic Custom Pools"
+                width={72}
+                height={72}
+                className="drop-shadow-[0_4px_16px_rgba(26,179,232,0.60)]"
+              />
+            </div>
             <p className="font-inter text-gold text-sm font-semibold tracking-widest uppercase mb-4">
               Fort Worth &mdash; DFW
             </p>
