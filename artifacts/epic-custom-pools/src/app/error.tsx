@@ -12,7 +12,7 @@ export default function GlobalError({
   return (
     <div className="min-h-screen bg-navy flex items-center justify-center px-4">
       <div className="text-center max-w-md">
-        <Image src="/logo-icon.png" alt="" width={64} height={64} className="mx-auto" aria-hidden="true" />
+        <Image src="/logo-icon.webp" alt="" width={64} height={64} className="mx-auto" aria-hidden="true" />
         <h1 className="font-playfair text-3xl font-bold text-white mt-6 mb-3">
           Something went wrong
         </h1>

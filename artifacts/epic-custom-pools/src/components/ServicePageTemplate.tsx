@@ -81,7 +81,7 @@ export default function ServicePageTemplate({
           <div className="max-w-2xl">
             <div className="mb-5">
               <Image
-                src="/logo-icon.png"
+                src="/logo-icon.webp"
                 alt="Epic Custom Pools"
                 width={72}
                 height={72}

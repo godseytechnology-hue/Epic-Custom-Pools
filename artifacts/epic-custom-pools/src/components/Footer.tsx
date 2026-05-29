@@ -116,7 +116,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <Image src="/logo-icon.png" alt="" width={72} height={72} className="drop-shadow-[0_2px_12px_rgba(26,179,232,0.40)]" aria-hidden="true" />
+              <Image src="/logo-icon.webp" alt="" width={72} height={72} className="drop-shadow-[0_2px_12px_rgba(26,179,232,0.40)]" aria-hidden="true" />
               <span className="font-playfair text-white font-bold text-lg">Epic Custom Pools</span>
             </div>
             <p className="font-inter text-gold/70 text-sm italic text-center md:text-right">

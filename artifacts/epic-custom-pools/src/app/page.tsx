@@ -10,7 +10,7 @@ import FAQSchema from '@/components/FAQSchema';
 import MarqueeTicker from '@/components/MarqueeTicker';
 import SectionDivider from '@/components/SectionDivider';
 
-const OG_IMAGE = `${siteConfig.siteUrl}/logo-icon.png`;
+const OG_IMAGE = `${siteConfig.siteUrl}/logo-icon.webp`;
 
 export const metadata: Metadata = {
   title: 'Custom Pool Builder Fort Worth TX',
@@ -173,7 +173,7 @@ export default function HomePage() {
         {/* Ghost watermark */}
         <div className="absolute inset-0 flex items-center justify-center z-[2] pointer-events-none" aria-hidden="true">
           <Image
-            src="/logo-icon.png"
+            src="/logo-icon.webp"
             alt=""
             width={480}
             height={480}
@@ -187,7 +187,7 @@ export default function HomePage() {
           {/* Logo lockup */}
           <div className="mb-8 animate-logo-surface">
             <Image
-              src="/logo-icon.png"
+              src="/logo-icon.webp"
               alt="Epic Custom Pools logo"
               width={220}
               height={220}
@@ -326,7 +326,7 @@ export default function HomePage() {
               {/* Large logo */}
               <div className="flex-shrink-0 flex items-center justify-center">
                 <Image
-                  src="/logo-icon.png"
+                  src="/logo-icon.webp"
                   alt="Epic Custom Pools logo"
                   width={220}
                   height={220}
@@ -434,7 +434,7 @@ export default function HomePage() {
       <section data-dark-section className="relative bg-navy py-20 px-4 md:px-8 text-center overflow-hidden">
         {/* Ghost watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
-          <Image src="/logo-icon.png" alt="" width={460} height={460} className="opacity-[0.05]" />
+          <Image src="/logo-icon.webp" alt="" width={460} height={460} className="opacity-[0.05]" />
         </div>
         {/* Ripple rings from center */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true">
@@ -456,7 +456,7 @@ export default function HomePage() {
 
         <ScrollReveal>
           <div className="relative z-10 max-w-3xl mx-auto">
-            <Image src="/logo-icon.png" alt="" width={88} height={88} className="mx-auto opacity-80" aria-hidden="true" />
+            <Image src="/logo-icon.webp" alt="" width={88} height={88} className="mx-auto opacity-80" aria-hidden="true" />
 
             <h2 className="font-barlow font-black uppercase leading-tight mt-4 mb-6" style={{ fontSize: 'clamp(38px, 5.5vw, 62px)', letterSpacing: '-0.02em' }}>
               <span className="block text-gradient-green">Every great backyard</span>
@@ -530,7 +530,7 @@ export default function HomePage() {
       {/* Logo mark section divider */}
       <div className="flex items-center justify-center gap-4 bg-slate-100 py-3" aria-hidden="true">
         <div className="h-px w-16 bg-gradient-to-r from-transparent to-teal/30" />
-        <Image src="/logo-icon.png" alt="" width={48} height={48} className="opacity-50" />
+        <Image src="/logo-icon.webp" alt="" width={48} height={48} className="opacity-50" />
         <div className="h-px w-16 bg-gradient-to-l from-transparent to-teal/30" />
       </div>
 

@@ -88,7 +88,7 @@ export default function AboutPage() {
             </p>
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/team-photo.jpeg"
+                src="/team-photo.webp"
                 alt="The Epic Custom Pools team — Dana, Jeff, and Billy — at a Fort Worth, TX event"
                 width={1080}
                 height={1080}

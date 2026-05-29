@@ -45,7 +45,7 @@ export default function Navbar() {
             aria-label="Epic Custom Pools — Home"
           >
             <Image
-              src="/logo-icon.png"
+              src="/logo-icon.webp"
               alt="Epic Custom Pools logo"
               width={66}
               height={66}

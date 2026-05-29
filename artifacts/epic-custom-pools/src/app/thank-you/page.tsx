@@ -24,7 +24,7 @@ export default function ThankYouPage() {
       <main className="min-h-screen bg-navy flex flex-col items-center justify-center px-4 text-center py-24">
         <div className="max-w-xl mx-auto">
           <div className="mb-8">
-            <Image src="/logo-icon.png" alt="" width={64} height={64} className="mx-auto" aria-hidden="true" />
+            <Image src="/logo-icon.webp" alt="" width={64} height={64} className="mx-auto" aria-hidden="true" />
           </div>
 
           <h1 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-4">

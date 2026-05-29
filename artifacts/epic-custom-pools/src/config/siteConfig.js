@@ -5,8 +5,12 @@ const serviceCities = (process.env.NEXT_PUBLIC_SERVICE_CITIES || DEFAULT_CITIES)
   .map((c) => c.trim())
   .filter(Boolean);
 
+// IMPORTANT: In Vercel, set NEXT_PUBLIC_SITE_URL=https://epiccustompools.com
+// (no www, no trailing slash). This value drives all canonical tags site-wide.
+const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://epiccustompools.com';
+
 const siteConfig = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://epiccustompools.com',
+  siteUrl: rawSiteUrl.replace(/\/+$/, ''),
   siteName: process.env.NEXT_PUBLIC_SITE_NAME || 'Epic Custom Pools',
   tagline: process.env.NEXT_PUBLIC_TAGLINE || "Fort Worth's Premier Custom Pool Builder",
   phone: process.env.NEXT_PUBLIC_PHONE || '(817) 313-2034',

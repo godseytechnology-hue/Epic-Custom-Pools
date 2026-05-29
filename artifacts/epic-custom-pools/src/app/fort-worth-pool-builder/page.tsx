@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
 };
 
-const HERO_IMAGE = '/hero-fort-worth.jpg';
+const HERO_IMAGE = '/hero-fort-worth.webp';
 
 const FAQS = [
   {
