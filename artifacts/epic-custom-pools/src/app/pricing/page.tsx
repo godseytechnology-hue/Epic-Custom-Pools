@@ -168,6 +168,8 @@ export default function PricingPage() {
         </div>
       </section>
 
+      <SectionDivider fill="white" bg="#e8f7fd" variant="wave" height={56} />
+
       {/* ─── PRICING TIER CARDS ───────────────────────────── */}
       <section className="bg-white py-20 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
@@ -219,6 +221,8 @@ export default function PricingPage() {
           </p>
         </div>
       </section>
+
+      <SectionDivider fill="#f9fafb" bg="white" variant="tilt" height={48} />
 
       {/* ─── OUTDOOR LIVING PRICING ───────────────────────── */}
       <section className="bg-gray-50 py-20 px-4 md:px-8">
@@ -283,6 +287,8 @@ export default function PricingPage() {
           </div>
         </div>
       </section>
+
+      <SectionDivider fill="white" bg="#f9fafb" variant="curve" height={48} />
 
       {/* ─── PROCESS TIMELINE ─────────────────────────────── */}
       <section className="bg-white py-20 px-4 md:px-8">

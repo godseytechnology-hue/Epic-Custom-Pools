@@ -161,6 +161,8 @@ export default function HomeBuildersPage() {
         </div>
       </section>
 
+      <SectionDivider fill="#f9fafb" bg="white" variant="tilt" height={48} />
+
       {/* ─── PROJECT TYPES ────────────────────────────────── */}
       <section className="bg-gray-50 py-20 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">

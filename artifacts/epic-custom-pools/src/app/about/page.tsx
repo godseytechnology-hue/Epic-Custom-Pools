@@ -126,6 +126,8 @@ export default function AboutPage() {
         </ScrollReveal>
       </section>
 
+      <SectionDivider fill="#f9fafb" bg="#f0fcff" variant="tilt" height={48} />
+
       {/* ─── FOUNDER'S STORY ───────────────────────────────────── */}
       {/*
        * ⚠️  PLACEHOLDER — Before launch, replace this entire section with the
@@ -247,6 +249,8 @@ export default function AboutPage() {
           </div>
         </ScrollReveal>
       </section>
+
+      <SectionDivider fill="white" bg="#f8fafc" variant="curve" height={48} />
 
       {/* ─── CTA ───────────────────────────────────────────────── */}
       <section className="bg-white py-16 md:py-20 px-4 md:px-8 text-center">
