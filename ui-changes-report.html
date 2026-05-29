@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Epic Custom Pools — UI/UX Changes (Last 24 Hours)</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0d2540;
+      --gold: #7ed321;
+      --teal: #1ab3e8;
+      --slate: #f1f5f9;
+      --gray: #f3f4f6;
+      --text: #1e293b;
+      --muted: #64748b;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f8fafc;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: var(--navy);
+      color: white;
+      padding: 56px 40px 48px;
+      text-align: center;
+    }
+    .header-badge {
+      display: inline-block;
+      background: rgba(126,211,33,0.15);
+      border: 1px solid rgba(126,211,33,0.4);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .header h1 span { color: var(--teal); }
+    .header p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.6);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── Change counter bar ── */
+    .change-nav {
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      padding: 0 40px;
+      overflow-x: auto;
+    }
+    .change-nav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .change-nav a:hover { color: var(--navy); border-color: var(--teal); }
+    .change-nav a .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    /* ── Content ── */
+    .content {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 60px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+    }
+
+    /* ── Change card ── */
+    .change {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .change-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .change-number {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: white;
+      font-size: 20px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .change-meta { flex: 1; }
+    .change-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+    .tag-visual { background: rgba(26,179,232,0.12); color: var(--teal); }
+    .tag-ux { background: rgba(126,211,33,0.12); color: #4a8a00; }
+    .tag-conversion { background: rgba(212,175,55,0.15); color: #7a5500; }
+    .tag-contrast { background: rgba(13,37,64,0.08); color: var(--navy); }
+
+    .change-meta h2 {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+    .change-meta p {
+      margin-top: 6px;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    /* ── Before/After ── */
+    .ba-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 640px) {
+      .ba-grid { grid-template-columns: 1fr; }
+    }
+    .ba-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+    .ba-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ba-label.before { background: #fee2e2; color: #991b1b; }
+    .ba-label.after  { background: #dcfce7; color: #166534; }
+    .ba-label .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .ba-label.before .dot { background: #ef4444; }
+    .ba-label.after  .dot { background: #22c55e; }
+    .ba-body {
+      padding: 20px;
+      background: white;
+    }
+
+    /* ── Screenshot frame ── */
+    .screenshot-frame {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+    .screenshot-frame .browser-bar {
+      background: #f1f5f9;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .browser-bar .dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+    .browser-bar .dot:nth-child(1) { background: #ef4444; }
+    .browser-bar .dot:nth-child(2) { background: #f59e0b; }
+    .browser-bar .dot:nth-child(3) { background: #22c55e; }
+    .browser-bar .url {
+      margin-left: 10px;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 3px 12px;
+      font-size: 12px;
+      color: var(--muted);
+      flex: 1;
+    }
+    .screenshot-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* ── Why callout ── */
+    .why-box {
+      background: linear-gradient(135deg, rgba(13,37,64,0.04), rgba(26,179,232,0.06));
+      border: 1px solid rgba(26,179,232,0.2);
+      border-left: 4px solid var(--teal);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+    }
+    .why-box strong {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 8px;
+    }
+    .why-box p {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── Mock UI elements for Before states ── */
+    .mock-hero-before {
+      background: #0d2540;
+      padding: 48px 32px;
+      text-align: center;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .mock-headline-old {
+      font-size: 28px;
+      font-weight: 800;
+      color: white;
+      line-height: 1.2;
+    }
+    .mock-hero-after {
+      background: #0d2540;
+      padding: 40px 32px;
+      text-align: center;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+    .stacked-word {
+      font-size: 52px;
+      font-weight: 900;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+
+    .mock-no-ticker {
+      background: white;
+      height: 56px;
+      border: 1px dashed #cbd5e1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+    .mock-ticker {
+      background: #0d2540;
+      padding: 14px 0;
+      overflow: hidden;
+      display: flex;
+      gap: 32px;
+      white-space: nowrap;
+    }
+    .ticker-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+    .ticker-dot { width: 5px; height: 5px; border-radius: 50%; background: #d4af37; flex-shrink: 0; }
+
+    .mock-hard-edge {
+      display: flex;
+      flex-direction: column;
+    }
+    .mock-section-a {
+      background: #f1f5f9;
+      padding: 20px 24px;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .mock-section-b {
+      background: white;
+      padding: 20px 24px;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .mock-divider-edge {
+      height: 0;
+      border-top: 1px solid #e2e8f0;
+    }
+    .mock-wave-divider {
+      width: 100%;
+      height: 40px;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .mock-bg-old {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .mock-bg-row {
+      padding: 12px 20px;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .swatch {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .mock-page-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .flow-block {
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .flow-block .arrow { font-size: 10px; color: rgba(0,0,0,0.3); margin-left: auto; }
+    .flow-services { background: #e0f2fe; color: #075985; }
+    .flow-form     { background: #0d2540; color: rgba(255,255,255,0.9); }
+    .flow-why      { background: #f0fdf4; color: #166534; }
+    .flow-faq      { background: #f1f5f9; color: #334155; }
+    .flow-cta      { background: #1e3a5f; color: rgba(255,255,255,0.9); }
+    .flow-moved    { outline: 2px dashed rgba(239,68,68,0.5); }
+    .flow-badge {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: 3px;
+      margin-left: 6px;
+    }
+    .badge-moved { background: rgba(239,68,68,0.15); color: #dc2626; }
+    .badge-new   { background: rgba(34,197,94,0.15); color: #16a34a; }
+
+    /* ── Divider ── */
+    hr.section-divider {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      padding: 40px 24px;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid #e2e8f0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-badge">UI/UX Change Log</div>
+    <h1>Epic Custom Pools<br><span>Last 24 Hours</span></h1>
+    <p>5 changes shipped — visual enhancements, page flow improvements, and conversion optimisation.</p>
+  </div>
+
+  <!-- Quick nav -->
+  <nav class="change-nav">
+    <a href="#c1"><span class="num">1</span> Hero Headline</a>
+    <a href="#c2"><span class="num">2</span> Marquee Ticker</a>
+    <a href="#c3"><span class="num">3</span> Section Dividers</a>
+    <a href="#c4"><span class="num">4</span> Background Contrast</a>
+    <a href="#c5"><span class="num">5</span> Page Flow Swap</a>
+  </nav>
+
+  <div class="content">
+
+    <!-- ─── Change 1: Hero Headline ─── -->
+    <div class="change" id="c1">
+      <div class="change-header">
+        <div class="change-number">1</div>
+        <div class="change-meta">
+          <span class="change-tag tag-visual">Visual Impact</span>
+          <h2>Hero Headline — Stacked Single-Word Treatment</h2>
+          <p>Redesigned from a standard sentence headline into three massive stacked words in brand colours.</p>
+        </div>
+      </div>
+
+      <div class="ba-grid">
+        <div class="ba-card">
+          <div class="ba-label before"><span class="dot"></span> Before</div>
+          <div class="ba-body">
+            <div class="mock-hero-before">
+              <div style="font-size:11px;font-weight:700;letter-spacing:.1em;color:#7ed321;text-transform:uppercase;margin-bottom:8px;">Fort Worth — DFW</div>
+              <div class="mock-headline-old">Custom Pool Builder<br>Fort Worth, TX</div>
+              <div style="font-size:13px;color:rgba(255,255,255,0.5);margin-top:8px;max-width:320px;">Owner-operated pool builder serving the DFW area.</div>
+            </div>
+          </div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-label after"><span class="dot"></span> After (current)</div>
+          <div class="ba-body">
+            <div class="mock-hero-after">
+              <div style="font-size:11px;font-weight:700;letter-spacing:.1em;color:#7ed321;text-transform:uppercase;margin-bottom:6px;">Fort Worth — DFW</div>
+              <div class="stacked-word" style="color:white;">BUILD</div>
+              <div class="stacked-word" style="color:#7ed321;">EPIC</div>
+              <div class="stacked-word" style="color:#1ab3e8;">MEMORIES</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screenshot -->
+      <div class="screenshot-frame">
+        <div class="browser-bar">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="url">epiccustompools.com</span>
+        </div>
+        <img src="screenshots/01-hero.jpg" alt="Current hero section with stacked headline" />
+      </div>
+
+      <div class="why-box">
+        <strong>Why it's an improvement</strong>
+        <p>Sentence headlines get skimmed and forgotten. Three single words hit the brand colours — white, lime-green, teal — before the visitor reads a single word of copy. The stacked treatment uses ~108px type, making the page feel like a premium brand rather than a contractor listing. Research consistently shows that emotional first impressions (formed in &lt;50ms) drive trust and time-on-page more than any body copy.</p>
+      </div>
+    </div>
+
+    <hr class="section-divider" />
+
+    <!-- ─── Change 2: Marquee Ticker ─── -->
+    <div class="change" id="c2">
+      <div class="change-header">
+        <div class="change-number">2</div>
+        <div class="change-meta">
+          <span class="change-tag tag-visual">Visual Impact</span>
+          <h2>Animated Marquee Ticker Added</h2>
+          <p>A continuously scrolling trust-signal band now sits between the hero and the trust bar.</p>
+        </div>
+      </div>
+
+      <div class="ba-grid">
+        <div class="ba-card">
+          <div class="ba-label before"><span class="dot"></span> Before — hard cut from hero to white</div>
+          <div class="ba-body" style="padding:0;">
+            <div class="mock-no-ticker">— no separator — hero ended, white section began —</div>
+          </div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-label after"><span class="dot"></span> After — dark scrolling band</div>
+          <div class="ba-body" style="padding:0;">
+            <div class="mock-ticker">
+              <span class="ticker-item"><span class="ticker-dot"></span>Custom Pools</span>
+              <span class="ticker-item"><span class="ticker-dot"></span>Outdoor Living</span>
+              <span class="ticker-item"><span class="ticker-dot"></span>(817) 313-2034</span>
+              <span class="ticker-item"><span class="ticker-dot"></span>Fort Worth</span>
+              <span class="ticker-item"><span class="ticker-dot"></span>Free Consultation</span>
+              <span class="ticker-item"><span class="ticker-dot"></span>DFW's Owner-Operated Builder</span>
+              <span class="ticker-item"><span class="ticker-dot"></span>Custom Pools</span>
+              <span class="ticker-item"><span class="ticker-dot"></span>Outdoor Living</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-box">
+        <strong>Why it's an improvement</strong>
+        <p>The marquee does two things at once: it bridges the visual gap between the dark hero and the white trust bar (so the transition doesn't feel abrupt), and it passively drills in key information — phone number, services, city names — without asking the visitor to stop and read. Motion also draws the eye downward, reducing bounce at the fold.</p>
+      </div>
+    </div>
+
+    <hr class="section-divider" />
+
+    <!-- ─── Change 3: Section Dividers ─── -->
+    <div class="change" id="c3">
+      <div class="change-header">
+        <div class="change-number">3</div>
+        <div class="change-meta">
+          <span class="change-tag tag-visual">Visual Polish</span>
+          <h2>Animated SVG Section Dividers</h2>
+          <p>Every major section transition now uses a wave or tilt SVG shape instead of a hard rectangular edge.</p>
+        </div>
+      </div>
+
+      <div class="ba-grid">
+        <div class="ba-card">
+          <div class="ba-label before"><span class="dot"></span> Before — abrupt rectangle border</div>
+          <div class="ba-body" style="padding:0;">
+            <div class="mock-hard-edge">
+              <div class="mock-section-a">Section A — slate-100 background</div>
+              <div class="mock-divider-edge"></div>
+              <div class="mock-section-b">Section B — white background</div>
+            </div>
+          </div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-label after"><span class="dot"></span> After — wave SVG divider</div>
+          <div class="ba-body" style="padding:0;">
+            <div class="mock-hard-edge">
+              <div class="mock-section-a">Section A — slate-100 background</div>
+              <div class="mock-wave-divider">
+                <svg viewBox="0 0 1440 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;height:40px;display:block;">
+                  <path d="M0,0 C240,40 480,0 720,20 C960,40 1200,0 1440,20 L1440,40 L0,40 Z" fill="white" />
+                  <rect x="0" y="0" width="1440" height="20" fill="#f1f5f9" />
+                  <path d="M0,20 C240,40 480,0 720,20 C960,40 1200,0 1440,20 L1440,40 L0,40 Z" fill="white" />
+                </svg>
+              </div>
+              <div class="mock-section-b">Section B — white background</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-box">
+        <strong>Why it's an improvement</strong>
+        <p>Hard rectangular cuts between coloured sections make a page feel like a stack of disconnected boxes — the design equivalent of a PowerPoint deck. Wave and tilt dividers carry the eye from one section to the next with forward momentum. This is a well-established pattern in premium service-business websites because it signals craft and intentionality, which is exactly what a high-ticket ($80k–$250k) pool contractor needs to convey.</p>
+      </div>
+    </div>
+
+    <hr class="section-divider" />
+
+    <!-- ─── Change 4: Background Contrast ─── -->
+    <div class="change" id="c4">
+      <div class="change-header">
+        <div class="change-number">4</div>
+        <div class="change-meta">
+          <span class="change-tag tag-contrast">Visual Hierarchy</span>
+          <h2>Section Background Contrast Bump</h2>
+          <p>Light section backgrounds stepped up: <code>gray-50</code>→<code>gray-100</code> and <code>slate-50</code>→<code>slate-100</code> site-wide.</p>
+        </div>
+      </div>
+
+      <div class="ba-grid">
+        <div class="ba-card">
+          <div class="ba-label before"><span class="dot"></span> Before — near-identical whites</div>
+          <div class="ba-body">
+            <div class="mock-bg-old">
+              <div class="mock-bg-row" style="background:#f9fafb;">
+                <span style="font-size:12px;color:#64748b;">Section — <code>gray-50</code></span>
+                <div class="swatch" style="background:#f9fafb;"></div>
+              </div>
+              <div class="mock-bg-row" style="background:white;border-top:1px solid #f1f5f9;">
+                <span style="font-size:12px;color:#64748b;">Section — <code>white</code></span>
+                <div class="swatch" style="background:white;"></div>
+              </div>
+              <div class="mock-bg-row" style="background:#f8fafc;border-top:1px solid #f1f5f9;">
+                <span style="font-size:12px;color:#64748b;">Section — <code>slate-50</code></span>
+                <div class="swatch" style="background:#f8fafc;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-label after"><span class="dot"></span> After — visible rhythm</div>
+          <div class="ba-body">
+            <div class="mock-bg-old">
+              <div class="mock-bg-row" style="background:#f3f4f6;">
+                <span style="font-size:12px;color:#64748b;">Section — <code>gray-100</code></span>
+                <div class="swatch" style="background:#f3f4f6;"></div>
+              </div>
+              <div class="mock-bg-row" style="background:white;border-top:1px solid #e2e8f0;">
+                <span style="font-size:12px;color:#64748b;">Section — <code>white</code></span>
+                <div class="swatch" style="background:white;"></div>
+              </div>
+              <div class="mock-bg-row" style="background:#f1f5f9;border-top:1px solid #e2e8f0;">
+                <span style="font-size:12px;color:#64748b;">Section — <code>slate-100</code></span>
+                <div class="swatch" style="background:#f1f5f9;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-box">
+        <strong>Why it's an improvement</strong>
+        <p>When alternating section backgrounds are too close in value, a long-scroll page feels like a single undifferentiated wall of content. The small contrast bump — just one Tailwind step — creates a clear visual rhythm that tells the visitor "you've arrived in a new section" without any headline needing to do that work. It also makes cards and UI elements inside sections pop more against their backgrounds.</p>
+      </div>
+    </div>
+
+    <hr class="section-divider" />
+
+    <!-- ─── Change 5: Page Flow Swap ─── -->
+    <div class="change" id="c5">
+      <div class="change-header">
+        <div class="change-number">5</div>
+        <div class="change-meta">
+          <span class="change-tag tag-conversion">Conversion</span>
+          <h2>Homepage Page Flow — CTA Banner Moved Up, Lead Form Moved Down</h2>
+          <p>The "Every great backyard" CTA banner and the "Ready to Get Started?" lead form swapped positions.</p>
+        </div>
+      </div>
+
+      <div class="ba-grid">
+        <div class="ba-card">
+          <div class="ba-label before"><span class="dot"></span> Before — form appeared mid-scroll</div>
+          <div class="ba-body">
+            <div class="mock-page-flow">
+              <div class="flow-block flow-services">Services — "What We Build"</div>
+              <div style="text-align:center;font-size:10px;color:#94a3b8;padding:2px;">↓</div>
+              <div class="flow-block flow-form flow-moved">Lead Form — "Ready to Get Started?" <span class="flow-badge badge-moved">was here</span></div>
+              <div style="text-align:center;font-size:10px;color:#94a3b8;padding:2px;">↓</div>
+              <div class="flow-block flow-why">Why Epic Custom Pools</div>
+              <div style="text-align:center;font-size:10px;color:#94a3b8;padding:2px;">↓</div>
+              <div class="flow-block flow-faq">FAQ Section</div>
+              <div style="text-align:center;font-size:10px;color:#94a3b8;padding:2px;">↓</div>
+              <div class="flow-block flow-cta flow-moved">CTA Banner — "Every great backyard" <span class="flow-badge badge-moved">was here</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-label after"><span class="dot"></span> After — emotional hook first, form last</div>
+          <div class="ba-body">
+            <div class="mock-page-flow">
+              <div class="flow-block flow-services">Services — "What We Build"</div>
+              <div style="text-align:center;font-size:10px;color:#94a3b8;padding:2px;">↓</div>
+              <div class="flow-block flow-cta">CTA Banner — "Every great backyard" <span class="flow-badge badge-new">moved up</span></div>
+              <div style="text-align:center;font-size:10px;color:#94a3b8;padding:2px;">↓</div>
+              <div class="flow-block flow-why">Why Epic Custom Pools</div>
+              <div style="text-align:center;font-size:10px;color:#94a3b8;padding:2px;">↓</div>
+              <div class="flow-block flow-faq">FAQ Section</div>
+              <div style="text-align:center;font-size:10px;color:#94a3b8;padding:2px;">↓</div>
+              <div class="flow-block flow-form">Lead Form — "Ready to Get Started?" <span class="flow-badge badge-new">moved down</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-box">
+        <strong>Why it's an improvement</strong>
+        <p>The old order asked visitors to fill out a form before they'd been sold on the brand. The CTA banner — with its "Every great backyard starts with a conversation" headline — is an emotional close, not a functional one. It should appear when the visitor's intent is peaked (right after seeing what you build), not buried at the bottom where most people never arrive. The lead form then waits at the very end for visitors who've read everything and are ready to commit — exactly the visitors most likely to convert.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    Generated May 29, 2026 &nbsp;·&nbsp; Epic Custom Pools &nbsp;·&nbsp; epiccustompools.com
+  </footer>
+
+</body>
+</html>

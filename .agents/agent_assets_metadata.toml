@@ -30,3 +30,9 @@ id = "OXANgzZViK4UYL5CDDPck"
 uri = "file://attached_assets/image_search/pool_6.jpg"
 type = "image"
 title = "F — Sunny suburban pool, wide shot"
+
+[[outputs]]
+id = "drmx0vC35FUDfaVmY67Om"
+uri = "file://ui-changes-report.tar.gz"
+type = "unspecified"
+title = "UI/UX Changes Report + Screenshots"
