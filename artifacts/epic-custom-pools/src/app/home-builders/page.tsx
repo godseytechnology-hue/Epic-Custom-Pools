@@ -36,11 +36,6 @@ const BUILDER_BENEFITS = [
     desc: 'From permit submission to buyer handover, you deal with one person — not a different sub at every phase. No finger-pointing.',
   },
   {
-    icon: '🛡️',
-    title: 'Full Warranty',
-    desc: 'Every pool carries a structural warranty and equipment warranty. Warranty documentation is delivered to the homeowner at handover.',
-  },
-  {
     icon: '📋',
     title: 'We Handle All Permits',
     desc: 'Our team submits, tracks, and closes pool permits with every relevant city and county across DFW. No burden on your office.',
