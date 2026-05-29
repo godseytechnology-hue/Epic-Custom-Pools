@@ -4,6 +4,8 @@ import LeadForm from '@/components/LeadForm';
 import TrackingLink from '@/components/TrackingLink';
 import ScrollReveal from '@/components/ScrollReveal';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import MarqueeTicker from '@/components/MarqueeTicker';
+import SectionDivider from '@/components/SectionDivider';
 import siteConfig from '@/config/siteConfig';
 
 export const metadata: Metadata = {
@@ -70,6 +72,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <MarqueeTicker />
+      <SectionDivider fill="white" bg="#0d2540" variant="wave" height={56} />
 
       {/* ─── MEET THE TEAM ─────────────────────────────────────── */}
       <section id="meet-the-team" className="bg-white py-16 md:py-20 px-4 md:px-8">

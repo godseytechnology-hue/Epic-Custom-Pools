@@ -6,6 +6,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import MobileBottomBar from '@/components/MobileBottomBar';
+import GlobalEffects from '@/components/GlobalEffects';
 import siteConfig from '@/config/siteConfig';
 
 const TIER_LABELS: Record<string, string> = {
@@ -158,6 +159,7 @@ export default function RootLayout({
           </>
         )}
 
+        <GlobalEffects />
         <Navbar />
         <main>{children}</main>
         <Footer />

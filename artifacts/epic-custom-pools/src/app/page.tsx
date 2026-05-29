@@ -7,6 +7,8 @@ import TrackingLink from '@/components/TrackingLink';
 import HeroVideoCarousel from '@/components/HeroVideoCarousel';
 import ScrollReveal from '@/components/ScrollReveal';
 import FAQSchema from '@/components/FAQSchema';
+import MarqueeTicker from '@/components/MarqueeTicker';
+import SectionDivider from '@/components/SectionDivider';
 
 const OG_IMAGE = `${siteConfig.siteUrl}/logo-icon.png`;
 
@@ -266,6 +268,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <MarqueeTicker />
+
       {/* ─── 2. TRUST BAR ────────────────────────────────────── */}
       <section className="bg-white border-b border-gray-100">
         <ScrollReveal>
@@ -359,6 +363,8 @@ export default function HomePage() {
           </div>
         </ScrollReveal>
       </section>
+
+      <SectionDivider fill="#f8fafc" bg="white" variant="tilt" flipX height={52} />
 
       {/* ─── 4. SERVICES OVERVIEW ────────────────────────────── */}
       <section className="bg-slate-50 py-20 px-4 md:px-8">
@@ -505,8 +511,10 @@ export default function HomePage() {
         </ScrollReveal>
       </section>
 
+      <SectionDivider fill="#0d2540" bg="#f8fafc" variant="wave" height={80} />
+
       {/* ─── 8. CTA BANNER ───────────────────────────────────── */}
-      <section className="relative bg-navy py-20 px-4 md:px-8 text-center overflow-hidden border-t border-border-dark">
+      <section className="relative bg-navy py-20 px-4 md:px-8 text-center overflow-hidden">
         {/* Ghost watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
           <Image src="/logo-icon.png" alt="" width={460} height={460} className="opacity-[0.05]" />

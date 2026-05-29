@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import LeadForm from '@/components/LeadForm';
+import MarqueeTicker from '@/components/MarqueeTicker';
+import SectionDivider from '@/components/SectionDivider';
 
 export type FaqItem = {
   question: string;
@@ -112,6 +114,9 @@ export default function ServicePageTemplate({
           </div>
         </div>
       </section>
+
+      <MarqueeTicker />
+      <SectionDivider fill="white" bg="#0d2540" variant="wave" height={56} />
 
       {/* ─── CONTENT SECTIONS ─────────────────────────────── */}
       <section className="bg-white py-16 px-4 md:px-8">

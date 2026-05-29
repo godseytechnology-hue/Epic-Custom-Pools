@@ -4,6 +4,8 @@ import LeadForm from '@/components/LeadForm';
 import FAQSchema, { FAQItem } from '@/components/FAQSchema';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 import ScrollReveal from '@/components/ScrollReveal';
+import MarqueeTicker from '@/components/MarqueeTicker';
+import SectionDivider from '@/components/SectionDivider';
 import siteConfig from '@/config/siteConfig';
 
 export type CityPageTemplateProps = {
@@ -176,6 +178,9 @@ export default function CityPageTemplate({
           </div>
         </div>
       </section>
+
+      <MarqueeTicker />
+      <SectionDivider fill="white" bg="#0d2540" variant="wave" height={56} />
 
       {/* ─── OPENING CONTENT ──────────────────────────────── */}
       <section className="bg-white py-16 px-4 md:px-8">

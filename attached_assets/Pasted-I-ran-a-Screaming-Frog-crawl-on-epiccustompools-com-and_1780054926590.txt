@@ -1,0 +1,79 @@
+I ran a Screaming Frog crawl on epiccustompools.com and found several SEO issues to fix. Please address all of the following:
+
+---
+
+## 1. Canonical tags — Non-Indexable Canonical (HIGH PRIORITY)
+
+All 12 pages are marked "Non-Indexable" because they have a canonical tag pointing to a *different* URL than the page itself. This tells Google not to index these pages.
+
+Affected pages:
+- / (homepage)
+- /aledo-pool-builder
+- /consultation
+- /pricing
+- /fort-worth-pool-builder
+- /granbury-pool-builder
+- /outdoor-living
+- /about
+- /weatherford-pool-builder
+- /home-builders
+- /possum-kingdom-pool-builder
+- /custom-pools
+
+**Fix:** Find where canonical tags are set in this Next.js project (likely in _app.tsx, layout.tsx, or per-page Head components). Each page's canonical URL must match the page's own URL exactly — no trailing slash differences, no www vs non-www mismatches, no http vs https mismatches.
+
+Check the canonical generation logic. Common causes:
+- A hardcoded base URL with wrong protocol or subdomain
+- A canonical pointing to www.epiccustompools.com when the site serves on epiccustompools.com (or vice versa)
+- A trailing slash mismatch (e.g. canonical is /pricing/ but page is /pricing)
+
+Audit every page's  and make sure it exactly matches the URL Google should index.
+
+---
+
+## 2. Images over 100 KB (MEDIUM — Opportunity)
+
+7 images (70% of total) are over 100 KB, which hurts Core Web Vitals and page speed.
+
+**Fix:**
+- Identify all images in /public or wherever assets are stored
+- Convert any PNG/JPG images that are over 100 KB to WebP format
+- Add width and height attributes to all  tags if missing (prevents layout shift)
+- Use Next.js  component (next/image) everywhere possible — it handles WebP conversion, lazy loading, and proper sizing automatically
+- For the hero/above-the-fold image specifically, add priority={true} to the Next.js Image component
+
+---
+
+## 3. Missing security headers (LOW — Warnings)
+
+Three HTTP security headers are missing on all 46 pages:
+
+- X-Frame-Options
+- Referrer-Policy  
+- X-Content-Type-Options
+
+**Fix:** Add these headers in next.config.js using the headers() function:
+
+async headers() {
+  return [
+    {
+      source: '/(.*)',
+      headers: [
+        { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+        { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+        { key: 'X-Content-Type-Options', value: 'nosniff' },
+      ],
+    },
+  ];
+}
+
+---
+
+## After making all changes:
+
+1. Run `npm run build` and confirm no errors
+2. Confirm in the browser dev tools (Network tab → response headers) that the three security headers appear on page responses
+3. Inspect the  of each page type and confirm the canonical tag exactly matches the page URL
+4. Check that images are being served as WebP in the Network tab
+
+Please start with issue #1 (canonicals) as it is the most critical — having all pages marked non-indexable means Google is being told not to index the site.
