@@ -187,8 +187,8 @@ export default function HomePage() {
             <Image
               src="/logo-icon.png"
               alt="Epic Custom Pools logo"
-              width={160}
-              height={160}
+              width={220}
+              height={220}
               className="drop-shadow-[0_8px_40px_rgba(26,179,232,0.80)] mx-auto"
               priority
             />
@@ -200,24 +200,24 @@ export default function HomePage() {
             Fort Worth &mdash; DFW
           </div>
 
-          {/* 3-line colored headline with word stagger */}
-          <h1 className="font-barlow font-black uppercase leading-[1.0] mb-6" style={{ fontSize: 'clamp(50px, 7.5vw, 84px)', letterSpacing: '-0.02em' }}>
+          {/* Stacked single-word headline */}
+          <h1 className="font-barlow font-black uppercase leading-[0.95] mb-6" style={{ fontSize: 'clamp(64px, 10vw, 108px)', letterSpacing: '-0.02em' }}>
             <span className="block text-white animate-word" style={{ animationDelay: '0ms' }}>
-              Where DFW Families
+              Build
             </span>
-            <span className="block text-gold animate-word" style={{ animationDelay: '90ms' }}>
-              Build Epic
+            <span className="block text-gold animate-word" style={{ animationDelay: '80ms' }}>
+              Epic
             </span>
-            <span className="block text-teal-light animate-word" style={{ animationDelay: '180ms' }}>
+            <span className="block text-teal-light animate-word" style={{ animationDelay: '160ms' }}>
               Memories
             </span>
           </h1>
 
-          <p className="font-inter text-white/80 text-lg md:text-xl leading-relaxed mb-10 max-w-xl mx-auto animate-word" style={{ animationDelay: '280ms' }}>
+          <p className="font-inter text-white/80 text-lg md:text-xl leading-relaxed mb-10 max-w-xl mx-auto animate-word" style={{ animationDelay: '250ms' }}>
             Owner-operated by a DFW pool industry expert — now serving {siteConfig.serviceAreaPhrase}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 sm:justify-center animate-word" style={{ animationDelay: '360ms' }}>
+          <div className="flex flex-col sm:flex-row gap-4 sm:justify-center animate-word" style={{ animationDelay: '330ms' }}>
             <TrackingLink
               href="/consultation"
               eventName="cta_click"
