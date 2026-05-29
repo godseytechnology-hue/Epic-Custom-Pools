@@ -36,24 +36,24 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="flex items-center justify-between h-16 md:h-[72px]">
+        <div className="flex items-center justify-between h-20 md:h-[88px]">
 
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2.5 shrink-0"
+            className="flex items-center gap-3 shrink-0"
             aria-label="Epic Custom Pools — Home"
           >
             <Image
               src="/logo-icon.png"
               alt="Epic Custom Pools logo"
-              width={52}
-              height={52}
-              className="shrink-0"
+              width={66}
+              height={66}
+              className="shrink-0 drop-shadow-[0_2px_10px_rgba(26,179,232,0.45)]"
               priority
             />
             <span
-              className="font-barlow text-lg md:text-xl font-black tracking-wide leading-tight uppercase"
+              className="font-barlow text-xl md:text-2xl font-black tracking-wide leading-tight uppercase"
               style={{
                 background: 'linear-gradient(to bottom, #ffffff 0%, #7ed321 52%, #1ab3e8 100%)',
                 WebkitBackgroundClip: 'text',

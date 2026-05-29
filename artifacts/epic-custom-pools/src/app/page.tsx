@@ -177,9 +177,9 @@ export default function HomePage() {
               <Image
                 src="/logo-icon.png"
                 alt="Epic Custom Pools logo"
-                width={84}
-                height={84}
-                className="drop-shadow-[0_4px_18px_rgba(26,179,232,0.55)]"
+                width={120}
+                height={120}
+                className="drop-shadow-[0_6px_28px_rgba(26,179,232,0.70)]"
                 priority
               />
             </div>
