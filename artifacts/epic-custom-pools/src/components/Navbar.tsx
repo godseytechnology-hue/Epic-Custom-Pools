@@ -36,7 +36,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="flex items-center justify-between h-[88px] md:h-[100px]">
+        <div className="flex items-center justify-between h-[68px] md:h-[80px]">
 
           {/* Logo */}
           <Link
@@ -47,8 +47,8 @@ export default function Navbar() {
             <Image
               src="/logo-icon.webp"
               alt="Epic Custom Pools logo"
-              width={78}
-              height={78}
+              width={60}
+              height={60}
               className="shrink-0 animate-logo-breathe"
               priority
             />
