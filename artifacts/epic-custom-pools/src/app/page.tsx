@@ -190,8 +190,8 @@ export default function HomePage() {
             <Image
               src="/logo-icon.webp"
               alt="Epic Custom Pools logo"
-              width={220}
-              height={220}
+              width={320}
+              height={320}
               className="drop-shadow-[0_8px_40px_rgba(26,179,232,0.80)] mx-auto"
               priority
             />
@@ -329,8 +329,8 @@ export default function HomePage() {
                 <Image
                   src="/logo-icon.webp"
                   alt="Epic Custom Pools logo"
-                  width={220}
-                  height={220}
+                  width={320}
+                  height={320}
                   className="drop-shadow-[0_8px_36px_rgba(26,179,232,0.28)]"
                 />
               </div>

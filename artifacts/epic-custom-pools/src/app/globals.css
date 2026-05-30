@@ -214,6 +214,20 @@ section.bg-white {
   .marquee-inner { animation-play-state: paused; }
 }
 
+/* ── Pool water background — light sections site-wide ── */
+section.bg-white::after,
+section.bg-slate-100::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/hero-pool.webp');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.055;
+  pointer-events: none;
+  z-index: -1;
+}
+
 /* ── Grain texture — section-scoped, light sections only ── */
 section:not([data-dark-section]) {
   position: relative;
