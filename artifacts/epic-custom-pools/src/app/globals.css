@@ -24,11 +24,19 @@
   }
 }
 
-/* Ambient mesh gradient — white sections get a barely-there brand colour wash */
-section.bg-white {
+/* ── Pool water + ambient brand wash — all light-background sections ── */
+section.bg-white,
+section.bg-gray-100,
+section.bg-slate-50,
+section.bg-slate-100 {
   background-image:
     radial-gradient(ellipse 80% 60% at 95% 5%,  rgba(126,211,33,0.08) 0%, transparent 55%),
-    radial-gradient(ellipse 60% 50% at 5%  95%, rgba(26,179,232,0.08) 0%, transparent 55%);
+    radial-gradient(ellipse 60% 50% at 5%  95%, rgba(26,179,232,0.08) 0%, transparent 55%),
+    linear-gradient(rgba(225, 243, 252, 0.85), rgba(225, 243, 252, 0.85)),
+    url('/pool-water-surface.png');
+  background-size: auto, auto, auto, cover;
+  background-position: 0 0, 0 0, 0 0, center;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
 }
 
 @layer utilities {
@@ -214,15 +222,6 @@ section.bg-white {
   .marquee-inner { animation-play-state: paused; }
 }
 
-/* ── Pool water background — light-grey sections site-wide ── */
-section.bg-slate-100 {
-  background-image:
-    linear-gradient(rgba(225, 243, 252, 0.82), rgba(225, 243, 252, 0.82)),
-    url('/pool-water-surface.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 
 /* ── Grain texture — section-scoped, light sections only ── */
 section:not([data-dark-section]) {
