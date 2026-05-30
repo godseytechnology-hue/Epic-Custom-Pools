@@ -47,7 +47,7 @@ const guniteExtraContent = (
     </section>
 
     {/* ─── SERVICE AREAS ──────────────────────────────────────── */}
-    <section className="bg-slate-50 py-16 px-4 md:px-8 border-t border-gray-100">
+    <section className="bg-white py-16 px-4 md:px-8">
       <div className="max-w-5xl mx-auto">
         <h2 className="font-playfair text-2xl md:text-3xl font-bold text-navy text-center mb-4">
           Custom Pool Service Areas

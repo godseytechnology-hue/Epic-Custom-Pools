@@ -141,7 +141,7 @@ export default function PricingPage() {
       </section>
 
       <MarqueeTicker />
-      <SectionDivider fill="#e1f3fc" bg="#0d2540" variant="wave" height={56} />
+      <SectionDivider fill="#ffffff" bg="#0d2540" variant="wave" height={56} />
 
       {/* ─── FINANCING CALLOUT ────────────────────────────── */}
       <section className="bg-white py-10 px-4 md:px-8">
@@ -223,7 +223,7 @@ export default function PricingPage() {
       </section>
 
       {/* ─── OUTDOOR LIVING PRICING ───────────────────────── */}
-      <section className="bg-gray-100 py-20 px-4 md:px-8">
+      <section className="bg-white py-20 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
             Outdoor Living Estimates
@@ -234,7 +234,7 @@ export default function PricingPage() {
           <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
             <table className="w-full text-sm font-inter">
               <thead>
-                <tr className="bg-teal text-white">
+                <tr className="bg-navy text-white">
                   <th className="text-left px-6 py-4 font-semibold">Outdoor Living Service</th>
                   <th className="text-left px-6 py-4 font-semibold">Typical Range</th>
                   <th className="text-left px-6 py-4 font-semibold hidden md:table-cell">Notes</th>
@@ -266,7 +266,7 @@ export default function PricingPage() {
       />
 
       {/* ─── COST FACTORS ─────────────────────────────────── */}
-      <section className="bg-gray-100 py-20 px-4 md:px-8">
+      <section className="bg-white py-20 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
             What Affects Your Final Price
@@ -320,7 +320,7 @@ export default function PricingPage() {
       </section>
 
       {/* ─── WHY WE SHOW PRICING ──────────────────────────── */}
-      <section className="bg-navy/5 border-y border-navy/10 py-16 px-4 md:px-8">
+      <section className="bg-white py-16 px-4 md:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-playfair text-2xl md:text-3xl font-bold text-navy mb-6">
             Why We Show Our Pricing

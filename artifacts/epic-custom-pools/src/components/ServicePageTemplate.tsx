@@ -116,7 +116,7 @@ export default function ServicePageTemplate({
       </section>
 
       <MarqueeTicker />
-      <SectionDivider fill="#e1f3fc" bg="#0d2540" variant="wave" height={56} />
+      <SectionDivider fill="#ffffff" bg="#0d2540" variant="wave" height={56} />
 
       {/* ─── CONTENT SECTIONS ─────────────────────────────── */}
       <section className="bg-white py-16 px-4 md:px-8">
@@ -145,7 +145,7 @@ export default function ServicePageTemplate({
       {/* ─── BENEFITS ─────────────────────────────────────── */}
       {benefits && benefits.length > 0 && (
         <>
-          <section className="bg-gray-100 py-16 px-4 md:px-8">
+          <section className="bg-white py-16 px-4 md:px-8">
           <div className="max-w-5xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-12">
               Key Benefits
@@ -170,7 +170,7 @@ export default function ServicePageTemplate({
       {/* ─── PROCESS STEPS ────────────────────────────────── */}
       {processSteps && processSteps.length > 0 && (
         <>
-          <section className="bg-slate-100 py-16 px-4 md:px-8">
+          <section className="bg-white py-16 px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-12">
               Our Build Process
@@ -204,7 +204,7 @@ export default function ServicePageTemplate({
             <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
               <table className="w-full text-sm font-inter">
                 <thead>
-                  <tr className="bg-teal text-white">
+                  <tr className="bg-navy text-white">
                     <th className="text-left px-6 py-4 font-semibold">Feature</th>
                     <th className="text-center px-6 py-4 font-semibold">{comparisonTable.leftHeader}</th>
                     <th className="text-center px-6 py-4 font-semibold">{comparisonTable.rightHeader}</th>
@@ -230,7 +230,7 @@ export default function ServicePageTemplate({
       {extraContent}
 
       {/* ─── INTERNAL LINKS ───────────────────────────────── */}
-      <section className="bg-gray-100 py-10 px-4 md:px-8">
+      <section className="bg-white py-10 px-4 md:px-8">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link
             href="/pricing"
@@ -251,7 +251,7 @@ export default function ServicePageTemplate({
       <LeadForm source={source} />
 
       {/* ─── FAQ ──────────────────────────────────────────── */}
-      <section className="bg-gray-100 py-16 px-4 md:px-8">
+      <section className="bg-white py-16 px-4 md:px-8">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-10">
             Frequently Asked Questions

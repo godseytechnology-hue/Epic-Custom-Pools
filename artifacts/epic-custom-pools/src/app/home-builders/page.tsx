@@ -105,7 +105,7 @@ export default function HomeBuildersPage() {
       </section>
 
       <MarqueeTicker />
-      <SectionDivider fill="#e1f3fc" bg="#0d2540" variant="wave" height={56} />
+      <SectionDivider fill="#ffffff" bg="#0d2540" variant="wave" height={56} />
 
       {/* ─── WHY BUILDERS CHOOSE US ───────────────────────── */}
       <section className="bg-white py-20 px-4 md:px-8">
@@ -157,7 +157,7 @@ export default function HomeBuildersPage() {
       </section>
 
       {/* ─── PROJECT TYPES ────────────────────────────────── */}
-      <section className="bg-gray-100 py-20 px-4 md:px-8">
+      <section className="bg-white py-20 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
             Communities &amp; Project Types We Support

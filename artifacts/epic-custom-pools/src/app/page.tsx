@@ -366,7 +366,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── 4. SERVICES OVERVIEW ────────────────────────────── */}
-      <section className="bg-slate-100 py-20 px-4 md:px-8">
+      <section className="bg-white py-20 px-4 md:px-8">
         <ScrollReveal>
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-14">
@@ -427,7 +427,7 @@ export default function HomePage() {
         </ScrollReveal>
       </section>
 
-      <SectionDivider fill="#0d2540" bg="#e1f3fc" variant="wave" height={80} />
+      <SectionDivider fill="#0d2540" bg="#ffffff" variant="wave" height={80} />
 
       {/* ─── CTA BANNER ──────────────────────────────────────── */}
       <section data-dark-section className="relative bg-navy py-20 px-4 md:px-8 text-center overflow-hidden">
@@ -527,14 +527,14 @@ export default function HomePage() {
       </section>
 
       {/* Logo mark section divider */}
-      <div className="flex items-center justify-center gap-4 bg-slate-100 py-3" aria-hidden="true">
+      <div className="flex items-center justify-center gap-4 bg-white py-3" aria-hidden="true">
         <div className="h-px w-16 bg-gradient-to-r from-transparent to-teal/30" />
         <Image src="/logo-icon.webp" alt="" aria-hidden="true" width={48} height={48} className="opacity-50" />
         <div className="h-px w-16 bg-gradient-to-l from-transparent to-teal/30" />
       </div>
 
       {/* ─── 6. FAQ SECTION ──────────────────────────────────── */}
-      <section className="bg-slate-100 py-20 px-4 md:px-8">
+      <section className="bg-white py-20 px-4 md:px-8">
         <ScrollReveal>
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">

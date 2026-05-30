@@ -74,7 +74,7 @@ export default function AboutPage() {
       </section>
 
       <MarqueeTicker />
-      <SectionDivider fill="#e1f3fc" bg="#0d2540" variant="wave" height={56} />
+      <SectionDivider fill="#ffffff" bg="#0d2540" variant="wave" height={56} />
 
       {/* ─── MEET THE TEAM ─────────────────────────────────────── */}
       <section id="meet-the-team" className="bg-white py-16 md:py-20 px-4 md:px-8">
@@ -136,7 +136,7 @@ export default function AboutPage() {
        *   - Any milestone moments that led to starting Epic Custom Pools
        * The goal is warmth and authenticity — not a corporate bio.
        */}
-      <section className="bg-gray-100 py-16 md:py-20 px-4 md:px-8">
+      <section className="bg-white py-16 md:py-20 px-4 md:px-8">
         <ScrollReveal>
           <div className="max-w-4xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy mb-8">
@@ -194,7 +194,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── WHAT WE STAND FOR ─────────────────────────────────── */}
-      <section className="bg-gray-100 py-16 md:py-20 px-4 md:px-8">
+      <section className="bg-white py-16 md:py-20 px-4 md:px-8">
         <ScrollReveal>
           <div className="max-w-5xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-12">
@@ -217,7 +217,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── SERVICE AREA ──────────────────────────────────────── */}
-      <section className="bg-slate-100 py-16 md:py-20 px-4 md:px-8">
+      <section className="bg-white py-16 md:py-20 px-4 md:px-8">
         <ScrollReveal>
           <div className="max-w-4xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
