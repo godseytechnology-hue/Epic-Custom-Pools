@@ -455,7 +455,7 @@ export default function HomePage() {
 
         <ScrollReveal>
           <div className="relative z-10 max-w-3xl mx-auto">
-            <Image src="/logo-icon.webp" alt="Epic Custom Pools logo" width={260} height={260} className="mx-auto mb-6 drop-shadow-[0_4px_24px_rgba(26,179,232,0.50)]" />
+            <Image src="/logo-icon.webp" alt="Epic Custom Pools logo" width={340} height={340} className="mx-auto mb-6 drop-shadow-[0_4px_24px_rgba(26,179,232,0.50)]" />
 
             <h2 className="font-barlow font-black uppercase leading-tight mt-4 mb-6" style={{ fontSize: 'clamp(38px, 5.5vw, 62px)', letterSpacing: '-0.02em' }}>
               <span className="block text-gradient-green">Every great backyard</span>
