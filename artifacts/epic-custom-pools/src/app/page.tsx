@@ -427,10 +427,8 @@ export default function HomePage() {
         </ScrollReveal>
       </section>
 
-      <SectionDivider fill="#0d2540" bg="#0d2540" variant="wave" height={80} />
-
       {/* ─── CTA BANNER ──────────────────────────────────────── */}
-      <section data-dark-section className="relative bg-navy py-20 px-4 md:px-8 text-center overflow-hidden">
+      <section data-dark-section className="relative bg-navy pt-10 pb-16 px-4 md:px-8 text-center overflow-hidden">
         {/* Ghost watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
           <Image src="/logo-icon.webp" alt="" aria-hidden="true" width={460} height={460} className="opacity-[0.05]" />
