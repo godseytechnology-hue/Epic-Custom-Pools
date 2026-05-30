@@ -91,7 +91,7 @@ export default function ConsultationPage() {
       </section>
 
       <MarqueeTicker />
-      <SectionDivider fill="#ffffff" bg="#0d2540" variant="wave" height={56} />
+      <SectionDivider fill="#e1f3fc" bg="#0d2540" variant="wave" height={56} />
 
       {/* ─── WHAT HAPPENS ─────────────────────────────────── */}
       <section className="bg-white py-20 px-4 md:px-8">

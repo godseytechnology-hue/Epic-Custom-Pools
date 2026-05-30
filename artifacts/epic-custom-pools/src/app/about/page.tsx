@@ -74,7 +74,7 @@ export default function AboutPage() {
       </section>
 
       <MarqueeTicker />
-      <SectionDivider fill="#ffffff" bg="#0d2540" variant="wave" height={56} />
+      <SectionDivider fill="#e1f3fc" bg="#0d2540" variant="wave" height={56} />
 
       {/* ─── MEET THE TEAM ─────────────────────────────────────── */}
       <section id="meet-the-team" className="bg-white py-16 md:py-20 px-4 md:px-8">
@@ -136,7 +136,7 @@ export default function AboutPage() {
        *   - Any milestone moments that led to starting Epic Custom Pools
        * The goal is warmth and authenticity — not a corporate bio.
        */}
-      <section className="bg-white py-16 md:py-20 px-4 md:px-8 border-t border-gray-100">
+      <section className="bg-white py-16 md:py-20 px-4 md:px-8">
         <ScrollReveal>
           <div className="max-w-4xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy mb-8">
@@ -168,7 +168,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── THE MISSION ───────────────────────────────────────── */}
-      <section className="bg-white py-16 md:py-20 px-4 md:px-8 border-t border-gray-100">
+      <section className="bg-white py-16 md:py-20 px-4 md:px-8">
         <ScrollReveal>
           <div className="max-w-4xl mx-auto">
             <div className="border-l-4 border-gold pl-6 flex items-start gap-6">
@@ -193,7 +193,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── WHAT WE STAND FOR ─────────────────────────────────── */}
-      <section className="bg-white py-16 md:py-20 px-4 md:px-8 border-t border-gray-100">
+      <section className="bg-white py-16 md:py-20 px-4 md:px-8">
         <ScrollReveal>
           <div className="max-w-5xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-12">
@@ -216,7 +216,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── SERVICE AREA ──────────────────────────────────────── */}
-      <section className="bg-white py-16 md:py-20 px-4 md:px-8 border-t border-gray-100">
+      <section className="bg-white py-16 md:py-20 px-4 md:px-8">
         <ScrollReveal>
           <div className="max-w-4xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
@@ -245,7 +245,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── CTA ───────────────────────────────────────────────── */}
-      <section className="bg-white py-10 md:py-12 px-4 md:px-8 border-t border-gray-100">
+      <section className="bg-white py-10 md:py-12 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="bg-navy rounded-2xl px-8 py-10 text-center shadow-lg">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-white mb-4">

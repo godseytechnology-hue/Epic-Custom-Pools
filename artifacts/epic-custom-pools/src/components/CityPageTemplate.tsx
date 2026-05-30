@@ -180,7 +180,7 @@ export default function CityPageTemplate({
       </section>
 
       <MarqueeTicker />
-      <SectionDivider fill="#ffffff" bg="#0d2540" variant="wave" height={56} />
+      <SectionDivider fill="#e1f3fc" bg="#0d2540" variant="wave" height={56} />
 
       {/* ─── OPENING CONTENT ──────────────────────────────── */}
       <section className="bg-white py-16 px-4 md:px-8">
@@ -194,7 +194,7 @@ export default function CityPageTemplate({
       </section>
 
       {/* ─── NEIGHBORHOODS ────────────────────────────────── */}
-      <section className="bg-white py-16 px-4 md:px-8 border-t border-gray-100">
+      <section className="bg-white py-16 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
             {neighborhoodLabel}
@@ -216,7 +216,7 @@ export default function CityPageTemplate({
       </section>
 
       {/* ─── LOCAL CONSIDERATIONS ─────────────────────────── */}
-      <section className="bg-white py-16 px-4 md:px-8 border-t border-gray-100">
+      <section className="bg-white py-16 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-playfair text-2xl md:text-3xl font-bold text-navy mb-5">
             {localConsiderationsHeading}
@@ -226,7 +226,7 @@ export default function CityPageTemplate({
       </section>
 
       {/* ─── POOL TYPES ───────────────────────────────────── */}
-      <section className="bg-white py-16 px-4 md:px-8 border-t border-gray-100">
+      <section className="bg-white py-16 px-4 md:px-8">
         <ScrollReveal>
           <div className="max-w-4xl mx-auto">
             <h2 className="font-playfair text-2xl md:text-3xl font-bold text-navy mb-5">
@@ -258,7 +258,7 @@ export default function CityPageTemplate({
       </section>
 
       {/* ─── OWNER-OPERATED TRUST ─────────────────────────── */}
-      <section className="bg-white py-16 px-4 md:px-8 border-t border-gray-100">
+      <section className="bg-white py-16 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="border-l-4 border-gold pl-6">
             <h2 className="font-playfair text-2xl md:text-3xl font-bold text-navy mb-5">
@@ -271,7 +271,7 @@ export default function CityPageTemplate({
 
       {/* ─── FAQ ──────────────────────────────────────────── */}
       {faqs && faqs.length > 0 && (
-        <section className="bg-white py-16 px-4 md:px-8 border-t border-gray-100">
+        <section className="bg-white py-16 px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-playfair text-2xl md:text-3xl font-bold text-navy mb-10">
               Frequently Asked Questions
@@ -291,7 +291,7 @@ export default function CityPageTemplate({
       )}
 
       {/* ─── INTERNAL LINKS ───────────────────────────────── */}
-      <section className="bg-white py-10 px-4 md:px-8 border-t border-gray-100">
+      <section className="bg-white py-10 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="bg-navy rounded-2xl px-8 py-7 flex flex-col sm:flex-row gap-4 justify-center items-center shadow-lg">
             <Link
@@ -311,7 +311,7 @@ export default function CityPageTemplate({
       </section>
 
       {/* ─── ALSO SERVING NEARBY ──────────────────────────── */}
-      <section className="bg-white py-12 px-4 md:px-8 border-t border-gray-100">
+      <section className="bg-white py-12 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
           <p className="font-inter text-sm font-semibold text-gray-400 tracking-widest uppercase text-center mb-5">
             Also Serving Nearby Communities
