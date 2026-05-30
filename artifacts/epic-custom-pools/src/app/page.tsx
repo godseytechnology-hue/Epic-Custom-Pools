@@ -291,7 +291,7 @@ export default function HomePage() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="animate-stagger flex flex-col sm:flex-row items-center sm:items-start gap-3 p-4 rounded-lg border border-gold/30 bg-gold/5 hover:bg-gold/10 transition-colors duration-200"
+                    className="animate-stagger flex flex-col sm:flex-row items-center sm:items-start gap-3 p-4 rounded-lg border border-gold/60 bg-white shadow-md hover:shadow-lg hover:border-gold/90 transition-all duration-200"
                     style={{ animationDelay: `${i * 120}ms` }}
                   >
                     {inner}
@@ -299,7 +299,7 @@ export default function HomePage() {
                 ) : (
                   <div
                     key={item.label}
-                    className="animate-stagger flex flex-col sm:flex-row items-center sm:items-start gap-3 p-4 rounded-lg border border-gray-100 bg-gray-50"
+                    className="animate-stagger flex flex-col sm:flex-row items-center sm:items-start gap-3 p-4 rounded-lg border border-gray-200 bg-white shadow-md"
                     style={{ animationDelay: `${i * 120}ms` }}
                   >
                     {inner}
