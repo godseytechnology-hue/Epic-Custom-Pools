@@ -17,8 +17,8 @@ const VIDEOS = [
   },
 ];
 
-const INTERVAL_MS = 9000;
-const FADE_MS = 1200;
+const INTERVAL_MS = 4000;
+const FADE_MS = 800;
 
 interface Props {
   className?: string;
@@ -28,12 +28,6 @@ export default function HeroVideoCarousel({ className }: Props) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [failed, setFailed] = useState<Set<number>>(new Set());
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
-
-  useEffect(() => {
-    videoRefs.current.forEach((video) => {
-      if (video) video.play().catch(() => {});
-    });
-  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -50,6 +44,24 @@ export default function HeroVideoCarousel({ className }: Props) {
     return () => clearInterval(interval);
   }, [failed]);
 
+  useEffect(() => {
+    videoRefs.current.forEach((video, i) => {
+      if (!video) return;
+      if (i === activeIndex) {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }, [activeIndex]);
+
+  const handleCanPlay = (index: number) => {
+    if (index === activeIndex) {
+      videoRefs.current[index]?.play().catch(() => {});
+    }
+  };
+
   const handleError = (index: number) => {
     setFailed((prev) => {
       const next = new Set(prev);
@@ -58,10 +70,10 @@ export default function HeroVideoCarousel({ className }: Props) {
     });
     setActiveIndex((prev) => {
       if (prev !== index) return prev;
-      let candidate = (index + 1) % VIDEOS.length;
-      let attempts = 0;
       const failedPlusNew = new Set(failed);
       failedPlusNew.add(index);
+      let candidate = (index + 1) % VIDEOS.length;
+      let attempts = 0;
       while (failedPlusNew.has(candidate) && attempts < VIDEOS.length) {
         candidate = (candidate + 1) % VIDEOS.length;
         attempts++;
@@ -80,8 +92,9 @@ export default function HeroVideoCarousel({ className }: Props) {
           muted
           playsInline
           loop
-          autoPlay
+          autoPlay={i === 0}
           preload="auto"
+          onCanPlay={() => handleCanPlay(i)}
           onError={() => handleError(i)}
           aria-hidden="true"
           style={{
@@ -92,6 +105,7 @@ export default function HeroVideoCarousel({ className }: Props) {
             objectFit: 'cover',
             opacity: activeIndex === i && !failed.has(i) ? 1 : 0,
             transition: `opacity ${FADE_MS}ms ease-in-out`,
+            display: failed.has(i) ? 'none' : undefined,
           }}
         />
       ))}
