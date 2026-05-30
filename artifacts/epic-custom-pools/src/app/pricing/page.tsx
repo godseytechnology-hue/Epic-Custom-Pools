@@ -141,34 +141,34 @@ export default function PricingPage() {
       </section>
 
       <MarqueeTicker />
-      <SectionDivider fill="white" bg="#0d2540" variant="wave" height={56} />
+      <SectionDivider fill="#e1f3fc" bg="#0d2540" variant="wave" height={56} />
 
       {/* ─── FINANCING CALLOUT ────────────────────────────── */}
-      <section className="bg-teal/10 border-y border-teal/20 py-8 px-4 md:px-8">
-        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <span className="text-3xl flex-shrink-0" aria-hidden="true">💳</span>
-            <div>
-              <p className="font-playfair text-navy text-lg font-bold leading-snug">
-                Pool Financing Available Through Lyon Financial
-              </p>
-              <p className="font-inter text-gray-600 text-sm mt-0.5">
-                Low monthly payments, quick approval — get your dream pool without waiting.
-              </p>
+      <section className="bg-white py-10 px-4 md:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-navy rounded-2xl px-8 py-6 shadow-lg border border-teal/20">
+            <div className="flex items-center gap-4">
+              <span className="text-3xl flex-shrink-0" aria-hidden="true">💳</span>
+              <div>
+                <p className="font-playfair text-white text-lg font-bold leading-snug">
+                  Pool Financing Available Through Lyon Financial
+                </p>
+                <p className="font-inter text-white/70 text-sm mt-0.5">
+                  Low monthly payments, quick approval — get your dream pool without waiting.
+                </p>
+              </div>
             </div>
+            <a
+              href="https://www.lyonfinancial.net/dealer/epic-custom-pools-llc-tx/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 inline-flex items-center justify-center bg-teal text-white font-inter font-semibold text-sm px-6 py-3 rounded hover:bg-teal/90 transition-colors duration-200 whitespace-nowrap"
+            >
+              Explore Financing Options →
+            </a>
           </div>
-          <a
-            href="https://www.lyonfinancial.net/dealer/epic-custom-pools-llc-tx/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-shrink-0 inline-flex items-center justify-center bg-teal text-white font-inter font-semibold text-sm px-6 py-3 rounded hover:bg-teal/90 transition-colors duration-200 whitespace-nowrap"
-          >
-            Explore Financing Options →
-          </a>
         </div>
       </section>
-
-      <SectionDivider fill="white" bg="#e8f7fd" variant="wave" height={56} />
 
       {/* ─── PRICING TIER CARDS ───────────────────────────── */}
       <section className="bg-white py-20 px-4 md:px-8">
@@ -222,7 +222,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <SectionDivider fill="#f3f4f6" bg="white" variant="tilt" height={48} />
+      <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="tilt" height={48} />
 
       {/* ─── OUTDOOR LIVING PRICING ───────────────────────── */}
       <section className="bg-gray-100 py-20 px-4 md:px-8">
@@ -288,7 +288,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <SectionDivider fill="white" bg="#f3f4f6" variant="curve" height={48} />
+      <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="curve" height={48} />
 
       {/* ─── PROCESS TIMELINE ─────────────────────────────── */}
       <section className="bg-white py-20 px-4 md:px-8">

@@ -272,7 +272,7 @@ export default function HomePage() {
       <MarqueeTicker />
 
       {/* ─── 2. TRUST BAR ────────────────────────────────────── */}
-      <section className="bg-white border-b border-gray-100">
+      <section className="bg-white">
         <ScrollReveal>
           <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
@@ -365,7 +365,7 @@ export default function HomePage() {
         </ScrollReveal>
       </section>
 
-      <SectionDivider fill="#f1f5f9" bg="white" variant="tilt" flipX height={52} />
+      <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="tilt" flipX height={52} />
 
       {/* ─── 4. SERVICES OVERVIEW ────────────────────────────── */}
       <section className="bg-slate-100 py-20 px-4 md:px-8">
@@ -429,7 +429,7 @@ export default function HomePage() {
         </ScrollReveal>
       </section>
 
-      <SectionDivider fill="#0d2540" bg="#f1f5f9" variant="wave" height={80} />
+      <SectionDivider fill="#0d2540" bg="#e1f3fc" variant="wave" height={80} />
 
       {/* ─── CTA BANNER ──────────────────────────────────────── */}
       <section data-dark-section className="relative bg-navy py-20 px-4 md:px-8 text-center overflow-hidden">

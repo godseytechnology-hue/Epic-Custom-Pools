@@ -91,7 +91,7 @@ export default function ConsultationPage() {
       </section>
 
       <MarqueeTicker />
-      <SectionDivider fill="white" bg="#0d2540" variant="wave" height={56} />
+      <SectionDivider fill="#e1f3fc" bg="#0d2540" variant="wave" height={56} />
 
       {/* ─── WHAT HAPPENS ─────────────────────────────────── */}
       <section className="bg-white py-20 px-4 md:px-8">
@@ -120,7 +120,7 @@ export default function ConsultationPage() {
       {/* ─── LEAD FORM ────────────────────────────────────── */}
       <LeadForm source="consultation-page" />
 
-      <SectionDivider fill="#f3f4f6" bg="white" variant="tilt" height={48} />
+      <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="tilt" height={48} />
 
       {/* ─── FAQ ──────────────────────────────────────────── */}
       <section className="bg-gray-100 py-20 px-4 md:px-8">
@@ -139,7 +139,7 @@ export default function ConsultationPage() {
         </div>
       </section>
 
-      <SectionDivider fill="white" bg="#f3f4f6" variant="curve" height={48} />
+      <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="curve" height={48} />
 
       {/* ─── SERVICE CITIES ───────────────────────────────── */}
       <section className="bg-white py-14 px-4 md:px-8 border-t border-gray-100">

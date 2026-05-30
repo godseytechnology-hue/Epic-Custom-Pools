@@ -74,7 +74,7 @@ export default function AboutPage() {
       </section>
 
       <MarqueeTicker />
-      <SectionDivider fill="white" bg="#0d2540" variant="wave" height={56} />
+      <SectionDivider fill="#e1f3fc" bg="#0d2540" variant="wave" height={56} />
 
       {/* ─── MEET THE TEAM ─────────────────────────────────────── */}
       <section id="meet-the-team" className="bg-white py-16 md:py-20 px-4 md:px-8">
@@ -126,7 +126,7 @@ export default function AboutPage() {
         </ScrollReveal>
       </section>
 
-      <SectionDivider fill="#f3f4f6" bg="#f0fcff" variant="tilt" height={48} />
+      <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="tilt" height={48} />
 
       {/* ─── FOUNDER'S STORY ───────────────────────────────────── */}
       {/*
@@ -169,7 +169,7 @@ export default function AboutPage() {
         </ScrollReveal>
       </section>
 
-      <SectionDivider fill="white" bg="#f3f4f6" variant="curve" height={52} />
+      <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="curve" height={52} />
 
       {/* ─── THE MISSION ───────────────────────────────────────── */}
       <section className="bg-white py-16 md:py-20 px-4 md:px-8">
@@ -197,7 +197,7 @@ export default function AboutPage() {
         </ScrollReveal>
       </section>
 
-      <SectionDivider fill="#f3f4f6" bg="white" variant="tilt" flipX height={48} />
+      <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="tilt" flipX height={48} />
 
       {/* ─── WHAT WE STAND FOR ─────────────────────────────────── */}
       <section className="bg-gray-100 py-16 md:py-20 px-4 md:px-8">
@@ -222,7 +222,7 @@ export default function AboutPage() {
         </ScrollReveal>
       </section>
 
-      <SectionDivider fill="#f1f5f9" bg="#f3f4f6" variant="wave" height={48} />
+      <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="wave" height={48} />
 
       {/* ─── SERVICE AREA ──────────────────────────────────────── */}
       <section className="bg-slate-100 py-16 md:py-20 px-4 md:px-8">
@@ -253,7 +253,7 @@ export default function AboutPage() {
         </ScrollReveal>
       </section>
 
-      <SectionDivider fill="white" bg="#f1f5f9" variant="curve" height={48} />
+      <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="curve" height={48} />
 
       {/* ─── CTA ───────────────────────────────────────────────── */}
       <section className="bg-white py-16 md:py-20 px-4 md:px-8 text-center">
