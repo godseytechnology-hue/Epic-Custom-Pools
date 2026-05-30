@@ -17,7 +17,7 @@ const VIDEOS = [
   },
 ];
 
-const INTERVAL_MS = 8000;
+const INTERVAL_MS = 10000;
 const FADE_MS = 800;
 
 interface Props {
