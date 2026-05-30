@@ -9,6 +9,7 @@ const ALL_CITY_LINKS: { label: string; href: string | null; tier: 'foundation' |
   { label: 'Aledo', href: '/aledo-pool-builder', tier: 'foundation' },
   { label: 'Possum Kingdom', href: '/possum-kingdom-pool-builder', tier: 'foundation' },
   { label: 'Granbury', href: '/granbury-pool-builder', tier: 'foundation' },
+  { label: 'Greater DFW', href: '/dfw-west-pool-builder', tier: 'foundation' },
 ];
 
 export default function Footer() {
