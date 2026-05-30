@@ -4,6 +4,7 @@ interface Props {
   variant?: 'wave' | 'tilt' | 'curve';
   flipX?: boolean;
   height?: number;
+  poolWaterBg?: boolean;
 }
 
 export default function SectionDivider({
@@ -12,6 +13,7 @@ export default function SectionDivider({
   variant = 'wave',
   flipX = false,
   height = 72,
+  poolWaterBg = false,
 }: Props) {
   const svgStyle: React.CSSProperties = {
     display: 'block',
@@ -21,8 +23,9 @@ export default function SectionDivider({
 
   return (
     <div
+      className={poolWaterBg ? 'divider-pool-water' : undefined}
       style={{
-        background: bg,
+        background: poolWaterBg ? undefined : bg,
         lineHeight: 0,
         overflow: 'hidden',
         transform: flipX ? 'scaleX(-1)' : undefined,
@@ -38,10 +41,19 @@ export default function SectionDivider({
           preserveAspectRatio="none"
           style={svgStyle}
         >
-          <path
-            d="M0,36 C360,72 1080,0 1440,36 L1440,72 L0,72 Z"
-            fill={fill}
-          />
+          {poolWaterBg ? (
+            /* Inverted path: fills the TOP (navy) and leaves the wave gap open
+               so the pool-water texture background shows through */
+            <path
+              d="M0,0 L1440,0 L1440,36 C1080,0 360,72 0,36 Z"
+              fill={fill}
+            />
+          ) : (
+            <path
+              d="M0,36 C360,72 1080,0 1440,36 L1440,72 L0,72 Z"
+              fill={fill}
+            />
+          )}
         </svg>
       )}
       {variant === 'tilt' && (
@@ -51,7 +63,11 @@ export default function SectionDivider({
           preserveAspectRatio="none"
           style={{ ...svgStyle, height: `${height}px` }}
         >
-          <path d="M0,60 L1440,0 L1440,60 Z" fill={fill} />
+          {poolWaterBg ? (
+            <path d="M0,0 L1440,0 L1440,0 L0,60 Z" fill={fill} />
+          ) : (
+            <path d="M0,60 L1440,0 L1440,60 Z" fill={fill} />
+          )}
         </svg>
       )}
       {variant === 'curve' && (
@@ -61,10 +77,17 @@ export default function SectionDivider({
           preserveAspectRatio="none"
           style={svgStyle}
         >
-          <path
-            d="M0,72 Q720,0 1440,72 L1440,72 L0,72 Z"
-            fill={fill}
-          />
+          {poolWaterBg ? (
+            <path
+              d="M0,0 L1440,0 L1440,72 Q720,0 0,72 Z"
+              fill={fill}
+            />
+          ) : (
+            <path
+              d="M0,72 Q720,0 1440,72 L1440,72 L0,72 Z"
+              fill={fill}
+            />
+          )}
         </svg>
       )}
     </div>

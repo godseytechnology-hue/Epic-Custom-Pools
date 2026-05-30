@@ -105,7 +105,7 @@ export default function HomeBuildersPage() {
       </section>
 
       <MarqueeTicker />
-      <SectionDivider fill="#e1f3fc" bg="#0d2540" variant="wave" height={56} />
+      <SectionDivider fill="#0d2540" variant="wave" height={56} poolWaterBg />
 
       {/* ─── WHY BUILDERS CHOOSE US ───────────────────────── */}
       <section className="bg-white py-20 px-4 md:px-8">

@@ -141,7 +141,7 @@ export default function PricingPage() {
       </section>
 
       <MarqueeTicker />
-      <SectionDivider fill="#e1f3fc" bg="#0d2540" variant="wave" height={56} />
+      <SectionDivider fill="#0d2540" variant="wave" height={56} poolWaterBg />
 
       {/* ─── FINANCING CALLOUT ────────────────────────────── */}
       <section className="bg-white py-10 px-4 md:px-8">
