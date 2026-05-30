@@ -152,10 +152,10 @@ export default function HomePage() {
         {/* Gradient overlay — dark at top, fades to transparent */}
         <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(to bottom, #060d14 0%, rgba(6,13,20,0.75) 45%, rgba(6,13,20,0.45) 70%, transparent 100%)' }}
+          style={{ background: 'linear-gradient(to bottom, rgba(6,13,20,0.85) 0%, rgba(6,13,20,0.45) 40%, rgba(6,13,20,0.20) 65%, transparent 100%)' }}
         />
         {/* Base tint so video doesn't overpower text */}
-        <div className="absolute inset-0 bg-navy/40" />
+        <div className="absolute inset-0 bg-navy/20" />
 
         {/* Green orb — top right */}
         <div
