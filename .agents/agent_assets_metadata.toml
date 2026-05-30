@@ -1,5 +1,10 @@
 uploads = []
-generated = []
+
+[[generated]]
+id = "ep7aUPuzxPYokYYpP7kkg"
+uri = "file://artifacts/epic-custom-pools/public/pool-water-surface.png"
+type = "image"
+title = "generated_image"
 
 [[outputs]]
 id = "0-pA2yreiM-yOCJLWwZS1"

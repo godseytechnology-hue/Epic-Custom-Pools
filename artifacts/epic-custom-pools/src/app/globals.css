@@ -214,18 +214,14 @@ section.bg-white {
   .marquee-inner { animation-play-state: paused; }
 }
 
-/* ── Pool water background — light sections site-wide ── */
-section.bg-white::after,
-section.bg-slate-100::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('/hero-pool.webp');
+/* ── Pool water background — light-grey sections site-wide ── */
+section.bg-slate-100 {
+  background-image:
+    linear-gradient(rgba(225, 243, 252, 0.82), rgba(225, 243, 252, 0.82)),
+    url('/pool-water-surface.png');
   background-size: cover;
   background-position: center;
-  opacity: 0.055;
-  pointer-events: none;
-  z-index: -1;
+  background-repeat: no-repeat;
 }
 
 /* ── Grain texture — section-scoped, light sections only ── */
