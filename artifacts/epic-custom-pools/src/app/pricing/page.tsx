@@ -222,8 +222,6 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="tilt" height={48} />
-
       {/* ─── OUTDOOR LIVING PRICING ───────────────────────── */}
       <section className="bg-gray-100 py-20 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
@@ -287,8 +285,6 @@ export default function PricingPage() {
           </div>
         </div>
       </section>
-
-      <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="curve" height={48} />
 
       {/* ─── PROCESS TIMELINE ─────────────────────────────── */}
       <section className="bg-white py-20 px-4 md:px-8">

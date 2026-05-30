@@ -193,8 +193,6 @@ export default function CityPageTemplate({
         </div>
       </section>
 
-      <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="tilt" height={48} />
-
       {/* ─── NEIGHBORHOODS ────────────────────────────────── */}
       <section className="bg-gray-100 py-16 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
@@ -217,8 +215,6 @@ export default function CityPageTemplate({
         </div>
       </section>
 
-      <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="curve" height={52} />
-
       {/* ─── LOCAL CONSIDERATIONS ─────────────────────────── */}
       <section className="bg-white py-16 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
@@ -228,8 +224,6 @@ export default function CityPageTemplate({
           <p className="font-inter text-gray-600 text-lg leading-relaxed">{localConsiderations}</p>
         </div>
       </section>
-
-      <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="tilt" flipX height={48} />
 
       {/* ─── POOL TYPES ───────────────────────────────────── */}
       <section className="bg-slate-100 py-16 px-4 md:px-8">

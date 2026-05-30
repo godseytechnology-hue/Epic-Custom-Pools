@@ -126,8 +126,6 @@ export default function AboutPage() {
         </ScrollReveal>
       </section>
 
-      <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="tilt" height={48} />
-
       {/* ─── FOUNDER'S STORY ───────────────────────────────────── */}
       {/*
        * ⚠️  PLACEHOLDER — Before launch, replace this entire section with the
@@ -169,8 +167,6 @@ export default function AboutPage() {
         </ScrollReveal>
       </section>
 
-      <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="curve" height={52} />
-
       {/* ─── THE MISSION ───────────────────────────────────────── */}
       <section className="bg-white py-16 md:py-20 px-4 md:px-8">
         <ScrollReveal>
@@ -197,8 +193,6 @@ export default function AboutPage() {
         </ScrollReveal>
       </section>
 
-      <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="tilt" flipX height={48} />
-
       {/* ─── WHAT WE STAND FOR ─────────────────────────────────── */}
       <section className="bg-gray-100 py-16 md:py-20 px-4 md:px-8">
         <ScrollReveal>
@@ -221,8 +215,6 @@ export default function AboutPage() {
           </div>
         </ScrollReveal>
       </section>
-
-      <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="wave" height={48} />
 
       {/* ─── SERVICE AREA ──────────────────────────────────────── */}
       <section className="bg-slate-100 py-16 md:py-20 px-4 md:px-8">
@@ -252,8 +244,6 @@ export default function AboutPage() {
           </div>
         </ScrollReveal>
       </section>
-
-      <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="curve" height={48} />
 
       {/* ─── CTA ───────────────────────────────────────────────── */}
       <section className="bg-white py-16 md:py-20 px-4 md:px-8 text-center">

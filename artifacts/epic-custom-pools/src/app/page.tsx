@@ -365,8 +365,6 @@ export default function HomePage() {
         </ScrollReveal>
       </section>
 
-      <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="tilt" flipX height={52} />
-
       {/* ─── 4. SERVICES OVERVIEW ────────────────────────────── */}
       <section className="bg-slate-100 py-20 px-4 md:px-8">
         <ScrollReveal>

@@ -145,7 +145,6 @@ export default function ServicePageTemplate({
       {/* ─── BENEFITS ─────────────────────────────────────── */}
       {benefits && benefits.length > 0 && (
         <>
-          <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="tilt" height={48} />
           <section className="bg-gray-100 py-16 px-4 md:px-8">
           <div className="max-w-5xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-12">
@@ -171,7 +170,6 @@ export default function ServicePageTemplate({
       {/* ─── PROCESS STEPS ────────────────────────────────── */}
       {processSteps && processSteps.length > 0 && (
         <>
-          <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="wave" height={52} />
           <section className="bg-slate-100 py-16 px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-12">
@@ -198,7 +196,6 @@ export default function ServicePageTemplate({
       {/* ─── COMPARISON TABLE ─────────────────────────────── */}
       {comparisonTable && (
         <>
-          <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="curve" height={48} />
           <section className="bg-white py-16 px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-10">
