@@ -144,8 +144,7 @@ export default function ServicePageTemplate({
 
       {/* ─── BENEFITS ─────────────────────────────────────── */}
       {benefits && benefits.length > 0 && (
-        <>
-          <section className="bg-white py-16 px-4 md:px-8">
+        <section className="bg-white py-16 px-4 md:px-8 border-t border-gray-100">
           <div className="max-w-5xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-12">
               Key Benefits
@@ -164,13 +163,11 @@ export default function ServicePageTemplate({
             </div>
           </div>
         </section>
-        </>
       )}
 
       {/* ─── PROCESS STEPS ────────────────────────────────── */}
       {processSteps && processSteps.length > 0 && (
-        <>
-          <section className="bg-white py-16 px-4 md:px-8">
+        <section className="bg-white py-16 px-4 md:px-8 border-t border-gray-100">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-12">
               Our Build Process
@@ -181,7 +178,7 @@ export default function ServicePageTemplate({
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-navy flex items-center justify-center">
                     <span className="font-playfair font-bold text-white text-lg">{step.step}</span>
                   </div>
-                  <div>
+                  <div className="flex-1 bg-gray-50 rounded-xl p-5 border border-gray-100">
                     <h3 className="font-playfair text-lg font-bold text-navy mb-1">{step.title}</h3>
                     <p className="font-inter text-gray-600 text-sm leading-relaxed">{step.desc}</p>
                   </div>
@@ -190,13 +187,11 @@ export default function ServicePageTemplate({
             </div>
           </div>
         </section>
-        </>
       )}
 
       {/* ─── COMPARISON TABLE ─────────────────────────────── */}
       {comparisonTable && (
-        <>
-          <section className="bg-white py-16 px-4 md:px-8">
+        <section className="bg-white py-16 px-4 md:px-8 border-t border-gray-100">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-10">
               {comparisonTable.caption}
@@ -223,27 +218,28 @@ export default function ServicePageTemplate({
             </div>
           </div>
         </section>
-        </>
       )}
 
       {/* ─── EXTRA CONTENT ────────────────────────────────── */}
       {extraContent}
 
       {/* ─── INTERNAL LINKS ───────────────────────────────── */}
-      <section className="bg-white py-10 px-4 md:px-8">
-        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Link
-            href="/pricing"
-            className="inline-flex items-center justify-center bg-navy text-white font-inter font-semibold text-sm px-8 py-3 rounded hover:bg-navy/80 transition-colors duration-200"
-          >
-            View Pricing &amp; Process →
-          </Link>
-          <Link
-            href="/consultation"
-            className="inline-flex items-center justify-center border-2 border-navy text-navy font-inter font-semibold text-sm px-8 py-3 rounded hover:bg-navy hover:text-white transition-colors duration-200"
-          >
-            Book Free Consultation →
-          </Link>
+      <section className="bg-white py-10 px-4 md:px-8 border-t border-gray-100">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-navy rounded-2xl px-8 py-7 flex flex-col sm:flex-row gap-4 justify-center items-center shadow-lg">
+            <Link
+              href="/pricing"
+              className="inline-flex items-center justify-center bg-gold text-navy font-inter font-bold text-sm px-8 py-3 rounded hover:bg-gold-light transition-colors duration-200"
+            >
+              View Pricing &amp; Process →
+            </Link>
+            <Link
+              href="/consultation"
+              className="inline-flex items-center justify-center border-2 border-white/40 text-white font-inter font-semibold text-sm px-8 py-3 rounded hover:border-white hover:bg-white/5 transition-colors duration-200"
+            >
+              Book Free Consultation →
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -251,12 +247,12 @@ export default function ServicePageTemplate({
       <LeadForm source={source} />
 
       {/* ─── FAQ ──────────────────────────────────────────── */}
-      <section className="bg-white py-16 px-4 md:px-8">
+      <section className="bg-white py-16 px-4 md:px-8 border-t border-gray-100">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-10">
             Frequently Asked Questions
           </h2>
-          <div className="space-y-6">
+          <div className="space-y-4">
             {faq.map((item, i) => (
               <div key={i} className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
                 <h3 className="font-playfair text-lg font-bold text-navy mb-3">{item.question}</h3>

@@ -136,7 +136,7 @@ export default function AboutPage() {
        *   - Any milestone moments that led to starting Epic Custom Pools
        * The goal is warmth and authenticity — not a corporate bio.
        */}
-      <section className="bg-white py-16 md:py-20 px-4 md:px-8">
+      <section className="bg-white py-16 md:py-20 px-4 md:px-8 border-t border-gray-100">
         <ScrollReveal>
           <div className="max-w-4xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy mb-8">
@@ -168,11 +168,10 @@ export default function AboutPage() {
       </section>
 
       {/* ─── THE MISSION ───────────────────────────────────────── */}
-      <section className="bg-white py-16 md:py-20 px-4 md:px-8">
+      <section className="bg-white py-16 md:py-20 px-4 md:px-8 border-t border-gray-100">
         <ScrollReveal>
           <div className="max-w-4xl mx-auto">
-            <div className="flex items-start gap-6">
-              <span className="text-teal text-4xl leading-none mt-1 hidden md:block" aria-hidden="true">◈</span>
+            <div className="border-l-4 border-gold pl-6 flex items-start gap-6">
               <div>
                 <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy mb-6">
                   Why We Do This
@@ -194,7 +193,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── WHAT WE STAND FOR ─────────────────────────────────── */}
-      <section className="bg-white py-16 md:py-20 px-4 md:px-8">
+      <section className="bg-white py-16 md:py-20 px-4 md:px-8 border-t border-gray-100">
         <ScrollReveal>
           <div className="max-w-5xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-12">
@@ -204,7 +203,7 @@ export default function AboutPage() {
               {VALUES.map((value) => (
                 <div
                   key={value.title}
-                  className="flex flex-col items-start bg-white rounded-xl p-8 border border-gray-100"
+                  className="flex flex-col items-start bg-white rounded-xl p-8 border border-gray-100 shadow-sm"
                 >
                   <span className="text-4xl mb-5" aria-hidden="true">{value.icon}</span>
                   <h3 className="font-playfair text-xl font-bold text-navy mb-3">{value.title}</h3>
@@ -217,7 +216,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── SERVICE AREA ──────────────────────────────────────── */}
-      <section className="bg-white py-16 md:py-20 px-4 md:px-8">
+      <section className="bg-white py-16 md:py-20 px-4 md:px-8 border-t border-gray-100">
         <ScrollReveal>
           <div className="max-w-4xl mx-auto">
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
@@ -246,22 +245,24 @@ export default function AboutPage() {
       </section>
 
       {/* ─── CTA ───────────────────────────────────────────────── */}
-      <section className="bg-white py-16 md:py-20 px-4 md:px-8 text-center">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy mb-4">
-            Ready to talk?
-          </h2>
-          <p className="font-inter text-gray-600 text-lg mb-8">
-            Let&apos;s design your pool together. No sales pitch — just an honest conversation about what you want to build and what it takes to get there.
-          </p>
-          <TrackingLink
-            href="/consultation"
-            eventName="cta_click"
-            eventParams={{ button_label: 'Schedule a Free Consultation', page: 'about' }}
-            className="inline-flex items-center justify-center bg-navy text-gold font-inter font-bold text-base px-10 py-4 rounded hover:bg-navy/90 transition-colors duration-200"
-          >
-            Schedule a Free Consultation →
-          </TrackingLink>
+      <section className="bg-white py-10 md:py-12 px-4 md:px-8 border-t border-gray-100">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-navy rounded-2xl px-8 py-10 text-center shadow-lg">
+            <h2 className="font-playfair text-3xl md:text-4xl font-bold text-white mb-4">
+              Ready to talk?
+            </h2>
+            <p className="font-inter text-white/70 text-lg mb-8 max-w-xl mx-auto">
+              Let&apos;s design your pool together. No sales pitch — just an honest conversation about what you want to build and what it takes to get there.
+            </p>
+            <TrackingLink
+              href="/consultation"
+              eventName="cta_click"
+              eventParams={{ button_label: 'Schedule a Free Consultation', page: 'about' }}
+              className="inline-flex items-center justify-center bg-gold text-navy font-inter font-bold text-base px-10 py-4 rounded hover:bg-gold-light transition-colors duration-200"
+            >
+              Schedule a Free Consultation →
+            </TrackingLink>
+          </div>
         </div>
       </section>
 

@@ -223,7 +223,7 @@ export default function PricingPage() {
       </section>
 
       {/* ─── OUTDOOR LIVING PRICING ───────────────────────── */}
-      <section className="bg-white py-20 px-4 md:px-8">
+      <section className="bg-white py-20 px-4 md:px-8 border-t border-gray-100">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
             Outdoor Living Estimates
@@ -266,7 +266,7 @@ export default function PricingPage() {
       />
 
       {/* ─── COST FACTORS ─────────────────────────────────── */}
-      <section className="bg-white py-20 px-4 md:px-8">
+      <section className="bg-white py-20 px-4 md:px-8 border-t border-gray-100">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
             What Affects Your Final Price
@@ -287,7 +287,7 @@ export default function PricingPage() {
       </section>
 
       {/* ─── PROCESS TIMELINE ─────────────────────────────── */}
-      <section className="bg-white py-20 px-4 md:px-8">
+      <section className="bg-white py-20 px-4 md:px-8 border-t border-gray-100">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
             Our Process, Start to Finish
@@ -320,14 +320,16 @@ export default function PricingPage() {
       </section>
 
       {/* ─── WHY WE SHOW PRICING ──────────────────────────── */}
-      <section className="bg-white py-16 px-4 md:px-8">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-playfair text-2xl md:text-3xl font-bold text-navy mb-6">
-            Why We Show Our Pricing
-          </h2>
-          <p className="font-inter text-gray-600 text-lg leading-relaxed">
-            Most contractors make you call before they&apos;ll mention a number. We think that&apos;s backwards. You&apos;re about to make one of the biggest investments in your home. You should be able to do your research without feeling pressured. We publish our pricing because we&apos;re confident in what we build — and because the builders who choose us do so knowing exactly what they&apos;re getting.
-          </p>
+      <section className="bg-white py-16 px-4 md:px-8 border-t border-gray-100">
+        <div className="max-w-3xl mx-auto">
+          <div className="border-l-4 border-gold pl-6">
+            <h2 className="font-playfair text-2xl md:text-3xl font-bold text-navy mb-6">
+              Why We Show Our Pricing
+            </h2>
+            <p className="font-inter text-gray-600 text-lg leading-relaxed">
+              Most contractors make you call before they&apos;ll mention a number. We think that&apos;s backwards. You&apos;re about to make one of the biggest investments in your home. You should be able to do your research without feeling pressured. We publish our pricing because we&apos;re confident in what we build — and because the builders who choose us do so knowing exactly what they&apos;re getting.
+            </p>
+          </div>
         </div>
       </section>
 

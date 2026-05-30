@@ -194,7 +194,7 @@ export default function CityPageTemplate({
       </section>
 
       {/* ─── NEIGHBORHOODS ────────────────────────────────── */}
-      <section className="bg-white py-16 px-4 md:px-8">
+      <section className="bg-white py-16 px-4 md:px-8 border-t border-gray-100">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy text-center mb-4">
             {neighborhoodLabel}
@@ -216,7 +216,7 @@ export default function CityPageTemplate({
       </section>
 
       {/* ─── LOCAL CONSIDERATIONS ─────────────────────────── */}
-      <section className="bg-white py-16 px-4 md:px-8">
+      <section className="bg-white py-16 px-4 md:px-8 border-t border-gray-100">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-playfair text-2xl md:text-3xl font-bold text-navy mb-5">
             {localConsiderationsHeading}
@@ -226,7 +226,7 @@ export default function CityPageTemplate({
       </section>
 
       {/* ─── POOL TYPES ───────────────────────────────────── */}
-      <section className="bg-white py-16 px-4 md:px-8">
+      <section className="bg-white py-16 px-4 md:px-8 border-t border-gray-100">
         <ScrollReveal>
           <div className="max-w-4xl mx-auto">
             <h2 className="font-playfair text-2xl md:text-3xl font-bold text-navy mb-5">
@@ -258,25 +258,27 @@ export default function CityPageTemplate({
       </section>
 
       {/* ─── OWNER-OPERATED TRUST ─────────────────────────── */}
-      <section className="bg-white py-16 px-4 md:px-8">
+      <section className="bg-white py-16 px-4 md:px-8 border-t border-gray-100">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-playfair text-2xl md:text-3xl font-bold text-navy mb-5">
-            Why Owner-Operated Matters
-          </h2>
-          <p className="font-inter text-gray-700 text-lg leading-relaxed">{ownerOperatedParagraph}</p>
+          <div className="border-l-4 border-gold pl-6">
+            <h2 className="font-playfair text-2xl md:text-3xl font-bold text-navy mb-5">
+              Why Owner-Operated Matters
+            </h2>
+            <p className="font-inter text-gray-700 text-lg leading-relaxed">{ownerOperatedParagraph}</p>
+          </div>
         </div>
       </section>
 
       {/* ─── FAQ ──────────────────────────────────────────── */}
       {faqs && faqs.length > 0 && (
-        <section className="bg-white py-16 px-4 md:px-8">
+        <section className="bg-white py-16 px-4 md:px-8 border-t border-gray-100">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-playfair text-2xl md:text-3xl font-bold text-navy mb-10">
               Frequently Asked Questions
             </h2>
-            <div className="space-y-8">
+            <div className="space-y-4">
               {faqs.map((faq, i) => (
-                <div key={i} className="border-b border-gray-100 pb-8 last:border-0 last:pb-0">
+                <div key={i} className="rounded-xl border border-gray-100 shadow-sm p-6">
                   <h3 className="font-inter text-lg font-semibold text-navy mb-3">
                     {faq.question}
                   </h3>
@@ -289,25 +291,27 @@ export default function CityPageTemplate({
       )}
 
       {/* ─── INTERNAL LINKS ───────────────────────────────── */}
-      <section className="bg-white py-10 px-4 md:px-8">
-        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Link
-            href="/pricing"
-            className="inline-flex items-center justify-center bg-navy text-white font-inter font-semibold text-sm px-8 py-3 rounded hover:bg-navy/80 transition-colors duration-200"
-          >
-            View Pricing &amp; Process →
-          </Link>
-          <Link
-            href="/consultation"
-            className="inline-flex items-center justify-center border-2 border-navy text-navy font-inter font-semibold text-sm px-8 py-3 rounded hover:bg-navy hover:text-white transition-colors duration-200"
-          >
-            Book Free Consultation →
-          </Link>
+      <section className="bg-white py-10 px-4 md:px-8 border-t border-gray-100">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-navy rounded-2xl px-8 py-7 flex flex-col sm:flex-row gap-4 justify-center items-center shadow-lg">
+            <Link
+              href="/pricing"
+              className="inline-flex items-center justify-center bg-gold text-navy font-inter font-bold text-sm px-8 py-3 rounded hover:bg-gold-light transition-colors duration-200"
+            >
+              View Pricing &amp; Process →
+            </Link>
+            <Link
+              href="/consultation"
+              className="inline-flex items-center justify-center border-2 border-white/40 text-white font-inter font-semibold text-sm px-8 py-3 rounded hover:border-white hover:bg-white/5 transition-colors duration-200"
+            >
+              Book Free Consultation →
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* ─── ALSO SERVING NEARBY ──────────────────────────── */}
-      <section className="bg-white py-12 px-4 md:px-8">
+      <section className="bg-white py-12 px-4 md:px-8 border-t border-gray-100">
         <div className="max-w-4xl mx-auto">
           <p className="font-inter text-sm font-semibold text-gray-400 tracking-widest uppercase text-center mb-5">
             Also Serving Nearby Communities
