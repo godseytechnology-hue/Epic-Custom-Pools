@@ -549,7 +549,7 @@ export default function HomePage() {
               {HOME_FAQS.map((faq, i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm"
+                  className="bg-white rounded-xl border border-navy p-6 shadow-md"
                 >
                   <h3 className="font-inter text-base font-semibold text-navy mb-3">
                     {faq.question}

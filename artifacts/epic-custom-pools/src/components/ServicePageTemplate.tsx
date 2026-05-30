@@ -254,7 +254,7 @@ export default function ServicePageTemplate({
           </h2>
           <div className="space-y-4">
             {faq.map((item, i) => (
-              <div key={i} className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+              <div key={i} className="bg-white rounded-xl p-6 border border-navy shadow-md">
                 <h3 className="font-playfair text-lg font-bold text-navy mb-3">{item.question}</h3>
                 <p className="font-inter text-gray-600 text-sm leading-relaxed">{item.answer}</p>
               </div>

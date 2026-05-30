@@ -278,7 +278,7 @@ export default function CityPageTemplate({
             </h2>
             <div className="space-y-4">
               {faqs.map((faq, i) => (
-                <div key={i} className="rounded-xl border border-gray-100 shadow-sm p-6">
+                <div key={i} className="rounded-xl border border-navy shadow-md p-6">
                   <h3 className="font-inter text-lg font-semibold text-navy mb-3">
                     {faq.question}
                   </h3>
