@@ -142,7 +142,7 @@ export default function ConsultationPage() {
       <SectionDivider fill="#e1f3fc" bg="#e1f3fc" variant="curve" height={48} />
 
       {/* ─── SERVICE CITIES ───────────────────────────────── */}
-      <section className="bg-white py-14 px-4 md:px-8 border-t border-gray-100">
+      <section className="bg-white py-14 px-4 md:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-playfair text-2xl font-bold text-navy mb-4">
             Areas We Serve

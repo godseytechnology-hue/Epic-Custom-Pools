@@ -107,19 +107,19 @@ export default function AboutPage() {
       </section>
 
       {/* ─── E-E-A-T TRUST SIGNALS ──────────────────────────────── */}
-      <section className="bg-teal/5 border-y border-teal/15 py-10 px-4 md:px-8">
+      <section className="bg-white py-10 px-4 md:px-8">
         <ScrollReveal>
           <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-center">
+            <div className="bg-navy rounded-2xl px-8 py-8 grid grid-cols-1 sm:grid-cols-2 gap-6 text-center">
               <div className="flex flex-col items-center gap-2">
                 <span className="text-3xl" aria-hidden="true">🏗️</span>
-                <p className="font-inter font-semibold text-navy text-base">10+ Years in the DFW Pool Industry</p>
-                <p className="font-inter text-gray-500 text-sm">Hands-on experience building pools across the Fort Worth area before founding Epic Custom Pools</p>
+                <p className="font-inter font-semibold text-white text-base">10+ Years in the DFW Pool Industry</p>
+                <p className="font-inter text-white/70 text-sm">Hands-on experience building pools across the Fort Worth area before founding Epic Custom Pools</p>
               </div>
               <div className="flex flex-col items-center gap-2">
                 <span className="text-3xl" aria-hidden="true">📍</span>
-                <p className="font-inter font-semibold text-navy text-base">Serving the DFW West Corridor</p>
-                <p className="font-inter text-gray-500 text-sm">Fort Worth, Weatherford, Aledo, Possum Kingdom, Granbury, and surrounding communities</p>
+                <p className="font-inter font-semibold text-white text-base">Serving the DFW West Corridor</p>
+                <p className="font-inter text-white/70 text-sm">Fort Worth, Weatherford, Aledo, Possum Kingdom, Granbury, and surrounding communities</p>
               </div>
             </div>
           </div>
