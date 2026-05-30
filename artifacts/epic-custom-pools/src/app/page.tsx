@@ -427,7 +427,7 @@ export default function HomePage() {
         </ScrollReveal>
       </section>
 
-      <SectionDivider fill="#0d2540" poolWaterBg={true} variant="wave" height={80} />
+      <SectionDivider fill="#0d2540" bg="#0d2540" variant="wave" height={80} />
 
       {/* ─── CTA BANNER ──────────────────────────────────────── */}
       <section data-dark-section className="relative bg-navy py-20 px-4 md:px-8 text-center overflow-hidden">
